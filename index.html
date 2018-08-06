@@ -10,7 +10,7 @@
 
 <script type="text/javascript" src="https://cdn.bootcss.com/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 
-<title>无尽的饼干</title>
+<title>无尽的饼干 - V2.0109</title>
 <!--
 Code and graphics copyright Orteil, 2013-2018
 Feel free to alter this code to your liking, but please do not re-host it, do not profit from it and do not present it as your own.
@@ -47,7 +47,7 @@ target-densityDpi=device-dpi"/>
 <div id="wrapper">
 
 	<div id="topBar">
-		<div><b>Cookie Clicker</b>&trade; &copy; <a href="../index.html" target="_blank">Orteil</a>, 2018 - <a href="http://dashnet.org" target="_blank">DashNet</a></div>
+		<div><b>无尽的饼干</b>&trade; &copy; <a href="../index.html" target="_blank">Orteil</a>, 2018 - <a href="http://dashnet.org" target="_blank">DashNet</a></div>
 		<div><a href="http://twitter.com/orteil42" target="_blank">twitter</a></div>
 		<div><a href="http://orteil42.tumblr.com" target="_blank">tumblr</a></div>
 		<!--<div><a href="http://forum.dashnet.org" target="_blank">Official forum</a></div>-->
@@ -56,7 +56,7 @@ target-densityDpi=device-dpi"/>
 		<div><a href="../randomgen/index.html" target="_blank">RandomGen</a></div>
 		<div><a href="../igm/index.html" target="_blank">Idle Game Maker</a></div>
 		<div id="links" class="hoverer">
-			Other versions
+			其它版本
 			<div class="hoverable">
 			<a href="../index.html" target="_blank" id="linkVersionLive">Live version</a>
 			<a href="beta/index.html" target="_blank" id="linkVersionBeta">Try the beta!</a>
@@ -71,11 +71,11 @@ target-densityDpi=device-dpi"/>
 			<div id="loader">
 				<div class="spinnyBig"></div>
 				<div class="spinnySmall"></div>
-				<div id="loading" class="title">Loading...</div>
-				<div id="failedToLoad" class="title">This is taking longer than expected.<br>
-				<div style="font-size:65%;line-height:120%;">Slow connection? If not, please make sure your javascript is enabled, then refresh.<br>
-				If problems persist, this might be on our side - wait a few minutes, then hit ctrl+f5!</div></div>
-				<div id="ifIE9" class="title" style="font-size:100%;line-height:120%;">Your browser may not be recent enough to run Cookie Clicker.<br>You might want to update, or switch to a more modern browser such as Chrome or Firefox.</div>
+				<div id="loading" class="title">加载中...</div>
+				<div id="failedToLoad" class="title">这比预计的时间要长。<br>
+				<div style="font-size:65%;line-height:120%;">连接缓慢?如果没有，请确保你的javascript是启用的，然后刷新。<br>
+				如果问题持续存在，这可能会出现在我们这边-等待几分钟，然后按ctrl +f5!</div></div>
+				<div id="ifIE9" class="title" style="font-size:100%;line-height:120%;">您的浏览器可能还不足以运行无尽的饼干。<br>您可能需要更新，或者切换到更现代的浏览器，如Chrome或Firefox。</div>
 				<!--<div class="title">Oops, looks like we've got a problem.</div>
 				<div>Please bear with us while we fix it.<br>Your save is safe, don't worry!</div>-->
 			</div>
@@ -123,16 +123,16 @@ target-densityDpi=device-dpi"/>
 
 		<div id="sectionMiddle" class="inset">
 			<div id="comments" class="inset title">
-				<div id="prefsButton" class="button">Options</div>
-				<div id="statsButton" class="button">Stats</div>
-				<div id="logButton" class="button"><div id="checkForUpdate">New update!</div>Info</div>
-				<div id="legacyButton" class="button">Legacy<div id="ascendMeterContainer" class="smallFramed meterContainer"><div id="ascendMeter" class="meter filling"></div></div><div class="roundedPanel" id="ascendNumber"></div><div id="ascendTooltip" class="framed"></div></div>
+				<div id="prefsButton" class="button">选项</div>
+				<div id="statsButton" class="button">统计</div>
+				<div id="logButton" class="button"><div id="checkForUpdate">新的更新!</div>信息</div>
+				<div id="legacyButton" class="button">遗产<div id="ascendMeterContainer" class="smallFramed meterContainer"><div id="ascendMeter" class="meter filling"></div></div><div class="roundedPanel" id="ascendNumber"></div><div id="ascendTooltip" class="framed"></div></div>
 				<div id="commentsTextBelow" class="commentsText"></div>
 				<div id="commentsText" class="commentsText"></div>
 				<div class="separatorBottom"></div>
 			</div>
 			<div id="centerArea">
-				<div id="buildingsTitle" class="inset title zoneTitle">Buildings</div>
+				<div id="buildingsTitle" class="inset title zoneTitle">建筑</div>
 				<div id="buildingsMaster"></div>
 				<div id="rows"></div>
 				<div id="menu"></div>
@@ -152,7 +152,7 @@ target-densityDpi=device-dpi"/>
 
 		<div id="sectionRight" class="inset">
 			<div id="store">
-				<div id="storeTitle" class="inset title zoneTitle">Store</div>
+				<div id="storeTitle" class="inset title zoneTitle">商店</div>
 				<div id="toggleUpgrades" class="storeSection upgradeBox"></div>
 				<div id="techUpgrades" class="storeSection upgradeBox"></div>
 				<div id="vaultUpgrades" class="storeSection upgradeBox"></div>
@@ -161,8 +161,8 @@ target-densityDpi=device-dpi"/>
 			</div>
 			
 			
-			<div id="support" style="margin-top:130px;">
-				<div class="supportComment">Sponsored links</div>
+			<div id="support" style="margin-top:130px;display:none;">
+				<div class="supportComment">赞助商链接</div>
 				<div style="position:relative;">
 				
 					<div style="position:relative;z-index:100;min-height:250px;">
@@ -210,10 +210,10 @@ target-densityDpi=device-dpi"/>
 		-->
 		
 		<div id="focusButtons">
-			<div id="focusLeft" class="title">Cookie</div>
-			<div id="focusMiddle" class="title" style="font-size:80%;padding-top:18px;padding-bottom:14px;">Buildings</div>
-			<div id="focusRight" class="title">Store</div>
-			<div id="focusMenu" class="title">Menu</div>
+			<div id="focusLeft" class="title">饼干</div>
+			<div id="focusMiddle" class="title" style="font-size:80%;padding-top:18px;padding-bottom:14px;">建筑</div>
+			<div id="focusRight" class="title">商店</div>
+			<div id="focusMenu" class="title">菜单</div>
 		</div>
 		<div id="compactOverlay" class="title">
 			<div id="compactCommentsText" class="commentsText"></div>
