@@ -6764,12 +6764,12 @@ Game.Launch=function()
 		new Game.Object('Grandma','grandma|grandmas|baked|Grandmas are [X] year older|Grandmas are [X] years older','A nice grandma to bake more cookies.',1,1,{pic:function(i){
 			var list=['grandma'];
 			if (Game.Has('农民老奶奶')) list.push('farmerGrandma');
-			if (Game.Has('Worker grandmas')) list.push('workerGrandma');
-			if (Game.Has('Miner grandmas')) list.push('minerGrandma');
-			if (Game.Has('Cosmic grandmas')) list.push('cosmicGrandma');
-			if (Game.Has('Transmuted grandmas')) list.push('transmutedGrandma');
-			if (Game.Has('Altered grandmas')) list.push('alteredGrandma');
-			if (Game.Has('Grandmas\' grandmas')) list.push('grandmasGrandma');
+			if (Game.Has('工人老奶奶')) list.push('workerGrandma');
+			if (Game.Has('矿工老奶奶')) list.push('minerGrandma');
+			if (Game.Has('宇宙老奶奶')) list.push('cosmicGrandma');
+			if (Game.Has('嬗变老奶奶')) list.push('transmutedGrandma');
+			if (Game.Has('改造老奶奶')) list.push('alteredGrandma');
+			if (Game.Has('老奶奶的奶奶')) list.push('grandmasGrandma');
 			if (Game.Has('Antigrandmas')) list.push('antiGrandma');
 			if (Game.Has('Rainbow grandmas')) list.push('rainbowGrandma');
 			if (Game.Has('Banker grandmas')) list.push('bankGrandma');
@@ -6782,12 +6782,12 @@ Game.Launch=function()
 		},bg:'grandmaBackground.png',xV:8,yV:8,w:32,rows:3,x:0,y:16},100,function(me){
 			var mult=1;
 			if (Game.Has('农民老奶奶')) mult*=2;
-			if (Game.Has('Worker grandmas')) mult*=2;
-			if (Game.Has('Miner grandmas')) mult*=2;
-			if (Game.Has('Cosmic grandmas')) mult*=2;
-			if (Game.Has('Transmuted grandmas')) mult*=2;
-			if (Game.Has('Altered grandmas')) mult*=2;
-			if (Game.Has('Grandmas\' grandmas')) mult*=2;
+			if (Game.Has('工人老奶奶')) mult*=2;
+			if (Game.Has('矿工老奶奶')) mult*=2;
+			if (Game.Has('宇宙老奶奶')) mult*=2;
+			if (Game.Has('嬗变老奶奶')) mult*=2;
+			if (Game.Has('改造老奶奶')) mult*=2;
+			if (Game.Has('老奶奶的奶奶')) mult*=2;
 			if (Game.Has('Antigrandmas')) mult*=2;
 			if (Game.Has('Rainbow grandmas')) mult*=2;
 			if (Game.Has('Banker grandmas')) mult*=2;
@@ -6852,23 +6852,23 @@ Game.Launch=function()
 		new Game.Object('Mine','mine|mines|mined|[X] mile deeper|[X] miles deeper','Mines out cookie dough and chocolate chips.',4,3,{base:'mine',xV:16,yV:16,w:64,rows:2,x:0,y:24},10000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
-			if (Game.Has('Miner grandmas')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
+			if (Game.Has('矿工老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
 			mult*=Game.magicCpS(me.name);
 			return me.baseCps*mult;
 		},function(){
 			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('Miner grandmas');
+			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('矿工老奶奶');
 		});
 		
 		new Game.Object('Factory','factory|factories|mass-produced|[X] additional patent|[X] additional patents','Produces large quantities of cookies.',5,4,{base:'factory',xV:8,yV:0,w:64,rows:1,x:0,y:-22},3000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
-			if (Game.Has('Worker grandmas')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
+			if (Game.Has('工人老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
 			mult*=Game.magicCpS(me.name);
 			return me.baseCps*mult;
 		},function(){
 			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('Worker grandmas');
+			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('工人老奶奶');
 		});
 		
 		new Game.Object('Bank','bank|banks|banked|Interest rates [X]% better|Interest rates [X]% better','Generates cookies from interest.',6,15,{base:'bank',xV:8,yV:4,w:56,rows:1,x:0,y:13},0,function(me){
@@ -6911,45 +6911,45 @@ Game.Launch=function()
 		new Game.Object('Shipment','shipment|shipments|shipped|[X] galaxy fully explored|[X] galaxies fully explored','Brings in fresh cookies from the cookie planet.',9,5,{base:'shipment',xV:16,yV:16,w:64,rows:1,x:0,y:0},40000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
-			if (Game.Has('Cosmic grandmas')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
+			if (Game.Has('宇宙老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
 			mult*=Game.magicCpS(me.name);
 			return me.baseCps*mult;
 		},function(){
 			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('Cosmic grandmas');
+			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('宇宙老奶奶');
 		});
 		
 		new Game.Object('Alchemy lab','alchemy lab|alchemy labs|transmuted|[X] primordial element mastered|[X] primordial elements mastered','Turns gold into cookies!',10,6,{base:'alchemylab',xV:16,yV:16,w:64,rows:2,x:0,y:16},200000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
-			if (Game.Has('Transmuted grandmas')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
+			if (Game.Has('嬗变老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
 			mult*=Game.magicCpS(me.name);
 			return me.baseCps*mult;
 		},function(){
 			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('Transmuted grandmas');
+			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('嬗变老奶奶');
 		});
 		
 		new Game.Object('Portal','portal|portals|retrieved|[X] dimension enslaved|[X] dimensions enslaved','Opens a door to the Cookieverse.',11,7,{base:'portal',xV:32,yV:32,w:64,rows:2,x:0,y:0},1666666,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
-			if (Game.Has('Altered grandmas')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
+			if (Game.Has('改造老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
 			mult*=Game.magicCpS(me.name);
 			return me.baseCps*mult;
 		},function(){
 			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('Altered grandmas');
+			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('改造老奶奶');
 		});
 		
 		new Game.Object('Time machine','time machine|time machines|recovered|[X] century secured|[X] centuries secured','Brings cookies from the past, before they were even eaten.',12,8,{base:'timemachine',xV:32,yV:32,w:64,rows:1,x:0,y:0},123456789,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
-			if (Game.Has('Grandmas\' grandmas')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
+			if (Game.Has('老奶奶的奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
 			mult*=Game.magicCpS(me.name);
 			return me.baseCps*mult;
 		},function(){
 			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('Grandmas\' grandmas');
+			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('老奶奶的奶奶');
 		});
 		
 		new Game.Object('Antimatter condenser','antimatter condenser|antimatter condensers|condensed|[X] extra quark flavor|[X] extra quark flavors','Condenses the antimatter in the universe into cookies.',13,13,{base:'antimattercondenser',xV:0,yV:64,w:64,rows:1,x:0,y:0},3999999999,function(me){
@@ -7637,13 +7637,13 @@ Game.Launch=function()
 		
 		order=250;
 		new Game.Upgrade('农民老奶奶',Game.getGrandmaSynergyUpgradeDesc('Farm')+'<q>A nice farmer to grow more cookies.</q>',Game.Objects['Farm'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
-		new Game.Upgrade('Miner grandmas',Game.getGrandmaSynergyUpgradeDesc('Mine')+'<q>A nice miner to dig more cookies.</q>',Game.Objects['Mine'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
-		new Game.Upgrade('Worker grandmas',Game.getGrandmaSynergyUpgradeDesc('Factory')+'<q>A nice worker to manufacture more cookies.</q>',Game.Objects['Factory'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('矿工老奶奶',Game.getGrandmaSynergyUpgradeDesc('Mine')+'<q>A nice miner to dig more cookies.</q>',Game.Objects['Mine'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('工人老奶奶',Game.getGrandmaSynergyUpgradeDesc('Factory')+'<q>A nice worker to manufacture more cookies.</q>',Game.Objects['Factory'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		order=255;
-		new Game.Upgrade('Cosmic grandmas',Game.getGrandmaSynergyUpgradeDesc('Shipment')+'<q>A nice thing to... uh... cookies.</q>',Game.Objects['Shipment'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
-		new Game.Upgrade('Transmuted grandmas',Game.getGrandmaSynergyUpgradeDesc('Alchemy lab')+'<q>A nice golden grandma to convert into more cookies.</q>',Game.Objects['Alchemy lab'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
-		new Game.Upgrade('Altered grandmas',Game.getGrandmaSynergyUpgradeDesc('Portal')+'<q>a NiCe GrAnDmA tO bA##########</q>',Game.Objects['Portal'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
-		new Game.Upgrade('Grandmas\' grandmas',Game.getGrandmaSynergyUpgradeDesc('Time machine')+'<q>A nice grandma\'s nice grandma to bake double the cookies.</q>',Game.Objects['Time machine'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('宇宙老奶奶',Game.getGrandmaSynergyUpgradeDesc('Shipment')+'<q>A nice thing to... uh... cookies.</q>',Game.Objects['Shipment'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('嬗变老奶奶',Game.getGrandmaSynergyUpgradeDesc('Alchemy lab')+'<q>A nice golden grandma to convert into more cookies.</q>',Game.Objects['Alchemy lab'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('改造老奶奶',Game.getGrandmaSynergyUpgradeDesc('Portal')+'<q>a NiCe GrAnDmA tO bA##########</q>',Game.Objects['Portal'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('老奶奶的奶奶',Game.getGrandmaSynergyUpgradeDesc('Time machine')+'<q>A nice grandma\'s nice grandma to bake double the cookies.</q>',Game.Objects['Time machine'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		
 		order=14000;
 		Game.baseResearchTime=Game.fps*60*30;
@@ -12025,12 +12025,12 @@ Game.Launch=function()
 				
 				var grandmas=0;
 				if (Game.Has('农民老奶奶')) grandmas++;
-				if (Game.Has('Worker grandmas')) grandmas++;
-				if (Game.Has('Miner grandmas')) grandmas++;
-				if (Game.Has('Cosmic grandmas')) grandmas++;
-				if (Game.Has('Transmuted grandmas')) grandmas++;
-				if (Game.Has('Altered grandmas')) grandmas++;
-				if (Game.Has('Grandmas\' grandmas')) grandmas++;
+				if (Game.Has('工人老奶奶')) grandmas++;
+				if (Game.Has('矿工老奶奶')) grandmas++;
+				if (Game.Has('宇宙老奶奶')) grandmas++;
+				if (Game.Has('嬗变老奶奶')) grandmas++;
+				if (Game.Has('改造老奶奶')) grandmas++;
+				if (Game.Has('老奶奶的奶奶')) grandmas++;
 				if (Game.Has('Antigrandmas')) grandmas++;
 				if (Game.Has('Rainbow grandmas')) grandmas++;
 				if (Game.Has('Banker grandmas')) grandmas++;
