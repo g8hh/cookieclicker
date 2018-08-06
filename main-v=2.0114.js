@@ -6281,20 +6281,20 @@ Game.Launch=function()
 					icon=[0,7];
 				}
 				//if (l('rowInfo'+me.id) && Game.drawT%10==0) l('rowInfoContent'+me.id).innerHTML='&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+'<br>&bull; producing '+Beautify(me.storedTotalCps,1)+' '+(me.storedTotalCps==1?'cookie':'cookies')+' per second<br>&bull; total : '+Beautify(me.totalCookies)+' '+(Math.floor(me.totalCookies)==1?'cookie':'cookies')+' '+me.actionName;
-				return '<div style="min-width:350px;padding:8px;"><div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;'+(icon[2]?'background-image:url('+icon[2]+');':'')+'background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div style="float:right;"><span class="price">'+Beautify(Math.round(me.price))+'</span></div><div class="name">'+name+'</div>'+'<small>[owned : '+me.amount+'</small>]'+(me.free>0?' <small>[free : '+me.free+'</small>!]':'')+
+				return '<div style="min-width:350px;padding:8px;"><div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;'+(icon[2]?'background-image:url('+icon[2]+');':'')+'background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div style="float:right;"><span class="price">'+Beautify(Math.round(me.price))+'</span></div><div class="name">'+cndisplayname(name)+'</div>'+'<small>[拥有 : '+me.amount+'</small>]'+(me.free>0?' <small>[空闲 : '+me.free+'</small>!]':'')+
 				'<div class="line"></div><div class="description">'+desc+'</div>'+
 				(me.totalCookies>0?(
 					'<div class="line"></div><div class="data">'+
-					(me.amount>0?'&bull; each '+me.single+' produces <b>'+Beautify((me.storedTotalCps/me.amount)*Game.globalCpsMult,1)+'</b> '+((me.storedTotalCps/me.amount)*Game.globalCpsMult==1?'cookie':'cookies')+' per second<br>':'')+
-					'&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+' producing <b>'+Beautify(me.storedTotalCps*Game.globalCpsMult,1)+'</b> '+(me.storedTotalCps*Game.globalCpsMult==1?'cookie':'cookies')+' per second (<b>'+Beautify(Game.cookiesPs>0?((me.amount>0?((me.storedTotalCps*Game.globalCpsMult)/Game.cookiesPs):0)*100):0,1)+'%</b> of total)<br>'+
-					'&bull; <b>'+Beautify(me.totalCookies)+'</b> '+(Math.floor(me.totalCookies)==1?'cookie':'cookies')+' '+me.actionName+' so far</div>'
+					(me.amount>0?'&bull; 每个 '+cnsigle(me.single)+' 每秒生产 <b>'+Beautify((me.storedTotalCps/me.amount)*Game.globalCpsMult,1)+'</b> '+((me.storedTotalCps/me.amount)*Game.globalCpsMult==1?'饼干':'饼干')+'<br>':'')+
+					'&bull; '+me.amount+' '+(me.amount==1?cnsigle(me.single):cnsigle(me.plural))+' 每秒生产 <b>'+Beautify(me.storedTotalCps*Game.globalCpsMult,1)+'</b> '+(me.storedTotalCps*Game.globalCpsMult==1?'饼干':'饼干')+' (<b>占生产总量的 '+Beautify(Game.cookiesPs>0?((me.amount>0?((me.storedTotalCps*Game.globalCpsMult)/Game.cookiesPs):0)*100):0,1)+'%</b>)<br>'+
+					'&bull; 到目前为止，得到 <b>'+Beautify(me.totalCookies)+'</b> '+(Math.floor(me.totalCookies)==1?'饼干':'饼干')+' 通过 '+cnactionname(me.actionName)+'</div>'
 				):'')+
 				'</div>';
 			}
 			this.levelTooltip=function()
 			{
 				var me=this;
-				return '<div style="width:280px;padding:8px;"><b>Level '+Beautify(me.level)+' '+me.plural+'</b><div class="line"></div>'+(me.level==1?me.extraName:me.extraPlural).replace('[X]',Beautify(me.level))+' granting <b>+'+Beautify(me.level)+'% '+me.name+' CpS</b>.<div class="line"></div>Click to level up for <span class="price lump'+(Game.lumps>=me.level+1?'':' disabled')+'">'+Beautify(me.level+1)+' sugar lump'+(me.level==0?'':'s')+'</span>.'+((me.level==0 && me.minigameUrl)?'<div class="line"></div><b>Levelling up this building unlocks a minigame.</b>':'')+'</div>';
+				return '<div style="width:280px;padding:8px;"><b>等级 '+Beautify(me.level)+' '+cnsigle(me.plural)+'</b><div class="line"></div>'+(me.level==1?me.extraName:me.extraPlural).replace('[X]',Beautify(me.level))+' 给予 <b>+'+Beautify(me.level)+'% '+cndisplayname(me.name)+' 饼干每秒总产量</b>.<div class="line"></div>点击升级消耗 <span class="price lump'+(Game.lumps>=me.level+1?'':' 禁用')+'">'+Beautify(me.level+1)+' 糖块'+(me.level==0?'':'s')+'</span>.'+((me.level==0 && me.minigameUrl)?'<div class="line"></div><b>这个建筑升级解锁一个迷你游戏。</b>':'')+'</div>';
 			}
 			/*this.levelUp=function()
 			{
@@ -6379,7 +6379,7 @@ Game.Launch=function()
 				l('productIcon'+me.id).style.backgroundPosition='-'+icon[0]+'px -'+icon[1]+'px';
 				//l('productIconOff'+me.id).style.backgroundImage='url(img/'+iconOff+')';
 				l('productIconOff'+me.id).style.backgroundPosition='-'+iconOff[0]+'px -'+iconOff[1]+'px';
-				l('productName'+me.id).innerHTML=displayName;
+				l('productName'+me.id).innerHTML=cndisplayname(displayName);
 				l('productOwned'+me.id).innerHTML=me.amount?me.amount:'';
 				l('productPrice'+me.id).innerHTML=Beautify(Math.round(price));
 				l('productPriceMult'+me.id).innerHTML=(Game.buyBulk>1)?('x'+Game.buyBulk+' '):'';
@@ -6763,7 +6763,7 @@ Game.Launch=function()
 		Game.SpecialGrandmaUnlock=15;
 		new Game.Object('Grandma','grandma|grandmas|baked|Grandmas are [X] year older|Grandmas are [X] years older','A nice grandma to bake more cookies.',1,1,{pic:function(i){
 			var list=['grandma'];
-			if (Game.Has('Farmer grandmas')) list.push('farmerGrandma');
+			if (Game.Has('农民老奶奶')) list.push('farmerGrandma');
 			if (Game.Has('Worker grandmas')) list.push('workerGrandma');
 			if (Game.Has('Miner grandmas')) list.push('minerGrandma');
 			if (Game.Has('Cosmic grandmas')) list.push('cosmicGrandma');
@@ -6781,7 +6781,7 @@ Game.Launch=function()
 			return choose(list)+'.png';
 		},bg:'grandmaBackground.png',xV:8,yV:8,w:32,rows:3,x:0,y:16},100,function(me){
 			var mult=1;
-			if (Game.Has('Farmer grandmas')) mult*=2;
+			if (Game.Has('农民老奶奶')) mult*=2;
 			if (Game.Has('Worker grandmas')) mult*=2;
 			if (Game.Has('Miner grandmas')) mult*=2;
 			if (Game.Has('Cosmic grandmas')) mult*=2;
@@ -6839,12 +6839,12 @@ Game.Launch=function()
 		new Game.Object('Farm','farm|farms|harvested|[X] more acre|[X] more acres','Grows cookie plants from cookie seeds.',3,2,{base:'farm',xV:8,yV:8,w:64,rows:2,x:0,y:16},500,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
-			if (Game.Has('Farmer grandmas')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
+			if (Game.Has('农民老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
 			mult*=Game.magicCpS(me.name);
 			return me.baseCps*mult;
 		},function(){
 			Game.UnlockTiered(this);
-			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('Farmer grandmas');
+			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('农民老奶奶');
 		});
 		Game.last.minigameUrl='minigameGarden.js';
 		Game.last.minigameName='Garden';
@@ -7630,13 +7630,13 @@ Game.Launch=function()
 		{
 			var building=Game.Objects[building];
 			var grandmaNumber=(building.id-1);
-			if (grandmaNumber==1) grandmaNumber='grandma';
-			else grandmaNumber+=' grandmas';
-			return 'Grandmas are <b>twice</b> as efficient. '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' gain <b>+1% CpS</b> per '+grandmaNumber+'.';
+			if (grandmaNumber==1) grandmaNumber='老奶奶';
+			else grandmaNumber+=' 老奶奶';
+			return '老奶奶工作效率 <b>翻倍</b>. '+cnsigle(building.plural)+' 获得 <b>+1% 饼干每秒总产量</b> 每 '+grandmaNumber+'.';
 		}
 		
 		order=250;
-		new Game.Upgrade('Farmer grandmas',Game.getGrandmaSynergyUpgradeDesc('Farm')+'<q>A nice farmer to grow more cookies.</q>',Game.Objects['Farm'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('农民老奶奶',Game.getGrandmaSynergyUpgradeDesc('Farm')+'<q>A nice farmer to grow more cookies.</q>',Game.Objects['Farm'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		new Game.Upgrade('Miner grandmas',Game.getGrandmaSynergyUpgradeDesc('Mine')+'<q>A nice miner to dig more cookies.</q>',Game.Objects['Mine'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		new Game.Upgrade('Worker grandmas',Game.getGrandmaSynergyUpgradeDesc('Factory')+'<q>A nice worker to manufacture more cookies.</q>',Game.Objects['Factory'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		order=255;
@@ -12024,7 +12024,7 @@ Game.Launch=function()
 				if (Game.shimmerTypes['golden'].n>=4) Game.Win('Four-leaf cookie');
 				
 				var grandmas=0;
-				if (Game.Has('Farmer grandmas')) grandmas++;
+				if (Game.Has('农民老奶奶')) grandmas++;
 				if (Game.Has('Worker grandmas')) grandmas++;
 				if (Game.Has('Miner grandmas')) grandmas++;
 				if (Game.Has('Cosmic grandmas')) grandmas++;
@@ -12418,3 +12418,100 @@ window.onload=function()
 		}
 	}
 };
+//汉化建筑
+function cndisplayname(name){
+    var cnname="";
+    var temp=name;
+    if(temp=="Cursor"){
+        cnname="游标"
+    }else if(temp=="Grandma"){
+        cnname="老奶奶"
+    }else if(temp=="Farm"){
+        cnname="农场"
+    }else if(temp=="Mine"){
+        cnname="矿山"
+    }else if(temp=="Factory"){
+        cnname="工厂"
+    }else if(temp=="Bank"){
+        cnname="银行"
+    }else if(temp=="Temple"){
+        cnname="寺庙"
+    }else if(temp=="Wizard tower"){
+        cnname="精灵塔"
+    }else if(temp=="Shipment"){
+        cnname="装船"
+    }else if(temp=="Alchemy lab"){
+        cnname="炼金实验室"
+    }else if(temp=="Portal"){
+        cnname="传送门"
+    }else if(temp=="Time machine"){
+        cnname="时光机器"
+    }else if(temp=='<span style="font-size:65%;position:relative;bottom:4px;">Antimatter condenser</span>'){
+        cnname='<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>'
+    }else if(temp=="Antimatter condenser"){
+        cnname="反物质冷凝器"
+    }else if(temp=="Prism"){
+        cnname="棱镜"
+    }else if(temp=="Chancemaker"){
+        cnname="机会制造商"
+    }else{
+        return name;
+    }
+    return cnname;
+}
+//汉化指令
+function cnactionname(name){
+    var cnactionname="";
+    var temp=name;
+    if(temp=="clicked"){
+        cnactionname="点击"
+    }else if(temp=="baked"){
+        cnactionname="烘烤"
+    }else if(temp=="harvested"){
+        cnactionname="收获"
+    }else if(temp=="mined"){
+        cnactionname="开采"
+    }else{
+        return name;
+    }
+    return cnactionname;
+}
+//汉化职业
+function cnsigle(name){
+    var cnsigle="";
+    var temp=name;
+    if(temp=="cursor" || temp=="cursors"){
+        cnsigle="游标"
+    }else if(temp=="grandma" || temp=="grandmas"){
+        cnsigle="老奶奶"
+    }else if(temp=="farm" || temp=="farms"){
+        cnsigle="农场"
+    }else if(temp=="mine" || temp=="mines"){
+        cnsigle="矿山"
+    }else if(temp=="factory" || temp=="factories"){
+        cnsigle="工厂"
+    }else if(temp=="bank" || temp=="banks"){
+        cnsigle="银行"
+    }else if(temp=="temple" || temp=="temples"){
+        cnsigle="寺庙"
+    }else if(temp=="wizard tower" || temp=="wizard towers"){
+        cnsigle="精灵塔"
+    }else if(temp=="shipment" || temp=="shipments"){
+        cnsigle="装船"
+    }else if(temp=="alchemy lab" || temp=="alchemy labs"){
+        cnsigle="炼金实验室"
+    }else if(temp=="portal" || temp=="portals"){
+        cnsigle="传送门"
+    }else if(temp=="time machine" || temp=="time machines"){
+        cnsigle="时光机器"
+    }else if(temp=="antimatter condenser" || temp=="antimatter condensers"){
+        cnsigle="反物质冷凝器"
+    }else if(temp=="prism" || temp=="prisms"){
+        cnsigle="棱镜"
+    }else if(temp=="chancemaker" || temp=="chancemakers"){
+        cnsigle="机会制造商"
+    }else{
+        return name;
+    }
+    return cnsigle;
+}
