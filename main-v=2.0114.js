@@ -574,42 +574,42 @@ Game.Launch=function()
 	}
 	
 	Game.updateLog=
-	'<div class="section">Info</div>'+
+	'<div class="section">信息</div>'+
 	'</div><div class="subsection">'+
-	'<div class="title">About</div>'+
-	'<div class="listing">Cookie Clicker is a javascript game by <a href="http://orteil.dashnet.org" target="_blank">Orteil</a> and <a href="http://dashnet.org" target="_blank">Opti</a>.</div>'+
+	'<div class="title">关于</div>'+
+	'<div class="listing">无尽的饼干是一个JavaScript游戏，作者是 <a href="http://orteil.dashnet.org" target="_blank">Orteil</a> 和 <a href="http://dashnet.org" target="_blank">Opti</a>.</div>'+
 	//'<div class="listing">We have an <a href="https://discordapp.com/invite/cookie" target="_blank">official Discord</a>, as well as a <a href="http://forum.dashnet.org" target="_blank">forum</a>; '+
-	'<div class="listing">We have an <a href="https://discordapp.com/invite/cookie" target="_blank">official Discord</a>; '+
-		'if you\'re looking for help, you may also want to visit the <a href="http://www.reddit.com/r/CookieClicker" target="_blank">subreddit</a> '+
-		'or the <a href="http://cookieclicker.wikia.com/wiki/Cookie_Clicker_Wiki" target="_blank">wiki</a>.</div>'+
-	'<div class="listing">News and teasers are usually posted on my <a href="http://orteil42.tumblr.com/" target="_blank">tumblr</a> and <a href="http://twitter.com/orteil42" target="_blank">twitter</a>.</div>'+
-	'<div class="listing" id="supportSection"><b style="color:#fff;opacity:1;">Cookie Clicker is 100% free, forever.</b> Want to support us so we can keep developing games? Here\'s some ways you can help :<div style="margin:4px 12px;">&bull; '+
-	'<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="donate"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="BBN2WL3TC6QH4"><input type="submit" id="donateButton" value="donate" name="submit" alt="PayPal — The safer, easier way to pay online."><img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1"></form> to our PayPal'+
-	'<br>&bull; disable your adblocker<br>&bull; check out our <a href="http://www.redbubble.com/people/dashnet" target="_blank">rad cookie shirts, hoodies and stickers</a>!<br>&bull; (if you want!)</div></div>'+
-	'<div class="listing warning">Note : if you find a new bug after an update and you\'re using a 3rd-party add-on, make sure it\'s not just your add-on causing it!</div>'+
-	'<div class="listing warning">Warning : clearing your browser cache or cookies <small>(what else?)</small> will result in your save being wiped. Export your save and back it up first!</div>'+
+	'<div class="listing">我们有一个 <a href="https://discordapp.com/invite/cookie" target="_blank">官方论坛</a>; '+
+		'如果你正在寻求帮助，你可以访问 <a href="http://www.reddit.com/r/CookieClicker" target="_blank">subreddit</a> '+
+		'或者 <a href="http://cookieclicker.wikia.com/wiki/Cookie_Clicker_Wiki" target="_blank">wiki</a>.</div>'+
+	'<div class="listing">新闻玩笑通常被贴在我的 <a href="http://orteil42.tumblr.com/" target="_blank">tumblr</a> 和 <a href="http://twitter.com/orteil42" target="_blank">twitter</a>.</div>'+
+	'<div class="listing" id="supportSection"><b style="color:#fff;opacity:1;">无尽的饼干是100%的免费的, 永远。</b> 想要支持我们继续开发游戏吗?这里有一些方法可以帮助你 :<div style="margin:4px 12px;">&bull; '+
+	'<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="donate"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="BBN2WL3TC6QH4"><input type="submit" id="donateButton" value="donate" name="submit" alt="PayPal — The safer, easier way to pay online."><img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1"></form> 通过 PayPal 捐赠我们'+
+	'<br>&bull; 关掉广告拦截器<br>&bull; 访问或者购买 <a href="http://www.redbubble.com/people/dashnet" target="_blank">拉德饼干衬衫，帽衫和贴纸</a>!<br>&bull; (如果你想的话!)</div></div>'+
+	'<div class="listing warning">注意：如果在更新之后发现新的错误，并且您正在使用第三方附加组件，请确保它不是您的附加组件造成的！</div>'+
+	'<div class="listing warning">警告：清除浏览器缓存或Cookie <small>(还有什么？)</small> 将导致你的存档被抹去。 请在之前导出并且先备份您的存档！</div>'+
 	
 	'</div><div class="subsection">'+
-	'<div class="title">Version history</div>'+
+	'<div class="title">更新日志</div>'+
 	
 	'</div><div class="subsection update small">'+
-	'<div class="title">01/08/2018 - buy buy buy</div>'+
-	'<div class="listing">&bull; added a heavenly upgrade that lets you buy all your upgrades instantly</div>'+
-	'<div class="listing">&bull; added a heavenly upgrade that lets you see upgrade tiers (feature was previously removed due to being confusing)</div>'+
-	'<div class="listing">&bull; added a new wrinkler-related heavenly upgrade</div>'+
-	'<div class="listing">&bull; added a new upgrade tier</div>'+
-	'<div class="listing">&bull; added a couple new cookies and achievements</div>'+
-	'<div class="listing">&bull; new "extra buttons" setting; turning it on adds buttons that let you minimize buildings</div>'+
-	'<div class="listing">&bull; new "lump confirmation" setting; turning it on will show a confirmation prompt when you spend sugar lumps</div>'+
-	'<div class="listing">&bull; buildings now sell back for 25% of their current price (down from 50%); Earth Shatterer modified accordingly, now gives back 50% (down from 85%)</div>'+
-	'<div class="listing">&bull; farm soils now unlock correctly based on current amount of farms</div>'+
-	'<div class="listing">&bull; cheapcaps have a new exciting nerf</div>'+
-	'<div class="listing">&bull; wrinklegill spawns a bunch more</div>'+
-	'<div class="listing">&bull; can now ctrl-shift-click on "Harvest all" to only harvest mature, non-immortal plants</div>'+
-	'<div class="listing">&bull; added a new rare type of sugar lump</div>'+
+	'<div class="title">01/08/2018 - 买买买</div>'+
+	'<div class="listing">&bull; 增加了一个天堂的升级，让你可以立即购买所有的升级</div>'+
+	'<div class="listing">&bull; 添加了一个天堂升级，可以让您看到升级层（由于之前让人混淆，以前被删除了）</div>'+
+	'<div class="listing">&bull; 增加了一个新的与皱纹有关的天堂升级。</div>'+
+	'<div class="listing">&bull; 添加了一个新的升级层。</div>'+
+	'<div class="listing">&bull; 增加了一些新的饼干和成就</div>'+
+	'<div class="listing">&bull; 新的“额外的按钮”设置;打开它，增加按钮，让你最小化建筑物</div>'+
+	'<div class="listing">&bull; 新的“糖块确认”设置;当你消费糖块时，打开它会显示一个确认提示</div>'+
+	'<div class="listing">&bull; 建筑物现在的价格是当前价格的25%(从50%下降);地球碎石机相应地进行了修改，现在降低到50%(从85%减少到50%)</div>'+
+	'<div class="listing">&bull; 根据目前的农场数量，农场土壤可以正确地解锁。</div>'+
+	'<div class="listing">&bull; 廉价的帽子拥有一种新的令人兴奋的神经细胞</div>'+
+	'<div class="listing">&bull; 皱纹增多</div>'+
+	'<div class="listing">&bull; 现在可以按ctrl-shift键点击“收割所有”只收获成熟的、非不朽的植物</div>'+
+	'<div class="listing">&bull; 添加了一种新的罕见的糖块</div>'+
 	
 	'</div><div class="subsection update small">'+
-	'<div class="title">20/04/2018 - weeding out some bugs</div>'+
+	'<div class="title">20/04/2018 - 修复一些错误</div>'+
 	'<div class="listing">&bull; golden clovers and wrinklegills should spawn a bit more often</div>'+
 	'<div class="listing">&bull; cronerice matures a lot sooner</div>'+
 	'<div class="listing">&bull; mature elderworts stay mature after reloading</div>'+
