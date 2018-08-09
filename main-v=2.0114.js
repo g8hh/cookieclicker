@@ -3200,8 +3200,8 @@ Game.Launch=function()
 					Game.harvestLumps(1,true);
 					Game.lumpCurrentType=0;//all offline lumps after the first one have a normal type
 					if (amount>1) Game.harvestLumps(amount-1,true);
-					if (Game.prefs.popups) Game.Popup('Harvested '+Beautify(amount)+' sugar lump'+(amount==1?'':'s')+' while you were away');
-					else Game.Notify('','You harvested <b>'+Beautify(amount)+'</b> sugar lump'+(amount==1?'':'s')+' while you were away.',[29,14]);
+					if (Game.prefs.popups) Game.Popup('收获 '+Beautify(amount)+' 糖块'+(amount==1?'':'')+' 在你离开的时候');
+					else Game.Notify('','你收获了 <b>'+Beautify(amount)+'</b> 糖块'+(amount==1?'':'')+' 在你离开的时候.',[29,14]);
 					Game.lumpT=Date.now()-(age-amount*Game.lumpOverripeAge);
 					Game.computeLumpType();
 				}
@@ -3248,7 +3248,7 @@ Game.Launch=function()
 				Game.gainBuff('sugar blessing',24*60*60,1);
 				Game.Earn(Game.cookies);
 				if (Game.prefs.popups) Game.Popup('Sugar blessing activated!');
-				else Game.Notify('Sugar blessing activated!','Your cookies have been doubled.<br>+10% golden cookies for the next 24 hours.',[29,16]);
+				else Game.Notify('Sugar blessing activated!','你的饼干已经翻倍了。<br>+10% 黄金饼干出现几率，在接下来的24小时。',[29,16]);
 			}
 			else if (Game.lumpCurrentType==3) total*=choose([0,0,1,2,2]);
 			else if (Game.lumpCurrentType==4)
@@ -3268,8 +3268,8 @@ Game.Launch=function()
 			if (!silent)
 			{
 				var rect=l('lumpsIcon2').getBoundingClientRect();Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24);
-				if (total>0) Game.Popup('<small>+'+Beautify(total)+' sugar lump'+(total==1?'':'s')+'</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
-				else Game.Popup('<small>Botched harvest!</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
+				if (total>0) Game.Popup('<small>+'+Beautify(total)+' 糖块'+(total==1?'':'s')+'</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
+				else Game.Popup('<small>糟糕的收获!</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
 				PlaySound('snd/pop'+Math.floor(Math.random()*3+1)+'.mp3',0.75);
 			}
 			Game.computeLumpTimes();
@@ -4196,14 +4196,14 @@ Game.Launch=function()
 					{
 						var moni=mult*Math.min(Game.cookies*0.15,Game.cookiesPs*60*15)+13;//add 15% to cookies owned (+13), or 15 minutes of cookie production - whichever is lowest
 						Game.Earn(moni);
-						popup='Lucky!<div style="font-size:65%;">+'+Beautify(moni)+' cookies!</div>';
+						popup='幸运!<div style="font-size:65%;">+'+Beautify(moni)+' 饼干!</div>';
 					}
 					else if (choice=='ruin cookies')
 					{
 						var moni=Math.min(Game.cookies*0.05,Game.cookiesPs*60*10)+13;//lose 5% of cookies owned (-13), or 10 minutes of cookie production - whichever is lowest
 						moni=Math.min(Game.cookies,moni);
 						Game.Spend(moni);
-						popup='Ruin!<div style="font-size:65%;">Lost '+Beautify(moni)+' cookies!</div>';
+						popup='毁了!<div style="font-size:65%;">失去 '+Beautify(moni)+' 饼干!</div>';
 					}
 					else if (choice=='blood frenzy')
 					{
@@ -4244,11 +4244,11 @@ Game.Launch=function()
 						if (Math.random()<0.01 || nextMoni>=maxPayout)
 						{
 							this.chain=0;
-							popup='Cookie chain<div style="font-size:65%;">+'+moniStr+' cookies!<br>Cookie chain over. You made '+Beautify(this.totalFromChain)+' cookies.</div>';
+							popup='饼干链<div style="font-size:65%;">+'+moniStr+' 饼干!<br>饼干链完成. 你制作了 '+Beautify(this.totalFromChain)+' 饼干.</div>';
 						}
 						else
 						{
-							popup='Cookie chain<div style="font-size:65%;">+'+moniStr+' cookies!</div>';//
+							popup='饼干链<div style="font-size:65%;">+'+moniStr+' 饼干!</div>';//
 						}
 						Game.Earn(moni);
 					}
@@ -4260,7 +4260,7 @@ Game.Launch=function()
 					{
 						var moni=Math.max(mult*(Game.cookiesPs*60*Math.floor(Math.random()*7+1)),Math.floor(Math.random()*7+1));//either 1-7 cookies or 1-7 minutes of cookie production, whichever is highest
 						Game.Earn(moni);
-						popup='<div style="font-size:75%;">+'+Beautify(moni)+' cookies!</div>';
+						popup='<div style="font-size:75%;">+'+Beautify(moni)+' 饼干!</div>';
 					}
 					else if (choice=='blab')//sorry (it's really rare)
 					{
@@ -4302,7 +4302,7 @@ Game.Launch=function()
 				{
 					if (this.chain>0 && this.totalFromChain>0)
 					{
-						Game.Popup('Cookie chain broken.<div style="font-size:65%;">You made '+Beautify(this.totalFromChain)+' cookies.</div>',me.x+me.l.offsetWidth/2,me.y);
+						Game.Popup('饼干链坏掉了.<div style="font-size:65%;">你制作了 '+Beautify(this.totalFromChain)+' 饼干.</div>',me.x+me.l.offsetWidth/2,me.y);
 						this.chain=0;this.totalFromChain=0;
 					}
 					if (me.spawnLead) Game.missedGoldenClicks++;
@@ -4453,9 +4453,9 @@ Game.Launch=function()
 					
 					var popup='';
 					
-					if (Game.prefs.popups) Game.Popup('You found '+choose(['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Donner','Blitzen','Rudolph'])+'!<br>The reindeer gives you '+Beautify(moni)+' cookies.'+(cookie==''?'':'<br>You are also rewarded with '+cookie+'!'));
-					else Game.Notify('You found '+choose(['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Donner','Blitzen','Rudolph'])+'!','The reindeer gives you '+Beautify(moni)+' cookies.'+(cookie==''?'':'<br>You are also rewarded with '+cookie+'!'),[12,9],6);
-					popup='<div style="font-size:80%;">+'+Beautify(moni)+' cookies!</div>';
+					if (Game.prefs.popups) Game.Popup('你发现了 '+choose(['精力充沛的人','舞者','舞蹈者','唠叨的女人','彗星','丘比特','唐纳','闪电','鲁道夫'])+'!<br>驯鹿给了你 '+Beautify(moni)+' 饼干.'+(cookie==''?'':'<br>You are also rewarded with '+cookie+'!'));
+					else Game.Notify('你发现了 '+choose(['精力充沛的人','舞者','舞蹈者','唠叨的女人','彗星','丘比特','唐纳','闪电','鲁道夫'])+'!','驯鹿给你 '+Beautify(moni)+' 饼干.'+(cookie==''?'':'<br>您还被奖励 '+cookie+'!'),[12,9],6);
+					popup='<div style="font-size:80%;">+'+Beautify(moni)+' 饼干!</div>';
 					
 					if (popup!='') Game.Popup(popup,Game.mouseX,Game.mouseY);
 					
@@ -5068,24 +5068,24 @@ Game.Launch=function()
 				if (days) {minutes=0;seconds=0;}
 				if (hours) {seconds=0;}
 				var bits=[];
-				if (days>0) bits.push(Beautify(days)+' day'+(days==1?'':'s'));
-				if (hours>0) bits.push(Beautify(hours)+' hour'+(hours==1?'':'s'));
-				if (minutes>0) bits.push(Beautify(minutes)+' minute'+(minutes==1?'':'s'));
-				if (seconds>0) bits.push(Beautify(seconds)+' second'+(seconds==1?'':'s'));
-				if (bits.length==0) str='less than 1 second';
+				if (days>0) bits.push(Beautify(days)+' 天'+(days==1?'':'s'));
+				if (hours>0) bits.push(Beautify(hours)+' 小时'+(hours==1?'':'s'));
+				if (minutes>0) bits.push(Beautify(minutes)+' 分钟'+(minutes==1?'':'s'));
+				if (seconds>0) bits.push(Beautify(seconds)+' 秒'+(seconds==1?'':'s'));
+				if (bits.length==0) str='少于1秒';
 				else str=bits.join(', ');
 			}
 			else
 			{
-				if (time>=Game.fps*60*60*24*2 && detail<2) str=Beautify(Math.floor(time/(Game.fps*60*60*24)))+' days';
-				else if (time>=Game.fps*60*60*24 && detail<2) str='1 day';
-				else if (time>=Game.fps*60*60*2 && detail<3) str=Beautify(Math.floor(time/(Game.fps*60*60)))+' hours';
-				else if (time>=Game.fps*60*60 && detail<3) str='1 hour';
-				else if (time>=Game.fps*60*2 && detail<4) str=Beautify(Math.floor(time/(Game.fps*60)))+' minutes';
-				else if (time>=Game.fps*60 && detail<4) str='1 minute';
-				else if (time>=Game.fps*2 && detail<5) str=Beautify(Math.floor(time/(Game.fps)))+' seconds';
-				else if (time>=Game.fps && detail<5) str='1 second';
-				else str='less than 1 second';
+				if (time>=Game.fps*60*60*24*2 && detail<2) str=Beautify(Math.floor(time/(Game.fps*60*60*24)))+' 天';
+				else if (time>=Game.fps*60*60*24 && detail<2) str='1 天';
+				else if (time>=Game.fps*60*60*2 && detail<3) str=Beautify(Math.floor(time/(Game.fps*60*60)))+' 小时';
+				else if (time>=Game.fps*60*60 && detail<3) str='1 小时';
+				else if (time>=Game.fps*60*2 && detail<4) str=Beautify(Math.floor(time/(Game.fps*60)))+' 分';
+				else if (time>=Game.fps*60 && detail<4) str='1 分';
+				else if (time>=Game.fps*2 && detail<5) str=Beautify(Math.floor(time/(Game.fps)))+' 秒';
+				else if (time>=Game.fps && detail<5) str='1 秒';
+				else str='少于1秒';
 			}
 			return str;
 		}
@@ -5119,32 +5119,32 @@ Game.Launch=function()
 			}
 			if (Game.onMenu=='prefs')
 			{
-				str+='<div class="section">Options</div>'+
+				str+='<div class="section">选项</div>'+
 				'<div class="subsection">'+
-				'<div class="title">General</div>'+
-				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.toSave=true;PlaySound(\'snd/tick.mp3\');">Save</a><label>Save manually (the game autosaves every 60 seconds; shortcut : ctrl+S)</label></div>'+
-				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.ExportSave();PlaySound(\'snd/tick.mp3\');">Export save</a><a class="option" '+Game.clickStr+'="Game.ImportSave();PlaySound(\'snd/tick.mp3\');">Import save</a><label>You can use this to backup your save or to transfer it to another computer (shortcut for import : ctrl+O)</label></div>'+
-				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.FileSave();PlaySound(\'snd/tick.mp3\');">Save to file</a><a class="option" style="position:relative;"><input id="FileLoadInput" type="file" style="cursor:pointer;opacity:0;position:absolute;left:0px;top:0px;width:100%;height:100%;" onchange="Game.FileLoad(event);" '+Game.clickStr+'="PlaySound(\'snd/tick.mp3\');"/>Load from file</a><label>Use this to keep backups on your computer</label></div>'+
+				'<div class="title">普通设置</div>'+
+				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.toSave=true;PlaySound(\'snd/tick.mp3\');">保存</a><label>手动保存（游戏每60秒会自动保存一次，快捷键：Ctrl + S）</label></div>'+
+				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.ExportSave();PlaySound(\'snd/tick.mp3\');">导出存档</a><a class="option" '+Game.clickStr+'="Game.ImportSave();PlaySound(\'snd/tick.mp3\');">导入存档</a><label>您可以使用它来备份您的存档或将其传输到另一台计算机（快捷键导入：Ctrl + O）</label></div>'+
+				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.FileSave();PlaySound(\'snd/tick.mp3\');">保存到文件</a><a class="option" style="position:relative;"><input id="FileLoadInput" type="file" style="cursor:pointer;opacity:0;position:absolute;left:0px;top:0px;width:100%;height:100%;" onchange="Game.FileLoad(event);" '+Game.clickStr+'="PlaySound(\'snd/tick.mp3\');"/>从文件导入</a><label>用这个来保存游戏存档到你的计算机上</label></div>'+
 				
-				'<div class="listing"><a class="option warning" '+Game.clickStr+'="Game.HardReset();PlaySound(\'snd/tick.mp3\');">Wipe save</a><label>Delete all your progress, including your achievements</label></div>'+
-				'<div class="title">Settings</div>'+
+				'<div class="listing"><a class="option warning" '+Game.clickStr+'="Game.HardReset();PlaySound(\'snd/tick.mp3\');">复位</a><label>删除所有的游戏进度，包括你的成就</label></div>'+
+				'<div class="title">其它设置</div>'+
 				'<div class="listing">'+
-				Game.WriteSlider('volumeSlider','Volume','[$]%',function(){return Game.volume;},'Game.setVolume(Math.round(l(\'volumeSlider\').value));l(\'volumeSliderRightText\').innerHTML=Game.volume+\'%\';')+'<br>'+
-				Game.WriteButton('fancy','fancyButton','Fancy graphics ON','Fancy graphics OFF','Game.ToggleFancy();')+'<label>(visual improvements; disabling may improve performance)</label><br>'+
-				Game.WriteButton('filters','filtersButton','CSS filters ON','CSS filters OFF','Game.ToggleFilters();')+'<label>(cutting-edge visual improvements; disabling may improve performance)</label><br>'+
-				Game.WriteButton('particles','particlesButton','Particles ON','Particles OFF')+'<label>(cookies falling down, etc; disabling may improve performance)</label><br>'+
-				Game.WriteButton('numbers','numbersButton','Numbers ON','Numbers OFF')+'<label>(numbers that pop up when clicking the cookie)</label><br>'+
-				Game.WriteButton('milk','milkButton','Milk ON','Milk OFF')+'<label>(only appears with enough achievements)</label><br>'+
-				Game.WriteButton('cursors','cursorsButton','Cursors ON','Cursors OFF')+'<label>(visual display of your cursors)</label><br>'+
-				Game.WriteButton('wobbly','wobblyButton','Wobbly cookie ON','Wobbly cookie OFF')+'<label>(your cookie will react when you click it)</label><br>'+
-				Game.WriteButton('cookiesound','cookiesoundButton','Alt cookie sound ON','Alt cookie sound OFF')+'<label>(how your cookie sounds when you click on it)</label><br>'+
-				Game.WriteButton('crates','cratesButton','Icon crates ON','Icon crates OFF')+'<label>(display boxes around upgrades and achievements in stats)</label><br>'+
-				Game.WriteButton('monospace','monospaceButton','Alt font ON','Alt font OFF')+'<label>(your cookies are displayed using a monospace font)</label><br>'+
-				Game.WriteButton('format','formatButton','Short numbers OFF','Short numbers ON','BeautifyAll();Game.RefreshStore();Game.upgradesToRebuild=1;',1)+'<label>(shorten big numbers)</label><br>'+
-				Game.WriteButton('notifs','notifsButton','Fast notes ON','Fast notes OFF')+'<label>(notifications disappear much faster)</label><br>'+
+				Game.WriteSlider('volumeSlider','音量','[$]%',function(){return Game.volume;},'Game.setVolume(Math.round(l(\'volumeSlider\').value));l(\'volumeSliderRightText\').innerHTML=Game.volume+\'%\';')+'<br>'+
+				Game.WriteButton('fancy','fancyButton','花哨的图形 已开启','花哨的图形 已关闭','Game.ToggleFancy();')+'<label>(视觉上的改进; 禁用可能会提高性能)</label><br>'+
+				Game.WriteButton('filters','filtersButton','CSS滤镜 已开启','CSS滤镜 已关闭','Game.ToggleFilters();')+'<label>(先进的视觉改进; 禁用可能会提高性能)</label><br>'+
+				Game.WriteButton('particles','particlesButton','粒子效果 已开启','粒子效果 已关闭')+'<label>(饼干掉下来等等; 禁用可能会提高性能)</label><br>'+
+				Game.WriteButton('numbers','numbersButton','数字显示 已开启','数字显示 已关闭')+'<label>(点击饼干时弹出的数字)</label><br>'+
+				Game.WriteButton('milk','milkButton','牛奶显示 已开启','牛奶显示 已关闭')+'<label>(只在有足够的成就时出现)</label><br>'+
+				Game.WriteButton('cursors','cursorsButton','游标 已开启','游标 已关闭')+'<label>(是否显示你的游标)</label><br>'+
+				Game.WriteButton('wobbly','wobblyButton','饼干颤抖 已开启','饼干颤抖 已关闭')+'<label>(你的饼干会在你点击的时候作出反应)</label><br>'+
+				Game.WriteButton('cookiesound','cookiesoundButton','点击饼干声音 已开启','点击饼干声音 已关闭')+'<label>(当你点击它时，你的饼干是否发出声音)</label><br>'+
+				Game.WriteButton('crates','cratesButton','图标箱 已开启','图标箱 已关闭')+'<label>(显示升级和统计成就的框)</label><br>'+
+				Game.WriteButton('monospace','monospaceButton','字体 已开启','字体 已关闭')+'<label>(您的饼干使用等宽字体显示)</label><br>'+
+				Game.WriteButton('format','formatButton','短数字 已关闭','短数字 已开启','BeautifyAll();Game.RefreshStore();Game.upgradesToRebuild=1;',1)+'<label>(缩短大数目的数字)</label><br>'+
+				Game.WriteButton('notifs','notifsButton','快速提示 已开启','快速提示 已关闭')+'<label>(notifications disappear much faster)</label><br>'+
 				//Game.WriteButton('autoupdate','autoupdateButton','Offline mode OFF','Offline mode ON',0,1)+'<label>(disables update notifications)</label><br>'+
-				Game.WriteButton('warn','warnButton','Closing warning ON','Closing warning OFF')+'<label>(the game will ask you to confirm when you close the window)</label><br>'+
-				Game.WriteButton('focus','focusButton','Defocus OFF','Defocus ON',0,1)+'<label>(the game will be less resource-intensive when out of focus)</label><br>'+
+				Game.WriteButton('warn','warnButton','关闭提示 已开启','关闭提示 已关闭')+'<label>(当你关闭游戏窗口时，游戏会要求您确认)</label><br>'+
+				Game.WriteButton('focus','focusButton','失焦 已关闭','失焦 已开启',0,1)+'<label>(当焦点不集中时，游戏的资源密集度会降低)</label><br>'+
 				Game.WriteButton('extraButtons','extraButtonsButton','Extra buttons ON','Extra buttons OFF','Game.ToggleExtraButtons();')+'<label>(add Mute buttons on buildings)</label><br>'+
 				Game.WriteButton('askLumps','askLumpsButton','Lump confirmation ON','Lump confirmation OFF')+'<label>(the game will ask you to confirm before spending sugar lumps)</label><br>'+
 				'</div>'+
