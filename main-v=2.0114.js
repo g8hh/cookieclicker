@@ -3136,31 +3136,31 @@ Game.Launch=function()
 		Game.lumpTooltip=function()
 		{
 			var str='<div style="padding:8px;width:400px;font-size:11px;text-align:center;">'+
-			'You have <span class="price lump">'+Beautify(Game.lumps)+' sugar lump'+(Game.lumps==1?'':'s')+'</span>.'+
+			'你有 <span class="price lump">'+Beautify(Game.lumps)+' 糖块'+(Game.lumps==1?'':'s')+'</span>.'+
 			'<div class="line"></div>'+
-			'A <b>sugar lump</b> is coalescing here, attracted by your accomplishments.';
+			'一个 <b>糖块</b> 在这里凝聚，被你过去的壮举所吸引。';
 						
 			var age=Date.now()-Game.lumpT;
 			str+='<div class="line"></div>';
-			if (age<Game.lumpMatureAge) str+='This sugar lump is still growing and will take <b>'+Game.sayTime(((Game.lumpMatureAge-age)/1000+1)*Game.fps,-1)+'</b> to reach maturity.';
-			else if (age<Game.lumpRipeAge) str+='This sugar lump is mature and will be ripe in <b>'+Game.sayTime(((Game.lumpRipeAge-age)/1000+1)*Game.fps,-1)+'</b>.<br>You may <b>click it to harvest it now</b>, but there is a <b>50% chance you won\'t get anything</b>.';
-			else if (age<Game.lumpOverripeAge) str+='<b>This sugar lump is ripe! Click it to harvest it.</b><br>If you do nothing, it will auto-harvest in <b>'+Game.sayTime(((Game.lumpOverripeAge-age)/1000+1)*Game.fps,-1)+'</b>.';
+			if (age<Game.lumpMatureAge) str+='这个糖块还在生长，还需要 <b>'+Game.sayTime(((Game.lumpMatureAge-age)/1000+1)*Game.fps,-1)+'</b> 达到成熟。';
+			else if (age<Game.lumpRipeAge) str+='这个糖块是成熟的，会成熟的 <b>'+Game.sayTime(((Game.lumpRipeAge-age)/1000+1)*Game.fps,-1)+'</b>.<br>你可以 <b>点击它以获取它</b>, 但是有 <b>50% 几率你不会得到任何东西</b>.';
+			else if (age<Game.lumpOverripeAge) str+='<b>这个糖块熟了!点击它以获取它。</b><br>如果你什么都不做，它就会在 <b>'+Game.sayTime(((Game.lumpOverripeAge-age)/1000+1)*Game.fps,-1)+'</b> 自动收割 。';
 			
 			var phase=(age/Game.lumpOverripeAge)*7;
 			if (phase>=3)
 			{
 				if (Game.lumpCurrentType!=0) str+='<div class="line"></div>';
-				if (Game.lumpCurrentType==1) str+='This sugar lump grew to be <b>bifurcated</b>; harvesting it has a 50% chance of yielding two lumps.';
-				else if (Game.lumpCurrentType==2) str+='This sugar lump grew to be <b>golden</b>; harvesting it will yield 2 to 7 lumps, your current cookies will be doubled, and you will find 10% more golden cookies for the next 24 hours.';
-				else if (Game.lumpCurrentType==3) str+='This sugar lump was affected by the elders and grew to be <b>meaty</b>; harvesting it will yield between 0 and 2 lumps.';
-				else if (Game.lumpCurrentType==4) str+='This sugar lump is <b>caramelized</b>, its stickiness binding it to unexpected things; harvesting it will yield between 1 and 3 lumps and will refill your sugar lump cooldowns.';
+				if (Game.lumpCurrentType==1) str+='这个糖块长大了 <b>分叉</b>; 收割时，它有50%的机会产生两块。';
+				else if (Game.lumpCurrentType==2) str+='这个糖块长大了 <b>黄金</b>; 收获2到7块，你现在的饼干会翻倍，你会找到10%的黄金饼干在接下来的24小时。';
+				else if (Game.lumpCurrentType==3) str+='这个糖块受到了长老们的影响，渐渐长大了 <b>多肉的</b>; 收割时，它的产量在0到2块之间。';
+				else if (Game.lumpCurrentType==4) str+='这个糖块是 <b>焦糖化</b>, 它的粘性把它和意想不到的东西结合在一起;收获它将会产生1到3个结块，并补充你的糖块冷却时间。';
 			}
 			
 			str+='<div class="line"></div>';
-			str+='Your sugar lumps mature after <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>ripen after <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>and fall after <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>.';
+			str+='糖块完全成熟需要 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>成熟后 <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>然后会在 <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>后自动掉落。';
 			
 			str+='<div class="line"></div>'+
-			'&bull; Sugar lumps can be harvested when mature, though if left alone beyond that point they will start ripening (increasing the chance of harvesting them) and will eventually fall and be auto-harvested after some time.<br>&bull; Sugar lumps are delicious and may be used as currency for all sorts of things.<br>&bull; Once a sugar lump is harvested, another one will start growing in its place.<br>&bull; Note that sugar lumps keep growing when the game is closed.';
+			'&bull; 糖块可以在成熟时收获，但如果不吃的话，它们最终会掉落并在一段时间后自动收获。<br>&bull; 糖块儿很好吃，可以用作各种食物的货币。<br>&bull; 一旦一个糖块被收获，另一个就会开始生长。<br>&bull; 注意，当游戏关闭时，糖块会继续生长。';
 			
 			str+='</div>';
 			return str;
@@ -5456,78 +5456,78 @@ Game.Launch=function()
 				if (Math.random()<0.75 || Game.cookiesEarned<10000)
 				{
 					if (Game.Objects['Grandma'].amount>0) list.push(choose([
-					'<q>Moist cookies.</q><sig>grandma</sig>',
-					'<q>We\'re nice grandmas.</q><sig>grandma</sig>',
-					'<q>Indentured servitude.</q><sig>grandma</sig>',
-					'<q>Come give grandma a kiss.</q><sig>grandma</sig>',
-					'<q>Why don\'t you visit more often?</q><sig>grandma</sig>',
-					'<q>Call me...</q><sig>grandma</sig>'
+					'<q>潮湿的饼干。</q><sig>老奶奶</sig>',
+                    '<q>我们是很好的奶奶。</q><sig>老奶奶</sig>',
+                    '<q>契约奴役。</q><sig>老奶奶</sig>',
+                    '<q>快来给奶奶一个吻。</q><sig>老奶奶</sig>',
+                    '<q>你为什么不经常去拜访？</q><sig>老奶奶</sig>',
+                    '<q>打给我...</q><sig>老奶奶</sig>'
 					]));
 					
 					if (Game.Objects['Grandma'].amount>=50) list.push(choose([
-					'<q>Absolutely disgusting.</q><sig>grandma</sig>',
-					'<q>You make me sick.</q><sig>grandma</sig>',
-					'<q>You disgust me.</q><sig>grandma</sig>',
-					'<q>We rise.</q><sig>grandma</sig>',
-					'<q>It begins.</q><sig>grandma</sig>',
-					'<q>It\'ll all be over soon.</q><sig>grandma</sig>',
-					'<q>You could have stopped it.</q><sig>grandma</sig>'
+					'<q>绝对恶心。</q><sig>老奶奶</sig>',
+                    '<q>你让我感到恶心。</q><sig>老奶奶</sig>',
+                    '<q>我讨厌你。</q><sig>老奶奶</sig>',
+                    '<q>我们起来。</q><sig>老奶奶</sig>',
+                    '<q>它开始了。</q><sig>老奶奶</sig>',
+                    '<q>这一切都将很快结束。</q><sig>老奶奶</sig>',
+                    '<q>你可以阻止它。</q><sig>老奶奶</sig>'
 					]));
 					
 					if (Game.HasAchiev('Just wrong') && Math.random()<0.4) list.push(choose([
-					'News : cookie manufacturer downsizes, sells own grandmother!',
-					'<q>It has betrayed us, the filthy little thing.</q><sig>grandma</sig>',
-					'<q>It tried to get rid of us, the nasty little thing.</q><sig>grandma</sig>',
-					'<q>It thought we would go away by selling us. How quaint.</q><sig>grandma</sig>',
-					'<q>I can smell your rotten cookies.</q><sig>grandma</sig>'
+					'新闻：饼干制造商缩小规模，销售自己的祖母！',
+                    '<q>它背叛了我们，那个肮脏的小东西。</q><sig>老奶奶</sig>',
+                    '<q>它试图摆脱我们这个讨厌的小东西。</q><sig>老奶奶</sig>',
+                    '<q>它认为我们会通过出售我们而走开。 多么古怪。</q><sig>老奶奶</sig>',
+                    '<q>我可以闻到你的烂饼干。</q><sig>老奶奶</sig>'
 					]));
 					
 					if (Game.Objects['Grandma'].amount>=1 && Game.pledges>0 && Game.elderWrath==0) list.push(choose([
-					'<q>shrivel</q><sig>grandma</sig>',
-					'<q>writhe</q><sig>grandma</sig>',
-					'<q>throb</q><sig>grandma</sig>',
-					'<q>gnaw</q><sig>grandma</sig>',
-					'<q>We will rise again.</q><sig>grandma</sig>',
-					'<q>A mere setback.</q><sig>grandma</sig>',
-					'<q>We are not satiated.</q><sig>grandma</sig>',
-					'<q>Too late.</q><sig>grandma</sig>'
+					'<q>枯萎</q><sig>老奶奶</sig>',
+				'<q>翻腾</q><sig>老奶奶</sig>',
+				'<q>感动</q><sig>老奶奶</sig>',
+				'<q>啃</q><sig>老奶奶</sig>',
+				'<q>我们会再起来。</q><sig>老奶奶</sig>',
+				'<q>仅仅是一个挫折。</q><sig>老奶奶</sig>',
+				'<q>我们不满足。</q><sig>老奶奶</sig>',
+				'<q>太晚了。</q><sig>老奶奶</sig>'
 					]));
 					
 					if (Game.Objects['Farm'].amount>0) list.push(choose([
-					'News : cookie farms suspected of employing undeclared elderly workforce!',
-					'News : cookie farms release harmful chocolate in our rivers, says scientist!',
-					'News : genetically-modified chocolate controversy strikes cookie farmers!',
-					'News : free-range farm cookies popular with today\'s hip youth, says specialist.',
-					'News : farm cookies deemed unfit for vegans, says nutritionist.'
+					'新闻：饼干农场涉嫌雇用未申报的老年劳动力！',
+				'新闻：科学家说，饼干农场在我们的河流中释放有害的巧克力！',
+				'新闻：转基因巧克力的争议袭击饼干农民！',
+				'新闻：专家解释说，现在的时尚青年中流行的是农场曲奇。',
+				'新闻：营养学家认为农场饼干不适合素食者。'
 					]));
 					
 					if (Game.Objects['Mine'].amount>0) list.push(choose([
-					'News : is our planet getting lighter? Experts examine the effects of intensive chocolate mining.',
-					'News : '+Math.floor(Math.random()*1000+2)+' miners trapped in collapsed chocolate mine!',
-					'News : chocolate mines found to cause earthquakes and sinkholes!',
-					'News : chocolate mine goes awry, floods village in chocolate!',
-					'News : depths of chocolate mines found to house "peculiar, chocolaty beings"!'
+					'新闻：我们的星球变得更轻？ 专家们检查密集的巧克力采矿的影响。',
+				'新闻：'+Math.floor(Math.random()*1000+2)+' 名矿工被困在倒塌的巧克力矿山',
+				'新闻：巧克力矿被发现引起地震和沉没！',
+				'新闻：巧克力矿山出了问题，巧克力在村里泛滥！',
+				'新闻：巧克力矿山深处发现房子“特有的，巧克力味的生命”！'
 					]));
 					
 					if (Game.Objects['Factory'].amount>0) list.push(choose([
-					'News : cookie factories linked to global warming!',
-					'News : cookie factories involved in chocolate weather controversy!',
-					'News : cookie factories on strike, robotic minions employed to replace workforce!',
-					'News : cookie factories on strike - workers demand to stop being paid in cookies!',
-					'News : factory-made cookies linked to obesity, says study.'
+					'新闻：与全球变暖挂钩的饼干工厂！',
+				'新闻：参与巧克力天气争议的饼干工厂！',
+				'新闻：罢工的饼干工厂，机器人奴才被用来取代劳动力！',
+				'新闻：饼干工厂罢工 - 工人要求停止用饼干支付！',
+				'新闻：研究表明，工厂制造的饼干与肥胖有关。'
 					]));
 					
 					if (Game.Objects['Bank'].amount>0) list.push(choose([
-					'News : cookie loans on the rise as people can no longer afford them with regular money.',
-					'News : cookies slowly creeping up their way as a competitor to traditional currency!',
-					'News : most bakeries now fitted with ATMs to allow for easy cookie withdrawals and deposits.',
-					'News : cookie economy now strong enough to allow for massive vaults doubling as swimming pools!',
-					'News : "Tomorrow\'s wealthiest people will be calculated by their worth in cookies", predict specialists.'
+					'新闻：随着人们再也不能用普通的钱来支付，饼干贷款的数量就会增加。',
+				'新闻：作为传统货币的竞争对手，饼干慢慢地崛起了！',
+				'新闻：现在大多数面包店都装有自动取款机，方便取款和存款。',
+				'新闻：饼干经济现在强大到足以让巨大的拱顶加倍作为游泳池！',
+				'新闻：预测专家说，“明天最富有的人将以他们的饼干价值计算”。'
 					]));
 					
 					if (Game.Objects['Temple'].amount>0) list.push(choose([
-					'News : explorers bring back ancient artifact from abandoned temple; archeologists marvel at the centuries-old '+choose(['magic','carved','engraved','sculpted','royal','imperial','mummified','ritual','golden','silver','stone','cursed','plastic','bone','blood','holy','sacred','sacrificial','electronic','singing','tapdancing'])+' '+choose(['spoon','fork','pizza','washing machine','calculator','hat','piano','napkin','skeleton','gown','dagger','sword','shield','skull','emerald','bathtub','mask','rollerskates','litterbox','bait box','cube','sphere','fungus'])+'!',
-					'News : recently-discovered chocolate temples now sparking new cookie-related cult; thousands pray to Baker in the sky!',
+					'新闻：探险者从废弃的寺庙带回古代的神器; 考古学家惊叹于数百年的历史 '+choose(['magic','carved','engraved','sculpted','royal','imperial','mummified','ritual','golden','silver','stone','cursed','plastic','bone','blood','holy','sacred','sacrificial','electronic','singing','tapdancing'])+' '+choose(['spoon','fork','pizza','washing machine','calculator','hat','piano','napkin','skeleton','gown','dagger','sword','shield','skull','emerald','bathtub','mask','rollerskates','litterbox','bait box','cube','sphere','fungus'])+'!',
+					'新闻：最近发现的巧克力寺庙现在引发新的饼干相关的邪教组织; 数千人向天空中的贝克祈祷！',
 					'News : just how extensive is the cookie pantheon? Theologians speculate about possible '+choose(['god','goddess'])+' of '+choose([choose(animals),choose(['kazoos','web design','web browsers','kittens','atheism','handbrakes','hats','aglets','elevator music','idle games','the letter "P"','memes','hamburgers','bad puns','kerning','stand-up comedy','failed burglary attempts','clickbait','one weird tricks'])])+'.',
 					'News : theists of the world discover new cookie religion - "Oh boy, guess we were wrong all along!"',
 					'News : cookie heaven allegedly "sports elevator instead of stairway"; cookie hell "paved with flagstone, as good intentions make for poor building material".'
@@ -6634,7 +6634,7 @@ Game.Launch=function()
 			
 			var SellAllPrompt=function(id)
 			{
-				return function(id){Game.Prompt('<div class="block">Do you really want to sell your '+Game.ObjectsById[id].amount+' '+(Game.ObjectsById[id].amount==1?Game.ObjectsById[id].single:Game.ObjectsById[id].plural)+'?</div>',[['Yes','Game.ObjectsById['+id+'].sell(-1);Game.ClosePrompt();'],['No','Game.ClosePrompt();']]);}(id);
+				return function(id){Game.Prompt('<div class="block">你真的想卖掉你的 '+Game.ObjectsById[id].amount+' '+(Game.ObjectsById[id].amount==1?Game.ObjectsById[id].single:Game.ObjectsById[id].plural)+'?</div>',[['是的','Game.ObjectsById['+id+'].sell(-1);Game.ClosePrompt();'],['取消','Game.ClosePrompt();']]);}(id);
 			}
 			
 			Game.ClickProduct=function(what)
@@ -6726,7 +6726,7 @@ Game.Launch=function()
 		}
 		
 		//define objects
-		new Game.Object('Cursor','cursor|cursors|clicked|[X] extra finger|[X] extra fingers','Autoclicks once every 10 seconds.',0,0,{},15,function(){
+		new Game.Object('Cursor','cursor|cursors|点击|[X] 额外的手指|[X] 额外的手指','每隔10秒自动点击一次',0,0,{},15,function(){
 			var add=0;
 			if (Game.Has('Thousand fingers')) add+=		0.1;
 			if (Game.Has('Million fingers')) add+=		0.5;
