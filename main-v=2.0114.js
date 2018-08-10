@@ -2113,7 +2113,7 @@ Game.Launch=function()
 				if (cookiesForfeited>=1000000) Game.Win('牺牲');
 				if (cookiesForfeited>=1000000000) Game.Win('遗忘');
 				if (cookiesForfeited>=1000000000000) Game.Win('从头开始');
-				if (cookiesForfeited>=1000000000000000) Game.Win('Nihilism');
+				if (cookiesForfeited>=1000000000000000) Game.Win('虚无主义');
 				if (cookiesForfeited>=1000000000000000000) Game.Win('Dematerialize');
 				if (cookiesForfeited>=1000000000000000000000) Game.Win('Nil zero zilch');
 				if (cookiesForfeited>=1000000000000000000000000) Game.Win('Transcendence');
@@ -3430,16 +3430,16 @@ Game.Launch=function()
 			for (var i in Game.Objects) {num+=Game.Objects[i].amount;}
 			num-=Game.Objects['Cursor'].amount;
 			add=add*num;
-			if (Game.Has('Plastic mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Iron mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Titanium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Adamantium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Unobtainium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Eludium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Wishalloy mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Fantasteel mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Nevercrack mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Armythril mouse')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('塑料鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('铁制鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('钛制鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('釉质鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('难得素鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('E合金鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('叉合金鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('范塔钢鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('永不崩溃的鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('阿迈斯里鼠标')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('Technobsidian mouse')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('Plasmarble mouse')) add+=Game.cookiesPs*0.01;
 			var mult=1;
@@ -3502,7 +3502,7 @@ Game.Launch=function()
 				if (now-Game.lastClick<1000/15)
 				{
 					Game.autoclickerDetected+=Game.fps;
-					if (Game.autoclickerDetected>=Game.fps*5) Game.Win('Uncanny clicker');
+					if (Game.autoclickerDetected>=Game.fps*5) Game.Win('神奇遥控器');
 				}
 				var amount=amount?amount:Game.computedMouseCps;
 				Game.Earn(amount);
@@ -4068,12 +4068,12 @@ Game.Launch=function()
 						Game.goldenClicks++;
 						Game.goldenClicksLocal++;
 						
-						if (Game.goldenClicks>=1) Game.Win('Golden cookie');
-						if (Game.goldenClicks>=7) Game.Win('Lucky cookie');
-						if (Game.goldenClicks>=27) Game.Win('A stroke of luck');
-						if (Game.goldenClicks>=77) Game.Win('Fortune');
-						if (Game.goldenClicks>=777) Game.Win('Leprechaun');
-						if (Game.goldenClicks>=7777) Game.Win('Black cat\'s paw');
+						if (Game.goldenClicks>=1) Game.Win('黄金饼干');
+						if (Game.goldenClicks>=7) Game.Win('幸运饼干');
+						if (Game.goldenClicks>=27) Game.Win('好运气');
+						if (Game.goldenClicks>=77) Game.Win('幸运');
+						if (Game.goldenClicks>=777) Game.Win('妖精');
+						if (Game.goldenClicks>=7777) Game.Win('黑猫的爪子');
 						
 						if (Game.goldenClicks>=7) Game.Unlock('Lucky day');
 						if (Game.goldenClicks>=27) Game.Unlock('Serendipity');
@@ -4431,7 +4431,7 @@ Game.Launch=function()
 					
 					var cookie='';
 					var failRate=0.8;
-					if (Game.HasAchiev('Let it snow')) failRate=0.6;
+					if (Game.HasAchiev('让它下雪')) failRate=0.6;
 					failRate*=1/Game.dropRateMult();
 					if (Game.Has('Starsnow')) failRate*=0.95;
 					if (Game.hasGod)
@@ -5092,13 +5092,13 @@ Game.Launch=function()
 		
 		Game.tinyCookie=function()
 		{
-			if (!Game.HasAchiev('Tiny cookie'))
+			if (!Game.HasAchiev('小饼干'))
 			{
 				return '<div class="tinyCookie" '+Game.clickStr+'="Game.ClickTinyCookie();"></div>';
 			}
 			return '';
 		}
-		Game.ClickTinyCookie=function(){if (!Game.HasAchiev('Tiny cookie')){PlaySound('snd/tick.mp3');Game.Win('Tiny cookie');}}
+		Game.ClickTinyCookie=function(){if (!Game.HasAchiev('小饼干')){PlaySound('snd/tick.mp3');Game.Win('小饼干');}}
 		
 		Game.setVolume=function(what)
 		{
@@ -5639,10 +5639,10 @@ Game.Launch=function()
 				
 				if (Math.random()<0.05)
 				{
-					if (Game.HasAchiev('基数10')) list.push('News : cookie manufacturer completely forgoes common sense, lets OCD drive building decisions!');//somehow I got flak for this one
-					if (Game.HasAchiev('从头开始')) list.push('News : follow the tear-jerking, riches-to-rags story about a local cookie manufacturer who decided to give it all up!');
-					if (Game.HasAchiev('A world filled with cookies')) list.push('News : known universe now jammed with cookies! No vacancies!');
-					if (Game.HasAchiev('Last Chance to See')) list.push('News : incredibly rare albino wrinkler on the brink of extinction poached by cookie-crazed pastry magnate!');
+					if (Game.HasAchiev('基数10')) list.push('新闻：饼干制造商完全放弃常识，让强迫驱动建设的决定！');//somehow I got flak for this one
+					if (Game.HasAchiev('从头开始')) list.push('新闻：遵循有关本地饼干生产商谁决定放弃一切的催人泪下，财富到抹布的故事！');
+					if (Game.HasAchiev('一个充满了饼干的世界')) list.push('新闻：现在已知的宇宙挤满了饼干！ 没有空位！');
+					if (Game.HasAchiev('最后机会')) list.push('新闻：令人难以置信的罕见的白化皱纹在饼干疯狂的糕点巨头被偷猎灭绝的边缘！');
 					if (Game.Has('Serendipity')) list.push('News : local cookie manufacturer becomes luckiest being alive!');
 					if (Game.Has('Season switcher')) list.push('News : seasons are all out of whack! "We need to get some whack back into them seasons", says local resident.');
 					
@@ -7690,10 +7690,10 @@ Game.Launch=function()
 		Game.last.priceFunc=function(){return Math.pow(8,Math.min(Game.pledges+2,14));}
 		
 		order=150;
-		new Game.Upgrade('Plastic mouse','Clicking gains <b>+1% of your CpS</b>.<q>Slightly squeaky.</q>',50000,[11,0]);Game.MakeTiered(Game.last,1,11);
-		new Game.Upgrade('Iron mouse','Clicking gains <b>+1% of your CpS</b>.<q>Click like it\'s 1349!</q>',5000000,[11,1]);Game.MakeTiered(Game.last,2,11);
-		new Game.Upgrade('Titanium mouse','Clicking gains <b>+1% of your CpS</b>.<q>Heavy, but powerful.</q>',500000000,[11,2]);Game.MakeTiered(Game.last,3,11);
-		new Game.Upgrade('Adamantium mouse','Clicking gains <b>+1% of your CpS</b>.<q>You could cut diamond with these.</q>',50000000000,[11,13]);Game.MakeTiered(Game.last,4,11);
+		new Game.Upgrade('塑料鼠标','点击获得 <b>+1% 总秒收益</b>.<q>轻微的吱吱作响。</q>',50000,[11,0]);Game.MakeTiered(Game.last,1,11);
+		new Game.Upgrade('铁制鼠标','点击获得 <b>+1% 总秒收益</b>.<q>按一下，1349 !</q>',5000000,[11,1]);Game.MakeTiered(Game.last,2,11);
+		new Game.Upgrade('钛制鼠标','点击获得 <b>+1% 总秒收益</b>.<q>重,但功能强大。</q>',500000000,[11,2]);Game.MakeTiered(Game.last,3,11);
+		new Game.Upgrade('釉质鼠标','点击获得 <b>+1% 总秒收益</b>.<q>你可以用这些来切割钻石。</q>',50000000000,[11,13]);Game.MakeTiered(Game.last,4,11);
 		
 		order=40000;
 		new Game.Upgrade('Ultrascience','Research takes only <b>5 seconds</b>.<q>YEAH, SCIENCE!</q>',7,[9,2]);//debug purposes only
@@ -7717,7 +7717,7 @@ Game.Launch=function()
 			Game.Lock('Revoke Elder Covenant');
 			Game.Unlock('Revoke Elder Covenant');
 			Game.Lock('Elder Pledge');
-			Game.Win('Elder calm');
+			Game.Win('平静的老人');
 			Game.CollectWrinklers();
 			Game.storeToRefresh=1;
 		});
@@ -7787,7 +7787,7 @@ Game.Launch=function()
 		order=1000;new Game.TieredUpgrade('Reverse cyclotrons','Antimatter condensers are <b>翻倍</b>。<q>These can uncollision particles and unspin atoms. For... uh... better flavor, and stuff.</q>','Antimatter condenser',5);
 		
 		order=150;
-		new Game.Upgrade('Unobtainium mouse','Clicking gains <b>+1% of your CpS</b>.<q>These nice mice should suffice.</q>',5000000000000,[11,14]);Game.MakeTiered(Game.last,5,11);
+		new Game.Upgrade('难得素鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这些漂亮的鼠标就够了。</q>',5000000000000,[11,14]);Game.MakeTiered(Game.last,5,11);
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Caramoas',desc:'Yeah. That\'s got a nice ring to it.',icon:[14,4],require:'Box of brand biscuits',power:					3,	price:	9999999999999999});
@@ -7922,8 +7922,8 @@ Game.Launch=function()
 		new Game.Upgrade('Septillion fingers','鼠标和游标获得 <b>+500000</b> 每个非游标建筑生产的饼干数。<q>[cursory flavor text]</q>',10000000000000000000,[12,20]);Game.MakeTiered(Game.last,11,0);
 		new Game.Upgrade('Octillion fingers','鼠标和游标获得 <b>+5000000</b> 每个非游标建筑生产的饼干数。<q>Turns out you <b>can</b> quite put your finger on it.</q>',10000000000000000000000,[12,19]);Game.MakeTiered(Game.last,12,0);
 		
-		order=150;new Game.Upgrade('Eludium mouse','Clicking gains <b>+1% of your CpS</b>.<q>I rodent do that if I were you.</q>',500000000000000,[11,15]);Game.MakeTiered(Game.last,6,11);
-		new Game.Upgrade('Wishalloy mouse','Clicking gains <b>+1% of your CpS</b>.<q>Clicking is fine and dandy, but don\'t smash your mouse over it. Get your game on. Go play.</q>',50000000000000000,[11,16]);Game.MakeTiered(Game.last,7,11);
+		order=150;new Game.Upgrade('E合金鼠标','点击获得 <b>+1% 总秒收益</b>.<q>如果我是你，我就会这么做。</q>',500000000000000,[11,15]);Game.MakeTiered(Game.last,6,11);
+		new Game.Upgrade('叉合金鼠标','点击获得 <b>+1% 总秒收益</b>.<q>按一下就可以了，但是不要把你的鼠标砸在上面。开始你的游戏吧。去玩。</q>',50000000000000000,[11,16]);Game.MakeTiered(Game.last,7,11);
 		order=200;new Game.TieredUpgrade('Aging agents','老奶奶工作效率 <b>翻倍</b>。<q>Counter-intuitively, grandmas have the uncanny ability to become more powerful the older they get.</q>','Grandma',6);
 		order=300;new Game.TieredUpgrade('Pulsar sprinklers','农场工作效率 <b>翻倍</b>。<q>There\'s no such thing as over-watering. The moistest is the bestest.</q>','Farm',6);
 		order=500;new Game.TieredUpgrade('Deep-bake process','Factories are <b>翻倍</b>。<q>A patented process increasing cookie yield two-fold for the same amount of ingredients. Don\'t ask how, don\'t take pictures, and be sure to wear your protective suit.</q>','Factory',6);
@@ -8389,8 +8389,8 @@ Game.Launch=function()
 		
 		new Game.Upgrade('Residual luck','While the golden switch is on, you gain an additional <b>+10% CpS</b> per golden cookie upgrade owned.<q>Fortune comes in many flavors.</q>',99999,[27,6]);Game.last.pool='prestige';Game.last.parents=['Golden switch'];
 		
-		order=150;new Game.Upgrade('Fantasteel mouse','Clicking gains <b>+1% of your CpS</b>.<q>You could be clicking using your touchpad and we\'d be none the wiser.</q>',5000000000000000000,[11,17]);Game.MakeTiered(Game.last,8,11);
-		new Game.Upgrade('Nevercrack mouse','Clicking gains <b>+1% of your CpS</b>.<q>How much beefier can you make a mouse until it\'s considered a rat?</q>',500000000000000000000,[11,18]);Game.MakeTiered(Game.last,9,11);
+		order=150;new Game.Upgrade('范塔钢鼠标','点击获得 <b>+1% 饼干秒生产量</b>.<q>你可以用你的触摸板来点击，而我们不会变得更聪明。</q>',5000000000000000000,[11,17]);Game.MakeTiered(Game.last,8,11);
+		new Game.Upgrade('永不崩溃的鼠标','点击获得 <b>+1% 总秒收益</b>.<q>你能造一只鼠标直到它被认为是鼠标吗?</q>',500000000000000000000,[11,18]);Game.MakeTiered(Game.last,9,11);
 		
 		
 		new Game.Upgrade('Five-finger discount','All upgrades are <b>1% cheaper per 100 cursors</b>.<q>Stick it to the man.</q>',555555,[28,7],function(){Game.upgradesToRebuild=1;});Game.last.pool='prestige';Game.last.parents=['Halo gloves','Abaddon'];
@@ -8531,7 +8531,7 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Birthday cookie',desc:'-',icon:[22,13],power:years,price:99999999999999999999999999999});Game.last.baseDesc='Cookie production multiplier <b>+1%</b> for every year Cookie Clicker has existed (currently : <b>+'+Beautify(years)+'%</b>).<q>Thank you for playing Cookie Clicker!<br>-Orteil</q>';Game.last.desc=BeautifyInText(Game.last.baseDesc);
 		
 		
-		order=150;new Game.Upgrade('Armythril mouse','Clicking gains <b>+1% of your CpS</b>.<q>This one takes about 53 people to push it around and another 48 to jump down on the button and trigger a click. You could say it\'s got some heft to it.</q>',50000000000000000000000,[11,19]);Game.MakeTiered(Game.last,10,11);
+		order=150;new Game.Upgrade('阿迈斯里鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这个需要大约53人来推动它，另外48人跳下来按下按钮并触发点击。你可以说它有一些分量。</q>',50000000000000000000000,[11,19]);Game.MakeTiered(Game.last,10,11);
 		
 		order=200;new Game.TieredUpgrade('Reverse dementia','老奶奶工作效率 <b>翻倍</b>。<q>Extremely unsettling, and somehow even worse than the regular kind.</q>','Grandma',9);
 		order=300;new Game.TieredUpgrade('Humane pesticides','农场工作效率 <b>翻倍</b>。<q>Made by people, for people, from people and ready to unleash some righteous scorching pain on those pesky insects that so deserve it.</q>','Farm',9);
@@ -9012,174 +9012,174 @@ Game.Launch=function()
 		new Game.Achievement('基数10','拥有至少 <b>10 件最贵的物品，第二昂贵的20件，第三贵的30件</b> 以此类推。',[23,12]);
 		
 		order=10000;
-		new Game.Achievement('Golden cookie','Click a <b>golden cookie</b>.',[10,14]);
-		new Game.Achievement('Lucky cookie','Click <b>7 golden cookies</b>.',[22,6]);
-		new Game.Achievement('A stroke of luck','Click <b>27 golden cookies</b>.',[23,6]);
+		new Game.Achievement('黄金饼干','点击1个 <b>黄金饼干</b>。',[10,14]);
+		new Game.Achievement('幸运饼干','点击 <b>7个黄金饼干</b>.',[22,6]);
+		new Game.Achievement('好运气','点击 <b>27个黄金饼干</b>.',[23,6]);
 		
 		order=30200;
-		new Game.Achievement('Cheated cookies taste awful','Hack in some cookies.',[10,6]);Game.last.pool='shadow';
+		new Game.Achievement('被骗的饼干味道很糟糕','侵入一些饼干',[10,6]);Game.last.pool='shadow';
 		order=11010;
-		new Game.Achievement('Uncanny clicker','Click really, really fast.<q>Well I\'ll be!</q>',[12,0]);
+		new Game.Achievement('神奇遥控器','点击真的非常快。<q>好吧，我会的!</q>',[12,0]);
 		
 		order=5000;
-		new Game.Achievement('Builder','Own <b>100</b> buildings.',[2,6]);
-		new Game.Achievement('Architect','Own <b>500</b> buildings.',[3,6]);
+		new Game.Achievement('建设者','拥有 <b>100</b> 建筑。',[2,6]);
+		new Game.Achievement('建筑师','拥有 <b>500</b> 建筑。',[3,6]);
 		order=6000;
-		new Game.Achievement('Enhancer','Purchase <b>20</b> upgrades.',[9,0]);
-		new Game.Achievement('Augmenter','Purchase <b>50</b> upgrades.',[9,1]);
+		new Game.Achievement('增强剂','购买 <b>20</b> 升级。',[9,0]);
+		new Game.Achievement('增益剂','购买 <b>50</b> 升级。',[9,1]);
 		
 		order=11000;
-		new Game.Achievement('Cookie-dunker','Dunk the cookie.<q>You did it!</q>',[1,8]);
+		new Game.Achievement('饼干灌篮高手','扣篮成功。<q>你做到了!</q>',[1,8]);
 		
 		order=10000;
-		new Game.Achievement('Fortune','Click <b>77 golden cookies</b>.<q>You should really go to bed.</q>',[24,6]);
+		new Game.Achievement('幸运','点击 <b>77黄金饼干</b>.<q>你真的应该去睡觉了。</q>',[24,6]);
 		order=31000;
-		new Game.Achievement('True Neverclick','Make <b>1 million</b> cookies with <b>no</b> cookie clicks.<q>This kinda defeats the whole purpose, doesn\'t it?</q>',[12,0]);Game.last.pool='shadow';
+		new Game.Achievement('真正的永不点击','制作 <b>1 million</b> 饼干 <b>不去</b> 点击饼干。<q>这有点违背了初衷，不是吗?</q>',[12,0]);Game.last.pool='shadow';
 		
 		order=20000;
-		new Game.Achievement('Elder nap','Appease the grandmatriarchs at least <b>once</b>.<q>we<br>are<br>eternal</q>',[8,9]);
-		new Game.Achievement('Elder slumber','Appease the grandmatriarchs at least <b>5 times</b>.<q>our mind<br>outlives<br>the universe</q>',[8,9]);
+		new Game.Achievement('老年小睡','至少要安抚老奶奶 <b>1次</b>。<q>我们<br>是<br>永恒的</q>',[8,9]);
+		new Game.Achievement('老年沉睡','至少要安抚老奶奶 <b>5次</b>。<q>我们的思想<br>胜过<br>宇宙</q>',[8,9]);
 		
 		order=1150;
-		new Game.Achievement('Elder','Own at least <b>7</b> grandma types.',[10,9]);
+		new Game.Achievement('老年人','拥有至少 <b>7</b> 老奶奶的类型.',[10,9]);
 		
 		order=20000;
-		new Game.Achievement('Elder calm','Declare a covenant with the grandmatriarchs.<q>we<br>have<br>fed</q>',[8,9]);
+		new Game.Achievement('平静的老人','与祖母宣告立约。<q>我们<br>有<br>美联储</q>',[8,9]);
 		
 		order=5000;
-		new Game.Achievement('Engineer','Own <b>1000</b> buildings.',[4,6]);
+		new Game.Achievement('工程师','拥有 <b>1000</b> 建筑.',[4,6]);
 		
 		order=10000;
-		new Game.Achievement('Leprechaun','Click <b>777 golden cookies</b>.',[25,6]);
-		new Game.Achievement('Black cat\'s paw','Click <b>7777 golden cookies</b>.',[26,6]);
+		new Game.Achievement('妖精','点击 <b>777 黄金饼干</b>.',[25,6]);
+		new Game.Achievement('黑猫的爪子','点击 <b>7777 黄金饼干</b>.',[26,6]);
 		
 		order=30050;
-		new Game.Achievement('Nihilism','Ascend with <b>1 quadrillion</b> cookies baked.<q>There are many things<br>that need to be erased</q>',[11,7]);
+		new Game.Achievement('虚无主义','转生时有 <b>1 quadrillion</b> 烘烤的饼干。<q>有很多东西<br>都需要擦除</q>',[11,7]);
 		
 		order=1900;
-		new Game.TieredAchievement('Antibatter','Have <b>1</b> antimatter condenser.','Antimatter condenser',1);
-		new Game.TieredAchievement('Quirky quarks','Have <b>50</b> antimatter condensers.','Antimatter condenser',2);
-		new Game.TieredAchievement('It does matter!','Have <b>100</b> antimatter condensers.','Antimatter condenser',3);
+		new Game.TieredAchievement('防糊剂','拥有 <b>1</b> 反物质冷凝器。','Antimatter condenser',1);
+		new Game.TieredAchievement('古怪夸克','拥有 <b>50</b> 反物质冷凝器。','Antimatter condenser',2);
+		new Game.TieredAchievement('这很重要!','拥有 <b>100</b> 反物质冷凝器。','Antimatter condenser',3);
 		
 		order=6000;
-		new Game.Achievement('Upgrader','Purchase <b>100</b> upgrades.',[9,2]);
+		new Game.Achievement('升级程序','购买 <b>100</b> 项升级。',[9,2]);
 		
 		order=7000;
-		new Game.Achievement('Centennial','Have at least <b>100 of everything</b>.',[6,6]);
+		new Game.Achievement('一百周年纪念','至少有 <b>100 个全部建筑</b>.',[6,6]);
 		
 		order=30500;
-		new Game.Achievement('Hardcore','Get to <b>1 billion</b> cookies baked with <b>no upgrades purchased</b>.',[12,6]);//Game.last.pool='shadow';
+		new Game.Achievement('核心','达到 <b>1 billion</b> 饼干烘焙而 <b>未购买升级</b>.',[12,6]);//Game.last.pool='shadow';
 		
 		order=30600;
-		new Game.Achievement('Speed baking I','Get to <b>1 million</b> cookies baked in <b>35 minutes</b>.',[12,5]);Game.last.pool='shadow';
-		new Game.Achievement('Speed baking II','Get to <b>1 million</b> cookies baked in <b>25 minutes</b>.',[13,5]);Game.last.pool='shadow';
-		new Game.Achievement('Speed baking III','Get to <b>1 million</b> cookies baked in <b>15 minutes</b>.',[14,5]);Game.last.pool='shadow';
+		new Game.Achievement('快速烘焙 I','达到 <b>1 million</b> 饼干烘焙在 <b>35 分钟内</b>.',[12,5]);Game.last.pool='shadow';
+		new Game.Achievement('快速烘焙 II','达到 <b>1 million</b> 饼干烘焙在 <b>25 分钟内</b>.',[13,5]);Game.last.pool='shadow';
+		new Game.Achievement('快速烘焙 III','达到 <b>1 million</b> 饼干烘焙在 <b>15 分钟内</b>.',[14,5]);Game.last.pool='shadow';
 		
 		
 		order=61000;
-		var achiev=new Game.Achievement('Getting even with the oven','Defeat the <b>Sentient Furnace</b> in the factory dungeons.',[12,7]);Game.last.pool='dungeon';
-		var achiev=new Game.Achievement('Now this is pod-smashing','Defeat the <b>Ascended Baking Pod</b> in the factory dungeons.',[12,7]);Game.last.pool='dungeon';
-		var achiev=new Game.Achievement('Chirped out','Find and defeat <b>Chirpy</b>, the dysfunctionning alarm bot.',[13,7]);Game.last.pool='dungeon';
-		var achiev=new Game.Achievement('Follow the white rabbit','Find and defeat the elusive <b>sugar bunny</b>.',[14,7]);Game.last.pool='dungeon';
+		var achiev=new Game.Achievement('即使有烤箱','击败 <b>感应炉</b> 在工厂的地牢。',[12,7]);Game.last.pool='dungeon';
+		var achiev=new Game.Achievement('这真是太棒了','击败 <b>提升烘干仓</b> 在工厂的地牢。',[12,7]);Game.last.pool='dungeon';
+		var achiev=new Game.Achievement('发出叫声','找到并击败 <b>活泼的</b>, 功能障碍报警机器人。',[13,7]);Game.last.pool='dungeon';
+		var achiev=new Game.Achievement('跟着白兔','寻找并击败那些难以捉摸的 <b>糖兔子</b>.',[14,7]);Game.last.pool='dungeon';
 		
 		order=1000;
-		new Game.Achievement('Clickasmic','Make <b>100,000,000,000</b> cookies from clicking.',[11,14]);
+		new Game.Achievement('点击狂魔','通过点击获取 <b>100,000,000,000</b> 饼干。',[11,14]);
 		
 		order=1100;
-		new Game.TieredAchievement('Friend of the ancients','Have <b>150</b> grandmas.','Grandma',4);
-		new Game.TieredAchievement('Ruler of the ancients','Have <b>200</b> grandmas.','Grandma',5);
+		new Game.TieredAchievement('老人的朋友','拥有 <b>150</b> 老奶奶.','Grandma',4);
+		new Game.TieredAchievement('老人的统治者','拥有 <b>200</b> 老奶奶.','Grandma',5);
 		
 		order=32000;
-		new Game.Achievement('Wholesome','Unlock <b>100%</b> of your heavenly chips power.',[15,7]);
+		new Game.Achievement('健康','解锁 <b>100%</b> 你的天赋芯片的力量.',[15,7]);
 		
 		order=33000;
-		new Game.Achievement('Just plain lucky','You have <b>1 chance in 500,000</b> every second of earning this achievement.',[15,6]);Game.last.pool='shadow';
+		new Game.Achievement('非常幸运','你每秒有 <b>50万分之一</b> 的机会获得这个成就。',[15,6]);Game.last.pool='shadow';
 		
 		order=21000;
-		new Game.Achievement('Itchscratcher','Burst <b>1 wrinkler</b>.',[19,8]);
-		new Game.Achievement('Wrinklesquisher','Burst <b>50 wrinklers</b>.',[19,8]);
-		new Game.Achievement('Moistburster','Burst <b>200 wrinklers</b>.',[19,8]);
+		new Game.Achievement('瘙痒不求人','爆裂 <b>1 皱纹</b>.',[19,8]);
+		new Game.Achievement('皱纹的问题','爆裂 <b>50 皱纹</b>.',[19,8]);
+		new Game.Achievement('湿气爆炸','爆裂 <b>200 皱纹</b>.',[19,8]);
 		
 		order=22000;
-		new Game.Achievement('Spooky cookies','Unlock <b>every Halloween-themed cookie</b>.<div class="line"></div>Owning this achievement makes Halloween-themed cookies drop more frequently in future playthroughs.',[12,8]);
+		new Game.Achievement('幽灵饼干','解锁 <b>每个万圣节主题的饼干</b>.<br>拥有这个成就使万圣节主题饼干在未来的游戏中更频繁地降临。',[12,8]);
 		
 		order=22100;
-		new Game.Achievement('Coming to town','Reach <b>Santa\'s 7th form</b>.',[18,9]);
-		new Game.Achievement('All hail Santa','Reach <b>Santa\'s final form</b>.',[19,10]);
-		new Game.Achievement('Let it snow','Unlock <b>every Christmas-themed cookie</b>.<div class="line"></div>Owning this achievement makes Christmas-themed cookies drop more frequently in future playthroughs.',[19,9]);
-		new Game.Achievement('Oh deer','Pop <b>1 reindeer</b>.',[12,9]);
-		new Game.Achievement('Sleigh of hand','Pop <b>50 reindeer</b>.',[12,9]);
-		new Game.Achievement('Reindeer sleigher','Pop <b>200 reindeer</b>.',[12,9]);
+		new Game.Achievement('来到城镇','达到 <b>圣诞老人的第七张表</b>.',[18,9]);
+		new Game.Achievement('所有的圣诞老人都欢呼','达到 <b>圣诞老人的最终形式</b>.',[19,10]);
+		new Game.Achievement('让它下雪','解锁 <b>每一个以圣诞为主题的饼干</b>.<br>拥有这一成就，圣诞主题的饼干在未来的游戏中会更频繁地掉落。',[19,9]);
+		new Game.Achievement('哦，鹿','点击 <b>1 驯鹿</b>.',[12,9]);
+		new Game.Achievement('戏法','点击 <b>50 驯鹿</b>.',[12,9]);
+		new Game.Achievement('驯鹿长辈','点击 <b>200 驯鹿</b>.',[12,9]);
 
 		order=1200;
-		new Game.TieredAchievement('Perfected agriculture','Have <b>150</b> farms.','Farm',4);
+		new Game.TieredAchievement('完善农业','拥有 <b>150</b> 农场。','Farm',4);
 		order=1400;
-		new Game.TieredAchievement('Ultimate automation','Have <b>150</b> factories.','Factory',4);
+		new Game.TieredAchievement('终极自动化','拥有 <b>150</b> 工厂。','Factory',4);
 		order=1300;
-		new Game.TieredAchievement('Can you dig it','Have <b>150</b> mines.','Mine',4);
+		new Game.TieredAchievement('你能把它挖出来吗?','拥有 <b>150</b> 矿山。','Mine',4);
 		order=1500;
-		new Game.TieredAchievement('Type II civilization','Have <b>150</b> shipments.','Shipment',4);
+		new Game.TieredAchievement('第二类文明','拥有 <b>150</b> 装船。','Shipment',4);
 		order=1600;
-		new Game.TieredAchievement('Gild wars','Have <b>150</b> alchemy labs.','Alchemy lab',4);
+		new Game.TieredAchievement('镀金的战争','拥有 <b>150</b> 炼金术实验室。','Alchemy lab',4);
 		order=1700;
-		new Game.TieredAchievement('Brain-split','Have <b>150</b> portals.','Portal',4);
+		new Game.TieredAchievement('大脑分裂','拥有 <b>150</b> 传送门。','Portal',4);
 		order=1800;
-		new Game.TieredAchievement('Time duke','Have <b>150</b> time machines.','Time machine',4);
+		new Game.TieredAchievement('时间公爵','拥有 <b>150</b> 时光机器。','Time machine',4);
 		order=1900;
-		new Game.TieredAchievement('Molecular maestro','Have <b>150</b> antimatter condensers.','Antimatter condenser',4);
+		new Game.TieredAchievement('分子大师','拥有 <b>150</b> 反物质冷凝器。','Antimatter condenser',4);
 		
 		order=2000;
-		new Game.TieredAchievement('Lone photon','Have <b>1</b> prism.','Prism',1);
-		new Game.TieredAchievement('Dazzling glimmer','Have <b>50</b> prisms.','Prism',2);
-		new Game.TieredAchievement('Blinding flash','Have <b>100</b> prisms.','Prism',3);
-		new Game.TieredAchievement('Unending glow','Have <b>150</b> prisms.','Prism',4);
+		new Game.TieredAchievement('孤独的光子','拥有 <b>1</b> 棱镜。','Prism',1);
+		new Game.TieredAchievement('耀眼的微光','拥有 <b>50</b> 棱镜。','Prism',2);
+		new Game.TieredAchievement('眩目的闪光','拥有 <b>100</b> 棱镜。','Prism',3);
+		new Game.TieredAchievement('永恒的光芒','拥有 <b>150</b> 棱镜。','Prism',4);
 		
 		order=5000;
-		new Game.Achievement('Lord of Constructs','Own <b>2000</b> buildings.<q>He saw the vast plains stretching ahead of him, and he said : let there be civilization.</q>',[5,6]);
+		new Game.Achievement('建筑之王','拥有<b>2000</b> 建筑。<q>他看见广阔的平原在他前面伸展，他说:“让文明来吧。”</q>',[5,6]);
 		order=6000;
-		new Game.Achievement('Lord of Progress','Purchase <b>200</b> upgrades.<q>One can always do better. But should you?</q>',[9,14]);
+		new Game.Achievement('进步之王','购买 <b>200</b> 升级。<q>一个人总能做得更好。但你是否应该?</q>',[9,14]);
 		order=7002;
-		new Game.Achievement('Bicentennial','Have at least <b>200 of everything</b>.<q>You crazy person.</q>',[8,6]);
+		new Game.Achievement('周年纪念','至少有 <b>200 所有建筑</b>.<q>你这个疯子。</q>',[8,6]);
 		
 		order=22300;
-		new Game.Achievement('Lovely cookies','Unlock <b>every Valentine-themed cookie</b>.',[20,3]);
+		new Game.Achievement('可爱的饼干','解锁 <b>每个情人节主题的饼干</b>.',[20,3]);
 		
 		order=7001;
-		new Game.Achievement('Centennial and a half','Have at least <b>150 of everything</b>.',[7,6]);
+		new Game.Achievement('150周年纪念','至少有 <b>150 所有建筑</b>。',[7,6]);
 		
 		order=11000;
-		new Game.Achievement('Tiny cookie','Click the tiny cookie.<q>These aren\'t the cookies<br>you\'re clicking for.</q>',[0,5]);
+		new Game.Achievement('小饼干','点击小饼干。<q>这些不是饼干<br>你在点击的。</q>',[0,5]);
 		
 		order=400000;
-		new Game.Achievement('You win a cookie','This is for baking 10 trillion cookies and making it on the local news.<q>We\'re all so proud of you.</q>',[10,0]);
+		new Game.Achievement('你赢了一个饼干','这是为了烘培10万亿个小甜饼，并在当地新闻上发表。<q>我们都为你感到骄傲。</q>',[10,0]);
 		
 		order=1070;
-		new Game.Achievement('Click delegator','Make <b>10,000,000,000,000,000,000</b> cookies just from cursors.',[0,22]);
+		new Game.Achievement('点击委托','制作 <b>10,000,000,000,000,000,000</b> 饼干通过游标。',[0,22]);
 		order=1120;
-		new Game.Achievement('Gushing grannies','Make <b>10,000,000,000,000,000,000</b> cookies just from grandmas.',[1,22]);
+		new Game.Achievement('滔滔不绝','制作 <b>10,000,000,000,000,000,000</b> 饼干通过老奶奶。',[1,22]);
 		order=1220;
-		new Game.Achievement('I hate manure','Make <b>10,000,000,000,000</b> cookies just from farms.',[2,22]);
+		new Game.Achievement('我讨厌肥料','制作 <b>10,000,000,000,000</b> 饼干通过农场。',[2,22]);
 		order=1320;
-		new Game.Achievement('Never dig down','Make <b>100,000,000,000,000</b> cookies just from mines.',[3,22]);
+		new Game.Achievement('千万别挖','制作 <b>100,000,000,000,000</b> 饼干通过矿山。',[3,22]);
 		order=1420;
-		new Game.Achievement('The incredible machine','Make <b>1,000,000,000,000,000</b> cookies just from factories.',[4,22]);
+		new Game.Achievement('神奇的机器','制作 <b>1,000,000,000,000,000</b> 饼干通过工厂。',[4,22]);
 		order=1520;
-		new Game.Achievement('And beyond','Make <b>10,000,000,000,000,000,000</b> cookies just from shipments.',[5,22]);
+		new Game.Achievement('超越','制作 <b>10,000,000,000,000,000,000</b> 饼干通过装船。',[5,22]);
 		order=1620;
-		new Game.Achievement('Magnum Opus','Make <b>100,000,000,000,000,000,000</b> cookies just from alchemy labs.',[6,22]);
+		new Game.Achievement('代表作','制作 <b>100,000,000,000,000,000,000</b> 饼干通过炼金术实验室。',[6,22]);
 		order=1720;
-		new Game.Achievement('With strange eons','Make <b>1,000,000,000,000,000,000,000</b> cookies just from portals.',[7,22]);
+		new Game.Achievement('奇怪地','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过传送门。',[7,22]);
 		order=1820;
-		new Game.Achievement('Spacetime jigamaroo','Make <b>10,000,000,000,000,000,000,000</b> cookies just from time machines.',[8,22]);
+		new Game.Achievement('时空拼图','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过时光机器。',[8,22]);
 		order=1920;
-		new Game.Achievement('Supermassive','Make <b>100,000,000,000,000,000,000,000</b> cookies just from antimatter condensers.',[13,22]);
+		new Game.Achievement('超大质量','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过反物质冷凝器。',[13,22]);
 		order=2020;
-		new Game.Achievement('Praise the sun','Make <b>1,000,000,000,000,000,000,000,000</b> cookies just from prisms.',[14,22]);
+		new Game.Achievement('赞美太阳','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过棱镜。',[14,22]);
 		
 		
 		order=1000;
-		new Game.Achievement('Clickageddon','Make <b>10,000,000,000,000</b> cookies from clicking.',[11,15]);
-		new Game.Achievement('Clicknarok','Make <b>1,000,000,000,000,000</b> cookies from clicking.',[11,16]);
+		new Game.Achievement('点击时代','制作 <b>10,000,000,000,000</b> 饼干通过点击。',[11,15]);
+		new Game.Achievement('单击中心','制作 <b>1,000,000,000,000,000</b> 饼干通过点击。',[11,16]);
 		
 		order=1050;
 		new Game.Achievement('Extreme polydactyly','Have <b>300</b> cursors.',[0,13]);
@@ -10227,7 +10227,7 @@ Game.Launch=function()
 						{
 							//if (Math.random()<(Game.HasAchiev('Spooky cookies')?0.2:0.05))//halloween cookie drops
 							var failRate=0.95;
-							if (Game.HasAchiev('Spooky cookies')) failRate=0.8;
+							if (Game.HasAchiev('幽灵饼干')) failRate=0.8;
 							if (Game.Has('Starterror')) failRate*=0.9;
 							failRate*=1/Game.dropRateMult();
 							if (Game.hasGod)
@@ -10471,8 +10471,8 @@ Game.Launch=function()
 				
 				if (l('specialPic')){var rect=l('specialPic').getBoundingClientRect();Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2);}
 				
-				if (Game.santaLevel>=6) Game.Win('Coming to town');
-				if (Game.santaLevel>=14) Game.Win('All hail Santa');
+				if (Game.santaLevel>=6) Game.Win('来到城镇');
+				if (Game.santaLevel>=14) Game.Win('所有的圣诞老人都欢呼');
 				Game.recalculateGains=1;
 				Game.upgradesToRebuild=1;
 			}
@@ -11614,7 +11614,7 @@ Game.Launch=function()
 			Game.HardReset(2);
 			Game.bakeryName=name;
 			Game.bakeryNameRefresh();
-			Game.Achievements['Cheated cookies taste awful'].won=1;
+			Game.Achievements['被骗的饼干味道很糟糕'].won=1;
 		}
 		
 		Game.debugTimersOn=0;
@@ -11664,7 +11664,7 @@ Game.Launch=function()
 			l('devConsole').innerHTML=str;
 			l('debug').style.display='block';
 			Game.sesame=1;
-			Game.Achievements['Cheated cookies taste awful'].won=1;
+			Game.Achievements['被骗的饼干味道很糟糕'].won=1;
 		}
 		
 		Game.EditAscend=function()
@@ -11887,7 +11887,7 @@ Game.Launch=function()
 			/*=====================================================================================
 			UNLOCKING STUFF
 			=======================================================================================*/
-			if (Game.T%(Game.fps)==0 && Math.random()<1/500000) Game.Win('Just plain lucky');//1 chance in 500,000 every second achievement
+			if (Game.T%(Game.fps)==0 && Math.random()<1/500000) Game.Win('非常幸运');//1 chance in 500,000 every second achievement
 			if (Game.T%(Game.fps*5)==0 && Game.ObjectsById.length>0)//check some achievements and upgrades
 			{
 				if (isNaN(Game.cookies)) {Game.cookies=0;Game.cookiesEarned=0;Game.recalculateGains=1;}
@@ -11899,13 +11899,13 @@ Game.Launch=function()
 				
 				if (Game.cookiesEarned>=1000000 && (Game.ascensionMode==1 || Game.resets==0))//challenge run or hasn't ascended yet
 				{
-					if (timePlayed<=1000*60*35) Game.Win('Speed baking I');
-					if (timePlayed<=1000*60*25) Game.Win('Speed baking II');
-					if (timePlayed<=1000*60*15) Game.Win('Speed baking III');
+					if (timePlayed<=1000*60*35) Game.Win('快速烘焙 I');
+					if (timePlayed<=1000*60*25) Game.Win('快速烘焙 II');
+					if (timePlayed<=1000*60*15) Game.Win('快速烘焙 III');
 					
 					if (Game.cookieClicks<=15) Game.Win('永不点击');
-					if (Game.cookieClicks<=0) Game.Win('True Neverclick');
-					if (Game.cookiesEarned>=1000000000 && Game.UpgradesOwned==0) Game.Win('Hardcore');
+					if (Game.cookieClicks<=0) Game.Win('真正的永不点击');
+					if (Game.cookiesEarned>=1000000000 && Game.UpgradesOwned==0) Game.Win('核心');
 				}
 				
 				for (var i in Game.UnlockAt)
@@ -11926,7 +11926,7 @@ Game.Launch=function()
 				if (Game.Has('Basic wallpaper assortment')) Game.Unlock('Background selector');
 				if (Game.Has('Golden cookie alert sound')) Game.Unlock('Golden cookie sound selector');
 				
-				if (Game.Has('Eternal heart biscuits')) Game.Win('Lovely cookies');
+				if (Game.Has('Eternal heart biscuits')) Game.Win('可爱的饼干');
 				if (Game.season=='easter')
 				{
 					var eggs=0;
@@ -11948,7 +11948,7 @@ Game.Launch=function()
 					if (Game.Has('Heavenly bakery')) Game.Unlock('Heavenly confectionery');
 					if (Game.Has('Heavenly confectionery')) Game.Unlock('Heavenly key');
 					
-					if (Game.Has('Heavenly key')) Game.Win('Wholesome');
+					if (Game.Has('Heavenly key')) Game.Win('健康');
 				}
 			
 				for (var i in Game.BankAchievements)
@@ -11970,56 +11970,56 @@ Game.Launch=function()
 				if (minAmount>=1) Game.Win('其中的一切');
 				if (mathematician==1) Game.Win('数学家');
 				if (base10==1) Game.Win('基数10');
-				if (minAmount>=100) {Game.Win('Centennial');Game.Unlock('Milk chocolate butter biscuit');}
-				if (minAmount>=150) {Game.Win('Centennial and a half');Game.Unlock('Dark chocolate butter biscuit');}
-				if (minAmount>=200) {Game.Win('Bicentennial');Game.Unlock('White chocolate butter biscuit');}
-				if (minAmount>=250) {Game.Win('Bicentennial and a half');Game.Unlock('Ruby chocolate butter biscuit');}
-				if (minAmount>=300) {Game.Win('Tricentennial');Game.Unlock('Lavender chocolate butter biscuit');}
+				if (minAmount>=100) {Game.Win('一百周年纪念');Game.Unlock('Milk chocolate butter biscuit');}
+				if (minAmount>=150) {Game.Win('150周年纪念');Game.Unlock('Dark chocolate butter biscuit');}
+				if (minAmount>=200) {Game.Win('周年纪念');Game.Unlock('White chocolate butter biscuit');}
+				if (minAmount>=250) {Game.Win('二百年半');Game.Unlock('Ruby chocolate butter biscuit');}
+				if (minAmount>=300) {Game.Win('三百周年纪念');Game.Unlock('Lavender chocolate butter biscuit');}
 				if (minAmount>=350) {Game.Win('Tricentennial and a half');Game.Unlock('Synthetic chocolate green honey butter biscuit');}
 				if (minAmount>=400) {Game.Win('Quadricentennial');Game.Unlock('Royal raspberry chocolate butter biscuit');}
 				if (minAmount>=450) {Game.Win('Quadricentennial and a half');Game.Unlock('Ultra-concentrated high-energy chocolate butter biscuit');}
 				if (minAmount>=500) {Game.Win('Quincentennial');Game.Unlock('Pure pitch-black chocolate butter biscuit');}
 				
-				if (Game.handmadeCookies>=1000) {Game.Win('可以点击');Game.Unlock('Plastic mouse');}
-				if (Game.handmadeCookies>=100000) {Game.Win('全能点击');Game.Unlock('Iron mouse');}
-				if (Game.handmadeCookies>=10000000) {Game.Win('点击奥林匹克');Game.Unlock('Titanium mouse');}
-				if (Game.handmadeCookies>=1000000000) {Game.Win('点击奥腊马');Game.Unlock('Adamantium mouse');}
-				if (Game.handmadeCookies>=100000000000) {Game.Win('Clickasmic');Game.Unlock('Unobtainium mouse');}
-				if (Game.handmadeCookies>=10000000000000) {Game.Win('Clickageddon');Game.Unlock('Eludium mouse');}
-				if (Game.handmadeCookies>=1000000000000000) {Game.Win('Clicknarok');Game.Unlock('Wishalloy mouse');}
-				if (Game.handmadeCookies>=100000000000000000) {Game.Win('Clickastrophe');Game.Unlock('Fantasteel mouse');}
-				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('Clickataclysm');Game.Unlock('Nevercrack mouse');}
-				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('The ultimate clickdown');Game.Unlock('Armythril mouse');}
+				if (Game.handmadeCookies>=1000) {Game.Win('可以点击');Game.Unlock('塑料鼠标');}
+				if (Game.handmadeCookies>=100000) {Game.Win('全能点击');Game.Unlock('铁制鼠标');}
+				if (Game.handmadeCookies>=10000000) {Game.Win('点击奥林匹克');Game.Unlock('钛制鼠标');}
+				if (Game.handmadeCookies>=1000000000) {Game.Win('点击奥腊马');Game.Unlock('釉质鼠标');}
+				if (Game.handmadeCookies>=100000000000) {Game.Win('点击狂魔');Game.Unlock('难得素鼠标');}
+				if (Game.handmadeCookies>=10000000000000) {Game.Win('点击时代');Game.Unlock('E合金鼠标');}
+				if (Game.handmadeCookies>=1000000000000000) {Game.Win('单击中心');Game.Unlock('叉合金鼠标');}
+				if (Game.handmadeCookies>=100000000000000000) {Game.Win('点击祸患');Game.Unlock('范塔钢鼠标');}
+				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('点击大灾变');Game.Unlock('永不崩溃的鼠标');}
+				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('终极点击');Game.Unlock('阿迈斯里鼠标');}
 				if (Game.handmadeCookies>=100000000000000000000000) {Game.Win('All the other kids with the pumped up clicks');Game.Unlock('Technobsidian mouse');}
 				if (Game.handmadeCookies>=10000000000000000000000000) {Game.Win('One...more...click...');Game.Unlock('Plasmarble mouse');}
 				
-				if (Game.cookiesEarned<Game.cookies) Game.Win('Cheated cookies taste awful');
+				if (Game.cookiesEarned<Game.cookies) Game.Win('被骗的饼干味道很糟糕');
 				
-				if (Game.Has('Skull cookies') && Game.Has('Ghost cookies') && Game.Has('Bat cookies') && Game.Has('Slime cookies') && Game.Has('Pumpkin cookies') && Game.Has('Eyeball cookies') && Game.Has('Spider cookies')) Game.Win('Spooky cookies');
-				if (Game.wrinklersPopped>=1) Game.Win('Itchscratcher');
-				if (Game.wrinklersPopped>=50) Game.Win('Wrinklesquisher');
-				if (Game.wrinklersPopped>=200) Game.Win('Moistburster');
+				if (Game.Has('Skull cookies') && Game.Has('Ghost cookies') && Game.Has('Bat cookies') && Game.Has('Slime cookies') && Game.Has('Pumpkin cookies') && Game.Has('Eyeball cookies') && Game.Has('Spider cookies')) Game.Win('幽灵饼干');
+				if (Game.wrinklersPopped>=1) Game.Win('瘙痒不求人');
+				if (Game.wrinklersPopped>=50) Game.Win('皱纹的问题');
+				if (Game.wrinklersPopped>=200) Game.Win('湿气爆炸');
 				
 				if (Game.cookiesEarned>=1000000 && Game.Has('How to bake your dragon')) Game.Unlock('A crumbly egg');
 				
 				if (Game.cookiesEarned>=25 && Game.season=='christmas') Game.Unlock('A festive hat');
-				if (Game.Has('Christmas tree biscuits') && Game.Has('Snowflake biscuits') && Game.Has('Snowman biscuits') && Game.Has('Holly biscuits') && Game.Has('Candy cane biscuits') && Game.Has('Bell biscuits') && Game.Has('Present biscuits')) Game.Win('Let it snow');
+				if (Game.Has('Christmas tree biscuits') && Game.Has('Snowflake biscuits') && Game.Has('Snowman biscuits') && Game.Has('Holly biscuits') && Game.Has('Candy cane biscuits') && Game.Has('Bell biscuits') && Game.Has('Present biscuits')) Game.Win('让它下雪');
 				
-				if (Game.reindeerClicked>=1) Game.Win('Oh deer');
-				if (Game.reindeerClicked>=50) Game.Win('Sleigh of hand');
-				if (Game.reindeerClicked>=200) Game.Win('Reindeer sleigher');
+				if (Game.reindeerClicked>=1) Game.Win('哦，鹿');
+				if (Game.reindeerClicked>=50) Game.Win('戏法');
+				if (Game.reindeerClicked>=200) Game.Win('驯鹿长辈');
 				
-				if (buildingsOwned>=100) Game.Win('Builder');
-				if (buildingsOwned>=500) Game.Win('Architect');
-				if (buildingsOwned>=1000) Game.Win('Engineer');
-				if (buildingsOwned>=2000) Game.Win('Lord of Constructs');
-				if (Game.UpgradesOwned>=20) Game.Win('Enhancer');
-				if (Game.UpgradesOwned>=50) Game.Win('Augmenter');
-				if (Game.UpgradesOwned>=100) Game.Win('Upgrader');
-				if (Game.UpgradesOwned>=200) Game.Win('Lord of Progress');
+				if (buildingsOwned>=100) Game.Win('建设者');
+				if (buildingsOwned>=500) Game.Win('建筑师');
+				if (buildingsOwned>=1000) Game.Win('工程师');
+				if (buildingsOwned>=2000) Game.Win('建筑之王');
+				if (Game.UpgradesOwned>=20) Game.Win('增强剂');
+				if (Game.UpgradesOwned>=50) Game.Win('增益剂');
+				if (Game.UpgradesOwned>=100) Game.Win('升级程序');
+				if (Game.UpgradesOwned>=200) Game.Win('进步之王');
 				if (buildingsOwned>=3000 && Game.UpgradesOwned>=300) Game.Win('Polymath');
 				
-				if (Game.cookiesEarned>=10000000000000 && !Game.HasAchiev('You win a cookie')) {Game.Win('You win a cookie');Game.Earn(1);}
+				if (Game.cookiesEarned>=10000000000000 && !Game.HasAchiev('你赢了一个饼干')) {Game.Win('你赢了一个饼干');Game.Earn(1);}
 				
 				if (Game.shimmerTypes['golden'].n>=4) Game.Win('Four-leaf cookie');
 				
@@ -12037,65 +12037,65 @@ Game.Launch=function()
 				if (Game.Has('Priestess grandmas')) grandmas++;
 				if (Game.Has('Witch grandmas')) grandmas++;
 				if (Game.Has('Lucky grandmas')) grandmas++;
-				if (!Game.HasAchiev('Elder') && grandmas>=7) Game.Win('Elder');
-				if (Game.Objects['Grandma'].amount>=6 && !Game.Has('Bingo center/Research facility') && Game.HasAchiev('Elder')) Game.Unlock('Bingo center/Research facility');
-				if (Game.pledges>0) Game.Win('Elder nap');
-				if (Game.pledges>=5) Game.Win('Elder slumber');
+				if (!Game.HasAchiev('老年人') && grandmas>=7) Game.Win('老年人');
+				if (Game.Objects['Grandma'].amount>=6 && !Game.Has('Bingo center/Research facility') && Game.HasAchiev('老年人')) Game.Unlock('Bingo center/Research facility');
+				if (Game.pledges>0) Game.Win('老年小睡');
+				if (Game.pledges>=5) Game.Win('老年沉睡');
 				if (Game.pledges>=10) Game.Unlock('Sacrificial rolling pins');
 				if (Game.Objects['Cursor'].amount+Game.Objects['Grandma'].amount>=777) Game.Win('The elder scrolls');
 				
 				var base=10000000000000;
-				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('Click delegator');
-				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('Gushing grannies');
-				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('I hate manure');
-				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('Never dig down');
-				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('The incredible machine');
-				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('Vested interest');
-				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('New world order');
-				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('Hocus pocus');
-				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('And beyond');
-				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('Magnum Opus');
-				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('With strange eons');
-				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('Spacetime jigamaroo');
-				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('Supermassive');
-				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('Praise the sun');
+				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('点击委托');
+				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('滔滔不绝');
+				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('我讨厌肥料');
+				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('千万别挖');
+				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('神奇的机器');
+				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('既得利益');
+				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('世界新秩序');
+				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('欺骗');
+				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('超越');
+				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('代表作');
+				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('奇怪地');
+				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('时空拼图');
+				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('超大质量');
+				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('赞美太阳');
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Fingers crossed');
 
 				var base=10000000000000000;
-				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('Finger clickin\' good');
-				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('Panic at the bingo');
-				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('Rake in the dough');
-				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('Quarry on');
-				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('Yes I love technology');
-				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('Paid in full');
-				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('Church of Cookiology');
-				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('Too many rabbits, not enough hats');
-				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('The most precious cargo');
-				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('The Aureate');
-				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('Ever more hideous');
-				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('Be kind, rewind');
-				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('Infinitesimal');
-				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('A still more glorious dawn');
+				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('手指点击很好');
+				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('对宾果的恐慌');
+				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('在面团里搅拌');
+				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('采石场');
+				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('是的，我喜欢科技');
+				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('全部付清');
+				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('古教会的教堂');
+				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('兔子太多，帽子不够');
+				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('最珍贵的货物');
+				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('金色的');
+				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('更加丑恶');
+				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('仁慈，重来');
+				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('极小的');
+				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('一个更加灿烂的黎明');
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Just a statistic');
 				
 				var base=10000000000000000000;
-				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('Click (starring Adam Sandler)');
-				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('Frantiquities');
-				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('Overgrowth');
-				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('Sedimentalism');
-				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('Labor of love');
-				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('Reverse funnel system');
-				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('Thus spoke you');
-				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('Manafest destiny');
-				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('Neither snow nor rain nor heat nor gloom of night');
-				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('I\'ve got the Midas touch');
-				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('Which eternal lie');
-				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('D&eacute;j&agrave; vu');
-				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('Powers of Ten');
-				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('Now the dark days are gone');
+				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('点击(亚当•桑德勒主演)');
+				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('古物');
+				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('过度生长');
+				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('沉积主义');
+				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('爱的劳动');
+				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('逆向漏斗系统');
+				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('你这样说');
+				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('天命');
+				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('无论雨雪热还是漫漫黑夜');
+				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('我有点石成金的本领');
+				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('这永恒的谎言');
+				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('似曾相识');
+				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('十大权力');
+				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('现在黑暗的日子已经过去了');
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Murphy\'s wild guess');
 				
-				if (!Game.HasAchiev('Cookie-dunker') && Game.LeftBackground && Game.milkProgress>0.1 && (Game.LeftBackground.canvas.height*0.4+256/2-16)>((1-Game.milkHd)*Game.LeftBackground.canvas.height)) Game.Win('Cookie-dunker');
+				if (!Game.HasAchiev('饼干灌篮高手') && Game.LeftBackground && Game.milkProgress>0.1 && (Game.LeftBackground.canvas.height*0.4+256/2-16)>((1-Game.milkHd)*Game.LeftBackground.canvas.height)) Game.Win('饼干灌篮高手');
 				//&& l('bigCookie').getBoundingClientRect().bottom>l('milk').getBoundingClientRect().top+16 && Game.milkProgress>0.1) Game.Win('Cookie-dunker');
 				
 				for (var i in Game.customChecks) {Game.customChecks[i]();}
