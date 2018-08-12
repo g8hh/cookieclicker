@@ -6387,8 +6387,8 @@ Game.Launch=function()
 				if (Game.isMinigameReady(me) && Game.ascensionMode!=1)
 				{
 					l('productMinigameButton'+me.id).style.display='block';
-					if (!me.onMinigame) l('productMinigameButton'+me.id).innerHTML='View '+me.minigameName;
-					else l('productMinigameButton'+me.id).innerHTML='Close '+me.minigameName;
+					if (!me.onMinigame) l('productMinigameButton'+me.id).innerHTML='打开'+me.minigameName;
+					else l('productMinigameButton'+me.id).innerHTML='关闭'+me.minigameName;
 				}
 				else l('productMinigameButton'+me.id).style.display='none';
 			}
@@ -6847,7 +6847,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('农民老奶奶');
 		});
 		Game.last.minigameUrl='minigameGarden.js';
-		Game.last.minigameName='Garden';
+		Game.last.minigameName='花园';
 		
 		new Game.Object('Mine','矿山|矿山|开采|[X] 米深|[X] 米深','矿山生产饼干面团和巧克力片。',4,3,{base:'mine',xV:16,yV:16,w:64,rows:2,x:0,y:24},10000,function(me){
 			var mult=1;
@@ -6893,7 +6893,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('祭司老奶奶');
 		});
 		Game.last.minigameUrl='minigamePantheon.js';
-		Game.last.minigameName='Pantheon';
+		Game.last.minigameName='万神殿';
 		
 		new Game.Object('Wizard tower','精灵塔|精灵塔|召唤|咒语拥有 [X] 更多的音节|咒语拥有 [X] 更多的音节','用魔法咒语召唤饼干。',8,17,{base:'wizardtower',xV:16,yV:16,w:48,rows:2,x:0,y:20},0,function(me){
 			var mult=1;
@@ -8893,7 +8893,7 @@ Game.Launch=function()
 		{
 			var threshold=Math.pow(10,Math.floor(Game.BankAchievements.length*1.5+2));
 			if (Game.BankAchievements.length==0) threshold=1;
-			var achiev=new Game.Achievement(name,'烘烤 <b>'+Beautify(threshold)+'</b> 饼干'+(threshold==1?'':'s')+' 在一次转生中。',[Game.thresholdIcons[Game.BankAchievements.length],(Game.BankAchievements.length>23?2:5)]);
+			var achiev=new Game.Achievement(name,'烘烤 <b>'+Beautify(threshold)+'</b> 饼干'+(threshold==1?'':'')+' 在一次转生中。',[Game.thresholdIcons[Game.BankAchievements.length],(Game.BankAchievements.length>23?2:5)]);
 			achiev.threshold=threshold;
 			achiev.order=100+Game.BankAchievements.length*0.01;
 			Game.BankAchievements.push(achiev);
@@ -8904,7 +8904,7 @@ Game.Launch=function()
 		{
 			var threshold=Math.pow(10,Math.floor(Game.CpsAchievements.length*1.2));
 			//if (Game.CpsAchievements.length==0) threshold=1;
-			var achiev=new Game.Achievement(name,'Bake <b>'+Beautify(threshold)+'</b> cookie'+(threshold==1?'':'s')+' per second.',[Game.thresholdIcons[Game.CpsAchievements.length],(Game.CpsAchievements.length>23?2:5)]);
+			var achiev=new Game.Achievement(name,'每秒烘烤 <b>'+Beautify(threshold)+'</b> 饼干'+(threshold==1?'':'')+'。',[Game.thresholdIcons[Game.CpsAchievements.length],(Game.CpsAchievements.length>23?2:5)]);
 			achiev.threshold=threshold;
 			achiev.order=200+Game.CpsAchievements.length*0.01;
 			Game.CpsAchievements.push(achiev);
@@ -12248,7 +12248,7 @@ Game.Launch=function()
 				}
 				str=[str.slice(0, spacePos),add,str.slice(spacePos)].join('');
 			}
-			if (str.length>11 && !Game.mobile) unit='<br>cookies';
+			if (str.length>11 && !Game.mobile) unit='<br>饼干';
 			str+=unit;
 			if (Game.prefs.monospace) str='<span class="monospace">'+str+'</span>';
 			str=str+'<div style="font-size:50%;"'+(Game.cpsSucked>0?' class="warning"':'')+'>每秒 : '+Beautify(Game.cookiesPs*(1-Game.cpsSucked),1)+'</div>';//display cookie amount
