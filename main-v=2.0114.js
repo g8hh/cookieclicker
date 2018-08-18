@@ -4096,7 +4096,7 @@ Game.Launch=function()
 					if (me.wrath>0 && Math.random()<0.3) list.push('blood frenzy','chain cookie','cookie storm');
 					else if (Math.random()<0.03 && Game.cookiesEarned>=100000) list.push('chain cookie','cookie storm');
 					if (Math.random()<0.05 && Game.season=='fools') list.push('everything must go');
-					if (Math.random()<0.1 && (Math.random()<0.05 || !Game.hasBuff('Dragonflight'))) list.push('click frenzy');
+					if (Math.random()<0.1 && (Math.random()<0.05 || !Game.hasBuff('龙之飞舞'))) list.push('click frenzy');
 					if (me.wrath && Math.random()<0.1) list.push('cursed finger');
 					
 					if (Game.BuildingsOwned>=10 && Math.random()<0.25) list.push('building special');
@@ -4106,7 +4106,7 @@ Game.Launch=function()
 					if ((me.wrath==0 && Math.random()<0.15) || Math.random()<0.05)
 					{
 						if (Game.hasAura('Reaper of Fields')) list.push('dragon harvest');
-						if (Game.hasAura('Dragonflight')) list.push('dragonflight');
+						if (Game.hasAura('龙之飞舞')) list.push('龙之飞舞');
 					}
 					
 					if (this.last!='' && Math.random()<0.8 && list.indexOf(this.last)!=-1) list.splice(list.indexOf(this.last),1);//80% chance to force a different one
@@ -4221,9 +4221,9 @@ Game.Launch=function()
 					{
 						buff=Game.gainBuff('click frenzy',Math.ceil(13*effectDurMod),777);
 					}
-					else if (choice=='dragonflight')
+					else if (choice=='龙之飞舞')
 					{
-						buff=Game.gainBuff('dragonflight',Math.ceil(10*effectDurMod),1111);
+						buff=Game.gainBuff('龙之飞舞',Math.ceil(10*effectDurMod),1111);
 						if (Math.random()<0.8) Game.killBuff('Click frenzy');
 					}
 					else if (choice=='chain cookie')
@@ -6561,8 +6561,8 @@ Game.Launch=function()
 			if (Game.Has('Divine discount')) price*=0.99;
 			if (Game.hasAura('Fierce Hoarder')) price*=0.98;
 			if (Game.hasBuff('Everything must go')) price*=0.95;
-			if (Game.hasBuff('Crafty pixies')) price*=0.98;
-			if (Game.hasBuff('Nasty goblins')) price*=1.02;
+			if (Game.hasBuff('狡猾的小妖精')) price*=0.98;
+			if (Game.hasBuff('肮脏的妖精')) price*=1.02;
 			price*=Game.eff('buildingCost');
 			if (Game.hasGod)
 			{
@@ -6906,7 +6906,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('女巫老奶奶');
 		});
 		Game.last.minigameUrl='minigameGrimoire.js';
-		Game.last.minigameName='Grimoire';
+		Game.last.minigameName='魔法书';
 		
 		new Game.Object('Shipment','装船|装船|装运|[X] 星系完全探索|[X] 星系完全探索','从饼干星球带来新鲜的饼干。',9,5,{base:'shipment',xV:16,yV:16,w:64,rows:1,x:0,y:0},40000,function(me){
 			var mult=1;
@@ -7095,7 +7095,7 @@ Game.Launch=function()
 				if (Game.Has('Faberge egg')) price*=0.99;
 				if (Game.Has('Divine sales')) price*=0.99;
 				if (Game.hasBuff('Haggler\'s luck')) price*=0.98;
-				if (Game.hasBuff('Haggler\'s misery')) price*=1.02;
+				if (Game.hasBuff('砍价的魅力')) price*=1.02;
 				if (Game.hasAura('Master of the Armory')) price*=0.98;
 				price*=Game.eff('upgradeCost');
 				if (this.pool=='cookie' && Game.Has('Divine bakeries')) price/=5;
@@ -9787,10 +9787,10 @@ Game.Launch=function()
 				aura:1
 			};
 		});
-		new Game.buffType('dragonflight',function(time,pow)
+		new Game.buffType('龙之飞舞',function(time,pow)
 		{
 			return {
-				name:'Dragonflight',
+				name:'龙之飞舞',
 				desc:'Clicking power x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,25],
 				time:time*Game.fps,
@@ -9872,7 +9872,7 @@ Game.Launch=function()
 		new Game.buffType('pixie luck',function(time,pow)
 		{
 			return {
-				name:'Crafty pixies',
+				name:'狡猾的小妖精',
 				desc:'All buildings are '+pow+'% cheaper for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
@@ -9883,7 +9883,7 @@ Game.Launch=function()
 		new Game.buffType('pixie misery',function(time,pow)
 		{
 			return {
-				name:'Nasty goblins',
+				name:'肮脏的妖精',
 				desc:'All buildings are '+pow+'% pricier for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
@@ -9891,10 +9891,10 @@ Game.Launch=function()
 				max:true
 			};
 		});
-		new Game.buffType('magic adept',function(time,pow)
+		new Game.buffType('魔法专家',function(time,pow)
 		{
 			return {
-				name:'Magic adept',
+				name:'魔法专家',
 				desc:'Spells backfire '+pow+' times less for '+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,11],
 				time:time*Game.fps,
@@ -9902,11 +9902,11 @@ Game.Launch=function()
 				max:true
 			};
 		});
-		new Game.buffType('magic inept',function(time,pow)
+		new Game.buffType('魔法无能',function(time,pow)
 		{
 			return {
-				name:'Magic inept',
-				desc:'Spells backfire '+pow+' times more for '+Game.sayTime(time*Game.fps,-1)+'.',
+				name:'魔法无能',
+				desc:'咒语反效果会增加 '+pow+' 次在接下来的 '+Game.sayTime(time*Game.fps,-1)+'分钟.',
 				icon:[29,11],
 				time:time*Game.fps,
 				power:pow,
@@ -11012,7 +11012,7 @@ Game.Launch=function()
 				Timer.clean();
 				
 				var showDragon=0;
-				if (Game.hasBuff('Dragonflight') || Game.hasBuff('Dragon Harvest')) showDragon=1;
+				if (Game.hasBuff('龙之飞舞') || Game.hasBuff('Dragon Harvest')) showDragon=1;
 				
 				Game.cookieOriginX=Math.floor(ctx.canvas.width/2);
 				Game.cookieOriginY=Math.floor(ctx.canvas.height*0.4);
