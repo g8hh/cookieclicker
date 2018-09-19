@@ -7383,10 +7383,10 @@ Game.Launch=function()
 			if (Game.Has('Inspired checklist'))
 			{
 				storeStr+='<div id="storeBuyAll" class="storePre" '+Game.getTooltip(
-								'<div style="padding:8px;min-width:250px;text-align:center;font-size:11px;">Will <b>instantly purchase</b> every upgrade you can afford, starting from the cheapest one.<br>Upgrades in the <b>vault</b> will not be auto-purchased.<br>You may place an upgrade into the vault by <b>Ctrl-clicking</b> on it.</div>'
+								'<div style="padding:8px;min-width:250px;text-align:center;font-size:11px;">将会 <b>立即购买</b> 你能负担得起的所有升级, starting from the cheapest one.<br>Upgrades in the <b>vault</b> will not be auto-purchased.<br>You may place an upgrade into the vault by <b>Ctrl-clicking</b> on it.</div>'
 								,'store')+
 					'>'+
-						'<div id="storeBuyAllButton" class="storePreButton" '+Game.clickStr+'="Game.storeBuyAll();">Buy all upgrades</div>'+
+						'<div id="storeBuyAllButton" class="storePreButton" '+Game.clickStr+'="Game.storeBuyAll();">购买全部升级</div>'+
 					'</div>';
 				l('upgrades').classList.add('hasMenu');
 			}
@@ -7673,8 +7673,8 @@ Game.Launch=function()
 		new Game.Upgrade('Exotic nuts','Cookie production multiplier <b>+4%</b>.<q>You\'ll go crazy over these!</q>',32000000000000000,[5,9],function(){Game.SetResearch('Communal brainsweep');});Game.last.pool='tech';
 		new Game.Upgrade('Communal brainsweep','Each grandma gains another <b>+0.0<span></span>2 base CpS per grandma</b>.<div class="warning">Note : proceeding any further in scientific research may have unexpected results. You have been warned.</div><q>We fuse. We merge. We grow.</q>',64000000000000000,[6,9],function(){Game.elderWrath=2;Game.SetResearch('Arcane sugar');Game.storeToRefresh=1;});Game.last.pool='tech';
 		new Game.Upgrade('Arcane sugar','Cookie production multiplier <b>+5%</b>.<q>Tastes like insects, ligaments, and molasses.</q>',128000000000000000,[7,9],function(){Game.SetResearch('Elder Pact');});Game.last.pool='tech';
-		new Game.Upgrade('Elder Pact','Each grandma gains <b>+0.0<span></span>5 base CpS per portal</b>.<div class="warning">Note : this is a bad idea.</div><q>squirm crawl slither writhe<br>today we rise</q>',256000000000000000,[8,9],function(){Game.elderWrath=3;Game.storeToRefresh=1;});Game.last.pool='tech';
-		new Game.Upgrade('Elder Pledge','Contains the wrath of the elders, at least for a while.<q>This is a simple ritual involving anti-aging cream, cookie batter mixed in the moonlight, and a live chicken.</q>',1,[9,9],function()
+		new Game.Upgrade('Elder Pact','每一个老奶奶收益 <b>+0.0<span></span>5 基础饼干秒生产量每个传送门</b>.<div class="warning">注意:这不是一个好主意。</div><q>squirm crawl slither writhe<br>today we rise</q>',256000000000000000,[8,9],function(){Game.elderWrath=3;Game.storeToRefresh=1;});Game.last.pool='tech';
+		new Game.Upgrade('Elder Pledge','包含了长老们的愤怒，至少是暂时的。<q>这是一个简单的仪式，包括抗老化奶油，饼干面糊在月光下，和一只活鸡。</q>',1,[9,9],function()
 		{
 			Game.elderWrath=0;
 			Game.pledges++;
@@ -7685,7 +7685,7 @@ Game.Launch=function()
 		});
 		Game.getPledgeDuration=function(){return Game.fps*60*(Game.Has('Sacrificial rolling pins')?60:30);}
 		Game.last.pool='toggle';
-		Game.last.displayFuncWhenOwned=function(){return '<div style="text-align:center;">Time remaining until pledge runs out :<br><b>'+Game.sayTime(Game.pledgeT,-1)+'</b></div>';}
+		Game.last.displayFuncWhenOwned=function(){return '<div style="text-align:center;">直到承诺用完剩下的时间 :<br><b>'+Game.sayTime(Game.pledgeT,-1)+'</b></div>';}
 		Game.last.timerDisplay=function(){if (!Game.Upgrades['Elder Pledge'].bought) return -1; else return 1-Game.pledgeT/Game.getPledgeDuration();}
 		Game.last.priceFunc=function(){return Math.pow(8,Math.min(Game.pledges+2,14));}
 		
@@ -7696,22 +7696,22 @@ Game.Launch=function()
 		new Game.Upgrade('釉质鼠标','点击获得 <b>+1% 总秒收益</b>.<q>你可以用这些来切割钻石。</q>',50000000000,[11,13]);Game.MakeTiered(Game.last,4,11);
 		
 		order=40000;
-		new Game.Upgrade('Ultrascience','Research takes only <b>5 seconds</b>.<q>YEAH, SCIENCE!</q>',7,[9,2]);//debug purposes only
+		new Game.Upgrade('Ultrascience','研究只需要 <b>5 秒</b>.<q>是的,科学!</q>',7,[9,2]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Eclipse cookies',desc:'Look to the cookie.',icon:[0,4],power:					2,	price:	99999999999*5});
+		Game.NewUpgradeCookie({name:'Eclipse cookies',desc:'注意饼干.',icon:[0,4],power:					2,	price:	99999999999*5});
 		Game.NewUpgradeCookie({name:'Zebra cookies',desc:'...',icon:[1,4],power:									2,	price:	999999999999});
 		
 		order=100;
-		new Game.Upgrade('万兆手指','鼠标和游标获得 <b>+5000</b> 每个非游标建筑生产的饼干数。<q>man, just go click click click click click, it\'s real easy, man.</q>',10000000000000,[0,18]);Game.MakeTiered(Game.last,9,0);
+		new Game.Upgrade('万兆手指','鼠标和游标获得 <b>+5000</b> 每个非游标建筑生产的饼干数。<q>年轻人,你只需要点击，点击，点击，点击, 这真的很简单, 年轻人.</q>',10000000000000,[0,18]);Game.MakeTiered(Game.last,9,0);
 		
 		order=40000;
-		new Game.Upgrade('Gold hoard','Golden cookies appear <b>really often</b>.<q>That\'s entirely too many.</q>',7,[10,14]);//debug purposes only
+		new Game.Upgrade('Gold hoard','Golden cookies appear <b>really often</b>.<q>那真是太多了。</q>',7,[10,14]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=15000;
-		new Game.Upgrade('Elder Covenant','Puts a permanent end to the elders\' wrath, at the price of 5% of your CpS.<q>This is a complicated ritual involving silly, inconsequential trivialities such as cursed laxatives, century-old cacao, and an infant.<br>Don\'t question it.</q>',66666666666666,[8,9],function()
+		new Game.Upgrade('Elder Covenant','Puts a permanent end to the elders\' wrath, at the price of 5% 饼干秒生产量.<q>This is a complicated ritual involving silly, inconsequential trivialities such as cursed laxatives, century-old cacao, and an infant.<br>Don\'t question it.</q>',66666666666666,[8,9],function()
 		{
 			Game.pledgeT=0;
 			Game.Lock('Revoke Elder Covenant');
@@ -7723,7 +7723,7 @@ Game.Launch=function()
 		});
 		Game.last.pool='toggle';
 
-		new Game.Upgrade('Revoke Elder Covenant','You will get 5% of your CpS back, but the grandmatriarchs will return.<q>we<br>rise<br>again</q>',6666666666,[8,9],function()
+		new Game.Upgrade('Revoke Elder Covenant','你会得到 5% 饼干秒生产量, 但是老奶奶们会回来的。<q>我们<br>再次<br>出现</q>',6666666666,[8,9],function()
 		{
 			Game.Lock('Elder Covenant');
 			Game.Unlock('Elder Covenant');
@@ -8157,7 +8157,7 @@ Game.Launch=function()
 		new Game.Upgrade('Seraphim',desc(10,65)+'<q>Leading the first sphere of pastry heaven, seraphim possess ultimate knowledge of everything pertaining to baking.</q>',Math.pow(angelPriceFactor,6),[5,11]);Game.last.pool='prestige';Game.last.parents=['Cherubim'];
 		new Game.Upgrade('God',desc(10,75)+'<q>Like Santa, but less fun.</q>',Math.pow(angelPriceFactor,7),[6,11]);Game.last.pool='prestige';Game.last.parents=['Seraphim'];
 		
-		new Game.Upgrade('Twin Gates of Transcendence','You now <b>keep making cookies while the game is closed</b>, at the rate of <b>5%</b> of your regular CpS and up to <b>1 hour</b> after the game is closed.<br>(Beyond 1 hour, this is reduced by a further 90% - your rate goes down to <b>0.5%</b> of your CpS.)<q>This is one occasion you\'re always underdressed for. Don\'t worry, just rush in past the bouncer and pretend you know people.</q>',1,[15,11]);Game.last.pool='prestige';
+		new Game.Upgrade('Twin Gates of Transcendence','You now <b>keep making cookies while the game is closed</b>, at the rate of <b>5%</b> of your regular CpS and up to <b>1 hour</b> after the game is closed.<br>(Beyond 1 hour, this is reduced by a further 90% - your rate goes down to <b>0.5%</b> 饼干秒生产量.)<q>This is one occasion you\'re always underdressed for. Don\'t worry, just rush in past the bouncer and pretend you know people.</q>',1,[15,11]);Game.last.pool='prestige';
 
 		new Game.Upgrade('Heavenly luck','Golden cookies appear <b>5%</b> more often.<q>Someone up there likes you.</q>',77,[22,6]);Game.last.pool='prestige';
 		new Game.Upgrade('Lasting fortune','Golden cookies effects last <b>10%</b> longer.<q>This isn\'t your average everyday luck. This is... advanced luck.</q>',777,[23,6]);Game.last.pool='prestige';Game.last.parents=['Heavenly luck'];
@@ -8594,8 +8594,8 @@ Game.Launch=function()
 		Game.last.pool='debug';
 		
 		order=150;
-		new Game.Upgrade('Technobsidian mouse','Clicking gains <b>+1% of your CpS</b>.<q>A highly advanced mouse of a sophisticated design. Only one thing on its mind : to click.</q>',5000000000000000000000000,[11,28]);Game.MakeTiered(Game.last,11,11);
-		new Game.Upgrade('Plasmarble mouse','Clicking gains <b>+1% of your CpS</b>.<q>A shifting blur in the corner of your eye, this mouse can trigger a flurry of clicks when grazed by even the slightest breeze.</q>',500000000000000000000000000,[11,30]);Game.MakeTiered(Game.last,12,11);
+		new Game.Upgrade('Technobsidian mouse','点击获得 <b>+1% 饼干秒生产量</b>.<q>A highly advanced mouse of a sophisticated design. Only one thing on its mind : to click.</q>',5000000000000000000000000,[11,28]);Game.MakeTiered(Game.last,11,11);
+		new Game.Upgrade('Plasmarble mouse','点击获得 <b>+1% 饼干秒生产量</b>.<q>A shifting blur in the corner of your eye, this mouse can trigger a flurry of clicks when grazed by even the slightest breeze.</q>',500000000000000000000000000,[11,30]);Game.MakeTiered(Game.last,12,11);
 		
 		order=20000;
 		new Game.Upgrade('Kitten marketeers','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>no such thing as a saturated markit, sir</q>',900000000000000000000000000000000000000,Game.GetIcon('Kitten',11));Game.last.kitten=1;Game.MakeTiered(Game.last,11,18);
@@ -8618,7 +8618,7 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Green yeast digestives',desc:'-',icon:[25,25],power:0,price:60*3,locked:1});Game.last.baseDesc='<b>+1%</b> golden cookie gains and effect duration.<br><b>+1%</b> golden cookie frequency.<br><b>+3%</b> random drops.<br>Dropped by green rot plants.<q>These are tastier than you\'d expect, but not by much.</q>';
 		
 		order=23000;
-		new Game.Upgrade('Fern tea','You gain <b>+3%</b> of your regular CpS while the game is closed <small>(provided you have the Twin Gates of Transcendence heavenly upgrade)</small>.<br>Dropped by drowsyfern plants.<q>A chemically complex natural beverage, this soothing concoction has been used by mathematicians to solve equations in their sleep.</q>',60,[26,25]);
+		new Game.Upgrade('Fern tea','You gain <b>+3%</b> of your regular 饼干秒生产量 while the game is closed <small>(provided you have the Twin Gates of Transcendence heavenly upgrade)</small>.<br>Dropped by drowsyfern plants.<q>A chemically complex natural beverage, this soothing concoction has been used by mathematicians to solve equations in their sleep.</q>',60,[26,25]);
 		new Game.Upgrade('Ichor syrup','You gain <b>+7%</b> of your regular CpS while the game is closed <small>(provided you have the Twin Gates of Transcendence heavenly upgrade)</small>.<br>Sugar lumps mature <b>7 minutes</b> sooner.<br>Dropped by ichorpuff plants.<q>Tastes like candy. The smell is another story.</q>',60*2,[27,25]);
 		
 		order=10200;
@@ -8629,7 +8629,7 @@ Game.Launch=function()
 		{
 			var it=Game.Upgrades[gardenDrops[i]];
 			it.priceFunc=function(cost){return function(){return cost*Game.cookiesPs*60;}}(it.basePrice);
-			it.baseDesc=it.baseDesc.replace('<q>','<br>Cost scales with CpS.<q>');
+			it.baseDesc=it.baseDesc.replace('<q>','<br>花费饼干秒生产量的比例.<q>');
 			it.desc=BeautifyInText(it.baseDesc);
 			it.lasting=true;
 		}
@@ -8658,12 +8658,12 @@ Game.Launch=function()
 		order=1200;new Game.TieredUpgrade('Revised probabilistics','Chancemakers are <b>翻倍</b>。<q>Either something happens or it doesn\'t. That\'s a 50% chance! This suddenly makes a lot of unlikely things very possible.</q>','Chancemaker',10);
 		
 		order=20000;
-		new Game.Upgrade('Kitten analysts','You gain <b>more CpS</b> the more milk you have.<q>based on purrent return-on-investment meowdels we should be able to affurd to pay our empawyees somewhere around next century, sir</q>',900000000000000000000000000000000000000000,Game.GetIcon('Kitten',12));Game.last.kitten=1;Game.MakeTiered(Game.last,12,18);
+		new Game.Upgrade('Kitten analysts','你得到了 <b>更多的饼干秒生产量</b> the more milk you have.<q>based on purrent return-on-investment meowdels we should be able to affurd to pay our empawyees somewhere around next century, sir</q>',900000000000000000000000000000000000000000,Game.GetIcon('Kitten',12));Game.last.kitten=1;Game.MakeTiered(Game.last,12,18);
 		
 		
 		new Game.Upgrade('Eye of the wrinkler','Mouse over a wrinkler to see how many cookies are in its stomach.<q>Just a wrinkler and its will to survive.<br>Hangin\' tough, stayin\' hungry.</q>',99999999,[27,26]);Game.last.pool='prestige';Game.last.parents=['Wrinkly cookies'];
 		
-		new Game.Upgrade('Inspired checklist','Unlocks the <b>Buy all</b> feature, which lets you instantly purchase every upgrade in your store (starting from the cheapest one).<br>Also unlocks the <b>Vault</b>, a store section where you can place upgrades you do not wish to auto-buy.<q>Snazzy grandma accessories? Check. Transdimensional abominations? Check. A bunch of eggs for some reason? Check. Machine that goes "ping"? Check and check.</q>',900000,[28,26]);Game.last.pool='prestige';Game.last.parents=['Persistent memory','Permanent upgrade slot IV'];
+		new Game.Upgrade('Inspired checklist','Unlocks the <b>购买所有</b> feature, which lets you instantly purchase every upgrade in your store (starting from the cheapest one).<br>Also unlocks the <b>Vault</b>, a store section where you can place upgrades you do not wish to auto-buy.<q>Snazzy grandma accessories? Check. Transdimensional abominations? Check. A bunch of eggs for some reason? Check. Machine that goes "ping"? Check and check.</q>',900000,[28,26]);Game.last.pool='prestige';Game.last.parents=['Persistent memory','Permanent upgrade slot IV'];
 		
 		order=10300;
 		Game.NewUpgradeCookie({name:'Pure pitch-black chocolate butter biscuit',desc:'Rewarded for owning 500 of everything.<br>This chocolate is so pure and so flawless that it has no color of its own, instead taking on the appearance of whatever is around it. You\'re a bit surprised to notice that this one isn\'t stamped with your effigy, as its surface is perfectly smooth (to the picometer) - until you realize it\'s quite literally reflecting your own face like a mirror.',icon:[24,27],power:	10,price: 999999999999999999999999999999999999999999999,locked:1});
