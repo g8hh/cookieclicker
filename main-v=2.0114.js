@@ -5340,12 +5340,12 @@ Game.Launch=function()
 				'<div class="listing"><b>总烘烤的饼干 (本次游戏) :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned)+'</div></div>'+
 				'<div class="listing"><b>总烘烤的饼干 (所有时间) :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned+Game.cookiesReset)+'</div></div>'+
 				(Game.cookiesReset>0?'<div class="listing"><b>转生消耗的饼干 :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesReset)+'</div></div>':'')+
-				(Game.resets?('<div class="listing"><b>Legacy started :</b> '+(fullDate==''?'just now':(fullDate+' ago'))+', with '+Beautify(Game.resets)+' ascension'+(Game.resets==1?'':'s')+'</div>'):'')+
+				(Game.resets?('<div class="listing"><b>遗产开始：</b> '+(fullDate==''?'just now':(fullDate+' ago'))+', with '+Beautify(Game.resets)+' ascension'+(Game.resets==1?'':'s')+'</div>'):'')+
 				'<div class="listing"><b>游戏运行时间 :</b> '+(startDate==''?'刚刚':(startDate+' '))+'</div>'+
 				'<div class="listing"><b>拥有的建筑 :</b> '+Beautify(buildingsOwned)+'</div>'+
 				'<div class="listing"><b>每秒生产饼干数 :</b> '+Beautify(Game.cookiesPs,1)+' <small>'+
 					'(倍数 : '+Beautify(Math.round(Game.globalCpsMult*100),1)+'%)'+
-					(Game.cpsSucked>0?' <span class="warning">(withered : '+Beautify(Math.round(Game.cpsSucked*100),1)+'%)</span>':'')+
+					(Game.cpsSucked>0?' <span class="warning">(枯萎 : '+Beautify(Math.round(Game.cpsSucked*100),1)+'%)</span>':'')+
 					'</small></div>'+
 				'<div class="listing"><b>每次点击得到的饼干 :</b> '+Beautify(Game.computedMouseCps,1)+'</div>'+
 				'<div class="listing"><b>饼干点击次数 :</b> '+Beautify(Game.cookieClicks)+'</div>'+
@@ -7707,7 +7707,7 @@ Game.Launch=function()
 		new Game.Upgrade('万兆手指','鼠标和游标获得 <b>+5000</b> 每个非游标建筑生产的饼干数。<q>年轻人,你只需要点击，点击，点击，点击, 这真的很简单, 年轻人.</q>',10000000000000,[0,18]);Game.MakeTiered(Game.last,9,0);
 		
 		order=40000;
-		new Game.Upgrade('Gold hoard','Golden cookies appear <b>really often</b>.<q>那真是太多了。</q>',7,[10,14]);//debug purposes only
+		new Game.Upgrade('Gold hoard','黄金饼干出现 <b>更加频繁</b>.<q>那真是太多了。</q>',7,[10,14]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=15000;
@@ -7731,7 +7731,7 @@ Game.Launch=function()
 		Game.last.pool='toggle';
 		
 		order=5000;
-		new Game.Upgrade('Get lucky','Golden cookie effects last <b>twice as long</b>.<q>You\'ve been up all night, haven\'t you?</q>',77777777777777,[27,6]);
+		new Game.Upgrade('Get lucky','黄金饼干效果持续像 <b>两次那么久</b>.<q>You\'ve been up all night, haven\'t you?</q>',77777777777777,[27,6]);
 		
 		order=15000;
 		new Game.Upgrade('Sacrificial rolling pins','Elder pledges last <b>翻倍</b> as long.<q>These are mostly just for spreading the anti-aging cream.<br>(And accessorily, shortening the chicken\'s suffering.)</q>',2888888888888,[2,9]);
@@ -7893,19 +7893,19 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Eternal heart biscuits',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
 
 		order=1100;
-		new Game.TieredUpgrade('Gem polish','Prisms are <b>翻倍</b>。<q>Get rid of the grime and let more light in.<br>Truly, truly outrageous.</q>','Prism',1);
-		new Game.TieredUpgrade('9th color','Prisms are <b>翻倍</b>。<q>Delve into untouched optical depths where even the mantis shrimp hasn\'t set an eye!</q>','Prism',2);
-		new Game.TieredUpgrade('Chocolate light','Prisms are <b>翻倍</b>。<q>Bask into its cocoalescence.<br>(Warning : may cause various interesting albeit deadly skin conditions.)</q>','Prism',3);
-		new Game.TieredUpgrade('Grainbow','Prisms are <b>翻倍</b>。<q>Remember the different grains using the handy Roy G. Biv mnemonic : R is for rice, O is for oats... uh, B for barley?...</q>','Prism',4);
-		new Game.TieredUpgrade('Pure cosmic light','Prisms are <b>翻倍</b>。<q>Your prisms now receive pristine, unadulterated photons from the other end of the universe.</q>','Prism',5);
+		new Game.TieredUpgrade('Gem polish','棱镜 <b>翻倍</b>。<q>摆脱污垢，让更多的光线进入。<br>真的，真是太离谱了。</q>','Prism',1);
+		new Game.TieredUpgrade('9th color','棱镜 <b>翻倍</b>。<q>深入研究未受影响的光学深度甚至螳螂虾都没有引人注目！</q>','Prism',2);
+		new Game.TieredUpgrade('Chocolate light','棱镜 <b>翻倍</b>。<q>沐浴在它的茧中。<br>(警告:可能导致各种有趣但致命的皮肤状况。)</q>','Prism',3);
+		new Game.TieredUpgrade('Grainbow','棱镜 <b>翻倍</b>。<q>记住不同的谷物使用方便的Roy G. Biv助记法:R是大米，O是燕麦…B是大麦吗?</q>','Prism',4);
+		new Game.TieredUpgrade('Pure cosmic light','棱镜 <b>翻倍</b>。<q>你的棱镜现在接收到来自宇宙另一端的原始、纯净的光子。</q>','Prism',5);
 
 		order=255;
 		new Game.Upgrade('彩虹老奶奶',Game.getGrandmaSynergyUpgradeDesc('Prism')+'<q>一个发光的奶奶在饼干中闪闪发光。</q>',Game.Objects['Prism'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		
 		order=24000;
 		Game.seasonTriggerBasePrice=1111111111;
-		new Game.Upgrade('Season switcher','Allows you to <b>trigger seasonal events</b> at will, for a price.<q>There will always be time.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
-		new Game.Upgrade('Festive biscuit','Triggers <b>Christmas season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
+		new Game.Upgrade('Season switcher','允许你 <b>触发节日事件</b>, 只要你出得起价钱.<q>总是会有时间.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
+		new Game.Upgrade('Festive biscuit','触发 <b>圣诞节</b> 在接下来的24小时。<br>触发其它节日，将会取消这个节日。<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
 		new Game.Upgrade('Ghostly biscuit','Triggers <b>Halloween season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>spooky scary skeletons<br>will wake you with a boo</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
 		new Game.Upgrade('Lovesick biscuit','Triggers <b>Valentine\'s Day season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Romance never goes out of fashion.</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
 		new Game.Upgrade('Fool\'s biscuit','Triggers <b>Business Day season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Business. Serious business. This is absolutely all of your business.</q>',Game.seasonTriggerBasePrice,[17,6]);Game.last.season='fools';Game.last.pool='toggle';
