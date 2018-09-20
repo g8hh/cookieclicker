@@ -2493,30 +2493,30 @@ Game.Launch=function()
 				
 				classes+=' upgrade';
 				
-				if (me.pool=='prestige') {tags.push('Heavenly','#efa438');classes+=' heavenly';}
+				if (me.pool=='prestige') {tags.push('天堂','#efa438');classes+=' heavenly';}
 				else if (me.pool=='tech') tags.push('Tech','#36a4ff');
-				else if (me.pool=='cookie') tags.push('Cookie',0);
+				else if (me.pool=='cookie') tags.push('饼干',0);
 				else if (me.pool=='debug') tags.push('Debug','#00c462');
-				else if (me.pool=='toggle') tags.push('Switch',0);
-				else tags.push('Upgrade',0);
+				else if (me.pool=='toggle') tags.push('切换',0);
+				else tags.push('升级',0);
 				
-				if (me.tier!=0 && Game.Has('Label printer')) tags.push('Tier : '+Game.Tiers[me.tier].name,Game.Tiers[me.tier].color);
-				if (me.name=='Label printer' && Game.Has('Label printer')) tags.push('Tier : Self-referential','#ff00ea');
+				if (me.tier!=0 && Game.Has('Label printer')) tags.push('层 : '+Game.Tiers[me.tier].name,Game.Tiers[me.tier].color);
+				if (me.name=='Label printer' && Game.Has('Label printer')) tags.push('层 : Self-referential','#ff00ea');
 				
 				if (me.isVaulted()) tags.push('Vaulted','#4e7566');
 				
 				if (me.bought>0)
 				{
-					if (me.pool=='tech') tags.push('Researched',0);
-					else if (me.kitten) tags.push('Purrchased',0);
-					else tags.push('Purchased',0);
+					if (me.pool=='tech') tags.push('已研究',0);
+					else if (me.kitten) tags.push('已购买',0);
+					else tags.push('已购买',0);
 					enabled=1;
 				}
 				
-				if (me.lasting && me.unlocked) tags.push('Unlocked forever','#f2ff87');
+				if (me.lasting && me.unlocked) tags.push('永久解锁','#f2ff87');
 				
-				if (neuromancy && me.bought==0) tags.push('Click to learn!','#00c462');
-				else if (neuromancy && me.bought>0) tags.push('Click to unlearn!','#00c462');
+				if (neuromancy && me.bought==0) tags.push('点击学习!','#00c462');
+				else if (neuromancy && me.bought>0) tags.push('点击取消学习!','#00c462');
 				
 				if (neuromancy) clickStr='Game.UpgradesById['+me.id+'].toggle();';
 				
@@ -2541,8 +2541,8 @@ Game.Launch=function()
 				else {tags.push('未解锁',0);mysterious=1;}
 				if (!enabled) clickStr='Game.AchievementsById['+me.id+'].click();';
 				
-				if (neuromancy && me.won==0) tags.push('Click to win!','#00c462');
-				else if (neuromancy && me.won>0) tags.push('Click to lose!','#00c462');
+				if (neuromancy && me.won==0) tags.push('点击取胜!','#00c462');
+				else if (neuromancy && me.won>0) tags.push('点击输掉!','#00c462');
 				
 				if (neuromancy) clickStr='Game.AchievementsById['+me.id+'].toggle();';
 			}
@@ -3084,6 +3084,7 @@ Game.Launch=function()
 				if (me.canBePurchased || Game.Has('神经占卜'))
 				{
 					str+=Game.crate(me,'ascend','Game.PurchaseHeavenlyUpgrade('+me.id+');','heavenlyUpgrade'+me.id);
+                    
 				}
 				else
 				{
