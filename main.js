@@ -7920,13 +7920,13 @@ Game.Launch=function()
 		order=24000;
 		Game.seasonTriggerBasePrice=1111111111;
 		new Game.Upgrade('季节切换器','允许你 <b>触发节日事件</b>, 只要你出得起价钱.<q>总是会有时间.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
-		new Game.Upgrade('Festive biscuit','触发 <b>圣诞节</b> 在接下来的24小时。<br>触发其它节日，将会取消这个节日。<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
-		new Game.Upgrade('Ghostly biscuit','Triggers <b>Halloween season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>spooky scary skeletons<br>will wake you with a boo</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
-		new Game.Upgrade('Lovesick biscuit','Triggers <b>Valentine\'s Day season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Romance never goes out of fashion.</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
-		new Game.Upgrade('Fool\'s biscuit','Triggers <b>Business Day season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Business. Serious business. This is absolutely all of your business.</q>',Game.seasonTriggerBasePrice,[17,6]);Game.last.season='fools';Game.last.pool='toggle';
+		new Game.Upgrade('节日饼干','触发 <b>圣诞节</b> 在接下来的24小时。<br>触发其它节日，将会取消这个节日。<br>每个季节的开关都会增加成本。<q>是圣诞节前的那个晚上，是吗?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
+		new Game.Upgrade('鬼魂饼干','触发 <b>万圣节</b> 在接下来的24小时。<br>触发另一个季节将会取消这个。<br>每个季节的开关都会增加成本。<q>恐怖的骷髅<br/>会把你吵醒</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
+		new Game.Upgrade('相思病饼干','触发 <b>情人节</b> 在接下来的24小时<br><br>每个季节的开关都会增加成本。<q>浪漫永远不会过时。</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
+		new Game.Upgrade('傻瓜的饼干','触发 <b>工作日</b> 在接下来的24小时。<br>触发另一个季节将会取消这个。<br>每个季节的开关都会增加成本。<q>生意。正经事。这完全是你的事。</q>',Game.seasonTriggerBasePrice,[17,6]);Game.last.season='fools';Game.last.pool='toggle';
 		
 		order=40000;
-		new Game.Upgrade('Eternal seasons','Seasons now last forever.<q>Season to taste.</q>',7,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});//debug purposes only
+		new Game.Upgrade('永恒的季节','现在的季节永远持续下去。<q>季节的味道。</q>',7,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});//debug purposes only
 		Game.last.pool='debug';
 		
 		
@@ -8720,11 +8720,11 @@ Game.Launch=function()
 		//end of upgrades
 		
 		Game.seasons={
-			'christmas':{name:'Christmas',start:'Christmas season has started!',over:'Christmas season is over.',trigger:'Festive biscuit'},
-			'valentines':{name:'Valentine\'s day',start:'Valentine\'s day has started!',over:'Valentine\'s day is over.',trigger:'Lovesick biscuit'},
-			'fools':{name:'Business day',start:'Business day has started!',over:'Business day is over.',trigger:'Fool\'s biscuit'},
+			'christmas':{name:'Christmas',start:'Christmas season has started!',over:'Christmas season is over.',trigger:'节日饼干'},
+			'valentines':{name:'Valentine\'s day',start:'Valentine\'s day has started!',over:'Valentine\'s day is over.',trigger:'相思病饼干'},
+			'fools':{name:'Business day',start:'Business day has started!',over:'Business day is over.',trigger:'傻瓜的饼干'},
 			'easter':{name:'Easter',start:'Easter season has started!',over:'Easter season is over.',trigger:'Bunny biscuit'},
-			'halloween':{name:'Halloween',start:'Halloween has started!',over:'Halloween is over.',trigger:'Ghostly biscuit'}
+			'halloween':{name:'Halloween',start:'Halloween has started!',over:'Halloween is over.',trigger:'鬼魂饼干'}
 		};
 		
 		Game.computeSeasonPrices=function()
@@ -8777,8 +8777,8 @@ Game.Launch=function()
 					else Game.Notify(str,'',this.icon,4);
 				}
 				
-				me.displayFuncWhenOwned=function(){return '<div style="text-align:center;">Time remaining :<br><b>'+(Game.Has('Eternal seasons')?'forever':Game.sayTime(Game.seasonT,-1))+'</b></div>';}
-				me.timerDisplay=function(upgrade){return function(){if (!Game.Upgrades[upgrade.name].bought || Game.Has('Eternal seasons')) return -1; else return 1-Game.seasonT/Game.getSeasonDuration();}}(me);
+				me.displayFuncWhenOwned=function(){return '<div style="text-align:center;">Time remaining :<br><b>'+(Game.Has('永恒的季节')?'forever':Game.sayTime(Game.seasonT,-1))+'</b></div>';}
+				me.timerDisplay=function(upgrade){return function(){if (!Game.Upgrades[upgrade.name].bought || Game.Has('永恒的季节')) return -1; else return 1-Game.seasonT/Game.getSeasonDuration();}}(me);
 				
 			}
 		}
@@ -11870,7 +11870,7 @@ Game.Launch=function()
 			{
 				Game.seasonT--;
 			}
-			if (Game.seasonT<=0 && Game.season!='' && Game.season!=Game.baseSeason && !Game.Has('Eternal seasons'))
+			if (Game.seasonT<=0 && Game.season!='' && Game.season!=Game.baseSeason && !Game.Has('永恒的季节'))
 			{
 				var str=Game.seasons[Game.season].over;
 				if (Game.prefs.popups) Game.Popup(str);
