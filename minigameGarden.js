@@ -910,7 +910,7 @@ M.launch=function()
 				weedMult:0.1,
 				req:200,
 				effsStr:'<div class="gray">&bull; 一个周期有 <b>5 分钟</b></div><div class="red">&bull; 作物效果 <b>-75%</b></div><div class="green">&bull; 作物死亡时有<b>35% 概率</b>自动收获种子</div><div class="green">&bull; 杂草出现概率减少 <b>10 倍</b></div>',
-				q:'Dry soil made of small rocks tightly packed together. Not very conductive to plant health, but whatever falls off your crops will be easy to retrieve.<br>Useful if you\'re one of those farmers who just want to find new seeds without having to tend their garden too much.',
+				q:'由小岩石紧密堆积而成的干燥土壤。对植物健康没有多大帮助，但任何从庄稼上掉下来的东西都很容易找回。<br>如果你是那些只想寻找新种子而不必过多照料花园的农民之一，那很有用。',
 			},
 			'woodchips':{
 				name:'Wood chips',
@@ -920,7 +920,7 @@ M.launch=function()
 				weedMult:0.1,
 				req:300,
 				effsStr:'<div class="gray">&bull; 一个周期有 <b>5 分钟</b></div><div class="red">&bull; 作物效果 <b>-75%</b></div><div class="green">&bull; 植物发育与变异变为 <b>3 倍以上</b></div><div class="green">&bull; 杂草出现概率减少 <b>10 倍</b></div>',
-				q:'Soil made of bits and pieces of bark and sawdust. Helpful for young sprouts to develop, not so much for mature plants.',
+				q:'由树皮和木屑制成的土壤。有助于幼芽生长，而不是成熟植物。',
 			},
 		};
 		M.soilsById=[];var n=0;for (var i in M.soils){M.soils[i].id=n;M.soils[i].key=i;M.soilsById[n]=M.soils[i];n++;}
@@ -938,7 +938,7 @@ M.launch=function()
 					else
 					{
 						var effs={
-							cps:{n:'饼干产量'},
+							cps:{n:'饼干每秒产量'},
 							click:{n:'饼干/点击'},
 							cursorCps:{n:'cursor CpS'},
 							grandmaCps:{n:'grandma CpS'},
@@ -971,7 +971,7 @@ M.launch=function()
 							}
 						}
 						if (effStr=='') effStr='<div style="font-size:10px;margin-left:64px;"><b>None.</b></div>';
-						str+='<div>所有作物产生的总效果:</div>'+effStr;
+						str+='<div>你所有的植物的联合作用 :</div>'+effStr;
 					}
 					str+='<div class="line"></div>';
 					str+='<img src="img/gardenTip.png" style="float:right;margin:0px 0px 8px 8px;"/><small style="line-height:100%;">&bull; 你可以通过把种子种在一起来使它们杂交；新的作物会在相邻的空土地上生长。<br>&bull; 通过收获成熟作物来解锁新种子。<br>&bull; 你转生后，你的花园作物会重置，但是你将保留所有已解锁的种子。<br>&bull; 游戏关闭后，花园没有效果，作物也不会生长。</small>';
@@ -982,7 +982,7 @@ M.launch=function()
 			'harvestAll':{
 				name:'收获所有',
 				icon:0,
-				descFunc:function(){return '马上收获花园里的所有作物。<div class="line"></div>'+((Game.keys[16] && Game.keys[17])?'<b>你正在按着 shift+ctrl.</b> 只会收获成熟的、死亡的作物。':'Shift+ctrl+单击来只收获成熟的、死亡的作物。');},
+				descFunc:function(){return '马上收获花园里的所有作物。<div class="line"></div>'+((Game.keys[16] && Game.keys[17])?'<b>你正在按着 shift+ctrl.</b> 只会收获成熟的、死亡的作物。':'Shift+ctrl+单击 来只收获成熟的、死亡的作物。');},
 				func:function(){
 					PlaySound('snd/toneTick.mp3');
 					/*if (M.freeze){return false;}*/
@@ -1117,10 +1117,10 @@ M.launch=function()
 			
 			return '<div class="description">'+
 						(!me.immortal?('<div style="margin:6px 0px;font-size:11px;"><b>平均寿命 :</b> '+Game.sayTime(((100/(me.ageTick+me.ageTickR/2))*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(1)))+' 周期)</small></div>'):'')+
-						'<div style="margin:6px 0px;font-size:11px;"><b>平均成熟时间 :</b> '+Game.sayTime(((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)))+' 周期)</small></div>'+
-						(me.weed?'<div style="margin:6px 0px;font-size:11px;"><b>Is a weed</b></div>':'')+
-						(me.fungus?'<div style="margin:6px 0px;font-size:11px;"><b>Is a fungus</b></div>':'')+
-						(me.detailsStr?('<div style="margin:6px 0px;font-size:11px;"><b>Details :</b> '+me.detailsStr+'</div>'):'')+
+						'<div style="margin:6px 0px;font-size:11px;"><b>Average maturation :</b> '+Game.sayTime(((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)))+' 周期)</small></div>'+
+						(me.weed?'<div style="margin:6px 0px;font-size:11px;"><b>是杂草</b></div>':'')+
+						(me.fungus?'<div style="margin:6px 0px;font-size:11px;"><b>是一种真菌</b></div>':'')+
+						(me.detailsStr?('<div style="margin:6px 0px;font-size:11px;"><b>详情 :</b> '+me.detailsStr+'</div>'):'')+
 						(children!=''?('<div style="margin:6px 0px;font-size:11px;"><b>可能的变异 :</b> '+children+'</div>'):'')+
 						'<div class="line"></div>'+
 						'<div style="margin:6px 0px;"><b>效果 :</b></div>'+
@@ -1149,9 +1149,9 @@ M.launch=function()
 				var me=M.soilsById[id];
 				var str='<div style="padding:8px 4px;min-width:350px;">'+
 					(M.parent.amount<me.req?(
-						'<div style="text-align:center;">这种土壤需要'+me.req+'个农场解锁。</div>'
+						'<div style="text-align:center;">这种土壤需要 '+me.req+' 个农场解锁。</div>'
 					):('<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon*48)+'px '+(-34*48)+'px;"></div>'+
-					'<div><div class="name">'+me.name+'</div><div><small>'+((M.soil==me.id)?'你的种植区正在使用这种土壤。':(M.nextSoil>Date.now())?'你将在'+Game.sayTime((M.nextSoil-Date.now())/1000*30+30,-1)+'后才能再次改变土壤.':'单击此处来为你的整片种植区使用这种土壤。')+'</small></div></div>'+
+					'<div><div class="name">'+me.name+'</div><div><small>'+((M.soil==me.id)?'你的种植区正在使用这种土壤。':(M.nextSoil>Date.now())?'你将在 '+Game.sayTime((M.nextSoil-Date.now())/1000*30+30,-1)+'后才能再次改变土壤.':'单击此处来为你的整片种植区使用这种土壤。')+'</small></div></div>'+
 					'<div class="line"></div>'+
 					'<div class="description">'+
 						'<div style="margin:6px 0px;"><b>效果 :</b></div>'+
@@ -1170,8 +1170,8 @@ M.launch=function()
 					'<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-24px;margin-top:-4px;background-position:'+(-0*48)+'px '+(-me.icon*48)+'px;"></div>'+
 					'<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-24px;margin-top:-28px;background-position:'+(-4*48)+'px '+(-me.icon*48)+'px;"></div>'+
 					'<div style="background:url(img/turnInto.png);width:20px;height:22px;position:absolute;left:28px;top:24px;z-index:1000;"></div>'+
-					(me.plantable?('<div style="float:right;text-align:right;width:100px;"><small>种植成本 :</small><br><span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(shortenNumber(M.getCost(me))))+'</span><br><small>'+Game.sayTime(me.cost*60*30,-1)+'的饼干生产量,<br>最少 '+Beautify(me.costM)+' 饼干</small></div>'):'')+
-					'<div style="width:300px;"><div class="name">'+me.name+'种子</div><div><small>'+(me.plantable?'单击此处来选择这颗种子去种植。':'<span class="red">无法种植这棵种子。</span>')+'<br>Shift+ctrl+单击来收获所有这类型的成熟作物。</small></div></div>'+
+					(me.plantable?('<div style="float:right;text-align:right;width:100px;"><small>种植成本:</small><br><span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(shortenNumber(M.getCost(me))))+'</span><br><small>'+Game.sayTime(me.cost*60*30,-1)+' 的饼干每秒生产量,<br>最少  '+Beautify(me.costM)+' 饼干</small></div>'):'')+
+					'<div style="width:300px;"><div class="name">'+me.name+' 种子</div><div><small>'+(me.plantable?'单击此处来选择这颗种子去种植。':'<span class="red">无法种植这棵种子。</span>')+'<br>Shift+ctrl+单击来收获所有这类型的成熟作物。</small></div></div>'+
 					'<div class="line"></div>'+
 					M.getPlantDesc(me)+
 				'</div>';
@@ -1204,7 +1204,7 @@ M.launch=function()
 					var str='<div style="padding:8px 4px;min-width:350px;text-align:center;">'+
 						'<div class="name">一片空土地</div>'+'<div class="line"></div><div class="description">'+
 							'这片土地是空的。<br>拿一颗种子，在这里种点什么！'+
-							(me?'<div class="line"></div>点击这里种植<b>'+me.name+'</b> 并花费 <span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(M.getCost(me)))+'</span>.<br><small>(Shift-click to plant multiple.)</small>':'')+
+							(me?'<div class="line"></div>点击这里种植 <b>'+me.name+'</b> 并花费 <span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(M.getCost(me)))+'</span>.<br><small>(按住Shift-单击去批量种植.)</small>':'')+
 							(M.plotBoost[y][x]!=[1,1,1]?('<small>'+
 								(M.plotBoost[y][x][0]!=1?'<br>Aging multiplier : '+Beautify(M.plotBoost[y][x][0]*100)+'%':'')+
 								(M.plotBoost[y][x][1]!=1?'<br>Effect multiplier : '+Beautify(M.plotBoost[y][x][1]*100)+'%':'')+
@@ -1226,7 +1226,7 @@ M.launch=function()
 					var icon=[stage,me.icon];
 					var str='<div style="padding:8px 4px;min-width:350px;">'+
 						'<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div>'+
-						'<div class="name">'+me.name+'</div><div><small>这个作物在这里生长</small></div>'+
+						'<div class="name">'+me.name+'</div><div><small>这个作物在这里生长。</small></div>'+
 						'<div class="line"></div>'+
 						'<div style="text-align:center;">'+
 							'<div style="display:inline-block;position:relative;box-shadow:0px 0px 0px 1px #000,0px 0px 0px 1px rgba(255,255,255,0.5) inset,0px -2px 2px 0px rgba(255,255,255,0.5) inset;width:256px;height:6px;background:linear-gradient(to right,#fff 0%,#0f9 '+me.mature+'%,#3c0 '+(me.mature+0.1)+'%,#960 100%)">'+
@@ -1240,25 +1240,25 @@ M.launch=function()
 							'<small>'+(stage==1?'作物效果 : 10%':stage==2?'作物效果 : 25%':stage==3?'作物效果 : 50%':'作物效果 : 100%; 可能会繁殖，在收获时留下种子')+'</small>'+
 							'<br><small>'+(
 								stage<4?(
-									'大约在'+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)))+' 周期'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100))==1?'':'')+')后成熟'
+									'大约在 '+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)))+' 周期'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100))==1?'':'')+')后成熟'
 								):(
 									!me.immortal?(
-										'大约在'+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)))+' 周期'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100))==1?'':'')+')后腐烂'
+										'大约在 '+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)))+' 周期'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100))==1?'':'')+')后腐烂'
 									):
 										'不会腐烂'
 								)
 							)+'</small>'+
 							//'<small><br>'+M.plotBoost[y][x]+'</small>'+
 							(M.plotBoost[y][x]!=[1,1,1]?('<small>'+
-								(M.plotBoost[y][x][0]!=1?'<br>Aging multiplier : '+Beautify(M.plotBoost[y][x][0]*100)+'%':'')+
-								(M.plotBoost[y][x][1]!=1?'<br>Effect multiplier : '+Beautify(M.plotBoost[y][x][1]*100)+'%':'')+
-								(M.plotBoost[y][x][2]!=1?'<br>Weeds/fungus repellent : '+Beautify(100-M.plotBoost[y][x][2]*100)+'%':'')+
+								(M.plotBoost[y][x][0]!=1?'<br>老化乘数 : '+Beautify(M.plotBoost[y][x][0]*100)+'%':'')+
+								(M.plotBoost[y][x][1]!=1?'<br>效果乘数 : '+Beautify(M.plotBoost[y][x][1]*100)+'%':'')+
+								(M.plotBoost[y][x][2]!=1?'<br>杂草/真菌剂 : '+Beautify(100-M.plotBoost[y][x][2]*100)+'%':'')+
 								'</small>'
 							):'')+
 						'</div>'+
 						'<div class="line"></div>'+
 						//'<div style="text-align:center;">Click to harvest'+(M.seedSelected>=0?', planting <b>'+M.plantsById[M.seedSelected].name+'</b><br>for <span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(M.getCost(M.plantsById[M.seedSelected])))+'</span> in its place':'')+'.</div>'+
-						'<div style="text-align:center;">单击来'+(stage==4?'收获':'挖出')+'.</div>'+
+						'<div style="text-align:center;">单击来 '+(stage==4?'收获':'挖出')+'.</div>'+
 						'<div class="line"></div>'+
 						M.getPlantDesc(me)+
 					'</div>';
@@ -1998,8 +1998,8 @@ M.launch=function()
 		{
 			M.lumpRefill.style.display='block';
 			if (M.freeze) l('gardenNextTick').innerHTML='花园冻住了。解冻来恢复。';
-			else l('gardenNextTick').innerHTML='下一周期在'+Game.sayTime((M.nextStep-Date.now())/1000*30+30,-1)+'后';
-			l('gardenStats').innerHTML='已收获成熟作物: '+Beautify(M.harvests)+' (总共 : '+Beautify(M.harvestsTotal)+')';
+			else l('gardenNextTick').innerHTML='下一周期在 '+Game.sayTime((M.nextStep-Date.now())/1000*30+30,-1)+'';
+			l('gardenStats').innerHTML='已收获成熟作物 : '+Beautify(M.harvests)+' (总共 : '+Beautify(M.harvestsTotal)+')';
 			if (M.parent.level<M.plotLimits.length) l('gardenPlotSize').innerHTML='<small>种植区尺寸 : '+Math.max(1,Math.min(M.plotLimits.length,M.parent.level))+'/'+M.plotLimits.length+'<br>(随农场等级升级<糖块升级>)</small>';
 			else l('gardenPlotSize').innerHTML='';
 			l('gardenSeedsUnlocked').innerHTML='种子<small> ('+M.plantsUnlockedN+'/'+M.plantsN+')</small>';

@@ -7,7 +7,7 @@ Spoilers ahead.
 http://orteil.dashnet.org
 */
 
-var VERSION=2.0109;
+var VERSION=2.012;
 var BETA=0;
 
 /*=====================================================================================
@@ -593,6 +593,14 @@ Game.Launch=function()
 	'<div class="title">更新日志</div>'+
 	
 	'</div><div class="subsection update small">'+
+	'<div class="title">08/08/2018 - hey now</div>'+
+	'<div class="listing">&bull; Cookie Clicker somehow turns 5, going against doctors\' most optimistic estimates</div>'+
+	'<div class="listing">&bull; added a new tier of building achievements, all named after Smash Mouth\'s classic 1999 hit "All Star"</div>'+
+	'<div class="listing">&bull; added a new tier of building upgrades, all named after nothing in particular</div>'+
+	'<div class="listing">&bull; <b>to our players :</b> thank you so much for sticking with us all those years and allowing us to keep making the dumbest game known to mankind</div>'+
+	'<div class="listing">&bull; resumed work on the dungeons minigame</div>'+
+	
+	'</div><div class="subsection update small">'+
 	'<div class="title">01/08/2018 - 买买买</div>'+
 	'<div class="listing">&bull; 增加了一个天堂的升级，让你可以立即购买所有的升级</div>'+
 	'<div class="listing">&bull; 添加了一个天堂升级，可以让您看到升级层（由于之前让人混淆，以前被删除了）</div>'+
@@ -607,7 +615,6 @@ Game.Launch=function()
 	'<div class="listing">&bull; 皱纹增多</div>'+
 	'<div class="listing">&bull; 现在可以按ctrl-shift键点击“收割所有”只收获成熟的、非不朽的植物</div>'+
 	'<div class="listing">&bull; 添加了一种新的罕见的糖块</div>'+
-	
 	'</div><div class="subsection update small">'+
 	'<div class="title">20/04/2018 - 修复一些错误</div>'+
 	'<div class="listing">&bull; golden clovers and wrinklegills should spawn a bit more often</div>'+
@@ -672,7 +679,7 @@ Game.Launch=function()
 	'<div class="listing">&bull; the background selector upgrade is now functional</div>'+
 	'<div class="listing">&bull; the top menu no longer scrolls with the rest</div>'+
 	'<div class="listing">&bull; timespans are written nicer</div>'+
-	'<div class="listing">&bull; Dragonflights now tend to supercede Click frenzies, you will rarely have both at the same time</div>'+
+	'<div class="listing">&bull; 龙之飞舞 now tend to supercede Click frenzies, you will rarely have both at the same time</div>'+
 	'<div class="listing">&bull; some old bugs were phased out and replaced by new ones</div>'+
 	
 	'</div><div class="subsection update small">'+
@@ -1180,7 +1187,7 @@ Game.Launch=function()
 			Game.prefs.crates=0;//show crates around icons in stats
 			Game.prefs.altDraw=0;//use requestAnimationFrame to update drawing instead of fixed 30 fps setTimeout
 			Game.prefs.showBackupWarning=1;//if true, show a "Have you backed up your save?" message on save load; set to false when save is exported
-			Game.prefs.extraButtons=0;//if true, show Mute buttons and the building master bar
+			Game.prefs.extraButtons=1;//if true, show Mute buttons and the building master bar
 			Game.prefs.askLumps=0;//if true, show a prompt before spending lumps
 		}
 		Game.DefaultPrefs();
@@ -1696,7 +1703,7 @@ Game.Launch=function()
 						Game.prefs.cookiesound=spl[14]?parseInt(spl[14]):1;
 						Game.prefs.crates=spl[15]?parseInt(spl[15]):0;
 						Game.prefs.showBackupWarning=spl[16]?parseInt(spl[16]):1;
-						Game.prefs.extraButtons=spl[17]?parseInt(spl[17]):0;if (!Game.prefs.extraButtons) Game.removeClass('extraButtons'); else if (Game.prefs.extraButtons) Game.addClass('extraButtons');
+						Game.prefs.extraButtons=spl[17]?parseInt(spl[17]):1;if (!Game.prefs.extraButtons) Game.removeClass('extraButtons'); else if (Game.prefs.extraButtons) Game.addClass('extraButtons');
 						Game.prefs.askLumps=spl[18]?parseInt(spl[18]):0;
 						BeautifyAll();
 						spl=str[4].split(';');//cookies and lots of other stuff
@@ -3618,6 +3625,7 @@ Game.Launch=function()
 		/*=====================================================================================
 		CPS RECALCULATOR
 		=======================================================================================*/
+		
 		Game.heavenlyPower=1;//how many CpS percents a single heavenly chip gives
 		Game.recalculateGains=1;
 		Game.cookiesPsByType={};
@@ -6757,7 +6765,7 @@ Game.Launch=function()
 			if (this.amount>=350) Game.Unlock('巨量的手指');
 			if (this.amount>=400) Game.Unlock('千的九次方手指');
 			
-			if (this.amount>=1) Game.Win('单击');if (this.amount>=2) Game.Win('双击');if (this.amount>=50) Game.Win('鼠标滚轮');if (this.amount>=100) Game.Win('鼠标和人');if (this.amount>=200) Game.Win('数字');if (this.amount>=300) Game.Win('极端多指');if (this.amount>=400) Game.Win('T博士');if (this.amount>=500) Game.Win('大拇指，指骨，掌骨');
+			if (this.amount>=1) Game.Win('单击');if (this.amount>=2) Game.Win('双击');if (this.amount>=50) Game.Win('鼠标滚轮');if (this.amount>=100) Game.Win('鼠标和人');if (this.amount>=200) Game.Win('数字');if (this.amount>=300) Game.Win('极端多指');if (this.amount>=400) Game.Win('T博士');if (this.amount>=500) Game.Win('大拇指，指骨，掌骨');if (this.amount>=600) Game.Win('With her finger and her thumb');
 		});
 		
 		Game.SpecialGrandmaUnlock=15;
@@ -6870,6 +6878,9 @@ Game.Launch=function()
 			Game.UnlockTiered(this);
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('工人老奶奶');
 		});
+		//Game.last.minigameUrl='minigameDungeon.js';
+		//Game.last.minigameName='Dungeon';
+		//haha not yet tho
 		
 		new Game.Object('Bank','银行|银行|存入银行|利率增加 [X]% |利率增加 [X]% ','从利息中生成饼干。',6,15,{base:'bank',xV:8,yV:4,w:56,rows:1,x:0,y:13},0,function(me){
 			var mult=1;
@@ -7135,12 +7146,16 @@ Game.Launch=function()
 		
 		Game.Upgrade.prototype.click=function(e)
 		{
-			if (me.pool!='toggle' && me.pool!='tech' && Game.Has('Inspired checklist') && ((e && e.ctrlKey) || Game.keys[17]))
+			if ((e && e.ctrlKey) || Game.keys[17])
 			{
-				if (this.isVaulted()) this.unvault();
-				else this.vault();
-				Game.upgradesToRebuild=1;
-				PlaySound('snd/tick.mp3');
+				if (this.pool=='toggle' || this.pool=='tech') {}
+				else if (Game.Has('Inspired checklist'))
+				{
+					if (this.isVaulted()) this.unvault();
+					else this.vault();
+					Game.upgradesToRebuild=1;
+					PlaySound('snd/tick.mp3');
+				}
 			}
 			else this.buy();
 		}
@@ -8684,6 +8699,24 @@ Game.Launch=function()
 		
 		new Game.Upgrade('Label printer','Mouse over an upgrade to see its tier.<br><small>Note : only some upgrades have tiers. Tiers are purely cosmetic and have no effect on gameplay.</small><q>Also comes in real handy when you want to tell catsup apart from ketchup.</q>',9999,[27,7]);Game.last.pool='prestige';Game.last.parents=['Starter kitchen'];
 		
+		
+		
+		
+		order=200;new Game.TieredUpgrade('Good manners','Grandmas are <b>twice</b> as efficient.<q>Apparently these ladies are much more amiable if you take the time to learn their strange, ancient customs, which seem to involve saying "please" and "thank you" and staring at the sun with bulging eyes while muttering eldritch curses under your breath.</q>','Grandma',11);
+		order=300;new Game.TieredUpgrade('Lindworms','Farms are <b>twice</b> as efficient.<q>You have to import these from far up north, but they really help areate the soil!</q>','Farm',11);
+		order=400;new Game.TieredUpgrade('Bore again','Mines are <b>twice</b> as efficient.<q>After extracting so much sediment for so long, you\'ve formed some veritable mountains of your own from the accumulated piles of rock and dirt. Time to dig through those and see if you find anything fun!</q>','Mine',11);
+		order=500;new Game.TieredUpgrade('"Volunteer" interns','Factories are <b>twice</b> as efficient.<q>If you\'re bad at something, always do it for free.</q>','Factory',11);
+		order=525;new Game.TieredUpgrade('Rules of acquisition','Banks are <b>twice</b> as efficient.<q>Rule 387 : a cookie baked is a cookie kept.</q>','Bank',11);
+		order=550;new Game.TieredUpgrade('War of the gods','Temples are <b>twice</b> as efficient.<q>An interesting game; the only winning move is not to pray.</q>','Temple',11);
+		order=575;new Game.TieredUpgrade('Electricity','Wizard towers are <b>twice</b> as efficient.<q>Ancient magicks and forbidden hexes shroud this arcane knowledge, whose unfathomable power can mysteriously turn darkness into light and shock an elephant to death.</q>','Wizard tower',11);
+		order=600;new Game.TieredUpgrade('Universal alphabet','Shipments are <b>twice</b> as efficient.<q>You\'ve managed to chart a language that can be understood by any sentient species in the galaxy; its exciting vocabulary contains over 56 trillion words that sound and look like sparkly burps, forming intricate sentences that usually translate to something like "give us your cookies, or else".</q>','Shipment',11);
+		order=700;new Game.TieredUpgrade('Public betterment','Alchemy labs are <b>twice</b> as efficient.<q>Why do we keep trying to change useless matter into cookies, or cookies into even better cookies? Clearly, the way of the future is to change the people who eat the cookies into people with a greater understanding, appreciation and respect for the cookies they\'re eating. Into the vat you go!</q>','Alchemy lab',11);
+		order=800;new Game.TieredUpgrade('Embedded microportals','Portals are <b>twice</b> as efficient.<q>We\'ve found out that if we bake the portals into the cookies themselves, we can transport people\'s taste buds straight into the taste dimension! Good thing your army of lawyers got rid of the FDA a while ago!</q>','Portal',11);
+		order=900;new Game.TieredUpgrade('Nostalgia','Time machines are <b>twice</b> as efficient.<q>Your time machine technicians insist that this is some advanced new time travel tech, and not just an existing emotion universal to mankind. Either way, you have to admit that selling people the same old cookies just because it reminds them of the good old times is an interesting prospect.</q>','Time machine',11);
+		order=1000;new Game.TieredUpgrade('The definite molecule','Antimatter condensers are <b>twice</b> as efficient.<q>Your scientists have found a way to pack a cookie into one single continuous molecule, opening exciting new prospects in both storage and flavor despite the fact that these take up to a whole year to digest.</q>','Antimatter condenser',11);
+		order=1100;new Game.TieredUpgrade('Light capture measures','Prisms are <b>twice</b> as efficient.<q>As the universe gets ever so slightly dimmer due to you converting more and more of its light into cookies, you\'ve taken to finding new and unexplored sources of light for your prisms; for instance, the warm glow emitted by a pregnant woman, or the twinkle in the eye of a hopeful child.</q>','Prism',11);
+		order=1200;new Game.TieredUpgrade('0-sided dice','Chancemakers are <b>twice</b> as efficient.<q>The advent of the 0-sided dice has had unexpected and tumultuous effects on the gambling community, and saw experts around the world calling you both a genius and an imbecile.</q>','Chancemaker',11);
+		
 		//end of upgrades
 		
 		Game.seasons={
@@ -9580,6 +9613,26 @@ Game.Launch=function()
 		order=30250;
 		new Game.Achievement('When the cookies ascend just right','Ascend with exactly <b>1,000,000,000,000 cookies</b>.',[25,7]);Game.last.pool='shadow';//this achievement is shadow because it is only achievable through blind luck or reading external guides; this may change in the future
 		
+		
+		order=1050;
+		new Game.Achievement('With her finger and her thumb','Have <b>600</b> cursors.',[0,16]);
+		
+		order=1100;new Game.TieredAchievement('But wait \'til you get older','Have <b>550</b> grandmas.','Grandma',12);
+		order=1200;new Game.TieredAchievement('Sharpest tool in the shed','Have <b>500</b> farms.','Farm',11);
+		order=1300;new Game.TieredAchievement('Hey now, you\'re a rock','Have <b>500</b> mines.','Mine',11);
+		order=1400;new Game.TieredAchievement('Break the mold','Have <b>500</b> factories.','Factory',11);
+		order=1425;new Game.TieredAchievement('Get the show on, get paid','Have <b>500</b> banks.','Bank',11);
+		order=1450;new Game.TieredAchievement('My world\'s on fire, how about yours','Have <b>500</b> temples.','Temple',11);
+		order=1475;new Game.TieredAchievement('The meteor men beg to differ','Have <b>500</b> wizard towers.','Wizard tower',11);
+		order=1500;new Game.TieredAchievement('Only shooting stars','Have <b>500</b> shipments.','Shipment',11);
+		order=1600;new Game.TieredAchievement('We could all use a little change','Have <b>500</b> alchemy labs.','Alchemy lab',11);//"all that glitters is gold" was already an achievement
+		order=1700;new Game.TieredAchievement('Your brain gets smart but your head gets dumb','Have <b>500</b> portals.','Portal',11);
+		order=1800;new Game.TieredAchievement('The years start coming','Have <b>500</b> time machines.','Time machine',11);
+		order=1900;new Game.TieredAchievement('What a concept','Have <b>500</b> antimatter condensers.','Antimatter condenser',11);
+		order=2000;new Game.TieredAchievement('You\'ll never shine if you don\'t glow','Have <b>500</b> prisms.','Prism',11);
+		order=2100;new Game.TieredAchievement('You\'ll never know if you don\'t go','Have <b>500</b> chancemakers.','Chancemaker',11);
+		
+		
 		//end of achievements
 		
 		/*=====================================================================================
@@ -9861,7 +9914,7 @@ Game.Launch=function()
 		new Game.buffType('haggler misery',function(time,pow)
 		{
 			return {
-				name:'Haggler\'s misery',
+				name:'砍价的魅力',
 				desc:'All upgrades are '+pow+'% pricier for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[25,11],
 				time:time*Game.fps,
@@ -10531,7 +10584,7 @@ Game.Launch=function()
 				cost:function(){return Game.Objects['Wizard tower'].amount>=100;},
 				buy:function(){Game.Objects['Wizard tower'].sacrifice(100);},
 				costStr:function(){return '100 wizard towers';}},
-			{name:'Krumblor, cookie dragon',action:'Train Dragonflight<br><small>Aura : golden cookies may trigger a Dragonflight</small>',pic:5,
+			{name:'Krumblor, cookie dragon',action:'Train Dragonflight<br><small>Aura : golden cookies may trigger a 龙之飞舞</small>',pic:5,
 				cost:function(){return Game.Objects['Shipment'].amount>=100;},
 				buy:function(){Game.Objects['Shipment'].sacrifice(100);},
 				costStr:function(){return '100 shipments';}},
@@ -10581,7 +10634,7 @@ Game.Launch=function()
 			7:{name:'Fierce Hoarder',pic:[15,25],desc:'All buildings are <b>2%</b> cheaper.'},
 			8:{name:'Dragon God',pic:[16,25],desc:'Prestige CpS bonus <b>+5%</b>.'},
 			9:{name:'Arcane Aura',pic:[17,25],desc:'Golden cookies appear <b>+5%</b> more often.'},
-			10:{name:'Dragonflight',pic:[5,25],desc:'Golden cookies may trigger a <b>Dragonflight</b>.'},
+			10:{name:'Dragonflight',pic:[5,25],desc:'Golden cookies may trigger a <b>龙之飞舞</b>.'},
 			11:{name:'Ancestral Metamorphosis',pic:[6,25],desc:'Golden cookies give <b>10%</b> more cookies.'},
 			12:{name:'Unholy Dominion',pic:[7,25],desc:'Wrath cookies give <b>10%</b> more cookies.'},
 			13:{name:'Epoch Manipulator',pic:[8,25],desc:'Golden cookies last <b>5%</b> longer.'},

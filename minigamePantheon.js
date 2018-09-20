@@ -16,7 +16,7 @@ M.launch=function()
 				desc1:'<span class="green">+15% 基础饼干秒产量。</span>',
 				desc2:'<span class="green">+10% 基础饼干秒产量。</span>',
 				desc3:'<span class="green">+5% 基础饼干秒产量。</span>',
-				descAfter:'<span class="red">如果一个黄金饼干被点击，这个灵魂就会从槽上下来，所有的灵魂交换次数都会被用完。</span>',
+				descAfter:'<span class="red">如果一个黄金饼干被点击，这个灵魂就会从槽上下来，所有的崇拜互换次数都会被用完。</span>',
 				quote:'不朽的一生专注于内在自我，远离物质财富的干扰。',
 			},
 			'decadence':{
@@ -373,7 +373,7 @@ M.launch=function()
 				str+='<div class="ready templeGod templeGod'+(i%4)+' templeSlot titleFont" id="templeSlot'+i+'" '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.slotTooltip('+i+')','this')+'><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(i)+1)+'"></div></div>';
 			}
 			str+='</div>';
-			str+='<div id="templeInfo"><div '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.refillTooltip','this')+' id="templeLumpRefill" class="usesIcon shadowFilter lumpRefill" style="left:-6px;top:-10px;background-position:'+(-29*48)+'px '+(-14*48)+'px;"></div><div id="templeSwaps" '+Game.getTooltip('<div style="padding:8px;width:350px;font-size:11px;text-align:center;">每次你将一个灵魂放至插槽, 你就会使用一个灵魂交换次数。<div class="line"></div>如果你还剩2个次数, 下一个将在1小时后补充。<br>如果你还剩1个次数, 下一个将在4小时后补充。<br>如果你还剩0个次数, 下一个将在16小时后补充。<div class="line"></div>将灵魂移出插槽不消耗次数。</div>')+'>-</div></div>';
+			str+='<div id="templeInfo"><div '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.refillTooltip','this')+' id="templeLumpRefill" class="usesIcon shadowFilter lumpRefill" style="left:-6px;top:-10px;background-position:'+(-29*48)+'px '+(-14*48)+'px;"></div><div id="templeSwaps" '+Game.getTooltip('<div style="padding:8px;width:350px;font-size:11px;text-align:center;">每次你将一个灵魂放至插槽, 你就会使用一个崇拜互换次数。<div class="line"></div>如果你还剩2个次数, 下一个将在1小时后补充。<br>如果你还剩1个次数, 下一个将在4小时后补充。<br>如果你还剩0个次数, 下一个将在16小时后补充。<div class="line"></div>将灵魂移出插槽不消耗次数。</div>')+'>-</div></div>';
 			str+='<div id="templeGods">';
 			for (var i in M.gods)
 			{
@@ -405,8 +405,8 @@ M.launch=function()
 		
 		
 		M.refillTooltip=function(){
-			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击来花费 <span class="price lump">1 糖块</span>充满灵魂交换次数。'+
-				(Game.canRefillLump()?'<br><small>(每 '+Game.sayTime((Game.getLumpRefillMax()/1000)*Game.fps,-1)+'可以做一次)</small>':('<br><small class="red">(usable again in '+Game.sayTime((Game.getLumpRefillRemaining()/1000+1)*Game.fps,-1)+')</small>'))+
+			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击来花费<span class="price lump">1 糖块</span>充满崇拜互换次数。'+
+				(Game.canRefillLump()?'<br><small>(每'+Game.sayTime((Game.getLumpRefillMax()/1000)*Game.fps,-1)+'可以做一次)</small>':('<br><small class="red">(再次使用 '+Game.sayTime((Game.getLumpRefillRemaining()/1000+1)*Game.fps,-1)+')</small>'))+
 			'</div>';
 		};
 		AddEvent(M.lumpRefill,'click',function(){
@@ -496,7 +496,7 @@ M.launch=function()
 		if (M.swaps==0) t=1000*60*60*16;
 		else if (M.swaps==1) t=1000*60*60*4;
 		var t2=M.swapT+t-Date.now();
-		M.swapsL.innerHTML='灵魂交换次数 : <span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>'+((M.swaps<3)?' (下一个在 '+Game.sayTime((t2/1000+1)*Game.fps,-1)+')':'');
+		M.swapsL.innerHTML='崇拜互换次数 : <span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>'+((M.swaps<3)?' (下一个在 '+Game.sayTime((t2/1000+1)*Game.fps,-1)+')':'');
 	}
 	M.init(l('rowSpecial'+M.parent.id));
 }

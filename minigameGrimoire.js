@@ -31,7 +31,7 @@ M.launch=function()
 					val=Math.min(Game.cookies,val);
 					Game.Spend(val);
 					Game.Notify(buff.name,buff.desc,buff.icon,6);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>召唤失败! 失去了 '+Beautify(val)+' 饼干'+(val==1?'':'')+'!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">反效果!<br>召唤失败! 失去了 '+Beautify(val)+' 饼干'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'hand of fate':{
@@ -108,7 +108,7 @@ M.launch=function()
 						changed++;
 					}
 					if (changed==0){Game.Popup('<div style="font-size:80%;">没有Buff来改变!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">反效果!<br>不好!Buff持续时间缩短了。</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>反效果!不好!Buff持续时间缩短了。</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'spontaneous edifice':{
@@ -143,7 +143,7 @@ M.launch=function()
 					{if (Game.Objects[i].amount>0) buildings.push(Game.Objects[i]);}
 					var building=choose(buildings);
 					building.sacrifice(1);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>你的一个 '+building.plural+'<br>在一股烟雾中消失。</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">反效果!<br>你的一个'+building.plural+'<br>在一股烟雾中消失。</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'haggler\'s charm':{
@@ -245,7 +245,7 @@ M.launch=function()
 				{
 					Game.killBuff('魔法无能');
 					var buff=Game.gainBuff('魔法专家',5*60,10);
-					Game.Popup('<div style="font-size:80%;">无能!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">能力减弱了!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -421,8 +421,8 @@ M.launch=function()
 		}
 		
 		M.refillTooltip=function(){
-			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击来填充<b>100 单位</b>的魔法仪，花费<span class="price lump">1 糖块</span>。'+
-				(Game.canRefillLump()?'<br><small>(每'+Game.sayTime((Game.getLumpRefillMax()/1000)*Game.fps,-1)+'可以重填一次)</small>':('<br><small class="red">(在'+Game.sayTime((Game.getLumpRefillRemaining()/1000+1)*Game.fps,-1)+'后可重新使用)</small>'))+
+			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击来填充 <b>100 单位</b> 的魔法仪，花费 <span class="price lump">1 糖块</span>.'+
+				(Game.canRefillLump()?'<br><small>(每 '+Game.sayTime((Game.getLumpRefillMax()/1000)*Game.fps,-1)+'可以重填一次)</small>':('<br><small class="red">(在 '+Game.sayTime((Game.getLumpRefillRemaining()/1000+1)*Game.fps,-1)+'后可重新使用)</small>'))+
 			'</div>';
 		};
 		AddEvent(M.lumpRefill,'click',function(){
