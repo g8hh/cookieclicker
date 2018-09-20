@@ -924,7 +924,7 @@ Game.Launch=function()
 	
 	'</div><div class="subsection update small">'+
 	'<div class="title">02/09/2013 - a better way out</div>'+
-	'<div class="listing">&bull; Elder Covenant is even cheaper, and revoking it is cheaper still (also added a new achievement for getting it)</div>'+
+	'<div class="listing">&bull; 老人契约heaper, and revoking it is cheaper still (also added a new achievement for getting it)</div>'+
 	'<div class="listing">&bull; each grandma upgrade now requires 15 of the matching building</div>'+
 	'<div class="listing">&bull; the dreaded bottom cursor has been fixed with a new cursor display style</div>'+
 	'<div class="listing">&bull; added an option for faster, cheaper graphics</div>'+
@@ -936,7 +936,7 @@ Game.Launch=function()
 	'</div><div class="subsection update small">'+
 	'<div class="title">01/09/2013 - sorting things out</div>'+
 	'<div class="listing">&bull; upgrades and achievements are properly sorted in the stats screen</div>'+
-	'<div class="listing">&bull; made Elder Covenant much cheaper and less harmful</div>'+
+	'<div class="listing">&bull; made 老人契约 much cheaper and less harmful</div>'+
 	'<div class="listing">&bull; importing from the first version has been disabled, as promised</div>'+
 	'<div class="listing">&bull; "同心协力" now actually asks you to confirm the upgrade</div>'+
 	
@@ -2038,8 +2038,8 @@ Game.Launch=function()
 							
 							if (amount>0)
 							{
-								if (Game.prefs.popups) Game.Popup('Earned '+Beautify(amount)+' cookie'+(Math.floor(amount)==1?'':'s')+' while you were away');
-								else Game.Notify('Welcome back!','You earned <b>'+Beautify(amount)+'</b> cookie'+(Math.floor(amount)==1?'':'s')+' while you were away.<br>('+Game.sayTime(timeOfflineOptimal*Game.fps,-1)+' at '+Math.floor(percent)+'% CpS'+(timeOfflineReduced?', plus '+Game.sayTime(timeOfflineReduced*Game.fps,-1)+' at '+(Math.floor(percent*10)/100)+'%':'')+'.)',[Math.floor(Math.random()*16),11]);
+								if (Game.prefs.popups) Game.Popup('获得 '+Beautify(amount)+' 饼干'+(Math.floor(amount)==1?'':'')+' 在你离开的时候。');
+								else Game.Notify('欢迎回来!','你获得了 <b>'+Beautify(amount)+'</b> 饼干'+(Math.floor(amount)==1?'':'')+' 在你离开的时候。<br>('+Game.sayTime(timeOfflineOptimal*Game.fps,-1)+' 相当于 '+Math.floor(percent)+'% 饼干每秒总产量'+(timeOfflineReduced?', 加上 '+Game.sayTime(timeOfflineReduced*Game.fps,-1)+' 相当于 '+(Math.floor(percent*10)/100)+'%':'')+'.)',[Math.floor(Math.random()*16),11]);
 								Game.Earn(amount);
 							}
 						}
@@ -2058,7 +2058,7 @@ Game.Launch=function()
 					}
 					else//importing old version save
 					{
-						Game.Notify('Error importing save','Sorry, you can\'t import saves from the old version anymore.','',6,1);
+						Game.Notify('导入存档错误','对不起，您不能导入旧版本的存档。','',6,1);
 						return false;
 					}
 					
@@ -2090,15 +2090,15 @@ Game.Launch=function()
 					
 					if (Game.season!='' && Game.season==Game.baseSeason)
 					{
-						if (Game.season=='valentines') Game.Notify('Valentine\'s Day!','It\'s <b>Valentine\'s season</b>!<br>Love\'s in the air and cookies are just that much sweeter!',[20,3],60*3);
-						else if (Game.season=='fools') Game.Notify('Business Day!','It\'s <b>Business season</b>!<br>Don\'t panic! Things are gonna be looking a little more corporate for a few days.',[17,6],60*3);
-						else if (Game.season=='halloween') Game.Notify('Halloween!','It\'s <b>Halloween season</b>!<br>Everything is just a little bit spookier!',[13,8],60*3);
-						else if (Game.season=='christmas') Game.Notify('Christmas time!','It\'s <b>Christmas season</b>!<br>Bring good cheer to all and you just may get cookies in your stockings!',[12,10],60*3);
-						else if (Game.season=='easter') Game.Notify('Easter!','It\'s <b>Easter season</b>!<br>Keep an eye out and you just might click a rabbit or two!',[0,12],60*3);
+						if (Game.season=='valentines') Game.Notify('情人节!','这是 <b>情人节季节</b>!<br>爱在空中，饼干更加甜美！',[20,3],60*3);
+						else if (Game.season=='fools') Game.Notify('工作日!','这是 <b>工作季节</b>!<br>别恐慌！ 几天后，事情会变得更加公司化。',[17,6],60*3);
+						else if (Game.season=='halloween') Game.Notify('万圣节!','这是 <b>万圣节季节</b>！<br>一切都有点怪异！',[13,8],60*3);
+						else if (Game.season=='christmas') Game.Notify('圣诞节时刻!','这是 <b>圣诞节季节</b>!<br>为所有人带来愉快的欢呼，你可以在你的长筒袜中获得饼干！',[12,10],60*3);
+						else if (Game.season=='easter') Game.Notify('复活节!','这是<b>复活节的季节</b>！<br>请注意，你可能会点击一两只兔子!',[0,12],60*3);
 					}
 					
-					if (Game.prefs.popups) Game.Popup('Game loaded');
-					else Game.Notify('Game loaded','','',1,1);
+					if (Game.prefs.popups) Game.Popup('游戏加载成功');
+					else Game.Notify('游戏加载成功','','',1,1);
 					
 					if (Game.prefs.showBackupWarning==1) Game.showBackupWarning();
 				}
@@ -2127,13 +2127,13 @@ Game.Launch=function()
 				if (cookiesForfeited>=1000000000000000000000000000) Game.Win('消灭');
 				if (cookiesForfeited>=1000000000000000000000000000000) Game.Win('消极的空白');
 				if (cookiesForfeited>=1000000000000000000000000000000000) Game.Win('你说的是面包屑?');
-				if (cookiesForfeited>=1000000000000000000000000000000000000) Game.Win('You get nothing');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000) Game.Win('Humble rebeginnings');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000) Game.Win('The end of the world');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000000) Game.Win('Oh, you\'re back');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000000000) Game.Win('Lazarus');
+				if (cookiesForfeited>=1000000000000000000000000000000000000) Game.Win('你一无所获');
+				if (cookiesForfeited>=1000000000000000000000000000000000000000) Game.Win('谦虚的重新开始');
+				if (cookiesForfeited>=1000000000000000000000000000000000000000000) Game.Win('世界末日');
+				if (cookiesForfeited>=1000000000000000000000000000000000000000000000) Game.Win('哦，你回来了');
+				if (cookiesForfeited>=1000000000000000000000000000000000000000000000000) Game.Win('拉撒路');
 				
-				if (Math.round(Game.cookies)==1000000000000) Game.Win('When the cookies ascend just right');
+				if (Math.round(Game.cookies)==1000000000000) Game.Win('当饼干提升恰到好处时');
 			}
 			
 			Game.killBuffs();
@@ -2273,11 +2273,11 @@ Game.Launch=function()
 		{
 			if (!bypass)
 			{
-				Game.Prompt('<h3>Wipe save</h3><div class="block">Do you REALLY want to wipe your save?<br><small>You will lose your progress, your achievements, and your heavenly chips!</small></div>',[['Yes!','Game.ClosePrompt();Game.HardReset(1);'],'No']);
+				Game.Prompt('<h3>删除存档</h3><div class="block">你真的想删掉你的所有游戏进度？<br><small>你将失去你的所有游戏进度，你的成就，你的天堂芯片！</small></div>',[['确定!','Game.ClosePrompt();Game.HardReset(1);'],'取消']);
 			}
 			else if (bypass==1)
 			{
-				Game.Prompt('<h3>Wipe save</h3><div class="block">Whoah now, are you really, <b><i>REALLY</i></b> sure you want to go through with this?<br><small>Don\'t say we didn\'t warn you!</small></div>',[['Do it!','Game.ClosePrompt();Game.HardReset(2);'],'No']);
+				Game.Prompt('<h3>删除存档</h3><div class="block">哇，现在，你真的， <b><i>真的</i></b> 确定你想要删除游戏存档？<br><small>不要怪我们没有提醒你！</small></div>',[['确定!','Game.ClosePrompt();Game.HardReset(2);'],'取消']);
 			}
 			else
 			{
@@ -2483,8 +2483,8 @@ Game.Launch=function()
 			if (me.type=='upgrade')
 			{
 				var canBuy=(context=='store'?me.canBuy():true);
-				if (context=='stats' && me.bought==0 && !Game.Has('Neuromancy') && (!Game.sesame || me.pool!='debug')) return '';
-				else if (context=='stats' && (Game.Has('Neuromancy') || (Game.sesame && me.pool=='debug'))) neuromancy=1;
+				if (context=='stats' && me.bought==0 && !Game.Has('神经占卜') && (!Game.sesame || me.pool!='debug')) return '';
+				else if (context=='stats' && (Game.Has('神经占卜') || (Game.sesame && me.pool=='debug'))) neuromancy=1;
 				else if (context=='store' && !canBuy) enabled=0;
 				else if (context=='ascend' && me.bought==0) enabled=0;
 				else enabled=1;
@@ -2527,7 +2527,7 @@ Game.Launch=function()
 			}
 			else if (me.type=='achievement')
 			{
-				if (context=='stats' && (Game.Has('Neuromancy') || (Game.sesame && me.pool=='debug'))) neuromancy=1;
+				if (context=='stats' && (Game.Has('神经占卜') || (Game.sesame && me.pool=='debug'))) neuromancy=1;
 				
 				if (context=='stats' && me.won==0 && me.pool!='normal') return '';
 				else if (context!='stats') enabled=1;
@@ -3081,7 +3081,7 @@ Game.Launch=function()
 				var me=Game.PrestigeUpgrades[i];
 				
 				var ghosted=0;
-				if (me.canBePurchased || Game.Has('Neuromancy'))
+				if (me.canBePurchased || Game.Has('神经占卜'))
 				{
 					str+=Game.crate(me,'ascend','Game.PurchaseHeavenlyUpgrade('+me.id+');','heavenlyUpgrade'+me.id);
 				}
@@ -3098,7 +3098,7 @@ Game.Launch=function()
 						str+='<div class="crate upgrade heavenly ghosted" id="heavenlyUpgrade'+me.id+'" style="position:absolute;left:'+me.posX+'px;top:'+me.posY+'px;'+(me.icon[2]?'background-image:url('+me.icon[2]+');':'')+'background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>';
 					}
 				}
-				if (me.canBePurchased || Game.Has('Neuromancy') || ghosted)
+				if (me.canBePurchased || Game.Has('神经占卜') || ghosted)
 				{
 					if (me.posX<Game.heavenlyBounds.left) Game.heavenlyBounds.left=me.posX;
 					if (me.posX>Game.heavenlyBounds.right) Game.heavenlyBounds.right=me.posX;
@@ -3826,14 +3826,14 @@ Game.Launch=function()
 			Game.cpsSucked=sucking*suckRate;
 			
 			
-			if (Game.Has('Elder Covenant')) mult*=0.95;
+			if (Game.Has('老人契约')) mult*=0.95;
 			
 			if (Game.Has('Golden switch [off]'))
 			{
 				var goldenSwitchMult=1.5;
 				if (Game.Has('残余运气'))
 				{
-					var upgrades=['Get lucky','幸运日','意外的惊喜','Heavenly luck','Lasting fortune','决定性的命运','Lucky digit','Lucky number','Lucky payout'];
+					var upgrades=['走运','幸运日','意外的惊喜','Heavenly luck','Lasting fortune','决定性的命运','Lucky digit','Lucky number','Lucky payout'];
 					for (var i in upgrades) {if (Game.Has(upgrades[i])) goldenSwitchMult+=0.1;}
 				}
 				mult*=goldenSwitchMult;
@@ -4085,7 +4085,7 @@ Game.Launch=function()
 						
 						if (Game.goldenClicks>=7) Game.Unlock('幸运日');
 						if (Game.goldenClicks>=27) Game.Unlock('意外的惊喜');
-						if (Game.goldenClicks>=77) Game.Unlock('Get lucky');
+						if (Game.goldenClicks>=77) Game.Unlock('走运');
 						
 						if ((me.life/Game.fps)>(me.dur-1)) Game.Win('早起的鸟儿');
 						if (me.life<Game.fps) Game.Win('逝去的运气');
@@ -4130,7 +4130,7 @@ Game.Launch=function()
 					//create buff for effect
 					//buff duration multiplier
 					var effectDurMod=1;
-					if (Game.Has('Get lucky')) effectDurMod*=2;
+					if (Game.Has('走运')) effectDurMod*=2;
 					if (Game.Has('Lasting fortune')) effectDurMod*=1.1;
 					if (Game.Has('Lucky digit')) effectDurMod*=1.01;
 					if (Game.Has('Lucky number')) effectDurMod*=1.01;
@@ -7694,11 +7694,11 @@ Game.Launch=function()
 			Game.elderWrath=0;
 			Game.pledges++;
 			Game.pledgeT=Game.getPledgeDuration();
-			Game.Unlock('Elder Covenant');
+			Game.Unlock('老人契约');
 			Game.CollectWrinklers();
 			Game.storeToRefresh=1;
 		});
-		Game.getPledgeDuration=function(){return Game.fps*60*(Game.Has('Sacrificial rolling pins')?60:30);}
+		Game.getPledgeDuration=function(){return Game.fps*60*(Game.Has('牺牲擀面杖')?60:30);}
 		Game.last.pool='toggle';
 		Game.last.displayFuncWhenOwned=function(){return '<div style="text-align:center;">直到承诺用完剩下的时间 :<br><b>'+Game.sayTime(Game.pledgeT,-1)+'</b></div>';}
 		Game.last.timerDisplay=function(){if (!Game.Upgrades['老人的承诺'].bought) return -1; else return 1-Game.pledgeT/Game.getPledgeDuration();}
@@ -7726,11 +7726,11 @@ Game.Launch=function()
 		Game.last.pool='debug';
 		
 		order=15000;
-		new Game.Upgrade('Elder Covenant','Puts a permanent end to the elders\' wrath, at the price of 5% 饼干秒生产量.<q>This is a complicated ritual involving silly, inconsequential trivialities such as cursed laxatives, century-old cacao, and an infant.<br>Don\'t question it.</q>',66666666666666,[8,9],function()
+		new Game.Upgrade('老人契约','Puts a permanent end to the elders\' wrath, at the price of 5% 饼干秒生产量.<q>This is a complicated ritual involving silly, inconsequential trivialities such as cursed laxatives, century-old cacao, and an infant.<br>Don\'t question it.</q>',66666666666666,[8,9],function()
 		{
 			Game.pledgeT=0;
-			Game.Lock('Revoke Elder Covenant');
-			Game.Unlock('Revoke Elder Covenant');
+			Game.Lock('撤销老人契约');
+			Game.Unlock('撤销老人契约');
 			Game.Lock('老人的承诺');
 			Game.Win('平静的老人');
 			Game.CollectWrinklers();
@@ -7738,26 +7738,26 @@ Game.Launch=function()
 		});
 		Game.last.pool='toggle';
 
-		new Game.Upgrade('Revoke Elder Covenant','你会得到 5% 饼干秒生产量, 但是老奶奶们会回来的。<q>我们<br>再次<br>出现</q>',6666666666,[8,9],function()
+		new Game.Upgrade('撤销老人契约','你会得到 5% 饼干秒生产量, 但是老奶奶们会回来的。<q>我们<br>再次<br>出现</q>',6666666666,[8,9],function()
 		{
-			Game.Lock('Elder Covenant');
-			Game.Unlock('Elder Covenant');
+			Game.Lock('老人契约');
+			Game.Unlock('老人契约');
 		});
 		Game.last.pool='toggle';
 		
 		order=5000;
-		new Game.Upgrade('Get lucky','黄金饼干效果持续像 <b>两次那么久</b>.<q>You\'ve been up all night, haven\'t you?</q>',77777777777777,[27,6]);
+		new Game.Upgrade('走运','黄金饼干效果至少持续 <b>两倍的时间</b>。<q>你整晚都没睡，是吧?</q>',77777777777777,[27,6]);
 		
 		order=15000;
-		new Game.Upgrade('Sacrificial rolling pins','老人的承诺s last <b>翻倍</b> as long.<q>These are mostly just for spreading the anti-aging cream.<br>(And accessorily, shortening the chicken\'s suffering.)</q>',2888888888888,[2,9]);
+		new Game.Upgrade('牺牲擀面杖','长者承诺至少持续 <b>翻倍</b> 的时间。<q>这些主要是为了推广抗衰老面霜。<br>(而且还可以缩短鸡的痛苦。)</q>',2888888888888,[2,9]);
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Snickerdoodles',desc:'True to their name.',icon:[2,4],power:												2,	price:	999999999999*5});
-		Game.NewUpgradeCookie({name:'Stroopwafels',desc:'If it ain\'t dutch, it ain\'t much.',icon:[3,4],power:									2,	price:	9999999999999});
-		Game.NewUpgradeCookie({name:'Macaroons',desc:'Not to be confused with macarons.<br>These have coconut, okay?',icon:[4,4],power:			2,	price:	9999999999999*5});
+		Game.NewUpgradeCookie({name:'肉桂奶油饼干',desc:'确实是他们的名字。',icon:[2,4],power:												2,	price:	999999999999*5});
+		Game.NewUpgradeCookie({name:'荷式松饼干',desc:'如果不是荷兰人，那就太不重要了。',icon:[3,4],power:									2,	price:	9999999999999});
+		Game.NewUpgradeCookie({name:'蛋白杏仁饼干',desc:'不要和马卡龙混淆。<br>这些有椰子，好吗?',icon:[4,4],power:			2,	price:	9999999999999*5});
 		
 		order=40000;
-		new Game.Upgrade('Neuromancy','Can toggle upgrades on and off at will in the stats menu.<q>Can also come in handy to unsee things that can\'t be unseen.</q>',7,[4,9]);//debug purposes only
+		new Game.Upgrade('神经占卜','可以在统计菜单中随意开启和关闭升级。<q>也可以派人去看那些看不到的东西。</q>',7,[4,9]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10030;
@@ -9587,11 +9587,11 @@ Game.Launch=function()
 		new Game.Achievement('Seedless to nay','Convert a complete seed log into sugar lumps by sacrificing your garden to the sugar hornets.<div class="line"></div>Owning this achievement makes seeds <b>5% cheaper</b>, plants mature <b>5% sooner</b>, and plant upgrades drop <b>5% more</b>.',[29,20]);
 		
 		order=30050;
-		new Game.Achievement('You get nothing','Ascend with <b>1 undecillion</b> cookies baked.<q>Good day sir!</q>',[29,6]);
-		new Game.Achievement('Humble rebeginnings','Ascend with <b>1 duodecillion</b> cookies baked.<q>Started from the bottom, now we\'re here.</q>',[29,6]);
-		new Game.Achievement('The end of the world','Ascend with <b>1 tredecillion</b> cookies baked.<q>(as we know it)</q>',[21,25]);
-		new Game.Achievement('Oh, you\'re back','Ascend with <b>1 quattuordecillion</b> cookies baked.<q>Missed us?</q>',[21,25]);
-		new Game.Achievement('Lazarus','Ascend with <b>1 quindecillion</b> cookies baked.<q>Try, try again.</q>',[21,25]);
+		new Game.Achievement('你一无所获','Ascend with <b>1 undecillion</b> cookies baked.<q>Good day sir!</q>',[29,6]);
+		new Game.Achievement('谦虚的重新开始','Ascend with <b>1 duodecillion</b> cookies baked.<q>Started from the bottom, now we\'re here.</q>',[29,6]);
+		new Game.Achievement('世界末日','Ascend with <b>1 tredecillion</b> cookies baked.<q>(as we know it)</q>',[21,25]);
+		new Game.Achievement('哦，你回来了','Ascend with <b>1 quattuordecillion</b> cookies baked.<q>Missed us?</q>',[21,25]);
+		new Game.Achievement('拉撒路','Ascend with <b>1 quindecillion</b> cookies baked.<q>Try, try again.</q>',[21,25]);
 		
 		Game.CpsAchievement('Leisurely pace');
 		Game.CpsAchievement('Hypersonic');
@@ -9611,7 +9611,7 @@ Game.Launch=function()
 		new Game.Achievement('Maillard reaction','Harvest a <b>caramelized sugar lump</b>.',[29,27]);
 		
 		order=30250;
-		new Game.Achievement('When the cookies ascend just right','Ascend with exactly <b>1,000,000,000,000 cookies</b>.',[25,7]);Game.last.pool='shadow';//this achievement is shadow because it is only achievable through blind luck or reading external guides; this may change in the future
+		new Game.Achievement('当饼干提升恰到好处时','Ascend with exactly <b>1,000,000,000,000 cookies</b>.',[25,7]);Game.last.pool='shadow';//this achievement is shadow because it is only achievable through blind luck or reading external guides; this may change in the future
 		
 		
 		order=1050;
@@ -10009,7 +10009,7 @@ Game.Launch=function()
 		=======================================================================================*/
 		Game.UpdateGrandmapocalypse=function()
 		{
-			if (Game.Has('Elder Covenant') || Game.Objects['Grandma'].amount==0) Game.elderWrath=0;
+			if (Game.Has('老人契约') || Game.Objects['Grandma'].amount==0) Game.elderWrath=0;
 			else if (Game.pledgeT>0)//if the pledge is active, lower it
 			{
 				Game.pledgeT--;
@@ -10952,7 +10952,7 @@ Game.Launch=function()
 					{
 						var me=Game.PrestigeUpgrades[i];
 						var ghosted=0;
-						if (me.canBePurchased || Game.Has('Neuromancy')){}
+						if (me.canBePurchased || Game.Has('神经占卜')){}
 						else
 						{
 							for (var ii in me.parents){if (me.parents[ii]!=-1 && me.parents[ii].canBePurchased) ghosted=1;}
@@ -12094,7 +12094,7 @@ Game.Launch=function()
 				if (Game.Objects['Grandma'].amount>=6 && !Game.Has('宾果游戏中心/研究设施') && Game.HasAchiev('老年人')) Game.Unlock('宾果游戏中心/研究设施');
 				if (Game.pledges>0) Game.Win('老年小睡');
 				if (Game.pledges>=5) Game.Win('老年沉睡');
-				if (Game.pledges>=10) Game.Unlock('Sacrificial rolling pins');
+				if (Game.pledges>=10) Game.Unlock('牺牲擀面杖');
 				if (Game.Objects['Cursor'].amount+Game.Objects['Grandma'].amount>=777) Game.Win('上古卷轴');
 				
 				var base=10000000000000;
