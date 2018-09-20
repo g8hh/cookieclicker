@@ -4525,7 +4525,7 @@ Game.Launch=function()
 			"饼干风暴","cookie storm",
 			"Building special","building special",
 			"Dragon Harvest","dragon harvest",
-			"Dragonflight","dragonflight",
+			"龙之飞舞","dragonflight",
 			"Sweet","free sugar lump",
 			"Blab","blab"
 		];
@@ -10635,7 +10635,7 @@ Game.Launch=function()
 			7:{name:'Fierce Hoarder',pic:[15,25],desc:'All buildings are <b>2%</b> cheaper.'},
 			8:{name:'Dragon God',pic:[16,25],desc:'Prestige CpS bonus <b>+5%</b>.'},
 			9:{name:'Arcane Aura',pic:[17,25],desc:'Golden cookies appear <b>+5%</b> more often.'},
-			10:{name:'Dragonflight',pic:[5,25],desc:'Golden cookies may trigger a <b>龙之飞舞</b>.'},
+			10:{name:'龙之飞舞',pic:[5,25],desc:'Golden cookies may trigger a <b>龙之飞舞</b>.'},
 			11:{name:'Ancestral Metamorphosis',pic:[6,25],desc:'Golden cookies give <b>10%</b> more cookies.'},
 			12:{name:'Unholy Dominion',pic:[7,25],desc:'Wrath cookies give <b>10%</b> more cookies.'},
 			13:{name:'Epoch Manipulator',pic:[8,25],desc:'Golden cookies last <b>5%</b> longer.'},
