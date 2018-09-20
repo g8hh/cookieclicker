@@ -7633,8 +7633,8 @@ Game.Launch=function()
 		new Game.Upgrade('小猫工程师','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>喵喵喵，先生</q>',90000000000000,Game.GetIcon('Kitten',3));Game.last.kitten=1;Game.MakeTiered(Game.last,3,18);
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Dark chocolate-coated cookies',desc:'These absorb light so well you almost need to squint to see them.',icon:[10,3],power:			4,	price:	99999999999});
-		Game.NewUpgradeCookie({name:'White chocolate-coated cookies',desc:'These dazzling cookies absolutely glisten with flavor.',icon:[11,3],power:					4,	price:	99999999999});
+		Game.NewUpgradeCookie({name:'黑巧克力饼干',desc:'这些光吸收的光线如此之好，你几乎需要眯着眼才能看到它们。',icon:[10,3],power:			4,	price:	99999999999});
+		Game.NewUpgradeCookie({name:'白巧克力饼干',desc:'这些令人眼花缭乱的饼干绝对是有味道的。',icon:[11,3],power:					4,	price:	99999999999});
 		
 		
 		Game.getGrandmaSynergyUpgradeMultiplier=function(building)
@@ -7761,28 +7761,28 @@ Game.Launch=function()
 		Game.last.pool='debug';
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Empire biscuits',desc:'For your growing cookie empire, of course!',icon:[5,4],power:											2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'British tea biscuits',desc:'Quite.',icon:[6,4],require:'Tin of british tea biscuits',power:									2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Chocolate british tea biscuits',desc:'Yes, quite.',icon:[7,4],require:Game.last.name,power:									2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round british tea biscuits',desc:'Yes, quite riveting.',icon:[8,4],require:Game.last.name,power:								2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round chocolate british tea biscuits',desc:'Yes, quite riveting indeed.',icon:[9,4],require:Game.last.name,power:				2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round british tea biscuits with heart motif',desc:'Yes, quite riveting, old chap.',icon:[10,4],require:Game.last.name,power:	2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round chocolate british tea biscuits with heart motif',desc:'I like cookies.',icon:[11,4],require:Game.last.name,power:		2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'帝国饼干',desc:'当然，对你不断增长的饼干帝国来说！',icon:[5,4],power:											2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'英国茶饼干',desc:'确实。',icon:[6,4],require:'一罐英国茶饼干',power:									2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'英国茶巧克力饼干',desc:'是的，没错。',icon:[7,4],require:Game.last.name,power:									2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'圆形英国茶饼干',desc:'是的，很吸引人。',icon:[8,4],require:Game.last.name,power:								2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'圆巧克力英国茶饼干',desc:'是的，的确很吸引人。',icon:[9,4],require:Game.last.name,power:				2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'有心形图案的圆形英国茶饼干',desc:'是的，很吸引人，老伙计。',icon:[10,4],require:Game.last.name,power:	2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'有心形图案的圆巧克力英国茶饼干',desc:'我喜欢饼干。',icon:[11,4],require:Game.last.name,power:		2,	price:	99999999999999});
 		
 		order=1000;
-		new Game.TieredUpgrade('Sugar bosons','Antimatter condensers are <b>翻倍</b>。<q>Sweet firm bosons.</q>','Antimatter condenser',1);
-		new Game.TieredUpgrade('String theory','Antimatter condensers are <b>翻倍</b>。<q>Reveals new insight about the true meaning of baking cookies (and, as a bonus, the structure of the universe).</q>','Antimatter condenser',2);
-		new Game.TieredUpgrade('Large macaron collider','Antimatter condensers are <b>翻倍</b>。<q>How singular!</q>','Antimatter condenser',3);
-		new Game.TieredUpgrade('Big bang bake','Antimatter condensers are <b>翻倍</b>。<q>And that\'s how it all began.</q>','Antimatter condenser',4);
+		new Game.TieredUpgrade('糖玻色子','反物质冷凝器工作效率 <b>翻倍</b>。<q>可爱的公司玻色子。','Antimatter condenser',1);
+		new Game.TieredUpgrade('弦理论','反物质冷凝器工作效率 <b>翻倍</b>。<q>揭示烘烤饼干的真正意义(还有，作为奖励，宇宙的结构)。</q>','Antimatter condenser',2);
+		new Game.TieredUpgrade('大马卡龙对撞机','反物质冷凝器工作效率 <b>翻倍</b>。<q>多么奇异!</q>','Antimatter condenser',3);
+		new Game.TieredUpgrade('大爆炸烘烤','反物质冷凝器工作效率 <b>翻倍</b>。<q>这就是一切的开始。</q>','Antimatter condenser',4);
 
 		order=255;
 		new Game.Upgrade('反物质奶奶',Game.getGrandmaSynergyUpgradeDesc('Antimatter condenser')+'<q>一个吝啬的反物质奶奶吐出更多饼干<br>(不要将其与正常奶奶接触；否则可能会发生物质损失。)</q>',Game.Objects['Antimatter condenser'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 
 		order=10020;
-		Game.NewUpgradeCookie({name:'Madeleines',desc:'Unforgettable!',icon:[12,3],power:																2,	price:	99999999999999*5});
-		Game.NewUpgradeCookie({name:'Palmiers',desc:'Palmier than you!',icon:[13,3],power:																2,	price:	99999999999999*5});
-		Game.NewUpgradeCookie({name:'Palets',desc:'You could probably play hockey with these.<br>I mean, you\'re welcome to try.',icon:[12,4],power:	2,	price:	999999999999999});
-		Game.NewUpgradeCookie({name:'Sabl&eacute;s',desc:'The name implies they\'re made of sand. But you know better, don\'t you?',icon:[13,4],power:	2,	price:	999999999999999});
+		Game.NewUpgradeCookie({name:'玛德琳蛋糕',desc:'难忘的!',icon:[12,3],power:																2,	price:	99999999999999*5});
+		Game.NewUpgradeCookie({name:'蝴蝶酥',desc:'比你还好!',icon:[13,3],power:																2,	price:	99999999999999*5});
+		Game.NewUpgradeCookie({name:'调色板',desc:'你可以用这些来打曲棍球。我的意思是，你可以试一试。',icon:[12,4],power:	2,	price:	999999999999999});
+		Game.NewUpgradeCookie({name:'沙琪玛饼干',desc:'这个名字暗示着它们是由沙子构成的。但你知道得更好，不是吗?',icon:[13,4],power:	2,	price:	999999999999999});
 		
 		order=20000;
 		new Game.Upgrade('小猫监工','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>我的目的是为您服务，先生</q>',90000000000000000,Game.GetIcon('Kitten',4));Game.last.kitten=1;Game.MakeTiered(Game.last,4,18);
@@ -8080,7 +8080,7 @@ Game.Launch=function()
 		
 		
 		order=0;
-		new Game.Upgrade('Tin of british tea biscuits','Contains an assortment of fancy biscuits.<q>Every time is tea time.</q>',25,[21,8]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
+		new Game.Upgrade('一罐英国茶饼干','Contains an assortment of fancy biscuits.<q>Every time is tea time.</q>',25,[21,8]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
 		new Game.Upgrade('Box of macarons','Contains an assortment of macarons.<q>Multicolored delicacies filled with various kinds of jam.<br>Not to be confused with macaroons, macaroni, macarena or any of that nonsense.</q>',25,[20,8]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
 		new Game.Upgrade('Box of brand biscuits','Contains an assortment of popular biscuits.<q>They\'re brand new!</q>',25,[20,9]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
 	
@@ -8182,7 +8182,7 @@ Game.Launch=function()
 		new Game.Upgrade('Divine sales','Upgrades are <b>1% cheaper</b>.<q>Everything must go!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
 		new Game.Upgrade('Divine bakeries','Cookie upgrades are <b>5 times cheaper</b>.<q>They sure know what they\'re doing.</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['Divine sales','Divine discount'];
 		
-		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['Tin of british tea biscuits','Box of macarons','Box of brand biscuits','Tin of butter cookies'];
+		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','Box of macarons','Box of brand biscuits','Tin of butter cookies'];
 		new Game.Upgrade('启动厨房','You start with <b>5 grandmas</b>.<q>Where did these come from?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['Starter kit'];
 		new Game.Upgrade('光环手套','Clicks are <b>10% more powerful</b>.<q>Smite that cookie.</q>',55555,[22,7]);Game.last.pool='prestige';Game.last.parents=['Starter kit'];
 
