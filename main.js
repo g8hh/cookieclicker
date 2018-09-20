@@ -3453,7 +3453,7 @@ Game.Launch=function()
 			
 			for (var i in Game.customMouseCps) {mult+=Game.customMouseCps[i]();}
 			
-			if (Game.Has('Santa\'s helpers')) mult*=1.1;
+			if (Game.Has('圣诞老人的帮手')) mult*=1.1;
 			if (Game.Has('Cookie egg')) mult*=1.1;
 			if (Game.Has('光环手套')) mult*=1.1;
 			
@@ -3675,10 +3675,10 @@ Game.Launch=function()
 			if (Game.Has('Exotic nuts')) mult*=1.04;
 			if (Game.Has('Arcane sugar')) mult*=1.05;
 			
-			if (Game.Has('Increased merriness')) mult*=1.15;
-			if (Game.Has('Improved jolliness')) mult*=1.15;
-			if (Game.Has('A lump of coal')) mult*=1.01;
-			if (Game.Has('An itchy sweater')) mult*=1.01;
+			if (Game.Has('增加愉快')) mult*=1.15;
+			if (Game.Has('改良愉快')) mult*=1.15;
+			if (Game.Has('一堆煤')) mult*=1.01;
+			if (Game.Has('发痒的毛衣')) mult*=1.01;
 			if (Game.Has('圣诞老人的统治')) mult*=1.2;
 			
 			var buildMult=1;
@@ -3861,7 +3861,7 @@ Game.Launch=function()
 			if (Game.Has('Green yeast digestives')) rate*=1.03;
 			rate*=Game.eff('itemDrops');
 			if (Game.hasAura('Mind Over Matter')) rate*=1.25;
-			if (Game.Has('Santa\'s bottomless bag')) rate*=1.1;
+			if (Game.Has('圣诞老人的无底包')) rate*=1.1;
 			return rate;
 		}
 		/*=====================================================================================
@@ -4406,7 +4406,7 @@ Game.Launch=function()
 					me.dur=4;//duration; the cookie's lifespan in seconds before it despawns
 					
 					var dur=4;
-					if (Game.Has('Weighted sleighs')) dur*=2;
+					if (Game.Has('加重雪橇')) dur*=2;
 					dur*=Game.eff('reindeerDur');
 					me.dur=dur;
 					me.life=Math.ceil(Game.fps*me.dur);
@@ -4432,7 +4432,7 @@ Game.Launch=function()
 					if (Game.hasBuff('Elder frenzy')) val*=0.5;//very sorry
 					if (Game.hasBuff('Frenzy')) val*=0.75;//I sincerely apologize
 					var moni=Math.max(25,val);//1 minute of cookie production, or 25 cookies - whichever is highest
-					if (Game.Has('Ho ho ho-flavored frosting')) moni*=2;
+					if (Game.Has('何蚝味糖霜')) moni*=2;
 					moni*=Game.eff('reindeerGain');
 					Game.Earn(moni);
 					if (Game.hasBuff('Elder frenzy')) Game.Win('麋鹿');
@@ -4486,7 +4486,7 @@ Game.Launch=function()
 				maxTime:0,
 				getTimeMod:function(me,m)
 				{
-					if (Game.Has('Reindeer baking grounds')) m/=2;
+					if (Game.Has('驯鹿烘烤场')) m/=2;
 					if (Game.Has('Starsnow')) m*=0.95;
 					if (Game.hasGod)
 					{
@@ -6563,7 +6563,7 @@ Game.Launch=function()
 		
 		Game.modifyBuildingPrice=function(building,price)
 		{
-			if (Game.Has('Season savings')) price*=0.99;
+			if (Game.Has('季节储蓄')) price*=0.99;
 			if (Game.Has('圣诞老人的统治')) price*=0.99;
 			if (Game.Has('Faberge egg')) price*=0.99;
 			if (Game.Has('Divine discount')) price*=0.99;
@@ -6804,7 +6804,7 @@ Game.Launch=function()
 			if (Game.Has('幸运老奶奶')) mult*=2;
 			if (Game.Has('Bingo center/Research facility')) mult*=4;
 			if (Game.Has('Ritual rolling pins')) mult*=2;
-			if (Game.Has('Naughty list')) mult*=2;
+			if (Game.Has('淘气名单')) mult*=2;
 			
 			if (Game.Has('Elderwort biscuits')) mult*=1.02;
 			
@@ -7100,7 +7100,7 @@ Game.Launch=function()
 			if (this.priceFunc) price=this.priceFunc();
 			if (this.pool!='prestige')
 			{
-				if (Game.Has('Toy workshop')) price*=0.95;
+				if (Game.Has('玩具车间')) price*=0.95;
 				if (Game.Has('五指折扣')) price*=Math.pow(0.99,Game.Objects['Cursor'].amount/100);
 				if (Game.Has('圣诞老人的统治')) price*=0.98;
 				if (Game.Has('Faberge egg')) price*=0.99;
@@ -7865,18 +7865,18 @@ Game.Launch=function()
 			else Game.Notify('在节日的礼帽里，你会发现……','一个节日测试管<br>和 <b>'+drop+'</b>.',Game.Upgrades[drop].icon);
 		});
 		
-		new Game.Upgrade('Increased merriness','Cookie production multiplier <b>+15%</b>.<br>Cost scales with Santa level.<q>It turns out that the key to increased merriness, strangely enough, happens to be a good campfire and some s\'mores.<br>You know what they say, after all; the s\'more, the merrier.</q>',2525,[17,9]);
-		new Game.Upgrade('Improved jolliness','Cookie production multiplier <b>+15%</b>.<br>Cost scales with Santa level.<q>A nice wobbly belly goes a long way.<br>You jolly?</q>',2525,[17,9]);
-		new Game.Upgrade('A lump of coal','Cookie production multiplier <b>+1%</b>.<br>Cost scales with Santa level.<q>Some of the world\'s worst stocking stuffing.<br>I guess you could try starting your own little industrial revolution, or something?...</q>',2525,[13,9]);
-		new Game.Upgrade('An itchy sweater','Cookie production multiplier <b>+1%</b>.<br>Cost scales with Santa level.<q>You don\'t know what\'s worse : the embarrassingly quaint "elf on reindeer" motif, or the fact that wearing it makes you feel like you\'re wrapped in a dead sasquatch.</q>',2525,[14,9]);
-		new Game.Upgrade('Reindeer baking grounds','Reindeer appear <b>twice as frequently</b>.<br>Cost scales with Santa level.<q>Male reindeer are from Mars; female reindeer are from venison.</q>',2525,[12,9]);
-		new Game.Upgrade('Weighted sleighs','Reindeer are <b>twice as slow</b>.<br>Cost scales with Santa level.<q>Hope it was worth the weight.<br>(Something something forced into cervidude)</q>',2525,[12,9]);
-		new Game.Upgrade('Ho ho ho-flavored frosting','Reindeer give <b>twice as much</b>.<br>Cost scales with Santa level.<q>It\'s time to up the antler.</q>',2525,[12,9]);
-		new Game.Upgrade('Season savings','All buildings are <b>1% cheaper</b>.<br>Cost scales with Santa level.<q>By Santa\'s beard, what savings!<br>But who will save us?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
-		new Game.Upgrade('Toy workshop','All upgrades are <b>5% cheaper</b>.<br>Cost scales with Santa level.<q>Watch yours-elf around elvesdroppers who might steal our production secrets.<br>Or elven worse!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
-		new Game.Upgrade('Naughty list','老奶奶工作效率 <b>翻倍</b> as productive.<br>Cost scales with Santa level.<q>This list contains every unholy deed perpetuated by grandmakind.<br>He won\'t be checking this one twice.<br>Once. Once is enough.</q>',2525,[15,9]);
-		new Game.Upgrade('Santa\'s bottomless bag','Random drops are <b>10% more common</b>.<br>Cost scales with Santa level.<q>This is one bottom you can\'t check out.</q>',2525,[19,9]);
-		new Game.Upgrade('Santa\'s helpers','Clicking is <b>10% more powerful</b>.<br>Cost scales with Santa level.<q>Some choose to help hamburger; some choose to help you.<br>To each their own, I guess.</q>',2525,[19,9]);
+		new Game.Upgrade('增加愉快','饼干生产增加 <b>+15%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>结果证明这是增加愉快, 奇怪的是,恰好是一个不错的篝火和一些年代习俗。<br>你知道他们说什么，毕竟;越多越好，越多越好。</q>',2525,[17,9]);
+		new Game.Upgrade('改良愉快','饼干生产增加 <b>+15%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一个摇摇欲坠的小肚子会有很长的路要走。<br>你快乐吗?</q>',2525,[17,9]);
+		new Game.Upgrade('一堆煤','饼干生产增加 <b>+1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一些世界上最糟糕的袜子填充物。<br/>我猜你可以尝试开创自己的小工业革命，还是别的什么?...</q>',2525,[13,9]);
+		new Game.Upgrade('发痒的毛衣','饼干生产增加 <b>+1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>你不知道更糟糕的是什么:那个令人尴尬的古怪的“驯鹿”图案，或者穿着它会让你感觉像被一个死去的大脚野人裹住一样。</q>',2525,[14,9]);
+		new Game.Upgrade('驯鹿烘烤场','驯鹿出现频率 <b>两倍频繁</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>雄性驯鹿来自火星;雌性驯鹿是鹿肉。</q>',2525,[12,9]);
+		new Game.Upgrade('加重雪橇','驯鹿离开速度 <b>放慢2倍</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>希望它物有所值。<br>(某物被迫成为某物)</q>',2525,[12,9]);
+		new Game.Upgrade('何蚝味糖霜','点击驯鹿的奖励 <b>翻倍</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是我该起床的时候了。</q>',2525,[12,9]);
+		new Game.Upgrade('季节储蓄','所有建筑都便宜 <b>1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>圣诞老人的胡子，什么储蓄!<br/>谁会来救我们?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
+		new Game.Upgrade('玩具车间','所有升级都便宜 <b>5% </b>.<br>以圣诞老人等级为标准的成本衡量表。<q>看着你身边的精灵，他们可能会偷走我们的生产秘密。<br>或者更糟!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
+		new Game.Upgrade('淘气名单','老奶奶工作效率 <b>翻倍</b> .<br>以圣诞老人等级为标准的成本衡量表。<q>这个名单包含了每一个由格兰德克德人延续的不神圣的行为。<br>他赢不了两次了。<br>一次。一次就足够了。</q>',2525,[15,9]);
+		new Game.Upgrade('圣诞老人的无底包','随机掉落 <b>10% 更常见的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是你不能检查的一个底部。</q>',2525,[19,9]);
+		new Game.Upgrade('圣诞老人的帮手','点击加成 <b>10% 更强大的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一些人选择帮助汉堡包;有些人选择帮助你。<br>我想，每个人都有自己的想法。</q>,2525,[19,9]);
 		new Game.Upgrade('圣诞老人的遗产','饼干生产增加 <b>+3% 每圣诞老人等级</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>在北极，你得先找到精灵。当你得到精灵，你就开始制造玩具。然后当你拿到玩具的时候…然后你得到饼干。</q>',2525,[19,9]);
 		new Game.Upgrade('圣诞老人的牛奶和饼干','牛奶能力加 <b>5%</b>。<br>以圣诞老人等级为标准的成本衡量表。<q>这是圣诞老人可怕的不平衡饮食的一部分。</q>',2525,[19,9]);
 		
@@ -10491,7 +10491,7 @@ Game.Launch=function()
 		}
 		
 		Game.santaLevels=['Festive test tube','Festive ornament','Festive wreath','Festive tree','Festive present','Festive elf fetus','Elf toddler','Elfling','Young elf','Bulky elf','Nick','Santa Claus','Elder Santa','True Santa','Final Claus'];
-		Game.santaDrops=['Increased merriness','Improved jolliness','A lump of coal','An itchy sweater','Reindeer baking grounds','Weighted sleighs','Ho ho ho-flavored frosting','Season savings','Toy workshop','Naughty list','Santa\'s bottomless bag','Santa\'s helpers','圣诞老人的遗产','圣诞老人的牛奶和饼干'];
+		Game.santaDrops=['增加愉快','改良愉快','一堆煤','发痒的毛衣','驯鹿烘烤场','加重雪橇','何蚝味糖霜','季节储蓄','玩具车间','淘气名单','圣诞老人的无底包','圣诞老人的帮手','圣诞老人的遗产','圣诞老人的牛奶和饼干'];
 		for (var i in Game.santaDrops)//scale christmas upgrade prices with santa level
 		{Game.Upgrades[Game.santaDrops[i]].priceFunc=function(){return Math.pow(3,Game.santaLevel)*2525;}}
 		
