@@ -938,14 +938,14 @@ Game.Launch=function()
 	'<div class="listing">&bull; upgrades and achievements are properly sorted in the stats screen</div>'+
 	'<div class="listing">&bull; made Elder Covenant much cheaper and less harmful</div>'+
 	'<div class="listing">&bull; importing from the first version has been disabled, as promised</div>'+
-	'<div class="listing">&bull; "One mind" now actually asks you to confirm the upgrade</div>'+
+	'<div class="listing">&bull; "同心协力" now actually asks you to confirm the upgrade</div>'+
 	
 	'</div><div class="subsection update small">'+
 	'<div class="title">31/08/2013 - hotfixes</div>'+
 	'<div class="listing">&bull; added a way to permanently stop the grandmapocalypse</div>'+
-	'<div class="listing">&bull; Elder Pledge price is now capped</div>'+
-	'<div class="listing">&bull; One Mind and other grandma research upgrades are now a little more powerful, if not 100% accurate</div>'+
-	'<div class="listing">&bull; "golden" cookie now appears again during grandmapocalypse; Elder Pledge-related achievements are now unlockable</div>'+
+	'<div class="listing">&bull; 老人的承诺 price is now capped</div>'+
+	'<div class="listing">&bull; 同心协力 and other grandma research upgrades are now a little more powerful, if not 100% accurate</div>'+
+	'<div class="listing">&bull; "golden" cookie now appears again during grandmapocalypse; 老人的承诺-related achievements are now unlockable</div>'+
 	
 	'</div><div class="subsection update">'+
 	'<div class="title">31/08/2013 - too many grandmas</div>'+
@@ -3669,11 +3669,11 @@ Game.Launch=function()
 			}
 			mult*=(1+0.01*cookieMult);
 			
-			if (Game.Has('Specialized chocolate chips')) mult*=1.01;
-			if (Game.Has('Designer cocoa beans')) mult*=1.02;
-			if (Game.Has('Underworld ovens')) mult*=1.03;
-			if (Game.Has('Exotic nuts')) mult*=1.04;
-			if (Game.Has('Arcane sugar')) mult*=1.05;
+			if (Game.Has('专业巧克力片')) mult*=1.01;
+			if (Game.Has('可可豆设计师')) mult*=1.02;
+			if (Game.Has('地下烤箱')) mult*=1.03;
+			if (Game.Has('奇异果')) mult*=1.04;
+			if (Game.Has('神秘的糖')) mult*=1.05;
 			
 			if (Game.Has('增加愉快')) mult*=1.15;
 			if (Game.Has('改良愉快')) mult*=1.15;
@@ -6802,8 +6802,8 @@ Game.Launch=function()
 			if (Game.Has('祭司老奶奶')) mult*=2;
 			if (Game.Has('女巫老奶奶')) mult*=2;
 			if (Game.Has('幸运老奶奶')) mult*=2;
-			if (Game.Has('Bingo center/Research facility')) mult*=4;
-			if (Game.Has('Ritual rolling pins')) mult*=2;
+			if (Game.Has('宾果游戏中心/研究设施')) mult*=4;
+			if (Game.Has('仪式滚针')) mult*=2;
 			if (Game.Has('淘气名单')) mult*=2;
 			
 			if (Game.Has('Elderwort biscuits')) mult*=1.02;
@@ -6813,9 +6813,9 @@ Game.Launch=function()
 			mult*=Game.GetTieredCpsMult(me);
 
 			var add=0;
-			if (Game.Has('One mind')) add+=Game.Objects['Grandma'].amount*0.02;
-			if (Game.Has('Communal brainsweep')) add+=Game.Objects['Grandma'].amount*0.02;
-			if (Game.Has('Elder Pact')) add+=Game.Objects['Portal'].amount*0.05;
+			if (Game.Has('同心协力')) add+=Game.Objects['Grandma'].amount*0.02;
+			if (Game.Has('集体洗脑')) add+=Game.Objects['Grandma'].amount*0.02;
+			if (Game.Has('长者盟约')) add+=Game.Objects['Portal'].amount*0.05;
 			
 			var num=0;
 			for (var i in Game.Objects) {if (Game.Objects[i].name!='Grandma') num+=Game.Objects[i].amount;}
@@ -6832,7 +6832,7 @@ Game.Launch=function()
 			Game.Win('大错特错');
 			if (this.amount==0)
 			{
-				Game.Lock('Elder Pledge');
+				Game.Lock('老人的承诺');
 				Game.CollectWrinklers();
 				Game.pledgeT=0;
 			}
@@ -7668,28 +7668,28 @@ Game.Launch=function()
 			{
 				Game.researchT=Game.baseResearchTime;
 				if (Game.Has('持久的记忆')) Game.researchT=Math.ceil(Game.baseResearchTime/10);
-				if (Game.Has('Ultrascience')) Game.researchT=Game.fps*5;
+				if (Game.Has('超音波')) Game.researchT=Game.fps*5;
 				Game.nextResearch=Game.Upgrades[what].id;
-				if (Game.prefs.popups) Game.Popup('Research has begun.');
-				else Game.Notify('Research has begun','Your bingo center/research facility is conducting experiments.',[9,0]);
+				if (Game.prefs.popups) Game.Popup('研究已经开始。');
+				else Game.Notify('研究已经开始','你的宾果中心/研究中心正在进行实验。',[9,0]);
 			}
 		}
 		
-		new Game.Upgrade('Bingo center/Research facility','Grandma-operated science lab and leisure club.<br>Grandmas are <b>4 times</b> as efficient.<br><b>Regularly unlocks new upgrades</b>.<q>What could possibly keep those grandmothers in check?...<br>Bingo.</q>',1000000000000000,[11,9],function(){Game.SetResearch('Specialized chocolate chips');});Game.last.noPerm=1;
+		new Game.Upgrade('宾果游戏中心/研究设施','老奶奶操作的科学实验室和休闲俱乐部。<br>老奶奶工作效率工作效率 <b>4 倍</b>。<br><b>定期解锁新升级</b>.<q>还有什么能阻止这些老奶奶们呢?...<br>宾果。</q>',1000000000000000,[11,9],function(){Game.SetResearch('专业巧克力片');});Game.last.noPerm=1;
 		
 		order=15000;
-		new Game.Upgrade('Specialized chocolate chips','Cookie production multiplier <b>+1%</b>.<q>Computer-designed chocolate chips. Computer chips, if you will.</q>',1000000000000000,[0,9],function(){Game.SetResearch('Designer cocoa beans');});Game.last.pool='tech';
-		new Game.Upgrade('Designer cocoa beans','Cookie production multiplier <b>+2%</b>.<q>Now more aerodynamic than ever!</q>',2000000000000000,[1,9],function(){Game.SetResearch('Ritual rolling pins');});Game.last.pool='tech';
-		new Game.Upgrade('Ritual rolling pins','老奶奶工作效率 <b>翻倍</b>。<q>The result of years of scientific research!</q>',4000000000000000,[2,9],function(){Game.SetResearch('Underworld ovens');});Game.last.pool='tech';
-		new Game.Upgrade('Underworld ovens','Cookie production multiplier <b>+3%</b>.<q>Powered by science, of course!</q>',8000000000000000,[3,9],function(){Game.SetResearch('One mind');});Game.last.pool='tech';
-		new Game.Upgrade('One mind','Each grandma gains <b>+0.0<span></span>2 base CpS per grandma</b>.<div class="warning">Note : the grandmothers are growing restless. Do not encourage them.</div><q>We are one. We are many.</q>',16000000000000000,[4,9],function(){Game.elderWrath=1;Game.SetResearch('Exotic nuts');Game.storeToRefresh=1;});Game.last.pool='tech';
+		new Game.Upgrade('专业巧克力片','饼干生产增加 <b>+1%</b>.<q>电脑设计的巧克力片。电脑芯片，如果你愿意。</q>',1000000000000000,[0,9],function(){Game.SetResearch('可可豆设计师');});Game.last.pool='tech';
+		new Game.Upgrade('可可豆设计师','饼干生产增加 <b>+2%</b>.<q>现在比以前更符合空气动力学了!</q>',2000000000000000,[1,9],function(){Game.SetResearch('仪式滚针');});Game.last.pool='tech';
+		new Game.Upgrade('仪式滚针','老奶奶工作效率 <b>翻倍</b>。<q>多年的科学研究成果!</q>',4000000000000000,[2,9],function(){Game.SetResearch('地下烤箱');});Game.last.pool='tech';
+		new Game.Upgrade('地下烤箱','饼干生产增加 <b>+3%</b>.<q>当然是靠科学的力量!</q>',8000000000000000,[3,9],function(){Game.SetResearch('同心协力');});Game.last.pool='tech';
+		new Game.Upgrade('同心协力','每个老奶奶收获 <b>+0.0<span></span>2 基本秒收益老奶奶</b>.<div class="warning">注意:祖母们越来越焦躁不安。不要鼓励他们。</div><q>我们是一个。我们有很多。</q>',16000000000000000,[4,9],function(){Game.elderWrath=1;Game.SetResearch('奇异果');Game.storeToRefresh=1;});Game.last.pool='tech';
 		//Game.last.clickFunction=function(){return confirm('Warning : purchasing this will have unexpected, and potentially undesirable results!\nIt\'s all downhill from here. You have been warned!\nPurchase anyway?');};
-		Game.RequiresConfirmation(Game.last,'<div class="block"><b>Warning :</b> purchasing this will have unexpected, and potentially undesirable results!<br><small>It\'s all downhill from here. You have been warned!</small><br><br>Purchase anyway?</small></div>');
-		new Game.Upgrade('Exotic nuts','Cookie production multiplier <b>+4%</b>.<q>You\'ll go crazy over these!</q>',32000000000000000,[5,9],function(){Game.SetResearch('Communal brainsweep');});Game.last.pool='tech';
-		new Game.Upgrade('Communal brainsweep','Each grandma gains another <b>+0.0<span></span>2 base CpS per grandma</b>.<div class="warning">Note : proceeding any further in scientific research may have unexpected results. You have been warned.</div><q>We fuse. We merge. We grow.</q>',64000000000000000,[6,9],function(){Game.elderWrath=2;Game.SetResearch('Arcane sugar');Game.storeToRefresh=1;});Game.last.pool='tech';
-		new Game.Upgrade('Arcane sugar','Cookie production multiplier <b>+5%</b>.<q>Tastes like insects, ligaments, and molasses.</q>',128000000000000000,[7,9],function(){Game.SetResearch('Elder Pact');});Game.last.pool='tech';
-		new Game.Upgrade('Elder Pact','每一个老奶奶收益 <b>+0.0<span></span>5 基础饼干秒生产量每个传送门</b>.<div class="warning">注意:这不是一个好主意。</div><q>squirm crawl slither writhe<br>today we rise</q>',256000000000000000,[8,9],function(){Game.elderWrath=3;Game.storeToRefresh=1;});Game.last.pool='tech';
-		new Game.Upgrade('Elder Pledge','包含了长老们的愤怒，至少是暂时的。<q>这是一个简单的仪式，包括抗老化奶油，饼干面糊在月光下，和一只活鸡。</q>',1,[9,9],function()
+		Game.RequiresConfirmation(Game.last,'<div class="block"><b>警告 :</b> 购买这种产品将会带来意想不到的结果，而且可能会带来意想不到的后果!<br><small>从这里开始，一切都在走下坡路。我已经警告过你了!</small><br><br>还是购买?</small></div>');
+		new Game.Upgrade('奇异果','饼干生产增加 <b>+4%</b>.<q>你会为这些疯狂的!</q>',32000000000000000,[5,9],function(){Game.SetResearch('集体洗脑');});Game.last.pool='tech';
+		new Game.Upgrade('集体洗脑','每一个奶奶的收益 <b>+0.0<span></span>2 基本秒收益老奶奶</b>.<div class="warning">注:继续进行科学研究可能会产生意想不到的结果。我已经警告过你了!</div><q>我们融合。我们合并。我们成长。</q>',64000000000000000,[6,9],function(){Game.elderWrath=2;Game.SetResearch('神秘的糖');Game.storeToRefresh=1;});Game.last.pool='tech';
+		new Game.Upgrade('神秘的糖','饼干生产增加 <b>+5%</b>.<q>尝起来像昆虫、韧带和糖蜜。</q>',128000000000000000,[7,9],function(){Game.SetResearch('长者盟约');});Game.last.pool='tech';
+		new Game.Upgrade('长者盟约','每一个老奶奶收益 <b>+0.0<span></span>5 基础饼干秒生产量每个传送门</b>.<div class="warning">注意:这不是一个好主意。</div><q>今天我们起来<br/>爬着爬着爬着爬着</q>',256000000000000000,[8,9],function(){Game.elderWrath=3;Game.storeToRefresh=1;});Game.last.pool='tech';
+		new Game.Upgrade('老人的承诺','包含了长老们的愤怒，至少是暂时的。<q>这是一个简单的仪式，包括抗老化奶油，饼干面糊在月光下，和一只活鸡。</q>',1,[9,9],function()
 		{
 			Game.elderWrath=0;
 			Game.pledges++;
@@ -7701,7 +7701,7 @@ Game.Launch=function()
 		Game.getPledgeDuration=function(){return Game.fps*60*(Game.Has('Sacrificial rolling pins')?60:30);}
 		Game.last.pool='toggle';
 		Game.last.displayFuncWhenOwned=function(){return '<div style="text-align:center;">直到承诺用完剩下的时间 :<br><b>'+Game.sayTime(Game.pledgeT,-1)+'</b></div>';}
-		Game.last.timerDisplay=function(){if (!Game.Upgrades['Elder Pledge'].bought) return -1; else return 1-Game.pledgeT/Game.getPledgeDuration();}
+		Game.last.timerDisplay=function(){if (!Game.Upgrades['老人的承诺'].bought) return -1; else return 1-Game.pledgeT/Game.getPledgeDuration();}
 		Game.last.priceFunc=function(){return Math.pow(8,Math.min(Game.pledges+2,14));}
 		
 		order=150;
@@ -7711,7 +7711,7 @@ Game.Launch=function()
 		new Game.Upgrade('釉质鼠标','点击获得 <b>+1% 总秒收益</b>.<q>你可以用这些来切割钻石。</q>',50000000000,[11,13]);Game.MakeTiered(Game.last,4,11);
 		
 		order=40000;
-		new Game.Upgrade('Ultrascience','研究只需要 <b>5 秒</b>.<q>是的,科学!</q>',7,[9,2]);//debug purposes only
+		new Game.Upgrade('超音波','研究只需要 <b>5 秒</b>.<q>是的,科学!</q>',7,[9,2]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10020;
@@ -7731,7 +7731,7 @@ Game.Launch=function()
 			Game.pledgeT=0;
 			Game.Lock('Revoke Elder Covenant');
 			Game.Unlock('Revoke Elder Covenant');
-			Game.Lock('Elder Pledge');
+			Game.Lock('老人的承诺');
 			Game.Win('平静的老人');
 			Game.CollectWrinklers();
 			Game.storeToRefresh=1;
@@ -7749,7 +7749,7 @@ Game.Launch=function()
 		new Game.Upgrade('Get lucky','黄金饼干效果持续像 <b>两次那么久</b>.<q>You\'ve been up all night, haven\'t you?</q>',77777777777777,[27,6]);
 		
 		order=15000;
-		new Game.Upgrade('Sacrificial rolling pins','Elder pledges last <b>翻倍</b> as long.<q>These are mostly just for spreading the anti-aging cream.<br>(And accessorily, shortening the chicken\'s suffering.)</q>',2888888888888,[2,9]);
+		new Game.Upgrade('Sacrificial rolling pins','老人的承诺s last <b>翻倍</b> as long.<q>These are mostly just for spreading the anti-aging cream.<br>(And accessorily, shortening the chicken\'s suffering.)</q>',2888888888888,[2,9]);
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Snickerdoodles',desc:'True to their name.',icon:[2,4],power:												2,	price:	999999999999*5});
@@ -10015,25 +10015,25 @@ Game.Launch=function()
 				Game.pledgeT--;
 				if (Game.pledgeT==0)//did we reach 0? make the pledge purchasable again
 				{
-					Game.Lock('Elder Pledge');
-					Game.Unlock('Elder Pledge');
+					Game.Lock('老人的承诺');
+					Game.Unlock('老人的承诺');
 					Game.elderWrath=1;
 				}
 			}
 			else
 			{
-				if (Game.Has('One mind') && Game.elderWrath==0)
+				if (Game.Has('同心协力') && Game.elderWrath==0)
 				{
 					Game.elderWrath=1;
 				}
-				if (Math.random()<0.001 && Game.elderWrath<Game.Has('One mind')+Game.Has('Communal brainsweep')+Game.Has('Elder Pact'))
+				if (Math.random()<0.001 && Game.elderWrath<Game.Has('同心协力')+Game.Has('集体洗脑')+Game.Has('长者盟约'))
 				{
 					Game.elderWrath++;//have we already pledged? make the elder wrath shift between different stages
 				}
-				if (Game.Has('Elder Pact') && Game.Upgrades['Elder Pledge'].unlocked==0)
+				if (Game.Has('长者盟约') && Game.Upgrades['老人的承诺'].unlocked==0)
 				{
-					Game.Lock('Elder Pledge');
-					Game.Unlock('Elder Pledge');
+					Game.Lock('老人的承诺');
+					Game.Unlock('老人的承诺');
 				}
 			}
 			Game.elderWrathD+=((Game.elderWrath+1)-Game.elderWrathD)*0.001;//slowly fade to the target wrath state
@@ -12091,7 +12091,7 @@ Game.Launch=function()
 				if (Game.Has('女巫老奶奶')) grandmas++;
 				if (Game.Has('幸运老奶奶')) grandmas++;
 				if (!Game.HasAchiev('老年人') && grandmas>=7) Game.Win('老年人');
-				if (Game.Objects['Grandma'].amount>=6 && !Game.Has('Bingo center/Research facility') && Game.HasAchiev('老年人')) Game.Unlock('Bingo center/Research facility');
+				if (Game.Objects['Grandma'].amount>=6 && !Game.Has('宾果游戏中心/研究设施') && Game.HasAchiev('老年人')) Game.Unlock('宾果游戏中心/研究设施');
 				if (Game.pledges>0) Game.Win('老年小睡');
 				if (Game.pledges>=5) Game.Win('老年沉睡');
 				if (Game.pledges>=10) Game.Unlock('Sacrificial rolling pins');
