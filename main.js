@@ -22,7 +22,7 @@ function replaceAll(find,replace,str){return str.replace(new RegExp(escapeRegExp
 //disable sounds coming from soundjay.com (sorry)
 var realAudio=Audio;//backup real audio
 Audio=function(src){
-	if (src && src.indexOf('soundjay')>-1) {Game.Popup('Sorry, no sounds hotlinked from soundjay.com.');this.play=function(){};}
+	if (src && src.indexOf('soundjay')>-1) {Game.Popup('对不起，没有声音从soundjay.com热链接。');this.play=function(){};}
 	else return new realAudio(src);
 };
 
@@ -1020,10 +1020,10 @@ Game.Launch=function()
 	Game.ErrorFrame=function()
 	{
 		l('javascriptError').innerHTML=
-		'<div class="title">Oops. Wrong address!</div>'+
-		'<div>It looks like you\'re accessing Cookie Clicker from another URL than the official one.<br>'+
-		'You can <a href="http://orteil.dashnet.org/cookieclicker/" target="_blank">play Cookie Clicker over here</a>!<br>'+
-		'<small>(If for any reason, you are unable to access the game on the official URL, we are currently working on a second domain.)</small></div>';
+		'<div class="title">哎呀。 错误的地址！</div>'+
+		'<div>看起来您正在从其他链接访问《无尽的饼干》而不是官方链接。<br>'+
+		'你可以 <a href="http://orteil.dashnet.org/cookieclicker/" target="_blank">点这里玩官方英文版</a>!<br>'+
+		'<small>(如果由于任何原因，您无法通过官方网址访问游戏，我们目前正在开发第二个域名。)</small></div>';
 	}
 	
 	
@@ -1197,7 +1197,7 @@ Game.Launch=function()
 			if (Game.prefs && Game.prefs.warn)
 			{
 				if (typeof event=='undefined') event=window.event;
-				if (event) event.returnValue='Are you sure you want to close Cookie Clicker?';
+				if (event) event.returnValue='您确定要关闭游戏吗?';
 			}
 		}
 		
@@ -1316,9 +1316,9 @@ Game.Launch=function()
 			}
 			else if (parseFloat(r[0])>Game.version)
 			{
-				str='<b>New version available : v. '+r[0]+'!</b>';
-				if (r[1]) str+='<br><small>Update note : "'+r[1]+'"</small>';
-				str+='<br><b>Refresh to get it!</b>';
+				str='<b>新版本可用 : v. '+r[0]+'!</b>';
+				if (r[1]) str+='<br><small>更新说明 : "'+r[1]+'"</small>';
+				str+='<br><b>刷新以获得它!</b>';
 			}
 			if (str!='')
 			{
@@ -1452,8 +1452,8 @@ Game.Launch=function()
 			str+=
 			(type==3?'\n	amount of cookies contained in wrinklers : ':'')+parseFloat(Math.floor(wrinklers.amount))+';'+
 			(type==3?'\n	number of wrinklers : ':'')+parseInt(Math.floor(wrinklers.number))+';'+
-			(type==3?'\n	prestige level : ':'')+parseFloat(Game.prestige).toString()+';'+
-			(type==3?'\n	heavenly chips : ':'')+parseFloat(Game.heavenlyChips).toString()+';'+
+			(type==3?'\n	声望等级 : ':'')+parseFloat(Game.prestige).toString()+';'+
+			(type==3?'\n	天堂芯片 : ':'')+parseFloat(Game.heavenlyChips).toString()+';'+
 			(type==3?'\n	heavenly chips spent : ':'')+parseFloat(Game.heavenlyChipsSpent).toString()+';'+
 			(type==3?'\n	heavenly cookies : ':'')+parseFloat(Game.heavenlyCookies).toString()+';'+
 			(type==3?'\n	ascension mode : ':'')+parseInt(Math.floor(Game.ascensionMode))+';'+
@@ -1653,8 +1653,8 @@ Game.Launch=function()
 					
 					if (isNaN(version) || str.length<5)
 					{
-						if (Game.prefs.popups) Game.Popup('Oops, looks like the import string is all wrong!');
-						else Game.Notify('Error importing save','Oops, looks like the import string is all wrong!','',6,1);
+						if (Game.prefs.popups) Game.Popup('哎呀，看起来像导入的字符串都错了!');
+						else Game.Notify('导入存档时出错','哎呀，看起来像导入的字符串都错了!','',6,1);
 						return false;
 					}
 					if (version>=1 && version>Game.version)
@@ -1917,8 +1917,8 @@ Game.Launch=function()
 						
 						if (version<1.0503)//upgrades that used to be regular, but are now heavenly
 						{
-							var me=Game.Upgrades['Persistent memory'];me.unlocked=0;me.bought=0;
-							var me=Game.Upgrades['Season switcher'];me.unlocked=0;me.bought=0;
+							var me=Game.Upgrades['持久的记忆'];me.unlocked=0;me.bought=0;
+							var me=Game.Upgrades['季节切换器'];me.unlocked=0;me.bought=0;
 						}
 						
 						if (Game.bgType==-1) Game.bgType=0;
@@ -1936,7 +1936,7 @@ Game.Launch=function()
 						Game.LoadWrinklers(wrinklers.amount,wrinklers.number,wrinklers.shinies,wrinklers.amountShinies);
 						
 						//recompute season trigger prices
-						if (Game.Has('Season switcher')) {for (var i in Game.seasons) {Game.Unlock(Game.seasons[i].trigger);}}
+						if (Game.Has('季节切换器')) {for (var i in Game.seasons) {Game.Unlock(Game.seasons[i].trigger);}}
 						Game.computeSeasonPrices();
 						
 						//recompute prestige
@@ -1950,7 +1950,7 @@ Game.Launch=function()
 						if (version==1.037 && Game.beta)//are we opening the new beta? if so, save the old beta to /betadungeons
 						{
 							window.localStorage.setItem('CookieClickerGameBetaDungeons',window.localStorage.getItem('CookieClickerGameBeta'));
-							Game.Notify('Beta save data','Your beta save data has been safely exported to /betadungeons.',20);
+							Game.Notify('测试版保存数据','您的测试版保存数据已安全地导出到 /betadungeons.',20);
 						}
 						else if (version==1.0501 && Game.beta)//are we opening the newer beta? if so, save the old beta to /oldbeta
 						{
@@ -1976,7 +1976,7 @@ Game.Launch=function()
 							Game.heavenlyChips=Game.prestige;
 							Game.heavenlyChipsSpent=0;
 							
-							setTimeout(function(){Game.Prompt('<h3>Beta patch</h3><div class="block">We\'ve tweaked some things and fixed some others, please check the update notes!<div class="line"></div>Of note : due to changes in prestige balancing, all your heavenly upgrades have been removed and your heavenly chips refunded; you\'ll be able to reallocate them next time you ascend.<div class="line"></div>Thank you again for beta-testing Cookie Clicker!</div>',[['Alright then!','Game.ClosePrompt();']]);},200);
+							setTimeout(function(){Game.Prompt('<h3>Beta补丁</h3><div class="block">我们已经调整了一些东西并修复了其他一些东西，请查看更新说明！<div class="line"></div>值得注意的是：由于声望平衡的变化，你所有的天堂升级都已被删除，你的天堂筹码也退还了; 你下次提升时你将能够重新分配它们。<div class="line"></div>再次感谢您对《无尽的饼干》进行beta测试！</div>',[['好吧!','Game.ClosePrompt();']]);},200);
 						}
 						if (version<=1.0466)//are we loading from the old live version? reset HCs
 						{
@@ -2215,7 +2215,7 @@ Game.Launch=function()
 						if (Game.permanentUpgrades[i]!=-1)
 						{Game.UpgradesById[Game.permanentUpgrades[i]].earn();}
 					}
-					if (Game.Has('Season switcher')) {for (var i in Game.seasons) {Game.Unlock(Game.seasons[i].trigger);}}
+					if (Game.Has('季节切换器')) {for (var i in Game.seasons) {Game.Unlock(Game.seasons[i].trigger);}}
 					
 					if (Game.Has('Starter kit')) Game.Objects['Cursor'].getFree(10);
 					if (Game.Has('Starter kitchen')) Game.Objects['Grandma'].getFree(5);
@@ -3932,7 +3932,7 @@ Game.Launch=function()
 			}
 			
 			//cookie storm!
-			if (Game.hasBuff('Cookie storm') && Math.random()<0.5)
+			if (Game.hasBuff('饼干风暴') && Math.random()<0.5)
 			{
 				var newShimmer=new Game.shimmer('golden',0,1);
 				newShimmer.dur=Math.ceil(Math.random()*4+1);
@@ -4521,7 +4521,7 @@ Game.Launch=function()
 			"Click frenzy","click frenzy",
 			"Cursed finger","cursed finger",
 			"Cookie chain","chain cookie",
-			"Cookie storm","cookie storm",
+			"饼干风暴","cookie storm",
 			"Building special","building special",
 			"Dragon Harvest","dragon harvest",
 			"Dragonflight","dragonflight",
@@ -5652,7 +5652,7 @@ Game.Launch=function()
 					if (Game.HasAchiev('一个充满了饼干的世界')) list.push('新闻：现在已知的宇宙挤满了饼干！ 没有空位！');
 					if (Game.HasAchiev('最后机会')) list.push('新闻：令人难以置信的罕见的白化皱纹在饼干疯狂的糕点巨头被偷猎灭绝的边缘！');
 					if (Game.Has('意外的惊喜')) list.push('新闻:当地饼干制造商成为最幸运的生物!');
-					if (Game.Has('Season switcher')) list.push('News : seasons are all out of whack! "We need to get some whack back into them seasons", says local resident.');
+					if (Game.Has('季节切换器')) list.push('News : seasons are all out of whack! "We need to get some whack back into them seasons", says local resident.');
 					
 					if (Game.Has('小猫助手')) list.push('新闻：在当地的饼干设施周围听到微弱的喵喵声; 建议正在测试的新成分。');
 					if (Game.Has('小猫工人')) list.push('新闻：一群喵喵叫的小猫，戴着小小的安全帽，在当地的饼干设施附近报道。');
@@ -7667,7 +7667,7 @@ Game.Launch=function()
 			if (Game.Upgrades[what] && !Game.Has(what))
 			{
 				Game.researchT=Game.baseResearchTime;
-				if (Game.Has('Persistent memory')) Game.researchT=Math.ceil(Game.baseResearchTime/10);
+				if (Game.Has('持久的记忆')) Game.researchT=Math.ceil(Game.baseResearchTime/10);
 				if (Game.Has('Ultrascience')) Game.researchT=Game.fps*5;
 				Game.nextResearch=Game.Upgrades[what].id;
 				if (Game.prefs.popups) Game.Popup('Research has begun.');
@@ -7837,7 +7837,7 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Spider cookies',desc:'You found the recipe on the web. They do whatever a cookie can.',locked:1,icon:[18,8],power:						2, price: 444444444444});
 
 		order=0;
-		new Game.Upgrade('Persistent memory','Subsequent research will be <b>10 times</b> as fast.<q>It\'s all making sense!<br>Again!</q>',500,[9,2]);Game.last.pool='prestige';
+		new Game.Upgrade('持久的记忆','Subsequent research will be <b>10 times</b> as fast.<q>It\'s all making sense!<br>Again!</q>',500,[9,2]);Game.last.pool='prestige';
 		
 		order=40000;
 		new Game.Upgrade('Wrinkler doormat','Wrinklers spawn much more frequently.<q>You\'re such a pushover.</q>',7,[19,8]);//debug purposes only
@@ -7919,7 +7919,7 @@ Game.Launch=function()
 		
 		order=24000;
 		Game.seasonTriggerBasePrice=1111111111;
-		new Game.Upgrade('Season switcher','允许你 <b>触发节日事件</b>, 只要你出得起价钱.<q>总是会有时间.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
+		new Game.Upgrade('季节切换器','允许你 <b>触发节日事件</b>, 只要你出得起价钱.<q>总是会有时间.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
 		new Game.Upgrade('Festive biscuit','触发 <b>圣诞节</b> 在接下来的24小时。<br>触发其它节日，将会取消这个节日。<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
 		new Game.Upgrade('Ghostly biscuit','Triggers <b>Halloween season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>spooky scary skeletons<br>will wake you with a boo</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
 		new Game.Upgrade('Lovesick biscuit','Triggers <b>Valentine\'s Day season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Romance never goes out of fashion.</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
@@ -9759,7 +9759,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Frenzy',
-				desc:'Cookie production x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'饼干产量 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[10,14],
 				time:time*Game.fps,
 				add:true,
@@ -9771,7 +9771,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Elder frenzy',
-				desc:'Cookie production x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'饼干产量 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[29,6],
 				time:time*Game.fps,
 				add:true,
@@ -9783,7 +9783,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Clot',
-				desc:'Cookie production halved for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'饼干产量减半持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[15,5],
 				time:time*Game.fps,
 				add:true,
@@ -9795,7 +9795,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Dragon Harvest',
-				desc:'Cookie production x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'饼干产量 x'+pow+' 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[10,25],
 				time:time*Game.fps,
 				add:true,
@@ -9807,7 +9807,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Everything must go',
-				desc:'All buildings are '+pow+'% cheaper for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有建筑便宜 '+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[17,6],
 				time:time*Game.fps,
 				add:true,
@@ -9819,7 +9819,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Cursed finger',
-				desc:'Cookie production halted for '+Game.sayTime(time*Game.fps,-1)+',<br>but each click is worth '+Game.sayTime(time*Game.fps,-1)+' of CpS.',
+				desc:'饼干生产停止 '+Game.sayTime(time*Game.fps,-1)+',<br>但是每一次点击都是值得的 '+Game.sayTime(time*Game.fps,-1)+' 饼干每秒产量.',
 				icon:[12,17],
 				time:time*Game.fps,
 				add:true,
@@ -9832,7 +9832,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Click frenzy',
-				desc:'Clicking power x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'点击效果 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,14],
 				time:time*Game.fps,
 				add:true,
@@ -9844,7 +9844,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'龙之飞舞',
-				desc:'Clicking power x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'点击效果 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,25],
 				time:time*Game.fps,
 				add:true,
@@ -9855,8 +9855,8 @@ Game.Launch=function()
 		new Game.buffType('cookie storm',function(time,pow)
 		{
 			return {
-				name:'Cookie storm',
-				desc:'Cookies everywhere!',
+				name:'饼干风暴',
+				desc:'饼干无处不在!',
 				icon:[22,6],
 				time:time*Game.fps,
 				add:true,
@@ -9970,7 +9970,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Devastation',
-				desc:'Clicking power +'+Math.floor(pow*100-100)+'% for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'点击效果 +'+Math.floor(pow*100-100)+'% for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[23,18],
 				time:time*Game.fps,
 				multClick:pow,
@@ -9982,7 +9982,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Sugar frenzy',
-				desc:'Cookie production x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'饼干产量 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[29,14],
 				time:time*Game.fps,
 				add:true,
@@ -11875,7 +11875,7 @@ Game.Launch=function()
 				var str=Game.seasons[Game.season].over;
 				if (Game.prefs.popups) Game.Popup(str);
 				else Game.Notify(str,'',Game.seasons[Game.season].triggerUpgrade.icon);
-				if (Game.Has('Season switcher')) {Game.Unlock(Game.seasons[Game.season].trigger);Game.seasons[Game.season].triggerUpgrade.bought=0;}
+				if (Game.Has('季节切换器')) {Game.Unlock(Game.seasons[Game.season].trigger);Game.seasons[Game.season].triggerUpgrade.bought=0;}
 				Game.season=Game.baseSeason;
 				Game.seasonT=-1;
 			}
