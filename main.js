@@ -5283,7 +5283,7 @@ Game.Launch=function()
 				
 				var santaStr='';
 				var frames=15;
-				if (Game.Has('A festive hat'))
+				if (Game.Has('节庆帽子'))
 				{
 					for (var i=0;i<=Game.santaLevel;i++)
 					{
@@ -7844,25 +7844,25 @@ Game.Launch=function()
 		Game.last.pool='debug';
 		
 		order=10200;
-		Game.NewUpgradeCookie({name:'Christmas tree biscuits',desc:'Whose pine is it anyway?',locked:1,icon:[12,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'Snowflake biscuits',desc:'Mass-produced to be unique in every way.',locked:1,icon:[13,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'Snowman biscuits',desc:'It\'s frosted. Doubly so.',locked:1,icon:[14,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'Holly biscuits',desc:'You don\'t smooch under these ones. That would be the mistletoe (which, botanically, is a smellier variant of the mistlefinger).',locked:1,icon:[15,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'Candy cane biscuits',desc:'It\'s two treats in one!<br>(Further inspection reveals the frosting does not actually taste like peppermint, but like mundane sugary frosting.)',locked:1,icon:[16,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'Bell biscuits',desc:'What do these even have to do with christmas? Who cares, ring them in!',locked:1,icon:[17,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'Present biscuits',desc:'The prequel to future biscuits. Watch out!',locked:1,icon:[18,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'圣诞树饼干',desc:'这是谁的松树?',locked:1,icon:[12,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'雪花饼干',desc:'批量生产在各个方面都是独一无二的。',locked:1,icon:[13,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'雪人饼干',desc:'它被冻起来了。更是如此。',locked:1,icon:[14,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'冬青饼干',desc:'你不能在这些东西下面接吻。这将是槲寄生(植物学上是槲寄生的一个变种)。',locked:1,icon:[15,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'糖果手杖饼干',desc:'这是一种两种享受!<br />(进一步的检查发现，糖霜并不像薄荷味，而是像普通的含糖的糖霜。)',locked:1,icon:[16,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'铃铛饼干',desc:'这些与圣诞节有什么关系呢?谁在乎，给他们打电话!',locked:1,icon:[17,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'目前的饼干',desc:'未来饼干的前传。小心!',locked:1,icon:[18,10],power:2,price: 252525252525});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Gingerbread men',desc:'You like to bite the legs off first, right? How about tearing off the arms? You sick monster.',icon:[18,4],power:		2,price: 9999999999999999});
-		Game.NewUpgradeCookie({name:'Gingerbread trees',desc:'Evergreens in pastry form. Yule be surprised what you can come up with.',icon:[18,3],power:							2,price: 9999999999999999});
+		Game.NewUpgradeCookie({name:'姜饼人',desc:'你喜欢先咬腿，对吗?把胳膊撕掉怎么样?你这个恶心的怪物。',icon:[18,4],power:		2,price: 9999999999999999});
+		Game.NewUpgradeCookie({name:'姜饼树',desc:'常青树糕点形式。你所能想到的会让你大吃一惊。',icon:[18,3],power:							2,price: 9999999999999999});
 		
 		order=25000;
-		new Game.Upgrade('A festive hat','<b>Unlocks... something.</b><q>Not a creature was stirring, not even a mouse.</q>',25,[19,9],function()
+		new Game.Upgrade('节庆帽子','<b>解锁了... 一些东西。</b><q>没有一只动物在动，连一只老鼠也没有。</q>',25,[19,9],function()
 		{
 			var drop=choose(Game.santaDrops);
 			Game.Unlock(drop);
-			if (Game.prefs.popups) Game.Popup('In the festive hat, you find...<br>a festive test tube<br>and '+drop+'.');
-			else Game.Notify('In the festive hat, you find...','a festive test tube<br>and <b>'+drop+'</b>.',Game.Upgrades[drop].icon);
+			if (Game.prefs.popups) Game.Popup('在节日的礼帽里，你会发现……<br>一个节日测试管<br>和 '+drop+'.');
+			else Game.Notify('在节日的礼帽里，你会发现……','一个节日测试管<br>和 <b>'+drop+'</b>.',Game.Upgrades[drop].icon);
 		});
 		
 		new Game.Upgrade('Increased merriness','Cookie production multiplier <b>+15%</b>.<br>Cost scales with Santa level.<q>It turns out that the key to increased merriness, strangely enough, happens to be a good campfire and some s\'mores.<br>You know what they say, after all; the s\'more, the merrier.</q>',2525,[17,9]);
@@ -10454,7 +10454,7 @@ Game.Launch=function()
 		Game.UpdateSpecial=function()
 		{
 			Game.specialTabs=[];
-			if (Game.Has('A festive hat')) Game.specialTabs.push('santa');
+			if (Game.Has('节庆帽子')) Game.specialTabs.push('santa');
 			if (Game.Has('A crumbly egg')) Game.specialTabs.push('dragon');
 			if (Game.specialTabs.length==0) {Game.ToggleSpecialMenu(0);return;}
 		
@@ -12055,7 +12055,7 @@ Game.Launch=function()
 				
 				if (Game.cookiesEarned>=1000000 && Game.Has('How to bake your dragon')) Game.Unlock('A crumbly egg');
 				
-				if (Game.cookiesEarned>=25 && Game.season=='christmas') Game.Unlock('A festive hat');
+				if (Game.cookiesEarned>=25 && Game.season=='christmas') Game.Unlock('节庆帽子');
 				if (Game.Has('Christmas tree biscuits') && Game.Has('Snowflake biscuits') && Game.Has('Snowman biscuits') && Game.Has('Holly biscuits') && Game.Has('Candy cane biscuits') && Game.Has('Bell biscuits') && Game.Has('Present biscuits')) Game.Win('让它下雪');
 				
 				if (Game.reindeerClicked>=1) Game.Win('哦，鹿');
