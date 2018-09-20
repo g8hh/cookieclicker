@@ -7900,19 +7900,19 @@ Game.Launch=function()
 			}
 			return pow;
 		};
-		Game.NewUpgradeCookie({name:'Pure heart biscuits',desc:'Melty white chocolate<br>that says "I *like* like you".',season:'valentines',icon:[19,3],													power:heartPower,price: 1000000});
-		Game.NewUpgradeCookie({name:'Ardent heart biscuits',desc:'A red hot cherry biscuit that will nudge the target of your affection in interesting directions.',require:Game.last.name,season:'valentines',icon:[20,3],			power:heartPower,price: 1000000000});
-		Game.NewUpgradeCookie({name:'Sour heart biscuits',desc:'A bitter lime biscuit for the lonely and the heart-broken.',require:Game.last.name,season:'valentines',icon:[20,4],													power:heartPower,price: 1000000000000});
-		Game.NewUpgradeCookie({name:'Weeping heart biscuits',desc:'An ice-cold blueberry biscuit, symbol of a mending heart.',require:Game.last.name,season:'valentines',icon:[21,3],												power:heartPower,price: 1000000000000000});
-		Game.NewUpgradeCookie({name:'Golden heart biscuits',desc:'A beautiful biscuit to symbolize kindness, true love, and sincerity.',require:Game.last.name,season:'valentines',icon:[21,4],										power:heartPower,price: 1000000000000000000});
-		Game.NewUpgradeCookie({name:'Eternal heart biscuits',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
+		Game.NewUpgradeCookie({name:'纯心饼干',desc:'融化的白巧克力<br/>，上面写着“我喜欢你”。',season:'valentines',icon:[19,3],													power:heartPower,price: 1000000});
+		Game.NewUpgradeCookie({name:'心切饼干',desc:'一个红色的热樱桃饼干，它会将你的情感目标推向一个有趣的方向。',require:Game.last.name,season:'valentines',icon:[20,3],			power:heartPower,price: 1000000000});
+		Game.NewUpgradeCookie({name:'酸心饼干',desc:'为孤独和心碎的人做酸橙饼干。',require:Game.last.name,season:'valentines',icon:[20,4],													power:heartPower,price: 1000000000000});
+		Game.NewUpgradeCookie({name:'心水饼干',desc:'一个冰凉的蓝莓饼干，象征着一颗愈合的心。',require:Game.last.name,season:'valentines',icon:[21,3],												power:heartPower,price: 1000000000000000});
+		Game.NewUpgradeCookie({name:'金心饼干',desc:'一个漂亮的饼干象征着善良、真爱和真诚。',require:Game.last.name,season:'valentines',icon:[21,4],										power:heartPower,price: 1000000000000000000});
+		Game.NewUpgradeCookie({name:'永恒的心饼干',desc:'银色的糖霜对于一个非常特别的人来说，你已经喜欢了很长时间了。',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
 
 		order=1100;
-		new Game.TieredUpgrade('Gem polish','棱镜 <b>翻倍</b>。<q>摆脱污垢，让更多的光线进入。<br>真的，真是太离谱了。</q>','Prism',1);
-		new Game.TieredUpgrade('9th color','棱镜 <b>翻倍</b>。<q>深入研究未受影响的光学深度甚至螳螂虾都没有引人注目！</q>','Prism',2);
-		new Game.TieredUpgrade('Chocolate light','棱镜 <b>翻倍</b>。<q>沐浴在它的茧中。<br>(警告:可能导致各种有趣但致命的皮肤状况。)</q>','Prism',3);
-		new Game.TieredUpgrade('Grainbow','棱镜 <b>翻倍</b>。<q>记住不同的谷物使用方便的Roy G. Biv助记法:R是大米，O是燕麦…B是大麦吗?</q>','Prism',4);
-		new Game.TieredUpgrade('Pure cosmic light','棱镜 <b>翻倍</b>。<q>你的棱镜现在接收到来自宇宙另一端的原始、纯净的光子。</q>','Prism',5);
+		new Game.TieredUpgrade('宝石抛光','棱镜 <b>翻倍</b>。<q>摆脱污垢，让更多的光线进入。<br>真的，真是太离谱了。</q>','Prism',1);
+		new Game.TieredUpgrade('9号颜色','棱镜 <b>翻倍</b>。<q>深入研究未受影响的光学深度甚至螳螂虾都没有引人注目！</q>','Prism',2);
+		new Game.TieredUpgrade('巧克力之光','棱镜 <b>翻倍</b>。<q>沐浴在它的茧中。<br>(警告:可能导致各种有趣但致命的皮肤状况。)</q>','Prism',3);
+		new Game.TieredUpgrade('谷粒弓','棱镜 <b>翻倍</b>。<q>记住不同的谷物使用方便的Roy G. Biv助记法:R是大米，O是燕麦…B是大麦吗?</q>','Prism',4);
+		new Game.TieredUpgrade('纯粹的宇宙之光','棱镜 <b>翻倍</b>。<q>你的棱镜现在接收到来自宇宙另一端的原始、纯净的光子。</q>','Prism',5);
 
 		order=255;
 		new Game.Upgrade('彩虹老奶奶',Game.getGrandmaSynergyUpgradeDesc('Prism')+'<q>一个发光的奶奶在饼干中闪闪发光。</q>',Game.Objects['Prism'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
