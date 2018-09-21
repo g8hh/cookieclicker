@@ -4335,9 +4335,9 @@ Game.Launch=function()
 					if (Game.hasAura('奥术光环')) m*=0.95;
 					if (Game.hasBuff('糖的祝福')) m*=0.9;
 					if (Game.season=='easter' && Game.Has('星人')) m*=0.98;
-					else if (Game.season=='halloween' && Game.Has('Starterror')) m*=0.98;
-					else if (Game.season=='valentines' && Game.Has('Starlove')) m*=0.98;
-					else if (Game.season=='fools' && Game.Has('Startrade')) m*=0.95;
+					else if (Game.season=='halloween' && Game.Has('星际恐怖')) m*=0.98;
+					else if (Game.season=='valentines' && Game.Has('星际之恋')) m*=0.98;
+					else if (Game.season=='fools' && Game.Has('星际贸易')) m*=0.95;
 					if (!me.wrath) m*=1/Game.eff('goldenCookieFreq');
 					else m*=1/Game.eff('wrathCookieFreq');
 					if (Game.hasGod)
@@ -4442,7 +4442,7 @@ Game.Launch=function()
 					var failRate=0.8;
 					if (Game.HasAchiev('让它下雪')) failRate=0.6;
 					failRate*=1/Game.dropRateMult();
-					if (Game.Has('Starsnow')) failRate*=0.95;
+					if (Game.Has('星雪')) failRate*=0.95;
 					if (Game.hasGod)
 					{
 						var godLvl=Game.hasGod('seasons');
@@ -4488,7 +4488,7 @@ Game.Launch=function()
 				getTimeMod:function(me,m)
 				{
 					if (Game.Has('驯鹿烘烤场')) m/=2;
-					if (Game.Has('Starsnow')) m*=0.95;
+					if (Game.Has('星雪')) m*=0.95;
 					if (Game.hasGod)
 					{
 						var godLvl=Game.hasGod('seasons');
@@ -7891,7 +7891,7 @@ Game.Launch=function()
 		order=10300;
 		var heartPower=function(){
 			var pow=2;
-			if (Game.Has('Starlove')) pow=3;
+			if (Game.Has('星际之恋')) pow=3;
 			if (Game.hasGod)
 			{
 				var godLvl=Game.hasGod('seasons');
@@ -8144,8 +8144,8 @@ Game.Launch=function()
 			
 						'<div class="line"></div><div style="margin:4px auto;clear:both;width:120px;"><div class="crate upgrade enabled" style="background-position:'+(-slot*48)+'px '+(-10*48)+'px;"></div><div id="upgradeToSlotNone" class="crate upgrade enabled" style="background-position:'+(-0*48)+'px '+(-7*48)+'px;display:'+(upgrade!=-1?'none':'block')+';"></div><div id="upgradeToSlotWrap" style="float:left;display:'+(upgrade==-1?'none':'block')+';">'+(Game.crate(Game.UpgradesById[upgrade==-1?0:upgrade],'','','upgradeToSlot'))+'</div></div>'+
 						'<div class="block crateBox" style="overflow-y:scroll;float:left;clear:left;width:317px;padding:0px;height:250px;">'+upgrades+'</div>'+
-						'<div class="block" style="float:right;width:152px;clear:right;height:234px;">Here are all the upgrades you\'ve purchased last playthrough.<div class="line"></div>Pick one to permanently gain its effects!<div class="line"></div>You can reassign this slot anytime you ascend.</div>'
-						,[['Confirm','Game.permanentUpgrades['+slot+']=Game.SelectingPermanentUpgrade;Game.BuildAscendTree();Game.ClosePrompt();'],'Cancel'],0,'widePrompt');
+						'<div class="block" style="float:right;width:152px;clear:right;height:234px;">以下是你上次购买的所有升级。<div class="line"></div>选择一个来永久地获得它的效果！<div class="line"></div>当你转生时，你可以重新分配这个插槽。</div>'
+						,[['确定','Game.permanentUpgrades['+slot+']=Game.SelectingPermanentUpgrade;Game.BuildAscendTree();Game.ClosePrompt();'],'取消'],0,'widePrompt');
 		}
 		Game.SelectingPermanentUpgrade=-1;
 		Game.PutUpgradeInPermanentSlot=function(upgrade,slot)
@@ -8157,14 +8157,14 @@ Game.Launch=function()
 			l('upgradeToSlotWrap').innerHTML=(Game.crate(Game.UpgradesById[upgrade==-1?0:upgrade],'','','upgradeToSlot'));
 		}
 		
-		new Game.Upgrade('星人','Eggs drop <b>10%</b> more often.<br>Golden cookies appear <b>2%</b> more often during Easter.',111111,[0,12]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('Starsnow','Christmas cookies drop <b>5%</b> more often.<br>Reindeer appear <b>5%</b> more often.',111111,[12,9]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('Starterror','Spooky cookies drop <b>10%</b> more often.<br>Golden cookies appear <b>2%</b> more often during Halloween.',111111,[13,8]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('Starlove','Heart cookies are <b>50%</b> more powerful.<br>Golden cookies appear <b>2%</b> more often during Valentines.',111111,[20,3]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('Startrade','Golden cookies appear <b>5%</b> more often during Business day.',111111,[17,6]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星人','鸡蛋掉率增加 <b>10%</b>。<br>黄金饼干出现频率增加 <b>2%</b> 在复活节期间。',111111,[0,12]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星雪','圣诞饼干掉率增加 <b>5%</b>。<br>在复活节期间额外增加 <b>5%</b>。',111111,[12,9]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星际恐怖','幽灵饼干掉率增加 <b>10%</b> 更多地.<br>黄金饼干在万圣节期间出现几率增加 <b>2%</b>。',111111,[13,8]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星际之恋','心形饼干能力增加 <b>50%</b>。<br>黄金饼干在情人节期间出现几率增加 <b>2%</b>。',111111,[20,3]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星际贸易','黄金饼干在工作日掉率增加 <b>5%</b>。',111111,[17,6]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
 		
 		var angelPriceFactor=7;
-		var desc=function(percent,total){return 'You gain another <b>+'+percent+'%</b> of your regular CpS while the game is closed, for a total of <b>'+total+'%</b>.';}
+		var desc=function(percent,total){return '你获得了另外 <b>+'+percent+'%</b> 当前饼干每秒产量,当游戏关闭时。 总共 <b>'+total+'%</b>.';}
 		new Game.Upgrade('天使',desc(10,15)+'<q>在糕点天堂的第一层，天使们的任务是向他们认为有价值的人提供新的食谱。</q>',Math.pow(angelPriceFactor,1),[0,11]);Game.last.pool='prestige';Game.last.parents=['双重超越之门'];
 		new Game.Upgrade('大天使',desc(10,25)+'<q>天使长们是第一个糕点天堂的成员，他们负责世界上最大的面包房的顺利运转。</q>',Math.pow(angelPriceFactor,2),[1,11]);Game.last.pool='prestige';Game.last.parents=['天使'];
 		new Game.Upgrade('美德',desc(10,35)+'<q>在糕点天堂的第二层发现，美德利用他们的天力量来推和拉宇宙之星。</q>',Math.pow(angelPriceFactor,3),[2,11]);Game.last.pool='prestige';Game.last.parents=['大天使'];
@@ -10283,7 +10283,7 @@ Game.Launch=function()
 							//if (Math.random()<(Game.HasAchiev('Spooky cookies')?0.2:0.05))//halloween cookie drops
 							var failRate=0.95;
 							if (Game.HasAchiev('幽灵饼干')) failRate=0.8;
-							if (Game.Has('Starterror')) failRate*=0.9;
+							if (Game.Has('星际恐怖')) failRate*=0.9;
 							failRate*=1/Game.dropRateMult();
 							if (Game.hasGod)
 							{
