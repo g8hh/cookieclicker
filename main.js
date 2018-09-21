@@ -2026,7 +2026,7 @@ Game.Launch=function()
 								if (Game.Has('Seraphim')) percent+=10;
 								if (Game.Has('God')) percent+=10;
 								
-								if (Game.Has('Chimera')) {maxTime+=60*60*24*2;percent+=5;}
+								if (Game.Has('奇美拉')) {maxTime+=60*60*24*2;percent+=5;}
 								
 								if (Game.Has('Fern tea')) percent+=3;
 								if (Game.Has('Ichor syrup')) percent+=7;
@@ -7513,7 +7513,7 @@ Game.Launch=function()
 			upgrade.tier=tier;
 			upgrade.buildingTie1=b1;
 			upgrade.buildingTie2=b2;
-			upgrade.priceFunc=function(){return (this.buildingTie1.basePrice*10+this.buildingTie2.basePrice*1)*Game.Tiers[this.tier].price*(Game.Has('Chimera')?0.98:1);};
+			upgrade.priceFunc=function(){return (this.buildingTie1.basePrice*10+this.buildingTie2.basePrice*1)*Game.Tiers[this.tier].price*(Game.Has('奇美拉')?0.98:1);};
 			Game.Objects[building1].synergies.push(upgrade);
 			Game.Objects[building2].synergies.push(upgrade);
 			//Game.SetTier(building1,tier);
@@ -8235,7 +8235,7 @@ Game.Launch=function()
 		order=25100;
 		new Game.Upgrade('A crumbly egg','Unlocks the <b>cookie dragon egg</b>.<q>Thank you for adopting this robust, fun-loving cookie dragon! It will bring you years of joy and entertainment.<br>Keep in a dry and cool place, and away from other house pets. Subscription to home insurance is strongly advised.</q>',25,[21,12]);
 		
-		new Game.Upgrade('Chimera','Synergy upgrades are <b>2% cheaper</b>.<br>You gain another <b>+5%</b> of your regular CpS while the game is closed.<br>You retain optimal cookie production while the game is closed for <b>2 more days</b>.<q>More than the sum of its parts.</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','路西法','协同效应2'];
+		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','路西法','协同效应2'];
 		
 		new Game.Upgrade('奶油饼干罐头','含有丰富的奶油饼干。<q>丹麦饼干的五个品种。<br/>配小纸杯。</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
 		
@@ -12168,9 +12168,9 @@ Game.Launch=function()
 		
 		if (Game.T%(Game.fps*2)==0)
 		{
-			var title='Cookie Clicker';
-			if (Game.season=='fools') title='Cookie Baker';
-			document.title=(Game.OnAscend?'Ascending! ':'')+Beautify(Game.cookies)+' '+(Game.cookies==1?'cookie':'cookies')+' - '+title;
+			var title='无尽的饼干';
+			if (Game.season=='fools') title='烘烤饼干';
+			document.title=(Game.OnAscend?'升天! ':'')+Beautify(Game.cookies)+' '+(Game.cookies==1?'饼干':'饼干')+' - '+title;
 		}
 		if (Game.T%15==0)
 		{
