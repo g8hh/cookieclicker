@@ -2265,8 +2265,8 @@ Game.Launch=function()
 					Game.addClass('reincarnating');
 					Game.BigCookieSize=0;
 				}
-				if (Game.prefs.popups) Game.Popup('Game reset');
-				else Game.Notify('Game reset','So long, cookies.',[21,6],6);
+				if (Game.prefs.popups) Game.Popup('游戏重置');
+				else Game.Notify('游戏重置','这么久了，饼干。',[21,6],6);
 			}
 		}
 		Game.HardReset=function(bypass)
@@ -2859,7 +2859,7 @@ Game.Launch=function()
 			if (!bypass) Game.Prompt('<h3>Give up</h3><div class="block">你确定吗?你离开的话，就得不到任何天堂芯片！</div>',[['确定','Game.ClosePrompt();Game.GiveUpAscend(1);'],'取消']);
 			else
 			{
-				if (Game.prefs.popups) Game.Popup('Game reset');
+				if (Game.prefs.popups) Game.Popup('游戏重置');
 				else Game.Notify('放弃','让我们再试一次!',[0,5],4);
 				Game.Reset();
 			}
