@@ -161,7 +161,7 @@ M.launch=function()
 				},
 				fail:function()
 				{
-					Game.killBuff('Haggler\'s luck');
+					Game.killBuff('运气而已');
 					var buff=Game.gainBuff('haggler misery',60*60,2);
 					Game.Popup('<div style="font-size:80%;">反效果!<br>升级价格变高!</div>',Game.mouseX,Game.mouseY);
 				},

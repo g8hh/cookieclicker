@@ -3255,8 +3255,8 @@ Game.Launch=function()
 				total*=choose([2,3,4,5,6,7]);
 				Game.gainBuff('sugar blessing',24*60*60,1);
 				Game.Earn(Game.cookies);
-				if (Game.prefs.popups) Game.Popup('Sugar blessing activated!');
-				else Game.Notify('Sugar blessing activated!','你的饼干已经翻倍了。<br>+10% 黄金饼干出现几率，在接下来的24小时。',[29,16]);
+				if (Game.prefs.popups) Game.Popup('糖的祝福已激活!');
+				else Game.Notify('糖的祝福激活!','你的饼干已经翻倍了。<br>+10% 黄金饼干出现几率，在接下来的24小时。',[29,16]);
 			}
 			else if (Game.lumpCurrentType==3) total*=choose([0,0,1,2,2]);
 			else if (Game.lumpCurrentType==4)
@@ -3479,7 +3479,7 @@ Game.Launch=function()
 			
 			var out=mult*Game.ComputeCps(1,Game.Has('加强的食指')+Game.Has('腕管预防霜')+Game.Has('双手通用'),add);
 			
-			if (Game.hasBuff('Cursed finger')) out=Game.buffs['Cursed finger'].power;
+			if (Game.hasBuff('被诅咒的手指')) out=Game.buffs['被诅咒的手指'].power;
 			return out;
 		}
 		Game.computedMouseCps=1;
@@ -3847,7 +3847,7 @@ Game.Launch=function()
 			Game.globalCpsMult=mult;
 			Game.cookiesPs*=Game.globalCpsMult;
 			
-			//if (Game.hasBuff('Cursed finger')) Game.cookiesPs=0;
+			//if (Game.hasBuff('被诅咒的手指')) Game.cookiesPs=0;
 			
 			Game.computedMouseCps=Game.mouseCps();
 			
@@ -4233,7 +4233,7 @@ Game.Launch=function()
 					else if (choice=='龙之飞舞')
 					{
 						buff=Game.gainBuff('龙之飞舞',Math.ceil(10*effectDurMod),1111);
-						if (Math.random()<0.8) Game.killBuff('Click frenzy');
+						if (Math.random()<0.8) Game.killBuff('点击狂潮');
 					}
 					else if (choice=='chain cookie')
 					{
@@ -4333,7 +4333,7 @@ Game.Launch=function()
 					if (Game.Has('天上的运气')) m*=0.95;
 					if (Game.Has('Green yeast digestives')) m*=0.99;
 					if (Game.hasAura('Arcane Aura')) m*=0.95;
-					if (Game.hasBuff('Sugar blessing')) m*=0.9;
+					if (Game.hasBuff('糖的祝福')) m*=0.9;
 					if (Game.season=='easter' && Game.Has('星人')) m*=0.98;
 					else if (Game.season=='halloween' && Game.Has('Starterror')) m*=0.98;
 					else if (Game.season=='valentines' && Game.Has('Starlove')) m*=0.98;
@@ -4430,13 +4430,13 @@ Game.Launch=function()
 					}
 					
 					var val=Game.cookiesPs*60;
-					if (Game.hasBuff('Elder frenzy')) val*=0.5;//very sorry
-					if (Game.hasBuff('Frenzy')) val*=0.75;//I sincerely apologize
+					if (Game.hasBuff('老者狂怒')) val*=0.5;//very sorry
+					if (Game.hasBuff('疯狂')) val*=0.75;//I sincerely apologize
 					var moni=Math.max(25,val);//1 minute of cookie production, or 25 cookies - whichever is highest
 					if (Game.Has('何蚝味糖霜')) moni*=2;
 					moni*=Game.eff('reindeerGain');
 					Game.Earn(moni);
-					if (Game.hasBuff('Elder frenzy')) Game.Win('麋鹿');
+					if (Game.hasBuff('老者狂怒')) Game.Win('麋鹿');
 					
 					var cookie='';
 					var failRate=0.8;
@@ -4514,17 +4514,17 @@ Game.Launch=function()
 		};
 		
 		Game.goldenCookieChoices=[
-			"Frenzy","frenzy",
+			"疯狂","frenzy",
 			"Lucky","multiply cookies",
 			"Ruin","ruin cookies",
-			"Elder frenzy","blood frenzy",
-			"Clot","clot",
-			"Click frenzy","click frenzy",
-			"Cursed finger","cursed finger",
+			"老者狂怒","blood frenzy",
+			"血栓","clot",
+			"点击狂潮","click frenzy",
+			"被诅咒的手指","cursed finger",
 			"Cookie chain","chain cookie",
 			"饼干风暴","cookie storm",
 			"Building special","building special",
-			"Dragon Harvest","dragon harvest",
+			"龙之收获","dragon harvest",
 			"龙之飞舞","dragonflight",
 			"Sweet","free sugar lump",
 			"Blab","blab"
@@ -6187,7 +6187,7 @@ Game.Launch=function()
 				if (success && Game.hasGod)
 				{
 					var godLvl=Game.hasGod('ruin');
-					var old=Game.hasBuff('Devastation');
+					var old=Game.hasBuff('破坏');
 					if (old)
 					{
 						if (godLvl==1) old.multClick+=sold*0.01;
@@ -6569,7 +6569,7 @@ Game.Launch=function()
 			if (Game.Has('Faberge egg')) price*=0.99;
 			if (Game.Has('Divine discount')) price*=0.99;
 			if (Game.hasAura('Fierce Hoarder')) price*=0.98;
-			if (Game.hasBuff('Everything must go')) price*=0.95;
+			if (Game.hasBuff('一切都得走')) price*=0.95;
 			if (Game.hasBuff('狡猾的小妖精')) price*=0.98;
 			if (Game.hasBuff('肮脏的妖精')) price*=1.02;
 			price*=Game.eff('buildingCost');
@@ -7106,8 +7106,8 @@ Game.Launch=function()
 				if (Game.Has('圣诞老人的统治')) price*=0.98;
 				if (Game.Has('Faberge egg')) price*=0.99;
 				if (Game.Has('Divine sales')) price*=0.99;
-				if (Game.hasBuff('Haggler\'s luck')) price*=0.98;
-				if (Game.hasBuff('砍价的魅力')) price*=1.02;
+				if (Game.hasBuff('运气而已')) price*=0.98;
+				if (Game.hasBuff('砍价的不幸')) price*=1.02;
 				if (Game.hasAura('Master of the Armory')) price*=0.98;
 				price*=Game.eff('upgradeCost');
 				if (this.pool=='cookie' && Game.Has('Divine bakeries')) price/=5;
@@ -8180,7 +8180,7 @@ Game.Launch=function()
 		new Game.Upgrade('决定性的命运','Golden cookies stay <b>5%</b> longer.<q>Life just got a bit more intense.</q>',7777,[10,14]);Game.last.pool='prestige';Game.last.parents=['Lasting fortune'];
 
 		new Game.Upgrade('Divine discount','Buildings are <b>1% cheaper</b>.<q>Someone special deserves a special price.</q>',99999,[21,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
-		new Game.Upgrade('Divine sales','Upgrades are <b>1% cheaper</b>.<q>Everything must go!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
+		new Game.Upgrade('Divine sales','Upgrades are <b>1% cheaper</b>.<q>一切都得走!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
 		new Game.Upgrade('Divine bakeries','Cookie upgrades are <b>5 times cheaper</b>.<q>They sure know what they\'re doing.</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['Divine sales','Divine discount'];
 		
 		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','Tin of butter cookies'];
@@ -9759,8 +9759,8 @@ Game.Launch=function()
 		new Game.buffType('frenzy',function(time,pow)
 		{
 			return {
-				name:'Frenzy',
-				desc:'饼干产量 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				name:'疯狂',
+				desc:'饼干产量 x'+pow+' 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[10,14],
 				time:time*Game.fps,
 				add:true,
@@ -9771,8 +9771,8 @@ Game.Launch=function()
 		new Game.buffType('blood frenzy',function(time,pow)
 		{
 			return {
-				name:'Elder frenzy',
-				desc:'饼干产量 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				name:'老者狂怒',
+				desc:'饼干产量 x'+pow+' 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[29,6],
 				time:time*Game.fps,
 				add:true,
@@ -9783,7 +9783,7 @@ Game.Launch=function()
 		new Game.buffType('clot',function(time,pow)
 		{
 			return {
-				name:'Clot',
+				name:'血栓',
 				desc:'饼干产量减半持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[15,5],
 				time:time*Game.fps,
@@ -9795,7 +9795,7 @@ Game.Launch=function()
 		new Game.buffType('dragon harvest',function(time,pow)
 		{
 			return {
-				name:'Dragon Harvest',
+				name:'龙之收获',
 				desc:'饼干产量 x'+pow+' 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[10,25],
 				time:time*Game.fps,
@@ -9807,7 +9807,7 @@ Game.Launch=function()
 		new Game.buffType('everything must go',function(time,pow)
 		{
 			return {
-				name:'Everything must go',
+				name:'一切都得走',
 				desc:'所有建筑便宜 '+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[17,6],
 				time:time*Game.fps,
@@ -9819,7 +9819,7 @@ Game.Launch=function()
 		new Game.buffType('cursed finger',function(time,pow)
 		{
 			return {
-				name:'Cursed finger',
+				name:'被诅咒的手指',
 				desc:'饼干生产停止 '+Game.sayTime(time*Game.fps,-1)+',<br>但是每一次点击都是值得的 '+Game.sayTime(time*Game.fps,-1)+' 饼干每秒产量.',
 				icon:[12,17],
 				time:time*Game.fps,
@@ -9832,8 +9832,8 @@ Game.Launch=function()
 		new Game.buffType('click frenzy',function(time,pow)
 		{
 			return {
-				name:'Click frenzy',
-				desc:'点击效果 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				name:'点击狂潮',
+				desc:'点击效果 x'+pow+' 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,14],
 				time:time*Game.fps,
 				add:true,
@@ -9845,7 +9845,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'龙之飞舞',
-				desc:'点击效果 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'点击效果 x'+pow+' 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,25],
 				time:time*Game.fps,
 				add:true,
@@ -9894,8 +9894,8 @@ Game.Launch=function()
 		new Game.buffType('sugar blessing',function(time,pow)
 		{
 			return {
-				name:'Sugar blessing',
-				desc:'You find 10% more golden cookies for the next '+Game.sayTime(time*Game.fps,-1)+'.',
+				name:'糖的祝福',
+				desc:'你发现黄金饼干的几率增加 10% 在接下来 '+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,16],
 				time:time*Game.fps,
 				//add:true
@@ -9904,8 +9904,8 @@ Game.Launch=function()
 		new Game.buffType('haggler luck',function(time,pow)
 		{
 			return {
-				name:'Haggler\'s luck',
-				desc:'All upgrades are '+pow+'% cheaper for '+Game.sayTime(time*Game.fps,-1)+'!',
+				name:'运气而已',
+				desc:'所有升级都便宜 '+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[25,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9915,8 +9915,8 @@ Game.Launch=function()
 		new Game.buffType('haggler misery',function(time,pow)
 		{
 			return {
-				name:'砍价的魅力',
-				desc:'All upgrades are '+pow+'% pricier for '+Game.sayTime(time*Game.fps,-1)+'!',
+				name:'砍价的不幸',
+				desc:'所有升级成本增加 '+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[25,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9927,7 +9927,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'狡猾的小妖精',
-				desc:'All buildings are '+pow+'% cheaper for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有建筑便宜 '+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9938,7 +9938,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'肮脏的妖精',
-				desc:'All buildings are '+pow+'% pricier for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有建筑成本增加 '+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9949,7 +9949,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'魔法专家',
-				desc:'Spells backfire '+pow+' times less for '+Game.sayTime(time*Game.fps,-1)+'.',
+				desc:'咒语会适得其反 '+pow+'持续时间变短'+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9970,8 +9970,8 @@ Game.Launch=function()
 		new Game.buffType('devastation',function(time,pow)
 		{
 			return {
-				name:'Devastation',
-				desc:'点击效果 +'+Math.floor(pow*100-100)+'% for '+Game.sayTime(time*Game.fps,-1)+'!',
+				name:'破坏',
+				desc:'点击效果 +'+Math.floor(pow*100-100)+'% 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[23,18],
 				time:time*Game.fps,
 				multClick:pow,
@@ -9983,7 +9983,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'糖的狂热',
-				desc:'饼干产量 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'饼干产量 x'+pow+' 持续 '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[29,14],
 				time:time*Game.fps,
 				add:true,
@@ -10629,7 +10629,7 @@ Game.Launch=function()
 			1:{name:'牛奶的气息',pic:[18,25],desc:'Kittens are <b>5%</b> more effective.'},
 			2:{name:'Dragon Cursor',pic:[0,25],desc:'Clicking is <b>5%</b> more effective.'},
 			3:{name:'Elder Battalion',pic:[1,25],desc:'Grandmas gain <b>+1% CpS</b> for every non-grandma building.'},
-			4:{name:'Reaper of Fields',pic:[2,25],desc:'Golden cookies may trigger a <b>Dragon Harvest</b>.'},
+			4:{name:'Reaper of Fields',pic:[2,25],desc:'Golden cookies may trigger a <b>龙之收获</b>.'},
 			5:{name:'Earth Shatterer',pic:[3,25],desc:'Buildings sell back for <b>50%</b> instead of 25%.'},
 			6:{name:'Master of the Armory',pic:[4,25],desc:'All upgrades are <b>2%</b> cheaper.'},
 			7:{name:'Fierce Hoarder',pic:[15,25],desc:'All buildings are <b>2%</b> cheaper.'},
@@ -11066,7 +11066,7 @@ Game.Launch=function()
 				Timer.clean();
 				
 				var showDragon=0;
-				if (Game.hasBuff('龙之飞舞') || Game.hasBuff('Dragon Harvest')) showDragon=1;
+				if (Game.hasBuff('龙之飞舞') || Game.hasBuff('龙之收获')) showDragon=1;
 				
 				Game.cookieOriginX=Math.floor(ctx.canvas.width/2);
 				Game.cookieOriginY=Math.floor(ctx.canvas.height*0.4);
