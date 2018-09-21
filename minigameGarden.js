@@ -136,7 +136,7 @@ M.launch=function()
 				ageTickR:1,
 				mature:50,
 				children:['queenbeet'],
-				effsStr:'<div class="green">&bull; +1% CpS</div><div class="green">&bull; harvest when mature for +30 minutes of CpS (max. 3% of bank)</div>',
+				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; harvest when mature for +30 minutes of CpS (max. 3% of bank)</div>',
 				q:'A favorite among cooks, this large berry has a crunchy brown exterior and a creamy red center. Excellent in pies or chicken stews.',
 				onHarvest:function(x,y,age)
 				{
@@ -162,8 +162,8 @@ M.launch=function()
 				mature:25,
 				detailsStr:'Predictable growth',
 				children:['whiteChocoroot','drowsyfern','queenbeet'],
-				effsStr:'<div class="green">&bull; +1% CpS</div><div class="green">&bull; harvest when mature for +3 minutes of CpS (max. 3% of bank)</div><div class="green">&bull; predictable growth</div>',
-				q:'A tangly bramble coated in a sticky, sweet substance. Unknown genetic ancestry. Children often pick these from fields as-is as a snack.',
+				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; 成熟时收获了3分钟的饼干秒出了（最高不超过3%的银行产量）</div><div class="green">&bull; 可预见的增长</div>',
+				q:'一种涂有粘稠甜味物质的汤姆荆棘。 未知的遗传祖先。 孩子们经常从田里采摘这些作为零食。',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature)
@@ -214,8 +214,8 @@ M.launch=function()
 				mature:70,
 				detailsStr:'Spreads easily',
 				children:['brownMold','whiteChocoroot','wardlichen','greenRot'],
-				effsStr:'<div class="green">&bull; +1% CpS</div><div class="gray">&bull; may spread as brown mold</div>',
-				q:'A common rot that infests shady plots of earth. Grows in little creamy capsules. Smells sweet, but sadly wilts quickly.',
+				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="gray">&bull; 可以像棕色霉菌一样传播</div>',
+				q:'一种常见的腐烂物，寄生在阴凉的土地上。生长在乳脂状的小胶囊里。闻起来很香，但很快就会枯萎。',
 			},
 			'brownMold':{
 				name:'Brown mold',
@@ -228,7 +228,7 @@ M.launch=function()
 				mature:70,
 				detailsStr:'Spreads easily',
 				children:['whiteMildew','chocoroot','keenmoss','wrinklegill'],
-				effsStr:'<div class="red">&bull; -1% CpS</div><div class="gray">&bull; may spread as white mildew</div>',
+				effsStr:'<div class="red">&bull; -1% 饼干每秒产量</div><div class="gray">&bull; may spread as white mildew</div>',
 				q:'A common rot that infests shady plots of earth. Grows in odd reddish clumps. Smells bitter, but thankfully wilts quickly.',
 			},
 			
@@ -285,7 +285,7 @@ M.launch=function()
 				ageTickR:2,
 				mature:60,
 				children:[],
-				effsStr:'<div class="green">&bull; surrounding plants (3x3) are 20% more efficient</div><div class="red">&bull; -2% CpS</div>',
+				effsStr:'<div class="green">&bull; surrounding plants (3x3) are 20% more efficient</div><div class="red">&bull; -2% 饼干每秒产量</div>',
 				q:'This flower grows an intricate root network that distributes nutrients throughout the surrounding soil. The reason for this seemingly altruistic behavior is still unknown.',
 			},
 			'drowsyfern':{
@@ -297,7 +297,7 @@ M.launch=function()
 				ageTickR:0.1,
 				mature:30,
 				children:[],
-				effsStr:'<div class="green">&bull; +3% CpS</div><div class="red">&bull; -5% cookies per click</div><div class="red">&bull; -10% golden cookie frequency</div>',
+				effsStr:'<div class="green">&bull; +3% 饼干每秒产量</div><div class="red">&bull; -5% cookies per click</div><div class="red">&bull; -10% golden cookie frequency</div>',
 				q:'Traditionally used to brew a tea that guarantees a good night of sleep.',
 				onHarvest:function(x,y,age)
 				{
@@ -338,7 +338,7 @@ M.launch=function()
 				mature:80,
 				noContam:true,
 				children:['duketater','queenbeetLump','shriekbulb'],
-				effsStr:'<div class="green">&bull; +0.3% golden cookie effect duration</div><div class="red">&bull; -2% CpS</div><div class="green">&bull; harvest when mature for +1 hour of CpS (max. 6% of bank)</div>',
+				effsStr:'<div class="green">&bull; +0.3% golden cookie effect duration</div><div class="red">&bull; -2% 饼干每秒产量</div><div class="green">&bull; harvest when mature for +1 hour of CpS (max. 6% of bank)</div>',
 				q:'A delicious taproot used to prepare high-grade white sugar. Entire countries once went to war over these.',
 				onHarvest:function(x,y,age)
 				{
@@ -364,7 +364,7 @@ M.launch=function()
 				mature:85,
 				noContam:true,
 				children:[],
-				effsStr:'<div class="red">&bull; -10% CpS</div><div class="red">&bull; surrounding plants (3x3) are 20% less efficient</div><div class="green">&bull; harvest when mature for a sugar lump</div>',
+				effsStr:'<div class="red">&bull; -10% 饼干每秒产量</div><div class="red">&bull; surrounding plants (3x3) are 20% less efficient</div><div class="green">&bull; harvest when mature for a sugar lump</div>',
 				q:'A delicious taproot used to prepare high-grade white sugar. Entire countries once went to war over these.<br>It looks like this one has grown especially sweeter and juicier from growing in close proximity to other queenbeets.',
 				onHarvest:function(x,y,age)
 				{
@@ -461,7 +461,7 @@ M.launch=function()
 				ageTickR:18,
 				mature:80,
 				children:[],
-				effsStr:'<div class="green">&bull; +4% cookies per click</div><div class="green">&bull; +1% cursor CpS</div><div class="red">&bull; -1% CpS</div>',
+				effsStr:'<div class="green">&bull; +4% cookies per click</div><div class="green">&bull; +1% cursor CpS</div><div class="red">&bull; -1% 饼干每秒产量</div>',
 				q:'Touching its waxy skin reveals that the interior is hollow and uncomfortably squishy.',
 			},
 			'cheapcap':{
@@ -531,7 +531,7 @@ M.launch=function()
 				noContam:true,
 				detailsStr:'The unfortunate result of some plant combinations',
 				children:['shriekbulb'],
-				effsStr:'<div class="red">&bull; -2% CpS</div><div class="red">&bull; surrounding plants (3x3) are 5% less efficient</div>',
+				effsStr:'<div class="red">&bull; -2% 饼干每秒产量</div><div class="red">&bull; surrounding plants (3x3) are 5% less efficient</div>',
 				q:'A nasty vegetable with a dreadful quirk : its flesh resonates with a high-pitched howl whenever it is hit at the right angle by sunlight, moonlight, or even a slight breeze.',
 			},
 			'tidygrass':{
@@ -1117,7 +1117,7 @@ M.launch=function()
 			
 			return '<div class="description">'+
 						(!me.immortal?('<div style="margin:6px 0px;font-size:11px;"><b>平均寿命 :</b> '+Game.sayTime(((100/(me.ageTick+me.ageTickR/2))*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(1)))+' 周期)</small></div>'):'')+
-						'<div style="margin:6px 0px;font-size:11px;"><b>Average maturation :</b> '+Game.sayTime(((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)))+' 周期)</small></div>'+
+						'<div style="margin:6px 0px;font-size:11px;"><b>平均成熟时间 :</b> '+Game.sayTime(((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)))+' 周期)</small></div>'+
 						(me.weed?'<div style="margin:6px 0px;font-size:11px;"><b>是杂草</b></div>':'')+
 						(me.fungus?'<div style="margin:6px 0px;font-size:11px;"><b>是一种真菌</b></div>':'')+
 						(me.detailsStr?('<div style="margin:6px 0px;font-size:11px;"><b>详情 :</b> '+me.detailsStr+'</div>'):'')+
