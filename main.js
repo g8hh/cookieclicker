@@ -3190,7 +3190,7 @@ Game.Launch=function()
 				else if (godLvl==3) Game.lumpRipeAge-=(hour/3);
 			}
 			Game.lumpOverripeAge=Game.lumpRipeAge+hour;
-			if (Game.Has('Glucose-charged air')) {Game.lumpMatureAge/=2000;Game.lumpRipeAge/=2000;Game.lumpOverripeAge/=2000;}
+			if (Game.Has('葡萄糖空气')) {Game.lumpMatureAge/=2000;Game.lumpRipeAge/=2000;Game.lumpOverripeAge/=2000;}
 		}
 		Game.loadLumps=function(time)
 		{
@@ -3840,7 +3840,7 @@ Game.Launch=function()
 				mult*=goldenSwitchMult;
 			}
 			if (Game.Has('神奇的恶作剧')) mult*=1000;
-			if (Game.Has('Occult obstruction')) mult*=0;
+			if (Game.Has('神秘障碍')) mult*=0;
 			
 			for (var i in Game.customCpsMult) {mult*=Game.customCpsMult[i]();}
 			
@@ -4332,7 +4332,7 @@ Game.Launch=function()
 					if (Game.Has('Golden goose egg')) m*=0.95;
 					if (Game.Has('天上的运气')) m*=0.95;
 					if (Game.Has('Green yeast digestives')) m*=0.99;
-					if (Game.hasAura('Arcane Aura')) m*=0.95;
+					if (Game.hasAura('奥术光环')) m*=0.95;
 					if (Game.hasBuff('糖的祝福')) m*=0.9;
 					if (Game.season=='easter' && Game.Has('星人')) m*=0.98;
 					else if (Game.season=='halloween' && Game.Has('Starterror')) m*=0.98;
@@ -6567,8 +6567,8 @@ Game.Launch=function()
 			if (Game.Has('季节储蓄')) price*=0.99;
 			if (Game.Has('圣诞老人的统治')) price*=0.99;
 			if (Game.Has('法贝热彩蛋')) price*=0.99;
-			if (Game.Has('Divine discount')) price*=0.99;
-			if (Game.hasAura('Fierce Hoarder')) price*=0.98;
+			if (Game.Has('神圣折扣')) price*=0.99;
+			if (Game.hasAura('激烈囤积')) price*=0.98;
 			if (Game.hasBuff('一切都得走')) price*=0.95;
 			if (Game.hasBuff('狡猾的小妖精')) price*=0.98;
 			if (Game.hasBuff('肮脏的妖精')) price*=1.02;
@@ -7110,7 +7110,7 @@ Game.Launch=function()
 				if (Game.hasBuff('砍价的不幸')) price*=1.02;
 				if (Game.hasAura('Master of the Armory')) price*=0.98;
 				price*=Game.eff('upgradeCost');
-				if (this.pool=='cookie' && Game.Has('Divine bakeries')) price/=5;
+				if (this.pool=='cookie' && Game.Has('神圣的面包店')) price/=5;
 			}
 			return Math.ceil(price);
 		}
@@ -8179,9 +8179,9 @@ Game.Launch=function()
 		new Game.Upgrade('Lasting fortune','Golden cookies effects last <b>10%</b> longer.<q>This isn\'t your average everyday luck. This is... advanced luck.</q>',777,[23,6]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
 		new Game.Upgrade('决定性的命运','Golden cookies stay <b>5%</b> longer.<q>Life just got a bit more intense.</q>',7777,[10,14]);Game.last.pool='prestige';Game.last.parents=['Lasting fortune'];
 
-		new Game.Upgrade('Divine discount','Buildings are <b>1% cheaper</b>.<q>Someone special deserves a special price.</q>',99999,[21,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
+		new Game.Upgrade('神圣折扣','Buildings are <b>1% cheaper</b>.<q>Someone special deserves a special price.</q>',99999,[21,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
 		new Game.Upgrade('Divine sales','Upgrades are <b>1% cheaper</b>.<q>一切都得走!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
-		new Game.Upgrade('Divine bakeries','Cookie upgrades are <b>5 times cheaper</b>.<q>They sure know what they\'re doing.</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['Divine sales','Divine discount'];
+		new Game.Upgrade('神圣的面包店','Cookie upgrades are <b>5 times cheaper</b>.<q>They sure know what they\'re doing.</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['Divine sales','神圣折扣'];
 		
 		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','奶油饼干罐头'];
 		new Game.Upgrade('启动厨房','You start with <b>5 grandmas</b>.<q>Where did these come from?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
@@ -8451,17 +8451,17 @@ Game.Launch=function()
 		new Game.SynergyUpgrade('Mystical energies','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
 		
 		
-		new Game.Upgrade('协同效应1','Unlocks a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>15</b> of both buildings.<q>The many beats the few.</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','Dominions'];
-		new Game.Upgrade('协同效应2','Unlocks a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>75</b> of both buildings.<q>The several beats the many.</q>',252525,[10,29]);Game.last.pool='prestige';Game.last.parents=['恶魔','Seraphim','协同效应1'];
+		new Game.Upgrade('协同效应1','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 15 </b>所有建筑物，就会出现协同作用。<q>许多人击败了少数人。</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','Dominions'];
+		new Game.Upgrade('协同效应2','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 75 </b>所有建筑物，就会出现协同作用。<q>这几个击败了许多人。</q>',252525,[10,29]);Game.last.pool='prestige';Game.last.parents=['恶魔','Seraphim','协同效应1'];
 		
 		new Game.Upgrade('天堂饼干','饼干生产增加 <b>+10% 永久产量</b>.<q>和天堂芯片一起拷。另一种超越时间和空间的文字。</q>',3,[25,12]);Game.last.pool='prestige';Game.last.parents=['遗产'];Game.last.power=10;Game.last.pseudoCookie=true;
 		new Game.Upgrade('皱纹饼干','饼干生产增加 <b>+10% 永久地</b>.<q>在一个时间和空间都没有意义的地方，普通饼干的结果会让无数的电子人离开。</q>',6666666,[26,12]);Game.last.pool='prestige';Game.last.parents=['Sacrilegious corruption','老香料'];Game.last.power=10;Game.last.pseudoCookie=true;
-		new Game.Upgrade('翻倍运气的精华','金色饼干（以及所有其他产生的东西，如驯鹿）有<b>1%的几率被加倍</b>.<q>味道亮闪闪的。空的小瓶是用来做大铅笔的。</q>',7777777,[27,12]);Game.last.pool='prestige';Game.last.parents=['Divine bakeries','残余运气'];
+		new Game.Upgrade('翻倍运气的精华','金色饼干（以及所有其他产生的东西，如驯鹿）有<b>1%的几率被加倍</b>.<q>味道亮闪闪的。空的小瓶是用来做大铅笔的。</q>',7777777,[27,12]);Game.last.pool='prestige';Game.last.parents=['神圣的面包店','残余运气'];
 		
 		order=40000;
-		new Game.Upgrade('Occult obstruction','Cookie production <b>reduced to 0</b>.<q>If symptoms persist, consult a doctor.</q>',7,[15,5]);//debug purposes only
+		new Game.Upgrade('神秘障碍','饼干生产 <b>减少到 0</b>.<q>如果症状持续，请咨询医生。</q>',7,[15,5]);//debug purposes only
 		Game.last.pool='debug';
-		new Game.Upgrade('Glucose-charged air','Sugar lumps coalesce <b>a whole lot faster</b>.<q>Don\'t breathe too much or you\'ll get diabetes!</q>',7,[29,16]);//debug purposes only
+		new Game.Upgrade('葡萄糖空气','糖块会<b>更快地</b>结合在一起.<q>不要呼吸太多，否则你会得糖尿病的!</q>',7,[29,16]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10300;
@@ -10582,7 +10582,7 @@ Game.Launch=function()
 				cost:function(){return Game.Objects['Temple'].amount>=100;},
 				buy:function(){Game.Objects['Temple'].sacrifice(100);},
 				costStr:function(){return '100 寺庙';}},
-			{name:'Krumblor, cookie dragon',action:'训练神秘的光环<br><small>金色光环:黄金饼干出现几率增加 5%</small>',pic:5,
+			{name:'Krumblor, cookie dragon',action:'训练奥术光环<br><small>金色光环:黄金饼干出现几率增加 5%</small>',pic:5,
 				cost:function(){return Game.Objects['Wizard tower'].amount>=100;},
 				buy:function(){Game.Objects['Wizard tower'].sacrifice(100);},
 				costStr:function(){return '100 精灵塔';}},
@@ -10633,9 +10633,9 @@ Game.Launch=function()
 			4:{name:'Reaper of Fields',pic:[2,25],desc:'Golden cookies may trigger a <b>龙之收获</b>.'},
 			5:{name:'Earth Shatterer',pic:[3,25],desc:'Buildings sell back for <b>50%</b> instead of 25%.'},
 			6:{name:'Master of the Armory',pic:[4,25],desc:'All upgrades are <b>2%</b> cheaper.'},
-			7:{name:'Fierce Hoarder',pic:[15,25],desc:'All buildings are <b>2%</b> cheaper.'},
+			7:{name:'激烈囤积',pic:[15,25],desc:'All buildings are <b>2%</b> cheaper.'},
 			8:{name:'Dragon God',pic:[16,25],desc:'Prestige CpS bonus <b>+5%</b>.'},
-			9:{name:'Arcane Aura',pic:[17,25],desc:'Golden cookies appear <b>+5%</b> more often.'},
+			9:{name:'奥术光环',pic:[17,25],desc:'Golden cookies appear <b>+5%</b> more often.'},
 			10:{name:'龙之飞舞',pic:[5,25],desc:'Golden cookies may trigger a <b>龙之飞舞</b>.'},
 			11:{name:'Ancestral Metamorphosis',pic:[6,25],desc:'Golden cookies give <b>10%</b> more cookies.'},
 			12:{name:'Unholy Dominion',pic:[7,25],desc:'Wrath cookies give <b>10%</b> more cookies.'},
@@ -11624,7 +11624,7 @@ Game.Launch=function()
 		Game.SetAllUpgrades=function(on)
 		{
 			Game.popups=0;
-			var leftout=['神奇的恶作剧','Occult obstruction','Glucose-charged air'];
+			var leftout=['神奇的恶作剧','神秘障碍','葡萄糖空气'];
 			for (var i in Game.Upgrades)
 			{
 				if (on && (Game.Upgrades[i].pool=='toggle' || leftout.indexOf(Game.Upgrades[i].name)!=-1)) {}
