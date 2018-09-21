@@ -760,7 +760,7 @@ var LaunchDungeons=function()
 			'<a class="control middle" onclick="Game.HeroesById['+this.hero.id+'].Move(0,0);"></a><br>'+
 			'</div>';
 			str+='<div style="position:absolute;left:'+(9*16+16+48*3)+'px;bottom:16px;height:100%;">'+
-			'<div class="dungeonName"><a onclick="Game.ObjectsById['+this.id+'].setSpecial(0);">Exit</a> - <span class="title" style="font-size:12px;">'+this.name+'</span> lvl.'+(this.level+1)+'</div>'+
+			'<div class="dungeonName"><a onclick="Game.ObjectsById['+this.id+'].setSpecial(0);">Exit</a> - <span class="title" style="font-size:12px;">'+this.name+'</span> 等级.'+(this.level+1)+'</div>'+
 			'<div id="heroSlot'+this.id+'" class="mobSlot"><div id="picHero'+this.id+'" class="mobPic"></div><div id="nameHero'+this.id+'" class="title mobName"></div><div class="hpmBar"><div id="hpHero'+this.id+'" class="hpBar"></div></div></div>'+
 			'<div id="monsterSlot'+this.id+'" class="mobSlot" style="left:128px;"><div id="picMonster'+this.id+'" class="mobPic"></div><div id="nameMonster'+this.id+'" class="title mobName"></div><div class="hpmBar"><div id="hpMonster'+this.id+'" class="hpBar"></div></div></div>'+
 			'</div>'+

@@ -6392,7 +6392,7 @@ Game.Launch=function()
 				l('productOwned'+me.id).innerHTML=me.amount?me.amount:'';
 				l('productPrice'+me.id).innerHTML=Beautify(Math.round(price));
 				l('productPriceMult'+me.id).innerHTML=(Game.buyBulk>1)?('x'+Game.buyBulk+' '):'';
-				l('productLevel'+me.id).innerHTML='lvl '+Beautify(me.level);
+				l('productLevel'+me.id).innerHTML='等级 '+Beautify(me.level);
 				if (Game.isMinigameReady(me) && Game.ascensionMode!=1)
 				{
 					l('productMinigameButton'+me.id).style.display='block';
@@ -6426,7 +6426,7 @@ Game.Launch=function()
 				str+='<div class="productButtons">';
 					str+='<div id="productLevel'+this.id+'" class="productButton productLevel lumpsOnly" onclick="Game.ObjectsById['+this.id+'].levelUp()" '+Game.getDynamicTooltip('Game.ObjectsById['+this.id+'].levelTooltip')+'></div>';
 					str+='<div id="productMinigameButton'+this.id+'" class="productButton productMinigameButton lumpsOnly" onclick="Game.ObjectsById['+this.id+'].switchMinigame(-1);PlaySound(Game.ObjectsById['+this.id+'].onMinigame?\'snd/clickOn.mp3\':\'snd/clickOff.mp3\');"></div>';
-					str+='<div class="productButton productMute" '+Game.getTooltip('<div style="width:150px;text-align:center;font-size:11px;"><b>Mute</b><br>(Minimize this building)</div>')+' onclick="Game.ObjectsById['+this.id+'].mute(1);PlaySound(Game.ObjectsById['+this.id+'].muted?\'snd/clickOff.mp3\':\'snd/clickOn.mp3\');" id="productMute'+this.id+'">Mute</div>';
+					str+='<div class="productButton productMute" '+Game.getTooltip('<div style="width:150px;text-align:center;font-size:11px;"><b>收缩</b><br>(最小化这个建筑)</div>')+' onclick="Game.ObjectsById['+this.id+'].mute(1);PlaySound(Game.ObjectsById['+this.id+'].muted?\'snd/clickOff.mp3\':\'snd/clickOn.mp3\');" id="productMute'+this.id+'">收缩</div>';
 				str+='</div>';
 				str+='<canvas class="rowCanvas" id="rowCanvas'+this.id+'"></canvas>';
 				str+='<div class="rowSpecial" id="rowSpecial'+this.id+'"></div>';
@@ -7028,7 +7028,7 @@ Game.Launch=function()
 		l('buildingsMaster').innerHTML=str;
 		
 		//build object displays
-		var muteStr='<div style="position:absolute;left:8px;bottom:12px;opacity:0.5;">Muted :</div>';
+		var muteStr='<div style="position:absolute;left:8px;bottom:12px;opacity:0.5;">已收起建筑 :</div>';
 		for (var i in Game.Objects)
 		{
 			var me=Game.Objects[i];
@@ -7046,7 +7046,7 @@ Game.Launch=function()
 		{
 			return function(){
 				var me=Game.ObjectsById[id];
-				return '<div style="width:150px;text-align:center;font-size:11px;"><b>'+(me.plural.charAt(0).toUpperCase()+me.plural.slice(1))+(me.level>0?' (lvl.&nbsp;'+me.level+')':'')+'</b><div class="line"></div>Click to unmute '+me.plural+'<br>(display this building)</div>';
+				return '<div style="width:150px;text-align:center;font-size:11px;"><b>'+cndisplayname((me.plural.charAt(0).toUpperCase()+me.plural.slice(1)))+(me.level>0?' (等级&nbsp;'+me.level+')':'')+'</b><div class="line"></div>点击展开 '+cnsigle(me.plural)+'<br>(显示整个建筑)</div>';
 			}
 		}
 		l('buildingsMute').innerHTML=muteStr;
@@ -12476,9 +12476,9 @@ window.onload=function()
 function cndisplayname(name){
     var cnname="";
     var temp=name;
-    if(temp=="Cursor"){
+    if(temp=="Cursor" || temp=="Cursors"){
         cnname="游标"
-    }else if(temp=="Grandma"){
+    }else if(temp=="Grandma" || temp=="Grandmas"){
         cnname="老奶奶"
     }else if(temp=="Farm" || temp=="Farms"){
         cnname="农场"
