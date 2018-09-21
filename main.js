@@ -8871,8 +8871,8 @@ Game.Launch=function()
 					{
 						var name=Game.Achievements[what].shortName?Game.Achievements[what].shortName:Game.Achievements[what].name;
 						Game.Achievements[what].won=1;
-						if (Game.prefs.popups) Game.Popup('Achievement unlocked :<br>'+name);
-						else Game.Notify('Achievement unlocked','<div class="title" style="font-size:18px;margin-top:-2px;">'+name+'</div>',Game.Achievements[what].icon);
+						if (Game.prefs.popups) Game.Popup('成就解锁 :<br>'+name);
+						else Game.Notify('成就解锁','<div class="title" style="font-size:18px;margin-top:-2px;">'+name+'</div>',Game.Achievements[what].icon);
 						if (Game.CountsAsAchievementOwned(Game.Achievements[what].pool)) Game.AchievementsOwned++;
 						Game.recalculateGains=1;
 					}
