@@ -7506,8 +7506,8 @@ Game.Launch=function()
 			if (b1.basePrice>b2.basePrice) {b1=Game.Objects[building2];b2=Game.Objects[building1];}//swap
 			
 			desc=
-				(b1.plural.charAt(0).toUpperCase()+b1.plural.slice(1))+' 获得 <b>+5% 饼干每秒产量</b> 每 '+cndisplayname(b2.name)+'.<br>'+
-				(b2.plural.charAt(0).toUpperCase()+b2.plural.slice(1))+' 获得 <b>+0.1% 饼干每秒产量</b> 每 '+cndisplayname(b1.name)+'.'+
+				cndisplayname((b1.plural.charAt(0).toUpperCase()+b1.plural.slice(1)))+' 获得 <b>+5% 饼干每秒产量</b> 每 '+cndisplayname(b2.name)+'.<br>'+
+				cndisplayname((b2.plural.charAt(0).toUpperCase()+b2.plural.slice(1)))+' 获得 <b>+0.1% 饼干每秒产量</b> 每 '+cndisplayname(b1.name)+'.'+
 				desc;
 			var upgrade=new Game.Upgrade(name,desc,(b1.basePrice*10+b2.basePrice*1)*Game.Tiers[tier].price,Game.GetIcon(building1,tier));//Math.sqrt(b1.basePrice*b2.basePrice)*Game.Tiers[tier].price
 			upgrade.tier=tier;
@@ -10492,7 +10492,7 @@ Game.Launch=function()
 			}
 		}
 		
-		Game.santaLevels=['Festive test tube','Festive ornament','Festive wreath','Festive tree','Festive present','Festive elf fetus','Elf toddler','Elfling','Young elf','Bulky elf','Nick','Santa Claus','Elder Santa','True Santa','Final Claus'];
+		Game.santaLevels=['一个节日测试管','节日装饰','节日花环','节日树','节日礼物','节日精灵胎儿','精灵小孩','精灵','年轻的精灵','庞大的精灵','尼克','圣诞老人','老圣诞老人','真正的圣诞老人','最后的圣诞老人'];
 		Game.santaDrops=['增加愉快','改良愉快','一堆煤','发痒的毛衣','驯鹿烘烤场','加重雪橇','何蚝味糖霜','季节储蓄','玩具车间','淘气名单','圣诞老人的无底包','圣诞老人的帮手','圣诞老人的遗产','圣诞老人的牛奶和饼干'];
 		for (var i in Game.santaDrops)//scale christmas upgrade prices with santa level
 		{Game.Upgrades[Game.santaDrops[i]].priceFunc=function(){return Math.pow(3,Game.santaLevel)*2525;}}
@@ -12483,31 +12483,31 @@ function cndisplayname(name){
         cnname="老奶奶"
     }else if(temp=="Farm" || temp=="Farms"){
         cnname="农场"
-    }else if(temp=="Mine"){
+    }else if(temp=="Mine" || temp=="Mines"){
         cnname="矿山"
-    }else if(temp=="Factory"){
+    }else if(temp=="Factory" || temp=="Factorys"){
         cnname="工厂"
-    }else if(temp=="Bank"){
+    }else if(temp=="Bank" || temp=="Banks"){
         cnname="银行"
-    }else if(temp=="Temple"){
+    }else if(temp=="Temple" || temp=="Temples"){
         cnname="寺庙"
-    }else if(temp=="Wizard tower"){
+    }else if(temp=="Wizard tower" || temp=="Wizard towers"){
         cnname="精灵塔"
-    }else if(temp=="Shipment"){
+    }else if(temp=="Shipment" || temp=="Shipments"){
         cnname="装船"
-    }else if(temp=="Alchemy lab"){
+    }else if(temp=="Alchemy lab" || temp=="Alchemy labs"){
         cnname="炼金实验室"
-    }else if(temp=="Portal"){
+    }else if(temp=="Portal" || temp=="Portals"){
         cnname="传送门"
-    }else if(temp=="Time machine"){
+    }else if(temp=="Time machine" || temp=="Time machines"){
         cnname="时光机器"
     }else if(temp=='<span style="font-size:65%;position:relative;bottom:4px;">Antimatter condenser</span>'){
         cnname='<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>'
-    }else if(temp=="Antimatter condenser"){
+    }else if(temp=="Antimatter condenser" || temp=="Antimatter condensers"){
         cnname="反物质冷凝器"
-    }else if(temp=="Prism"){
+    }else if(temp=="Prism" || temp=="Prisms"){
         cnname="棱镜"
-    }else if(temp=="Chancemaker"){
+    }else if(temp=="Chancemaker" || temp=="Chancemakers"){
         cnname="机会制造商"
     }else{
         return name;
