@@ -3179,7 +3179,7 @@ Game.Launch=function()
 			Game.lumpMatureAge=hour*20;
 			Game.lumpRipeAge=hour*23;
 			if (Game.Has('甜菊糖')) Game.lumpRipeAge-=hour;
-			if (Game.Has('Diabetica Daemonicus')) Game.lumpMatureAge-=hour;
+			if (Game.Has('糖尿病患者')) Game.lumpMatureAge-=hour;
 			if (Game.Has('Ichor syrup')) Game.lumpMatureAge-=1000*60*7;
 			if (Game.Has('Sugar aging process')) Game.lumpRipeAge-=6000*Math.min(600,Game.Objects['Grandma'].amount);//capped at 600 grandmas
 			if (Game.hasGod && Game.BuildingsOwned%10==0)
@@ -3248,7 +3248,7 @@ Game.Launch=function()
 			if (!Game.canLumps()) return;
 			Game.lumpT=Date.now();
 			var total=amount;
-			if (Game.lumpCurrentType==1 && Game.Has('Sucralosia Inutilis') && Math.random()<0.05) total*=2;
+			if (Game.lumpCurrentType==1 && Game.Has('舒张症') && Math.random()<0.05) total*=2;
 			else if (Game.lumpCurrentType==1) total*=choose([1,2]);
 			else if (Game.lumpCurrentType==2)
 			{
@@ -3287,7 +3287,7 @@ Game.Launch=function()
 			Math.seedrandom(Game.seed+'/'+Game.lumpT);
 			var rand=Math.random();
 			var types=[0];
-			if (rand<(Game.Has('Sucralosia Inutilis')?0.15:0.1)) types.push(1);//bifurcated
+			if (rand<(Game.Has('舒张症')?0.15:0.1)) types.push(1);//bifurcated
 			if (rand<3/1000) types.push(2);//golden
 			if (rand<0.1*Game.elderWrath) types.push(3);//meaty
 			if (rand<1/50) types.push(4);//caramelized
@@ -8445,10 +8445,10 @@ Game.Launch=function()
 		new Game.SynergyUpgrade('Primeval glow','<q>From unending times, an ancient light still shines, impossibly pure and fragile in its old age.</q>','Time machine','Prism','synergy2');
 		
 		new Game.SynergyUpgrade('Extra physics funding','<q>Time to put your money where your particle colliders are.</q>','Antimatter condenser','Bank','synergy1');
-		new Game.SynergyUpgrade('Chemical proficiency','<q>Discover exciting new elements, such as Fleshmeltium, Inert Shampoo Byproduct #17 and Carbon++!</q>','Antimatter condenser','Alchemy lab','synergy2');
+		new Game.SynergyUpgrade('化学能力','<q>Discover exciting new elements, such as Fleshmeltium, Inert Shampoo Byproduct #17 and Carbon++!</q>','Antimatter condenser','Alchemy lab','synergy2');
 		
-		new Game.SynergyUpgrade('Light magic','<q>Actually not to be taken lightly! No, I\'m serious. 178 people died last year. You don\'t mess around with magic.</q>','Prism','Wizard tower','synergy1');
-		new Game.SynergyUpgrade('Mystical energies','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
+		new Game.SynergyUpgrade('光明魔法','<q>Actually not to be taken lightly! No, I\'m serious. 178 people died last year. You don\'t mess around with magic.</q>','Prism','Wizard tower','synergy1');
+		new Game.SynergyUpgrade('神秘的能量','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
 		
 		
 		new Game.Upgrade('协同效应1','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 15 </b>所有建筑物，就会出现协同作用。<q>许多人击败了少数人。</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','领地'];
@@ -8465,22 +8465,22 @@ Game.Launch=function()
 		Game.last.pool='debug';
 		
 		order=10300;
-		Game.NewUpgradeCookie({name:'Lavender chocolate butter biscuit',desc:'Rewarded for owning 300 of everything.<br>This subtly-flavored biscuit represents the accomplishments of decades of top-secret research. The molded design on the chocolate resembles a well-known entrepreneur who gave their all to the ancient path of baking.',icon:[26,10],power:	10,price: 999999999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'薰衣草巧克力奶油饼干',desc:'拥有300个各种建筑。<br>这种口味微妙的饼干代表了几十年来最高机密的研究成果。巧克力造型的造型就像一位著名的企业家，把他们的一切都献给了古老的烘焙之路。',icon:[26,10],power:	10,price: 999999999999999999999999999999999,locked:1});
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Lombardia cookies',desc:'These come from those farms with the really good memory.',icon:[23,13],require:'品牌饼干盒',power:												3,	price:	999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Bastenaken cookies',desc:'French cookies made of delicious cinnamon and candy sugar. These do not contain Nuts!',icon:[24,13],require:'品牌饼干盒',power:												3,	price:	999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'伦巴第饼干',desc:'这些来自那些有着良好记忆的农场。',icon:[23,13],require:'品牌饼干盒',power:												3,	price:	999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'巴斯顿坎饼干',desc:'法国曲奇饼是由香肉桂和糖制成的。这些不含坚果!',icon:[24,13],require:'品牌饼干盒',power:												3,	price:	999999999999999999999*5});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Pecan sandies',desc:'Stick a nut on a cookie and call it a day! Name your band after it! Whatever!',icon:[25,13],power:						4,price: 999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Moravian spice cookies',desc:'Popular for being the world\'s moravianest cookies.',icon:[26,13],power:						4,price: 9999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Anzac biscuits',desc:'Army biscuits from a bakery down under, containing no eggs but yes oats.',icon:[27,13],power:						4,price: 9999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Buttercakes',desc:'Glistening with cholesterol, these cookies moistly straddle the line between the legal definition of a cookie and just a straight-up stick of butter.',icon:[29,13],power:						4,price: 99999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Ice cream sandwiches',desc:'In an alternate universe, "ice cream sandwich" designates an ice cream cone filled with bacon, lettuce, and tomatoes. Maybe some sprinkles too.',icon:[28,13],power:						4,price: 99999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'山核桃饼干',desc:'把坚果粘在饼干上，把它叫做一天！给你的乐队命名!随你的便!',icon:[25,13],power:						4,price: 999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'摩拉维亚香料饼干',desc:'它是世界上最美味的饼干。',icon:[26,13],power:						4,price: 9999999999999999999999999});
+		Game.NewUpgradeCookie({name:'澳扎克饼干',desc:'从一家面包店买来的军用饼干，里面没有鸡蛋，只有燕麦。',icon:[27,13],power:						4,price: 9999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'黄油蛋糕',desc:'这些饼干的胆固醇含量高，这些饼干在饼干的法律定义和简单的黄油块之间的线之间有一层关系。',icon:[29,13],power:						4,price: 99999999999999999999999999});
+		Game.NewUpgradeCookie({name:'冰淇淋三明治',desc:'在另一个宇宙中，“冰淇淋三明治”设计了一个冰淇淋蛋筒，里面装满了熏肉、生菜和西红柿。也许一些洒。',icon:[28,13],power:						4,price: 99999999999999999999999999*5});
 		
-		new Game.Upgrade('甜菊糖','Sugar lumps ripen <b>an hour sooner</b>.<q>A plant of supernatural sweetness grown by angels in heavenly gardens.</q>',100000000,[25,15]);Game.last.pool='prestige';Game.last.parents=['皱纹饼干'];
-		new Game.Upgrade('Diabetica Daemonicus','Sugar lumps mature <b>an hour sooner</b>.<q>A malevolent, if delicious herb that is said to grow on the cliffs of the darkest abyss of the underworld.</q>',300000000,[26,15]);Game.last.pool='prestige';Game.last.parents=['甜菊糖','路西法'];
-		new Game.Upgrade('Sucralosia Inutilis','Bifurcated sugar lumps appear <b>5% more often</b> and are <b>5% more likely</b> to drop 2 lumps.<q>A rare berry of uninteresting flavor that is as elusive as its uses are limited; only sought-after by the most avid collectors with too much wealth on their hands.</q>',1000000000,[27,15]);Game.last.pool='prestige';Game.last.parents=['Diabetica Daemonicus'];
+		new Game.Upgrade('甜菊糖','糖块成熟 <b>早一个小时</b>.<q>一种由天使在天堂花园中种植的超自然的甜味植物。</q>',100000000,[25,15]);Game.last.pool='prestige';Game.last.parents=['皱纹饼干'];
+		new Game.Upgrade('糖尿病患者','糖块成熟 <b>早一个小时</b>.<q>这是一种恶毒的，据说是在黑暗的深渊的悬崖上生长的美味的药草。</q>',300000000,[26,15]);Game.last.pool='prestige';Game.last.parents=['甜菊糖','路西法'];
+		new Game.Upgrade('舒张症','分叉糖块出现几率 <b>5% 更多地</b> 并且 <b>5% 更有可能</b> 掉两个糖块。<q>一种罕见的无趣的浆果，它的用途是有限的;只受那些贪心的收藏家的追捧，他们手上有太多的财富。</q>',1000000000,[27,15]);Game.last.pool='prestige';Game.last.parents=['糖尿病患者'];
 		
 		//note : these showIf functions stop working beyond 10 quadrillion prestige level, due to loss in precision; the solution, of course, is to make sure 10 quadrillion is not an attainable prestige level
 		new Game.Upgrade('幸运数字','<b>+1%</b> 声望等级每秒饼干产量效果<br><b>+1%</b> 黄金饼干效果持续时间。<br><b>+1%</b> 黄金饼干寿命。<q>这种升级有点害羞，只有当你的声望等级达到7时才会出现。</q>',777,[24,15]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%10==7);};
@@ -8550,50 +8550,50 @@ Game.Launch=function()
 		
 		order=150;new Game.Upgrade('阿迈斯里鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这个需要大约53人来推动它，另外48人跳下来按下按钮并触发点击。你可以说它有一些分量。</q>',50000000000000000000000,[11,19]);Game.MakeTiered(Game.last,10,11);
 		
-		order=200;new Game.TieredUpgrade('Reverse dementia','老奶奶工作效率 <b>翻倍</b>。<q>Extremely unsettling, and somehow even worse than the regular kind.</q>','Grandma',9);
-		order=300;new Game.TieredUpgrade('Humane pesticides','农场工作效率 <b>翻倍</b>。<q>Made by people, for people, from people and ready to unleash some righteous scorching pain on those pesky insects that so deserve it.</q>','Farm',9);
-		order=400;new Game.TieredUpgrade('Mole people','矿山工作效率 <b>翻倍</b>。<q>Engineered from real human beings within your very labs, these sturdy little folks have a knack for finding the tastiest underground minerals in conditions that more expensive machinery probably wouldn\'t survive.</q>','Mine',9);
-		order=500;new Game.TieredUpgrade('Machine learning','工厂工作效率 <b>翻倍</b>。<q>You figured you might get better productivity if you actually told your workers to learn how to work the machines. Sometimes, it\'s the little things...</q>','Factory',9);
-		order=525;new Game.TieredUpgrade('Edible money','银行工作效率 <b>翻倍</b>。<q>It\'s really quite simple; you make all currency too delicious not to eat, solving world hunger and inflation in one fell swoop!</q>','Bank',9);
-		order=550;new Game.TieredUpgrade('Sick rap prayers','寺庙工作效率 <b>翻倍</b>。<q>With their ill beat and radical rhymes, these way-hip religious tunes are sure to get all the youngins who thought they were 2 cool 4 church back on the pews and praying for more! Wicked!</q>','Temple',9);
-		order=575;new Game.TieredUpgrade('Deluxe tailored wands','精灵塔工作效率 <b>翻倍</b>。<q>In this age of science, most skillful wand-makers are now long gone; but thankfully - not all those wanders are lost.</q>','Wizard tower',9);
-		order=600;new Game.TieredUpgrade('Autopilot','装船工作效率 <b>翻倍</b>。<q>Your ships are now fitted with completely robotic crews! It\'s crazy how much money you save when you don\'t have to compensate the families of those lost in space.</q>','Shipment',9);
-		order=700;new Game.TieredUpgrade('The advent of chemistry','炼金实验室工作效率 <b>翻倍</b>。<q>You know what? That whole alchemy nonsense was a load of baseless rubbish. Dear god, what were you thinking?</q>','Alchemy lab',9);
-		order=800;new Game.TieredUpgrade('The real world','传送门工作效率 <b>翻倍</b>。<q>It turns out that our universe is actually the twisted dimension of another, saner plane of reality. Time to hop on over there and loot the place!</q>','Portal',9);
-		order=900;new Game.TieredUpgrade('Second seconds','时光机器工作效率 <b>翻倍</b>。<q>That\'s twice as many seconds in the same amount of time! What a deal! Also, what in god\'s name!</q>','Time machine',9);
-		order=1000;new Game.TieredUpgrade('Quantum comb','反物质冷凝器工作效率 <b>翻倍</b>。<q>Quantum entanglement is one of those things that are so annoying to explain that we might honestly be better off without it. This is finally possible thanks to the quantum comb!</q>','Antimatter condenser',9);
-		order=1100;new Game.TieredUpgrade('Crystal mirrors','棱镜工作效率 <b>翻倍</b>。<q>Designed to filter more light back into your prisms, reaching levels of brightness that reality itself had never planned for.</q>','Prism',9);
-		order=1200;new Game.TieredUpgrade('Bunnypedes','机会制造者工作效率 <b>翻倍</b>。<q>You\'ve taken to breeding rabbits with hundreds of paws, which makes them intrinsically very lucky and thus a very handy (if very disturbing) pet.</q>','Chancemaker',9);
+		order=200;new Game.TieredUpgrade('反向痴呆症','老奶奶工作效率 <b>翻倍</b>。<q>Extremely unsettling, and somehow even worse than the regular kind.</q>','Grandma',9);
+		order=300;new Game.TieredUpgrade('人道杀虫剂','农场工作效率 <b>翻倍</b>。<q>由人民，人民，人民制造，并准备在那些非常值得它的讨厌的昆虫上释放出一些正义的灼热之痛。</q>','Farm',9);
+		order=400;new Game.TieredUpgrade('鼹鼠们','矿山工作效率 <b>翻倍</b>。<q>这些坚固的小伙伴们在你的实验室里从真正的人类中设计出来，他们有能力在更昂贵的机器可能无法生存的条件下寻找最美味的地下矿物。</q>','Mine',9);
+		order=500;new Game.TieredUpgrade('机器学习','工厂工作效率 <b>翻倍</b>。<q>如果你真的告诉你的工人要学习如何操作机器，你可能会觉得你的生产力可能会提高。 有时，这是小事......</q>','Factory',9);
+		order=525;new Game.TieredUpgrade('食用钱','银行工作效率 <b>翻倍</b>。<q>这真的很简单; 你让所有的货币都太美味了，不吃饭，一举解决世界饥饿和通货膨胀！</q>','Bank',9);
+		order=550;new Game.TieredUpgrade('生病说唱祈祷','寺庙工作效率 <b>翻倍</b>。<q>随着他们的节拍和激进的押韵，这些嘻嘻哈哈的宗教音乐肯定会让所有认为自己是2个很酷的教堂的年轻人回到座位上并祈祷更多！ 邪恶！</q>','Temple',9);
+		order=575;new Game.TieredUpgrade('豪华定制魔杖','精灵塔工作效率 <b>翻倍</b>。<q>在这个科学时代，大多数技术娴熟的魔杖制造者现在已经不复存在了; 但幸运的是 - 并非所有这些游荡都会丢失。</q>','Wizard tower',9);
+		order=600;new Game.TieredUpgrade('自动驾驶仪','装船工作效率 <b>翻倍</b>。<q>你的船现在装有完全机器人的船员！ 当你不必赔偿太空中失踪者的家属时，你会节省多少钱。</q>','Shipment',9);
+		order=700;new Game.TieredUpgrade('化学的到来','炼金实验室工作效率 <b>翻倍</b>。<q>你知道吗？ 这整个炼金术胡说是没有根据的废话。 亲爱的上帝，你在想什么？</q>','Alchemy lab',9);
+		order=800;new Game.TieredUpgrade('真实的世界','传送门工作效率 <b>翻倍</b>。<q>事实证明，我们的宇宙实际上是另一个更理性的现实世界扭曲的维度。是时候跳上去抢那个地方了!</q>','Portal',9);
+		order=900;new Game.TieredUpgrade('第二秒','时光机器工作效率 <b>翻倍</b>。<q>这是在相同时间内两倍的时间!什么交易!还有，以上帝的名义!</q>','Time machine',9);
+		order=1000;new Game.TieredUpgrade('量子梳','反物质冷凝器工作效率 <b>翻倍</b>。<q>量子纠缠是那些令人讨厌的事情之一，如果没有它我们可能真的会变得更好。 这最终可能归功于量子梳！</q>','Antimatter condenser',9);
+		order=1100;new Game.TieredUpgrade('水晶镜子','棱镜工作效率 <b>翻倍</b>。<q>旨在将更多光线过滤回棱镜，达到现实本身从未计划过的亮度水平。</q>','Prism',9);
+		order=1200;new Game.TieredUpgrade('小松鼠','机会制造者工作效率 <b>翻倍</b>。<q>你已经用数百只爪子养殖兔子，这使得它们本身非常幸运，因此是一种非常方便（如果非常令人不安）的宠物。</q>','Chancemaker',9);
 		
 		order=20000;
 		new Game.Upgrade('小猫助理区域经理','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>没有什么能强调……除了必须征得我的下级的同意外，先生</q>',900000000000000000000000000000000000,Game.GetIcon('Kitten',10));Game.last.kitten=1;Game.MakeTiered(Game.last,10,18);
 		
 		order=5000;
-		new Game.SynergyUpgrade('Charm quarks','<q>They\'re after your lucky quarks!</q>','Chancemaker','Antimatter condenser','synergy2');
+		new Game.SynergyUpgrade('魅力夸克','<q>他们在你的幸运夸克之后！</q>','Chancemaker','Antimatter condenser','synergy2');
 		
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Pink biscuits',desc:'One of the oldest cookies. Traditionally dipped in champagne to soften it, because the French will use any opportunity to drink.',icon:[21,16],power:						4,price: 999999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Whole-grain cookies',desc:'Covered in seeds and other earthy-looking debris. Really going for that "5-second rule" look.',icon:[22,16],power:						4,price: 999999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Candy cookies',desc:'These melt in your hands just a little bit.',icon:[23,16],power:						4,price: 9999999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Big chip cookies',desc:'You are in awe at the size of these chips. Absolute units.',icon:[24,16],power:						4,price: 9999999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'One chip cookies',desc:'You get one.',icon:[25,16],power:						1,price: 99999999999999999999999999999});
+		Game.NewUpgradeCookie({name:'粉红色的饼干',desc:'最古老的饼干之一。 传统上，用香槟浸泡软化，因为法国人会利用任何机会喝酒。',icon:[21,16],power:						4,price: 999999999999999999999999999});
+		Game.NewUpgradeCookie({name:'全麦饼干',desc:'覆盖在种子和其他朴实的碎片中。 真的想要那个“5秒规则”的样子。',icon:[22,16],power:						4,price: 999999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'糖果饼干',desc:'这些只是在你的手中融化了一点点。',icon:[23,16],power:						4,price: 9999999999999999999999999999});
+		Game.NewUpgradeCookie({name:'大曲奇饼',desc:'你对这些芯片的大小感到敬畏。 绝对单位。',icon:[24,16],power:						4,price: 9999999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'一个曲奇饼',desc:'你得到一个。',icon:[25,16],power:						1,price: 99999999999999999999999999999});
 		
 		
-		new Game.Upgrade('Sugar baking','Each unspent sugar lump (up to 100) gives <b>+1% CpS</b>.<div class="warning">Note : this means that spending sugar lumps will decrease your CpS until they grow back.</div><q>To bake with the sugary essence of eons themselves, you must first learn to take your sweet time.</q>',200000000,[21,17]);Game.last.pool='prestige';Game.last.parents=['甜菊糖'];
+		new Game.Upgrade('糖烘焙','Each unspent sugar lump (up to 100) gives <b>+1% CpS</b>.<div class="warning">Note : this means that spending sugar lumps will decrease your CpS until they grow back.</div><q>To bake with the sugary essence of eons themselves, you must first learn to take your sweet time.</q>',200000000,[21,17]);Game.last.pool='prestige';Game.last.parents=['甜菊糖'];
 		new Game.Upgrade('糖分渴求','Once an ascension, you may use the "糖的狂热" switch to <b>double your CpS</b> for 1 hour, at the cost of <b>1 sugar lump</b>.<q>Just a little kick to sweeten the deal.</q>',400000000,[22,17]);Game.last.pool='prestige';Game.last.parents=['Sugar baking'];
-		new Game.Upgrade('Sugar aging process','Each grandma (up to 600) makes sugar lumps ripen <b>6 seconds</b> sooner.<q>Aren\'t they just the sweetest?</q>',600000000,[23,17]);Game.last.pool='prestige';Game.last.parents=['糖分渴求','Diabetica Daemonicus'];
+		new Game.Upgrade('Sugar aging process','Each grandma (up to 600) makes sugar lumps ripen <b>6 seconds</b> sooner.<q>Aren\'t they just the sweetest?</q>',600000000,[23,17]);Game.last.pool='prestige';Game.last.parents=['糖分渴求','糖尿病患者'];
 		
 		order=40000;
-		new Game.Upgrade('糖的狂热','Activating this will <b>double your CpS</b> for 1 hour, at the cost of <b>1 sugar lump</b>.<br>May only be used once per ascension.',0,[22,17]);
+		new Game.Upgrade('糖的狂热','激活这个将会让你的饼干每秒产量在1小时内 <b>翻倍</b> , 成本是 <b>1 糖块</b>.<br>每次提升只能使用一次.',0,[22,17]);
 		Game.last.pool='toggle';Game.last.toggleInto=0;
 		Game.last.canBuyFunc=function(){return Game.lumps>=1;};
 		Game.last.clickFunction=Game.spendLump(1,'activate the sugar frenzy',function()
 		{
 			Game.Upgrades['糖的狂热'].buy(1);
 			buff=Game.gainBuff('糖的狂热',60*60,2);
-			if (Game.prefs.popups) Game.Popup('糖的狂热 activated!');
-			else Game.Notify('糖的狂热!','CpS x2 for 1 hour!',[29,14]);
+			if (Game.prefs.popups) Game.Popup('糖的狂热 已激活!');
+			else Game.Notify('糖的狂热!','饼干每秒产量在1小时内翻倍!',[29,14]);
 		});
 		
 		order=10020;
