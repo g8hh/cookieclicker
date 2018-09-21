@@ -2599,10 +2599,10 @@ Game.Launch=function()
 				{
 					if (me.pool!='toggle' && me.pool!='tech')
 					{
-						if (Game.Has('Inspired checklist'))
+						if (Game.Has('灵感的清单'))
 						{
-							if (me.isVaulted()) tip='升级是拱形的，不会自动购买。<br>点击购买。 按住Ctrl键单击以取消保存。';
-							else tip='点击购买。 按住Ctrl键并单击以保存库.';
+							if (me.isVaulted()) tip='升级是保鲜库的，不会自动购买。<br>点击购买。 按住Ctrl键单击以取消保存。';
+							else tip='点击购买。 按住Ctrl键并单击以保存到保险库.';
 							if (Game.keys[17]) tip+='<br>(你按着 Ctrl 键。)';
 							else tip+='<br>(你没有按着 Ctrl 键。)';
 						}
@@ -4843,7 +4843,7 @@ Game.Launch=function()
 					remaining--;
 				}
 			}
-			if (remaining>0) str='<div class="remaining">+'+remaining+' more notification'+(remaining==1?'':'s')+'.</div>'+str;
+			if (remaining>0) str='<div class="remaining">+'+remaining+' 更多通知'+(remaining==1?'':'s')+'.</div>'+str;
 			if (Game.Notes.length>1)
 			{
 				str+='<div class="framed close sidenote" onclick="PlaySound(\'snd/tick.mp3\');Game.CloseNotes();">x</div>';
@@ -7123,7 +7123,7 @@ Game.Launch=function()
 		
 		Game.storeBuyAll=function()
 		{
-			if (!Game.Has('Inspired checklist')) return false;
+			if (!Game.Has('灵感的清单')) return false;
 			for (var i in Game.UpgradesInStore)
 			{
 				var me=Game.UpgradesInStore[i];
@@ -7150,7 +7150,7 @@ Game.Launch=function()
 			if ((e && e.ctrlKey) || Game.keys[17])
 			{
 				if (this.pool=='toggle' || this.pool=='tech') {}
-				else if (Game.Has('Inspired checklist'))
+				else if (Game.Has('灵感的清单'))
 				{
 					if (this.isVaulted()) this.unvault();
 					else this.vault();
@@ -7396,10 +7396,10 @@ Game.Launch=function()
 			var techStr='';
 			var vaultStr='';
 			
-			if (Game.Has('Inspired checklist'))
+			if (Game.Has('灵感的清单'))
 			{
 				storeStr+='<div id="storeBuyAll" class="storePre" '+Game.getTooltip(
-								'<div style="padding:8px;min-width:250px;text-align:center;font-size:11px;">将会 <b>立即购买</b> 你能负担得起的所有升级, starting from the cheapest one.<br>Upgrades in the <b>vault</b> will not be auto-purchased.<br>You may place an upgrade into the vault by <b>Ctrl-clicking</b> on it.</div>'
+								'<div style="padding:8px;min-width:250px;text-align:center;font-size:11px;">将会 <b>立即购买</b> 你能负担得起的所有升级, 从最便宜的一个开始。<br><b>保险库</b>中的升级不会自动购买。<br>您可以通过<b>按住Ctrl键，单击</b>将升级放入保险库中。</div>'
 								,'store')+
 					'>'+
 						'<div id="storeBuyAllButton" class="storePreButton" '+Game.clickStr+'="Game.storeBuyAll();">购买全部升级</div>'+
@@ -7419,7 +7419,7 @@ Game.Launch=function()
 				,'store')+' '+Game.clickStr+'="Game.UpgradesById['+me.id+'].buy();" id="upgrade'+i+'" style="'+(me.icon[2]?'background-image:url('+me.icon[2]+');':'')+'background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>';*/
 				if (me.pool=='toggle') toggleStr+=str; else if (me.pool=='tech') techStr+=str; else
 				{
-					if (me.isVaulted() && Game.Has('Inspired checklist')) vaultStr+=str; else storeStr+=str;
+					if (me.isVaulted() && Game.Has('灵感的清单')) vaultStr+=str; else storeStr+=str;
 				}
 			}
 			
@@ -8679,16 +8679,16 @@ Game.Launch=function()
 		
 		new Game.Upgrade('皱纹的眼睛','Mouse over a wrinkler to see how many cookies are in its stomach.<q>Just a wrinkler and its will to survive.<br>Hangin\' tough, stayin\' hungry.</q>',99999999,[27,26]);Game.last.pool='prestige';Game.last.parents=['皱纹饼干'];
 		
-		new Game.Upgrade('Inspired checklist','Unlocks the <b>购买所有</b> feature, which lets you instantly purchase every upgrade in your store (starting from the cheapest one).<br>Also unlocks the <b>Vault</b>, a store section where you can place upgrades you do not wish to auto-buy.<q>Snazzy grandma accessories? Check. Transdimensional abominations? Check. A bunch of eggs for some reason? Check. Machine that goes "ping"? Check and check.</q>',900000,[28,26]);Game.last.pool='prestige';Game.last.parents=['持久的记忆','永久升级槽 IV'];
+		new Game.Upgrade('灵感的清单','解锁 <b>购买所有</b> 功能, 它可以让您立即购买商店中的每个升级（从最便宜的一个开始）。<br>同时解锁<b>保险库</b>，这是一个可以放置您不想自动购买的升级的主要部分。<q>时髦的奶奶配件？检查。 跨维度的可憎之事？检查。 一堆鸡蛋出于某种原因？检查。 机器“ping”？ 检查并检查。</q>',900000,[28,26]);Game.last.pool='prestige';Game.last.parents=['持久的记忆','永久升级槽 IV'];
 		
 		order=10300;
-		Game.NewUpgradeCookie({name:'Pure pitch-black chocolate butter biscuit',desc:'Rewarded for owning 500 of everything.<br>This chocolate is so pure and so flawless that it has no color of its own, instead taking on the appearance of whatever is around it. You\'re a bit surprised to notice that this one isn\'t stamped with your effigy, as its surface is perfectly smooth (to the picometer) - until you realize it\'s quite literally reflecting your own face like a mirror.',icon:[24,27],power:	10,price: 999999999999999999999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'纯黑色巧克力黄油饼干',desc:'拥有所有建筑各500件的奖励。<br>这种巧克力是如此的纯净无暇，它没有自己的颜色，而是呈现出它周围的一切。你会有点惊讶地发现这尊雕像没有印上你的肖像，因为它的表面非常光滑(对象形仪来说)——直到你意识到它像镜子一样真实地反映了你自己的脸。',icon:[24,27],power:	10,price: 999999999999999999999999999999999999999999999,locked:1});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Chocolate oatmeal cookies',desc:'These bad boys compensate for lack of a cohesive form and a lumpy, unsightly appearance by being just simply delicious. Something we should all aspire to.',icon:[23,28],power:						4,price: 99999999999999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Molasses cookies',desc:'Sticky, crackly, and dusted in fine sugar.<br>Some lunatics have been known to eat these with potatoes.',icon:[24,28],power:						4,price: 999999999999999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Biscotti',desc:'Almonds and pistachios make these very robust cookies slightly more interesting to eat than to bludgeon people with.',icon:[22,28],power:						4,price: 999999999999999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Waffle cookies',desc:'Whether these are cookies with shocklingly waffle-like features or simply regular cookie-sized waffles is a debate we\'re not getting into here.',icon:[21,28],power:						4,price: 9999999999999999999999999999999999999});
+		Game.NewUpgradeCookie({name:'巧克力燕麦饼干',desc:'这些坏男孩弥补缺乏一个有凝聚力的形式，并通过为只是单纯的美味凹凸不平的，外观造型不美观。 我们都应该渴望的东西。',icon:[23,28],power:						4,price: 99999999999999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'糖蜜饼干',desc:'粘稠，脆裂，撒上细糖。<br>一些疯子已经知道用土豆吃这些。',icon:[24,28],power:						4,price: 999999999999999999999999999999999999});
+		Game.NewUpgradeCookie({name:'脆饼',desc:'杏仁和开心果使这些非常结实的饼干吃起来比用它们来吓唬人更有趣。',icon:[22,28],power:						4,price: 999999999999999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'比利时饼干',desc:'这些饼干是否具有令人震惊的华夫饼一样的功能，或者只是普通的饼干大小的华夫饼，这是我们没有讨论的话题。',icon:[21,28],power:						4,price: 9999999999999999999999999999999999999});
 		
 		
 		order=10000;
@@ -12032,7 +12032,7 @@ Game.Launch=function()
 				if (minAmount>=350) {Game.Win('Tricentennial and a half');Game.Unlock('Synthetic chocolate green honey butter biscuit');}
 				if (minAmount>=400) {Game.Win('Quadricentennial');Game.Unlock('Royal raspberry chocolate butter biscuit');}
 				if (minAmount>=450) {Game.Win('Quadricentennial and a half');Game.Unlock('Ultra-concentrated high-energy chocolate butter biscuit');}
-				if (minAmount>=500) {Game.Win('Quincentennial');Game.Unlock('Pure pitch-black chocolate butter biscuit');}
+				if (minAmount>=500) {Game.Win('Quincentennial');Game.Unlock('纯黑色巧克力黄油饼干');}
 				
 				if (Game.handmadeCookies>=1000) {Game.Win('可以点击');Game.Unlock('塑料鼠标');}
 				if (Game.handmadeCookies>=100000) {Game.Win('全能点击');Game.Unlock('铁制鼠标');}
