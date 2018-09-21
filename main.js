@@ -2601,16 +2601,16 @@ Game.Launch=function()
 					{
 						if (Game.Has('Inspired checklist'))
 						{
-							if (me.isVaulted()) tip='Upgrade is vaulted and will not be auto-purchased.<br>Click to purchase. Ctrl-click to unvault.';
-							else tip='Click to purchase. Ctrl-click to vault.';
-							if (Game.keys[17]) tip+='<br>(You are holding Ctrl.)';
-							else tip+='<br>(You are not holding Ctrl.)';
+							if (me.isVaulted()) tip='升级是拱形的，不会自动购买。<br>点击购买。 按住Ctrl键单击以取消保存。';
+							else tip='点击购买。 按住Ctrl键并单击以保存库.';
+							if (Game.keys[17]) tip+='<br>(你按着 Ctrl 键。)';
+							else tip+='<br>(你没有按着 Ctrl 键。)';
 						}
-						else tip='Click to purchase.';
+						else tip='点击购买';
 					}
-					else if (me.pool=='toggle' && me.choicesFunction) tip='Click to open selector.';
-					else if (me.pool=='toggle') tip='Click to toggle.';
-					else if (me.pool=='tech') tip='Click to research.';
+					else if (me.pool=='toggle' && me.choicesFunction) tip='单击打开选择器。';
+					else if (me.pool=='toggle') tip='点击收缩。';
+					else if (me.pool=='tech') tip='点击研究。';
 				}
 				return function()
 				{
@@ -6566,7 +6566,7 @@ Game.Launch=function()
 		{
 			if (Game.Has('季节储蓄')) price*=0.99;
 			if (Game.Has('圣诞老人的统治')) price*=0.99;
-			if (Game.Has('Faberge egg')) price*=0.99;
+			if (Game.Has('法贝热彩蛋')) price*=0.99;
 			if (Game.Has('Divine discount')) price*=0.99;
 			if (Game.hasAura('Fierce Hoarder')) price*=0.98;
 			if (Game.hasBuff('一切都得走')) price*=0.95;
@@ -6620,15 +6620,15 @@ Game.Launch=function()
 		{
 			var str='';
 			str+='<div id="storeBulk" class="storePre" '+Game.getTooltip(
-							'<div style="padding:8px;min-width:200px;text-align:center;font-size:11px;">You can also press <b>Ctrl</b> to bulk-buy or sell <b>10</b> of a building at a time, or <b>Shift</b> for <b>100</b>.</div>'
+							'<div style="padding:8px;min-width:200px;text-align:center;font-size:11px;">你可以按 <b>Ctrl</b> 键，一次批量购买或出售 <b>10</b> 建筑。 或者 <b>Shift</b> 建，一次批量购买或出售<b>100</b>个。</div>'
 							,'store')+
 				'>'+
-				'<div id="storeBulkBuy" class="storePreButton storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(0);">Buy</div>'+
-				'<div id="storeBulkSell" class="storePreButton storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(1);">Sell</div>'+
+				'<div id="storeBulkBuy" class="storePreButton storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(0);">购买</div>'+
+				'<div id="storeBulkSell" class="storePreButton storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(1);">出售</div>'+
 				'<div id="storeBulk1" class="storePreButton storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(2);">1</div>'+
 				'<div id="storeBulk10" class="storePreButton storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(3);">10</div>'+
 				'<div id="storeBulk100" class="storePreButton storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(4);">100</div>'+
-				'<div id="storeBulkMax" class="storePreButton storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(5);">all</div>'+
+				'<div id="storeBulkMax" class="storePreButton storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(5);">全部</div>'+
 				'</div>';
 			for (var i in Game.Objects)
 			{
@@ -7104,7 +7104,7 @@ Game.Launch=function()
 				if (Game.Has('玩具车间')) price*=0.95;
 				if (Game.Has('五指折扣')) price*=Math.pow(0.99,Game.Objects['Cursor'].amount/100);
 				if (Game.Has('圣诞老人的统治')) price*=0.98;
-				if (Game.Has('Faberge egg')) price*=0.99;
+				if (Game.Has('法贝热彩蛋')) price*=0.99;
 				if (Game.Has('Divine sales')) price*=0.99;
 				if (Game.hasBuff('运气而已')) price*=0.98;
 				if (Game.hasBuff('砍价的不幸')) price*=1.02;
@@ -7983,7 +7983,7 @@ Game.Launch=function()
 		new Game.Upgrade('Turtle egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Turtles, right? Hatch from shells. Grow into shells. What\'s up with that?<br>Now for my skit about airplane food.</q>',eggPrice,[11,12]);
 		new Game.Upgrade('Ant larva','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These are a delicacy in some countries, I swear. You will let these invade your digestive tract, and you will derive great pleasure from it.<br>And all will be well.</q>',eggPrice,[12,12]);
 		new Game.Upgrade('Golden goose egg','Golden cookies appear <b>5% more often</b>.<br>Cost scales with how many eggs you own.<q>The sole vestige of a tragic tale involving misguided investments.</q>',eggPrice2,[13,12]);
-		new Game.Upgrade('Faberge egg','All buildings and upgrades are <b>1% cheaper</b>.<br>Cost scales with how many eggs you own.<q>This outrageous egg is definitely fab.</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
+		new Game.Upgrade('法贝热彩蛋','All buildings and upgrades are <b>1% cheaper</b>.<br>Cost scales with how many eggs you own.<q>This outrageous egg is definitely fab.</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('Wrinklerspawn','Wrinklers explode into <b>5% more cookies</b>.<br>Cost scales with how many eggs you own.<q>Look at this little guy! It\'s gonna be a big boy someday! Yes it is!</q>',eggPrice2,[15,12]);
 		new Game.Upgrade('Cookie egg','Clicking is <b>10% more powerful</b>.<br>Cost scales with how many eggs you own.<q>The shell appears to be chipped.<br>I wonder what\'s inside this one!</q>',eggPrice2,[16,12]);
 		new Game.Upgrade('煎蛋','Other eggs appear <b>10% more frequently</b>.<br>Cost scales with how many eggs you own.<q>Fromage not included.</q>',eggPrice2,[17,12]);
@@ -7997,9 +7997,9 @@ Game.Launch=function()
 		new Game.Upgrade('Century egg','You continually gain <b>more CpS the longer you\'ve played</b> in the current session.<br>Cost scales with how many eggs you own.<q>Actually not centuries-old. This one isn\'t a day over 86!</q>',eggPrice2,[19,12]);
 		new Game.Upgrade('"egg"','<b>+9 CpS</b><q>hey it\'s "egg"</q>',eggPrice2,[20,12]);
 		
-		Game.easterEggs=['鸡蛋','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva','Golden goose egg','Faberge egg','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
+		Game.easterEggs=['鸡蛋','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva','Golden goose egg','法贝热彩蛋','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
 		Game.eggDrops=['鸡蛋','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva'];
-		Game.rareEggDrops=['Golden goose egg','Faberge egg','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
+		Game.rareEggDrops=['Golden goose egg','法贝热彩蛋','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
 		
 		Game.GetHowManyEggs=function()
 		{
@@ -8704,29 +8704,29 @@ Game.Launch=function()
 		
 		
 		
-		order=200;new Game.TieredUpgrade('Good manners','Grandmas are <b>twice</b> as efficient.<q>Apparently these ladies are much more amiable if you take the time to learn their strange, ancient customs, which seem to involve saying "please" and "thank you" and staring at the sun with bulging eyes while muttering eldritch curses under your breath.</q>','Grandma',11);
-		order=300;new Game.TieredUpgrade('Lindworms','Farms are <b>twice</b> as efficient.<q>You have to import these from far up north, but they really help areate the soil!</q>','Farm',11);
-		order=400;new Game.TieredUpgrade('Bore again','Mines are <b>twice</b> as efficient.<q>After extracting so much sediment for so long, you\'ve formed some veritable mountains of your own from the accumulated piles of rock and dirt. Time to dig through those and see if you find anything fun!</q>','Mine',11);
-		order=500;new Game.TieredUpgrade('"Volunteer" interns','Factories are <b>twice</b> as efficient.<q>If you\'re bad at something, always do it for free.</q>','Factory',11);
-		order=525;new Game.TieredUpgrade('Rules of acquisition','Banks are <b>twice</b> as efficient.<q>Rule 387 : a cookie baked is a cookie kept.</q>','Bank',11);
-		order=550;new Game.TieredUpgrade('War of the gods','Temples are <b>twice</b> as efficient.<q>An interesting game; the only winning move is not to pray.</q>','Temple',11);
-		order=575;new Game.TieredUpgrade('Electricity','Wizard towers are <b>twice</b> as efficient.<q>Ancient magicks and forbidden hexes shroud this arcane knowledge, whose unfathomable power can mysteriously turn darkness into light and shock an elephant to death.</q>','Wizard tower',11);
-		order=600;new Game.TieredUpgrade('Universal alphabet','Shipments are <b>twice</b> as efficient.<q>You\'ve managed to chart a language that can be understood by any sentient species in the galaxy; its exciting vocabulary contains over 56 trillion words that sound and look like sparkly burps, forming intricate sentences that usually translate to something like "give us your cookies, or else".</q>','Shipment',11);
-		order=700;new Game.TieredUpgrade('Public betterment','Alchemy labs are <b>twice</b> as efficient.<q>Why do we keep trying to change useless matter into cookies, or cookies into even better cookies? Clearly, the way of the future is to change the people who eat the cookies into people with a greater understanding, appreciation and respect for the cookies they\'re eating. Into the vat you go!</q>','Alchemy lab',11);
-		order=800;new Game.TieredUpgrade('Embedded microportals','Portals are <b>twice</b> as efficient.<q>We\'ve found out that if we bake the portals into the cookies themselves, we can transport people\'s taste buds straight into the taste dimension! Good thing your army of lawyers got rid of the FDA a while ago!</q>','Portal',11);
-		order=900;new Game.TieredUpgrade('Nostalgia','Time machines are <b>twice</b> as efficient.<q>Your time machine technicians insist that this is some advanced new time travel tech, and not just an existing emotion universal to mankind. Either way, you have to admit that selling people the same old cookies just because it reminds them of the good old times is an interesting prospect.</q>','Time machine',11);
-		order=1000;new Game.TieredUpgrade('The definite molecule','Antimatter condensers are <b>twice</b> as efficient.<q>Your scientists have found a way to pack a cookie into one single continuous molecule, opening exciting new prospects in both storage and flavor despite the fact that these take up to a whole year to digest.</q>','Antimatter condenser',11);
-		order=1100;new Game.TieredUpgrade('Light capture measures','Prisms are <b>twice</b> as efficient.<q>As the universe gets ever so slightly dimmer due to you converting more and more of its light into cookies, you\'ve taken to finding new and unexplored sources of light for your prisms; for instance, the warm glow emitted by a pregnant woman, or the twinkle in the eye of a hopeful child.</q>','Prism',11);
-		order=1200;new Game.TieredUpgrade('0-sided dice','Chancemakers are <b>twice</b> as efficient.<q>The advent of the 0-sided dice has had unexpected and tumultuous effects on the gambling community, and saw experts around the world calling you both a genius and an imbecile.</q>','Chancemaker',11);
+		order=200;new Game.TieredUpgrade('礼貌','老奶奶 工作效率 <b>翻倍</b>。<q>Apparently these ladies are much more amiable if you take the time to learn their strange, ancient customs, which seem to involve saying "please" and "thank you" and staring at the sun with bulging eyes while muttering eldritch curses under your breath.</q>','Grandma',11);
+		order=300;new Game.TieredUpgrade('Lindworms','农场 工作效率 <b>翻倍</b>。<q>You have to import these from far up north, but they really help areate the soil!</q>','Farm',11);
+		order=400;new Game.TieredUpgrade('Bore again','矿山 工作效率 <b>翻倍</b>。<q>After extracting so much sediment for so long, you\'ve formed some veritable mountains of your own from the accumulated piles of rock and dirt. Time to dig through those and see if you find anything fun!</q>','Mine',11);
+		order=500;new Game.TieredUpgrade('"Volunteer" interns','工厂 工作效率 <b>翻倍</b>。<q>If you\'re bad at something, always do it for free.</q>','Factory',11);
+		order=525;new Game.TieredUpgrade('Rules of acquisition','银行 工作效率 <b>翻倍</b>。<q>Rule 387 : a cookie baked is a cookie kept.</q>','Bank',11);
+		order=550;new Game.TieredUpgrade('War of the gods','寺庙 工作效率 <b>翻倍</b>。<q>An interesting game; the only winning move is not to pray.</q>','Temple',11);
+		order=575;new Game.TieredUpgrade('Electricity','精灵塔 工作效率 <b>翻倍</b>。<q>Ancient magicks and forbidden hexes shroud this arcane knowledge, whose unfathomable power can mysteriously turn darkness into light and shock an elephant to death.</q>','Wizard tower',11);
+		order=600;new Game.TieredUpgrade('Universal alphabet','装船 工作效率 <b>翻倍</b>。<q>You\'ve managed to chart a language that can be understood by any sentient species in the galaxy; its exciting vocabulary contains over 56 trillion words that sound and look like sparkly burps, forming intricate sentences that usually translate to something like "give us your cookies, or else".</q>','Shipment',11);
+		order=700;new Game.TieredUpgrade('Public betterment','炼金实验室工作效率 <b>翻倍</b>。<q>Why do we keep trying to change useless matter into cookies, or cookies into even better cookies? Clearly, the way of the future is to change the people who eat the cookies into people with a greater understanding, appreciation and respect for the cookies they\'re eating. Into the vat you go!</q>','Alchemy lab',11);
+		order=800;new Game.TieredUpgrade('Embedded microportals','传送门工作效率 <b>翻倍</b>。<q>We\'ve found out that if we bake the portals into the cookies themselves, we can transport people\'s taste buds straight into the taste dimension! Good thing your army of lawyers got rid of the FDA a while ago!</q>','Portal',11);
+		order=900;new Game.TieredUpgrade('Nostalgia','时光机器工作效率 <b>翻倍</b>。<q>Your time machine technicians insist that this is some advanced new time travel tech, and not just an existing emotion universal to mankind. Either way, you have to admit that selling people the same old cookies just because it reminds them of the good old times is an interesting prospect.</q>','Time machine',11);
+		order=1000;new Game.TieredUpgrade('The definite molecule','反物质冷凝器工作效率 <b>翻倍</b>。<q>Your scientists have found a way to pack a cookie into one single continuous molecule, opening exciting new prospects in both storage and flavor despite the fact that these take up to a whole year to digest.</q>','Antimatter condenser',11);
+		order=1100;new Game.TieredUpgrade('光捕获措施','棱镜工作效率 <b>翻倍</b>。<q>由于你将越来越多的光转换成饼干，宇宙变得越来越暗，你已经开始为你的棱镜找到新的和未开发的光源; 例如，孕妇发出的温暖的光芒，或者一个充满希望的孩子眼中闪烁的光芒。</q>','Prism',11);
+		order=1200;new Game.TieredUpgrade('0面骰子','机会制造者工作效率 <b>翻倍</b>。<q>The advent of the 0-sided dice has had unexpected and tumultuous effects on the gambling community, and saw experts around the world calling you both a genius and an imbecile.</q>','Chancemaker',11);
 		
 		//end of upgrades
 		
 		Game.seasons={
-			'christmas':{name:'Christmas',start:'Christmas season has started!',over:'Christmas season is over.',trigger:'节日饼干'},
-			'valentines':{name:'Valentine\'s day',start:'Valentine\'s day has started!',over:'Valentine\'s day is over.',trigger:'相思病饼干'},
-			'fools':{name:'Business day',start:'Business day has started!',over:'Business day is over.',trigger:'傻瓜的饼干'},
-			'easter':{name:'Easter',start:'Easter season has started!',over:'Easter season is over.',trigger:'兔子饼干'},
-			'halloween':{name:'Halloween',start:'Halloween has started!',over:'Halloween is over.',trigger:'鬼魂饼干'}
+			'christmas':{name:'圣诞节',start:'圣诞节已经开始了！',over:'圣诞节已经结束。',trigger:'节日饼干'},
+			'valentines':{name:'情人节',start:'情人节已经开始了！',over:'情人节已经结束。',trigger:'相思病饼干'},
+			'fools':{name:'工作日',start:'工作日已经开始了！',over:'工作日已经结束。',trigger:'傻瓜的饼干'},
+			'easter':{name:'复活节',start:'复活节已经开始了！',over:'复活节已经结束。',trigger:'兔子饼干'},
+			'halloween':{name:'万圣节',start:'万圣节已经开始了！',over:'万圣节已经结束。',trigger:'鬼魂饼干'}
 		};
 		
 		Game.computeSeasonPrices=function()
@@ -8791,7 +8791,7 @@ Game.Launch=function()
 		for (var i in Game.Upgrades)
 		{
 			var me=Game.Upgrades[i];
-			if (me.order>=200 && me.order<2000 && !me.tier && me.name.indexOf('grandma')==-1 && me.pool!='prestige') console.log(me.name+' has no tier.');
+			if (me.order>=200 && me.order<2000 && !me.tier && me.name.indexOf('grandma')==-1 && me.pool!='prestige') console.log(me.name+' 没有层。');
 		}
 		
 		Game.UpgradesByPool=[];
