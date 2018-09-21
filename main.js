@@ -2501,7 +2501,7 @@ Game.Launch=function()
 				else tags.push('升级',0);
 				
 				if (me.tier!=0 && Game.Has('标签打印机')) tags.push('层 : '+Game.Tiers[me.tier].name,Game.Tiers[me.tier].color);
-				if (me.name=='标签打印机' && Game.Has('标签打印机')) tags.push('层 : Self-referential','#ff00ea');
+				if (me.name=='标签打印机' && Game.Has('标签打印机')) tags.push('层 : 自我指示','#ff00ea');
 				
 				if (me.isVaulted()) tags.push('Vaulted','#4e7566');
 				
