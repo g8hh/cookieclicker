@@ -1092,7 +1092,7 @@ M.launch=function()
 		
 		M.getCost=function(me)
 		{
-			if (Game.Has('Turbo-charged soil')) return 0;
+			if (Game.Has('涡轮增压土壤')) return 0;
 			return Math.max(me.costM,Game.cookiesPs*me.cost*60)*(Game.HasAchiev('Seedless to nay')?0.95:1);
 		}
 		
@@ -1350,7 +1350,7 @@ M.launch=function()
 				AddEvent(l('gardenSoil-'+me.id),'click',function(me){return function(){
 					if (M.freeze || M.soil==me.id || M.nextSoil>Date.now() || M.parent.amount<me.req){return false;}
 					PlaySound('snd/toneTick.mp3');
-					M.nextSoil=Date.now()+(Game.Has('Turbo-charged soil')?1:(1000*60*10));
+					M.nextSoil=Date.now()+(Game.Has('涡轮增压土壤')?1:(1000*60*10));
 					M.toCompute=true;M.soil=me.id;M.computeStepT();
 					for (var i in M.soils){var it=M.soils[i];if (it.id==M.soil){l('gardenSoil-'+it.id).classList.add('on');}else{l('gardenSoil-'+it.id).classList.remove('on');}}
 				}}(me));
@@ -1490,7 +1490,7 @@ M.launch=function()
 		
 		M.computeStepT=function()
 		{
-			if (Game.Has('Turbo-charged soil')) M.stepT=1;
+			if (Game.Has('涡轮增压土壤')) M.stepT=1;
 			else M.stepT=M.soilsById[M.soil].tick*60;
 		}
 		

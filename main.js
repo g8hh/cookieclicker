@@ -5349,7 +5349,7 @@ Game.Launch=function()
 				'<div class="listing"><b>总烘烤的饼干 (本次游戏) :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned)+'</div></div>'+
 				'<div class="listing"><b>总烘烤的饼干 (所有时间) :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned+Game.cookiesReset)+'</div></div>'+
 				(Game.cookiesReset>0?'<div class="listing"><b>转生消耗的饼干 :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesReset)+'</div></div>':'')+
-				(Game.resets?('<div class="listing"><b>遗产开始：</b> '+(fullDate==''?'just now':(fullDate+' ago'))+', with '+Beautify(Game.resets)+' ascension'+(Game.resets==1?'':'s')+'</div>'):'')+
+				(Game.resets?('<div class="listing"><b>遗产开始：</b> '+(fullDate==''?'现在':(fullDate+' 之前'))+', 和 '+Beautify(Game.resets)+' 上升'+(Game.resets==1?'':'')+'</div>'):'')+
 				'<div class="listing"><b>游戏运行时间 :</b> '+(startDate==''?'刚刚':(startDate+' '))+'</div>'+
 				'<div class="listing"><b>拥有的建筑 :</b> '+Beautify(buildingsOwned)+'</div>'+
 				'<div class="listing"><b>每秒生产饼干数 :</b> '+Beautify(Game.cookiesPs,1)+' <small>'+
@@ -5388,7 +5388,7 @@ Game.Launch=function()
 				'</div><div class="subsection">'+
 				'<div class="title">声望</div>'+
 				'<div class="listing"><div class="icon" style="float:left;background-position:'+(-19*48)+'px '+(-7*48)+'px;"></div>'+
-					'<div style="margin-top:8px;"><span class="title" style="font-size:22px;">声望等级 : '+Beautify(Game.prestige)+'</span> at '+Beautify(heavenlyMult*100,1)+'% of its potential <b>(+'+Beautify(parseFloat(Game.prestige)*Game.heavenlyPower*heavenlyMult,1)+'% CpS)</b><br>天堂芯片 : <b>'+Beautify(Game.heavenlyChips)+'</b></div>'+
+					'<div style="margin-top:8px;"><span class="title" style="font-size:22px;">声望等级 : '+Beautify(Game.prestige)+'</span> 在 '+Beautify(heavenlyMult*100,1)+'% 它的潜力 <b>(+'+Beautify(parseFloat(Game.prestige)*Game.heavenlyPower*heavenlyMult,1)+'% 饼干每秒产量)</b><br>天堂芯片 : <b>'+Beautify(Game.heavenlyChips)+'</b></div>'+
 				'</div>'+
 				(prestigeUpgrades!=''?(
 				'<div class="listing" style="clear:left;"><b>声望升级解锁 :</b> '+prestigeUpgradesOwned+'/'+prestigeUpgradesTotal+' ('+Math.floor((prestigeUpgradesOwned/prestigeUpgradesTotal)*100)+'%)</div>'+
@@ -7506,8 +7506,8 @@ Game.Launch=function()
 			if (b1.basePrice>b2.basePrice) {b1=Game.Objects[building2];b2=Game.Objects[building1];}//swap
 			
 			desc=
-				(b1.plural.charAt(0).toUpperCase()+b1.plural.slice(1))+' gain <b>+5% CpS</b> per '+b2.name.toLowerCase()+'.<br>'+
-				(b2.plural.charAt(0).toUpperCase()+b2.plural.slice(1))+' gain <b>+0.1% CpS</b> per '+b1.name.toLowerCase()+'.'+
+				(b1.plural.charAt(0).toUpperCase()+b1.plural.slice(1))+' 获得 <b>+5% 饼干每秒产量</b> 每 '+cndisplayname(b2.name)+'.<br>'+
+				(b2.plural.charAt(0).toUpperCase()+b2.plural.slice(1))+' 获得 <b>+0.1% 饼干每秒产量</b> 每 '+cndisplayname(b1.name)+'.'+
 				desc;
 			var upgrade=new Game.Upgrade(name,desc,(b1.basePrice*10+b2.basePrice*1)*Game.Tiers[tier].price,Game.GetIcon(building1,tier));//Math.sqrt(b1.basePrice*b2.basePrice)*Game.Tiers[tier].price
 			upgrade.tier=tier;
@@ -8606,7 +8606,7 @@ Game.Launch=function()
 		
 		
 		order=40000;
-		new Game.Upgrade('Turbo-charged soil','Garden plants grow every second.<br>Garden seeds are free to plant.<br>You can switch soils at any time.<q>It\'s got electrolytes!</q>',7,[2,16]);//debug purposes only
+		new Game.Upgrade('涡轮增压土壤','Garden plants grow every second.<br>Garden seeds are free to plant.<br>You can switch soils at any time.<q>It\'s got electrolytes!</q>',7,[2,16]);//debug purposes only
 		Game.last.buyFunction=function(){if (Game.Objects['Farm'].minigameLoaded){Game.Objects['Farm'].minigame.computeStepT();}}
 		Game.last.pool='debug';
 		
@@ -12481,7 +12481,7 @@ function cndisplayname(name){
         cnname="游标"
     }else if(temp=="Grandma"){
         cnname="老奶奶"
-    }else if(temp=="Farm"){
+    }else if(temp=="Farm" || temp=="Farms"){
         cnname="农场"
     }else if(temp=="Mine"){
         cnname="矿山"
