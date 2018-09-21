@@ -7792,15 +7792,15 @@ Game.Launch=function()
 		order=100;
 		new Game.Upgrade('百万的六乘方手指','鼠标和游标获得 <b>+50000</b> 每个非游标建筑生产的饼干数。<q>有时<br>事情只是<br>点击</q>',10000000000000000,[0,19]);Game.MakeTiered(Game.last,10,0);
 		
-		order=200;new Game.TieredUpgrade('Double-thick glasses','老奶奶工作效率 <b>翻倍</b>。<q>Oh... so THAT\'s what I\'ve been baking.</q>','Grandma',5);
-		order=300;new Game.TieredUpgrade('Gingerbread scarecrows','农场工作效率 <b>翻倍</b>。<q>Staring at your crops with mischievous glee.</q>','Farm',5);
-		order=500;new Game.TieredUpgrade('Recombobulators','Factories are <b>翻倍</b>。<q>A major part of cookie recombobulation.</q>','Factory',5);
-		order=400;new Game.TieredUpgrade('H-bomb mining','Mines are <b>翻倍</b>。<q>Questionable efficiency, but spectacular nonetheless.</q>','Mine',5);
-		order=600;new Game.TieredUpgrade('Chocolate monoliths','Shipments are <b>翻倍</b>。<q>My god. It\'s full of chocolate bars.</q>','Shipment',5);
-		order=700;new Game.TieredUpgrade('Aqua crustulae','Alchemy labs are <b>翻倍</b>。<q>Careful with the dosing - one drop too much and you get muffins.<br>And nobody likes muffins.</q>','Alchemy lab',5);
-		order=800;new Game.TieredUpgrade('Brane transplant','Portals are <b>翻倍</b>。<q>This refers to the practice of merging higher dimensional universes, or "branes", with our own, in order to facilitate transit (and harvesting of precious cookie dough).</q>','Portal',5);
-		order=900;new Game.TieredUpgrade('Yestermorrow comparators','Time machines are <b>翻倍</b>。<q>Fortnights into milleniums.</q>','Time machine',5);
-		order=1000;new Game.TieredUpgrade('Reverse cyclotrons','Antimatter condensers are <b>翻倍</b>。<q>These can uncollision particles and unspin atoms. For... uh... better flavor, and stuff.</q>','Antimatter condenser',5);
+		order=200;new Game.TieredUpgrade('双层厚眼镜','老奶奶工作效率 <b>翻倍</b>。<q>哦……所以这就是我一直在烘焙的东西。</q>','Grandma',5);
+		order=300;new Game.TieredUpgrade('姜饼稻草人','农场工作效率 <b>翻倍</b>。<q>看着你的庄稼，带着淘气的欢乐。</q>','Farm',5);
+		order=500;new Game.TieredUpgrade('重新组合','工厂工作效率 <b>翻倍</b>。<q>这是饼干的主要组成部分。</q>','Factory',5);
+		order=400;new Game.TieredUpgrade('氢弹开采','矿山工作效率 <b>翻倍</b>。<q>虽然效率有问题，但还是很壮观。</q>','Mine',5);
+		order=600;new Game.TieredUpgrade('巧克力块','装船工作效率 <b>翻倍</b>。<q>我的上帝。全是巧克力棒。</q>','Shipment',5);
+		order=700;new Game.TieredUpgrade('甲壳纲','炼金实验室工作效率 <b>翻倍</b>。<q>小心点，一滴太多，你就会得到松饼。<br>没有人喜欢松饼。</q>','Alchemy lab',5);
+		order=800;new Game.TieredUpgrade('膜移植','传送门工作效率 <b>翻倍</b>。<q>这指的是将更高维度的宇宙，或“膜”，与我们自己的相结合，以方便运输(和收获宝贵的饼干面团)。</q>','Portal',5);
+		order=900;new Game.TieredUpgrade('昨天比较器','时光机器工作效率 <b>翻倍</b>。<q>两周进入千禧年。</q>','Time machine',5);
+		order=1000;new Game.TieredUpgrade('反向回旋加速器','反物质冷凝器工作效率 <b>翻倍</b>。<q>它们可以不碰撞粒子和不旋转的原子。为…嗯…更好的味道,和东西。</q>','Antimatter condenser',5);
 		
 		order=150;
 		new Game.Upgrade('难得素鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这些漂亮的鼠标就够了。</q>',5000000000000,[11,14]);Game.MakeTiered(Game.last,5,11);
