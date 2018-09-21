@@ -1948,9 +1948,9 @@ from {top:20px;opacity:0;}
 	text-align:center;
 }
 
-#upgrades:before{content:'Upgrades';}
-#toggleUpgrades:before{content:'Switches';}
-#techUpgrades:before{content:'Research';}
+#upgrades:before{content:'升级';}
+#toggleUpgrades:before{content:'开关';}
+#techUpgrades:before{content:'研究';}
 /*#vaultUpgrades{height:0px;}*/
 /*#vaultUpgrades:hover{height:auto;min-height:60px;}*/
 #vaultUpgrades .crate{opacity:0.5;}
@@ -1958,7 +1958,7 @@ from {top:20px;opacity:0;}
 #vaultUpgrades{height:30px;}
 #vaultUpgrades:hover{height:auto;min-height:30px;}
 #vaultUpgrades:before{content:'Vault';}
-#products:before{content:'Buildings';}
+#products:before{content:'建筑';}
 #upgrades
 {
 }

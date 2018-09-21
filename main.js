@@ -2500,8 +2500,8 @@ Game.Launch=function()
 				else if (me.pool=='toggle') tags.push('切换',0);
 				else tags.push('升级',0);
 				
-				if (me.tier!=0 && Game.Has('Label printer')) tags.push('层 : '+Game.Tiers[me.tier].name,Game.Tiers[me.tier].color);
-				if (me.name=='Label printer' && Game.Has('Label printer')) tags.push('层 : Self-referential','#ff00ea');
+				if (me.tier!=0 && Game.Has('标签打印机')) tags.push('层 : '+Game.Tiers[me.tier].name,Game.Tiers[me.tier].color);
+				if (me.name=='标签打印机' && Game.Has('标签打印机')) tags.push('层 : Self-referential','#ff00ea');
 				
 				if (me.isVaulted()) tags.push('Vaulted','#4e7566');
 				
@@ -2707,8 +2707,8 @@ Game.Launch=function()
 		}
 		
 		Game.ascensionModes={
-		0:{name:'None',desc:'没有特别的修饰词.',icon:[10,0]},
-		1:{name:'Born again',desc:'这次的比赛会表现得像你刚开始游戏一样。威望等级和神圣的升级将不会有任何效果，如糖块和建筑水平。<div class="line"></div>有些成就只有在这种模式下才能获得。',icon:[2,7]}/*,
+		0:{name:'无',desc:'没有特别的修饰词.',icon:[10,0]},
+		1:{name:'重生',desc:'这次的比赛会表现得像你刚开始游戏一样。威望等级和神圣的升级将不会有任何效果，如糖块和建筑水平。<div class="line"></div>有些成就只有在这种模式下才能获得。',icon:[2,7]}/*,
 		2:{name:'Trigger finger',desc:'In this run, scrolling your mouse wheel on the cookie counts as clicking it. Some upgrades introduce new clicking behaviors.<br>No clicking achievements may be obtained in this mode.<div class="line"></div>Reaching 1 quadrillion cookies in this mode unlocks a special heavenly upgrade.',icon:[12,0]}*/
 		};
 		
@@ -5154,8 +5154,8 @@ Game.Launch=function()
 				//Game.WriteButton('autoupdate','autoupdateButton','Offline mode OFF','Offline mode ON',0,1)+'<label>(disables update notifications)</label><br>'+
 				Game.WriteButton('warn','warnButton','关闭提示 已开启','关闭提示 已关闭')+'<label>(当你关闭游戏窗口时，游戏会要求您确认)</label><br>'+
 				Game.WriteButton('focus','focusButton','失焦 已关闭','失焦 已开启',0,1)+'<label>(当焦点不集中时，游戏的资源密集度会降低)</label><br>'+
-				Game.WriteButton('extraButtons','extraButtonsButton','Extra buttons ON','Extra buttons OFF','Game.ToggleExtraButtons();')+'<label>(add Mute buttons on buildings)</label><br>'+
-				Game.WriteButton('askLumps','askLumpsButton','Lump confirmation ON','Lump confirmation OFF')+'<label>(the game will ask you to confirm before spending sugar lumps)</label><br>'+
+				Game.WriteButton('extraButtons','extraButtonsButton','额外的按钮 已开启','额外的按钮 已关闭','Game.ToggleExtraButtons();')+'<label>(在建筑物上添加静音按钮)</label><br>'+
+				Game.WriteButton('askLumps','askLumpsButton','糖块信息确认 开启','糖块信息确认 关闭')+'<label>(游戏将要求你在花费糖块之前确认)</label><br>'+
 				'</div>'+
 				//'<div class="listing">'+Game.WriteButton('autosave','autosaveButton','Autosave ON','Autosave OFF')+'</div>'+
 				'<div style="padding-bottom:128px;"></div>'+
@@ -5165,12 +5165,12 @@ Game.Launch=function()
 			else if (Game.onMenu=='main')
 			{
 				str+=
-				'<div class="listing">This isn\'t really finished</div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'prefs\');">Menu</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'stats\');">Stats</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'log\');">Updates</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="">Quit</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(Game.onMenu);">Resume</a></div>';
+				'<div class="listing">这还没有真的结束</div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'prefs\');">菜单</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'stats\');">统计</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'log\');">更新</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="">退出</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(Game.onMenu);">继续</a></div>';
 			}
 			else if (Game.onMenu=='log')
 			{
@@ -5257,8 +5257,8 @@ Game.Launch=function()
 				
 				var achievementsStr='';
 				var pools={
-					'dungeon':'<b>Dungeon achievements</b> <small>(Not technically achievable yet.)</small>',
-					'shadow':'<b>Shadow achievements</b> <small>(These are feats that are either unfair or difficult to attain. They do not give milk.)</small>'
+					'dungeon':'<b>地牢成就</b> <small>(在技术上尚未实现。)</small>',
+					'shadow':'<b>暗影成就</b> <small>(这些都是不公平或难以实现的壮举。 他们不给牛奶。)</small>'
 				};
 				for (var i in achievements)
 				{
@@ -7437,7 +7437,7 @@ Game.Launch=function()
 		
 		Game.NewUpgradeCookie=function(obj)
 		{
-			var upgrade=new Game.Upgrade(obj.name,'Cookie production multiplier <b>+'+Beautify((typeof(obj.power)=='function'?obj.power(obj):obj.power),1)+'%</b>.<q>'+obj.desc+'</q>',obj.price,obj.icon);
+			var upgrade=new Game.Upgrade(obj.name,'饼干生产加成 <b>+'+Beautify((typeof(obj.power)=='function'?obj.power(obj):obj.power),1)+'%</b>.<q>'+obj.desc+'</q>',obj.price,obj.icon);
 			upgrade.power=obj.power;
 			upgrade.pool='cookie';
 			var toPush={cookies:obj.price/20,name:obj.name};
@@ -8694,12 +8694,12 @@ Game.Launch=function()
 		
 		order=10000;
 		//early cookies that unlock at the same time as coconut cookies; meant to boost early game a little bit
-		Game.NewUpgradeCookie({name:'Almond cookies',desc:'Sometimes you feel like one of these. Sometimes you don\'t.',icon:[21,27],power:							2,	price:	99999999});
-		Game.NewUpgradeCookie({name:'Hazelnut cookies',desc:'Tastes like a morning stroll through a fragrant forest, minus the clouds of gnats.',icon:[22,27],power:							2,	price:	99999999});
-		Game.NewUpgradeCookie({name:'Walnut cookies',desc:'Some experts have pointed to the walnut\'s eerie resemblance to the human brain as a sign of its sentience - a theory most walnuts vehemently object to.',icon:[23,27],power:							2,	price:	99999999});
+		Game.NewUpgradeCookie({name:'杏仁饼干',desc:'有时候你会觉得自己就是其中之一。有时候你不。',icon:[21,27],power:							2,	price:	99999999});
+		Game.NewUpgradeCookie({name:'榛子饼干',desc:'尝起来就像早晨漫步在芬芳的森林里，没有了蚊蚋的云彩。',icon:[22,27],power:							2,	price:	99999999});
+		Game.NewUpgradeCookie({name:'核桃饼干',desc:'一些专家指出，核桃与人类大脑的怪异相似是其感知的标志 - 这是大多数核桃强烈反对的理论。',icon:[23,27],power:							2,	price:	99999999});
 		
 		
-		new Game.Upgrade('Label printer','Mouse over an upgrade to see its tier.<br><small>Note : only some upgrades have tiers. Tiers are purely cosmetic and have no effect on gameplay.</small><q>Also comes in real handy when you want to tell catsup apart from ketchup.</q>',9999,[27,7]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
+		new Game.Upgrade('标签打印机','将鼠标悬停在升级上以查看其弹出层。<br><small>注意：只有一些升级有弹出层。 等级纯粹是装饰性的，对游戏玩法没有影响。</small><q>当你想从番茄酱分辨酱还配备实时得心应手。</q>',9999,[27,7]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
 		
 		
 		
@@ -10672,13 +10672,13 @@ Game.Launch=function()
 			var highestBuilding=0;
 			for (var i in Game.Objects) {if (Game.Objects[i].amount>0) highestBuilding=Game.Objects[i];}
 			
-			Game.Prompt('<h3>Set your dragon\'s '+(slot==1?'secondary ':'')+'aura</h3>'+
+			Game.Prompt('<h3>设置你的龙的 '+(slot==1?'次要的 ':'')+'光环</h3>'+
 						'<div class="line"></div>'+
 						'<div id="dragonAuraInfo" style="min-height:60px;"></div>'+
 						'<div style="text-align:center;">'+str+'</div>'+
 						'<div class="line"></div>'+
-						'<div style="text-align:center;margin-bottom:8px;">'+(highestBuilding==0?'Switching your aura is <b>free</b> because you own no buildings.':'The cost of switching your aura is <b>1 '+highestBuilding.name+'</b>.<br>This will affect your CpS!')+'</div>'
-						,[['Confirm',(slot==0?'Game.dragonAura':'Game.dragonAura2')+'=Game.SelectingDragonAura;'+(highestBuilding==0 || currentAura==Game.SelectingDragonAura?'':'Game.ObjectsById['+highestBuilding.id+'].sacrifice(1);')+'Game.ToggleSpecialMenu(1);Game.ClosePrompt();'],'Cancel'],0,'widePrompt');
+						'<div style="text-align:center;margin-bottom:8px;">'+(highestBuilding==0?'转换你的光环是 <b>免费的</b> ，因为你没有建筑。':'改变你的光环的代价是 <b>1 '+highestBuilding.name+'</b>.<br>这会影响到你的饼干每秒产量！')+'</div>'
+						,[['确定',(slot==0?'Game.dragonAura':'Game.dragonAura2')+'=Game.SelectingDragonAura;'+(highestBuilding==0 || currentAura==Game.SelectingDragonAura?'':'Game.ObjectsById['+highestBuilding.id+'].sacrifice(1);')+'Game.ToggleSpecialMenu(1);Game.ClosePrompt();'],'取消'],0,'widePrompt');
 			Game.DescribeDragonAura(Game.SelectingDragonAura);
 		}
 		Game.SelectingDragonAura=-1;
@@ -10734,9 +10734,9 @@ Game.Launch=function()
 					{
 						str+='<div class="line"></div>'+
 						'<div class="optionBox" style="margin-bottom:0px;"><a class="option framed large title" '+Game.clickStr+'="Game.UpgradeSanta();">'+
-							'<div style="display:table-cell;vertical-align:middle;">Evolve</div>'+
+							'<div style="display:table-cell;vertical-align:middle;">进化</div>'+
 							'<div style="display:table-cell;vertical-align:middle;padding:4px 12px;">|</div>'+
-							'<div style="display:table-cell;vertical-align:middle;font-size:65%;">cost :<div'+(Game.cookies>moni?'':' style="color:#777;"')+'>'+Beautify(Math.pow(Game.santaLevel+1,Game.santaLevel+1))+' '+(Game.santaLevel>0?'cookies':'cookie')+'</div></div>'+
+							'<div style="display:table-cell;vertical-align:middle;font-size:65%;">成本 :<div'+(Game.cookies>moni?'':' style="color:#777;"')+'>'+Beautify(Math.pow(Game.santaLevel+1,Game.santaLevel+1))+' '+(Game.santaLevel>0?'饼干':'饼干')+'</div></div>'+
 						'</a></div>';
 					}
 				}
