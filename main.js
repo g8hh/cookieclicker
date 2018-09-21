@@ -6766,7 +6766,7 @@ Game.Launch=function()
 			if (this.amount>=350) Game.Unlock('巨量的手指');
 			if (this.amount>=400) Game.Unlock('千的九次方手指');
 			
-			if (this.amount>=1) Game.Win('单击');if (this.amount>=2) Game.Win('双击');if (this.amount>=50) Game.Win('鼠标滚轮');if (this.amount>=100) Game.Win('鼠标和人');if (this.amount>=200) Game.Win('数字');if (this.amount>=300) Game.Win('极端多指');if (this.amount>=400) Game.Win('T博士');if (this.amount>=500) Game.Win('大拇指，指骨，掌骨');if (this.amount>=600) Game.Win('With her finger and her thumb');
+			if (this.amount>=1) Game.Win('单击');if (this.amount>=2) Game.Win('双击');if (this.amount>=50) Game.Win('鼠标滚轮');if (this.amount>=100) Game.Win('鼠标和人');if (this.amount>=200) Game.Win('数字');if (this.amount>=300) Game.Win('极端多指');if (this.amount>=400) Game.Win('T博士');if (this.amount>=500) Game.Win('大拇指，指骨，掌骨');if (this.amount>=600) Game.Win('随着她的手指和她的拇指');
 		});
 		
 		Game.SpecialGrandmaUnlock=15;
@@ -9616,22 +9616,22 @@ Game.Launch=function()
 		
 		
 		order=1050;
-		new Game.Achievement('With her finger and her thumb','Have <b>600</b> cursors.',[0,16]);
+		new Game.Achievement('随着她的手指和她的拇指','拥有 <b>600</b> 游标.',[0,16]);
 		
-		order=1100;new Game.TieredAchievement('But wait \'til you get older','Have <b>550</b> grandmas.','Grandma',12);
-		order=1200;new Game.TieredAchievement('Sharpest tool in the shed','Have <b>500</b> farms.','Farm',11);
-		order=1300;new Game.TieredAchievement('Hey now, you\'re a rock','Have <b>500</b> mines.','Mine',11);
-		order=1400;new Game.TieredAchievement('Break the mold','Have <b>500</b> factories.','Factory',11);
-		order=1425;new Game.TieredAchievement('Get the show on, get paid','Have <b>500</b> banks.','Bank',11);
-		order=1450;new Game.TieredAchievement('My world\'s on fire, how about yours','Have <b>500</b> temples.','Temple',11);
-		order=1475;new Game.TieredAchievement('The meteor men beg to differ','Have <b>500</b> wizard towers.','Wizard tower',11);
-		order=1500;new Game.TieredAchievement('Only shooting stars','Have <b>500</b> shipments.','Shipment',11);
-		order=1600;new Game.TieredAchievement('We could all use a little change','Have <b>500</b> alchemy labs.','Alchemy lab',11);//"all that glitters is gold" was already an achievement
-		order=1700;new Game.TieredAchievement('Your brain gets smart but your head gets dumb','Have <b>500</b> portals.','Portal',11);
-		order=1800;new Game.TieredAchievement('The years start coming','Have <b>500</b> time machines.','Time machine',11);
-		order=1900;new Game.TieredAchievement('What a concept','Have <b>500</b> antimatter condensers.','Antimatter condenser',11);
-		order=2000;new Game.TieredAchievement('You\'ll never shine if you don\'t glow','Have <b>500</b> prisms.','Prism',11);
-		order=2100;new Game.TieredAchievement('You\'ll never know if you don\'t go','Have <b>500</b> chancemakers.','Chancemaker',11);
+		order=1100;new Game.TieredAchievement('但是等到你变老的时候','拥有 <b>550</b> 老奶奶.','Grandma',12);
+		order=1200;new Game.TieredAchievement('棚子里最锋利的工具','拥有 <b>500</b> 农场.','Farm',11);
+		order=1300;new Game.TieredAchievement('嘿，现在，你是一块石头','拥有 <b>500</b> 矿山.','Mine',11);
+		order=1400;new Game.TieredAchievement('打破模具','拥有 <b>500</b> factories.','工厂',11);
+		order=1425;new Game.TieredAchievement('获得节目，获得报酬','拥有 <b>500</b> 银行.','Bank',11);
+		order=1450;new Game.TieredAchievement('我的世界很火，你的怎么样','拥有 <b>500</b> 寺庙.','Temple',11);
+		order=1475;new Game.TieredAchievement('流星们不以为然','拥有 <b>500</b> 精灵塔.','Wizard tower',11);
+		order=1500;new Game.TieredAchievement('只有流星','拥有 <b>500</b> 装船.','Shipment',11);
+		order=1600;new Game.TieredAchievement('我们能做的也只能一点点变化','拥有 <b>500</b> 炼金实验室.','Alchemy lab',11);//"all that glitters is gold" was already an achievement
+		order=1700;new Game.TieredAchievement('你的大脑变聪明，但你的头变得愚蠢','拥有 <b>500</b> 传送门.','Portal',11);
+		order=1800;new Game.TieredAchievement('这些年开始了','拥有 <b>500</b> 时光机器.','Time machine',11);
+		order=1900;new Game.TieredAchievement('这个概念是什么','拥有 <b>500</b> 反物质冷凝器.','Antimatter condenser',11);
+		order=2000;new Game.TieredAchievement('如果你不发光，你永远不会发光','拥有 <b>500</b> 棱镜.','Prism',11);
+		order=2100;new Game.TieredAchievement('如果你不去你永远也不会知道','拥有 <b>500</b> 机会制造商.','Chancemaker',11);
 		
 		
 		//end of achievements
