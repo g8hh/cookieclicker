@@ -8096,12 +8096,12 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'奶油饼干',desc:'它像两个巧克力曲奇饼干!但是带着奶油的魔力一起带来的!这太完美了!',icon:[29,4],power:						3,price: 9999999999999999999*5});
 
 		order=0;
-		var desc='Placing an upgrade in this slot will make its effects <b>permanent</b> across all playthroughs.<br><b>Click to activate.</b>';
-		new Game.Upgrade('Permanent upgrade slot I',desc,	100,[0,10]);Game.last.pool='prestige';Game.last.iconFunction=function(){return Game.PermanentSlotIcon(0);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(0);};
-		new Game.Upgrade('Permanent upgrade slot II',desc,	2000,[1,10]);Game.last.pool='prestige';Game.last.parents=['Permanent upgrade slot I'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(1);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(1);};
-		new Game.Upgrade('Permanent upgrade slot III',desc,	30000,[2,10]);Game.last.pool='prestige';Game.last.parents=['Permanent upgrade slot II'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(2);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(2);};
-		new Game.Upgrade('Permanent upgrade slot IV',desc,	400000,[3,10]);Game.last.pool='prestige';Game.last.parents=['Permanent upgrade slot III'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(3);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(3);};
-		new Game.Upgrade('Permanent upgrade slot V',desc,	5000000,[4,10]);Game.last.pool='prestige';Game.last.parents=['Permanent upgrade slot IV'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(4);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(4);};
+		var desc='在这个插槽中进行升级将会产生 <b>永久</b> 效果,在之后所有的游戏。<br><b>点击它就能激活。</b>';
+		new Game.Upgrade('永久升级槽 I',desc,	100,[0,10]);Game.last.pool='prestige';Game.last.iconFunction=function(){return Game.PermanentSlotIcon(0);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(0);};
+		new Game.Upgrade('永久升级槽 II',desc,	2000,[1,10]);Game.last.pool='prestige';Game.last.parents=['永久升级槽 I'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(1);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(1);};
+		new Game.Upgrade('永久升级槽 III',desc,	30000,[2,10]);Game.last.pool='prestige';Game.last.parents=['永久升级槽 II'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(2);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(2);};
+		new Game.Upgrade('永久升级槽 IV',desc,	400000,[3,10]);Game.last.pool='prestige';Game.last.parents=['永久升级槽 III'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(3);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(3);};
+		new Game.Upgrade('永久升级槽 V',desc,	5000000,[4,10]);Game.last.pool='prestige';Game.last.parents=['永久升级槽 IV'];Game.last.iconFunction=function(){return Game.PermanentSlotIcon(4);};Game.last.activateFunction=function(){Game.AssignPermanentSlot(4);};
 		
 		Game.PermanentSlotIcon=function(slot)
 		{
@@ -8183,7 +8183,7 @@ Game.Launch=function()
 		new Game.Upgrade('Divine sales','Upgrades are <b>1% cheaper</b>.<q>一切都得走!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
 		new Game.Upgrade('Divine bakeries','Cookie upgrades are <b>5 times cheaper</b>.<q>They sure know what they\'re doing.</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['Divine sales','Divine discount'];
 		
-		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','Tin of butter cookies'];
+		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','奶油饼干罐头'];
 		new Game.Upgrade('启动厨房','You start with <b>5 grandmas</b>.<q>Where did these come from?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
 		new Game.Upgrade('光环手套','Clicks are <b>10% more powerful</b>.<q>Smite that cookie.</q>',55555,[22,7]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
 
@@ -8237,29 +8237,29 @@ Game.Launch=function()
 		
 		new Game.Upgrade('Chimera','Synergy upgrades are <b>2% cheaper</b>.<br>You gain another <b>+5%</b> of your regular CpS while the game is closed.<br>You retain optimal cookie production while the game is closed for <b>2 more days</b>.<q>More than the sum of its parts.</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','路西法','协同效应2'];
 		
-		new Game.Upgrade('Tin of butter cookies','Contains an assortment of rich butter cookies.<q>Five varieties of danish cookies.<br>Complete with little paper cups.</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
+		new Game.Upgrade('奶油饼干罐头','含有丰富的奶油饼干。<q>丹麦饼干的五个品种。<br/>配小纸杯。</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
 		
-		new Game.Upgrade('黄金开关','Unlocks the <b>黄金开关</b>, which passively boosts your CpS by 50% but disables golden cookies.<q>Less clicking, more idling.</q>',999,[21,10]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
+		new Game.Upgrade('黄金开关','解锁 <b>黄金开关</b>, 这可以让你的饼干秒产量增加50%，但会让你失去金色的饼干。<q>更少的点击,更多的空闲。</q>',999,[21,10]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
 		
 		new Game.Upgrade('选择经典的乳制品','解锁 <b>牛奶选择器</b>, 让你挑出你的饼干下面的牛奶。<br>有各种各样的基本口味。<q>别大惊小怪的，老兄。</q>',9,[1,8]);Game.last.pool='prestige';Game.last.parents=[];
 		
-		new Game.Upgrade('Fanciful dairy selection','Contains more exotic flavors for your 牛奶选择器.<q>Strong bones for the skeleton army.</q>',1000000,[9,7]);Game.last.pool='prestige';Game.last.parents=['选择经典的乳制品'];
+		new Game.Upgrade('奇特的乳制品选择','为您提供更多的异国风味的牛奶选择器.<q>骨骼强健的骷颅军队。</q>',1000000,[9,7]);Game.last.pool='prestige';Game.last.parents=['选择经典的乳制品'];
 		
 		order=10300;
-		Game.NewUpgradeCookie({name:'龙形饼干',desc:'Imbued with the vigor and vitality of a full-grown cookie dragon, this mystical cookie will embolden your empire for the generations to come.',icon:[10,25],power:5,price:9999999999999999*7,locked:1});
+		Game.NewUpgradeCookie({name:'龙形饼干',desc:'这款神秘的小甜饼充满了一种成熟的饼干龙的活力和活力，它将为你的后代壮胆。',icon:[10,25],power:5,price:9999999999999999*7,locked:1});
 		
 		
 		order=40000;
-		new Game.Upgrade('黄金开关[关闭]','Turning this on will give you a passive <b>+50% CpS</b>, but prevents golden cookies from spawning.<br>Cost is equal to 1 hour of production.',1000000,[20,10]);
+		new Game.Upgrade('黄金开关[关闭]','打开这个会让你变得被动 <b>+50% 饼干秒产量</b>, 但是阻止了金色饼干的产生。<br>成本等于生产一小时。',1000000,[20,10]);
 		Game.last.pool='toggle';Game.last.toggleInto='黄金开关[开启]';
 		Game.last.priceFunc=function(){return Game.cookiesPs*60*60;}
 		
-		new Game.Upgrade('黄金开关[开启]','The switch is currently giving you a passive <b>+50% CpS</b>; it also prevents golden cookies from spawning.<br>Turning it off will revert those effects.<br>Cost is equal to 1 hour of production.',1000000,[21,10]);
+		new Game.Upgrade('黄金开关[开启]','这个开关现在是被动的 <b>+50% 饼干秒产量</b>; 它还可以防止黄金饼干产生。<br>关闭它将恢复这些效果。<br>成本等于1小时的生产。',1000000,[21,10]);
 		Game.last.pool='toggle';Game.last.toggleInto='黄金开关[关闭]';
 		Game.last.priceFunc=function(){return Game.cookiesPs*60*60;}
 		
 		order=50000;
-		new Game.Upgrade('牛奶选择器','Lets you pick what flavor of milk to display.',0,[1,8]);
+		new Game.Upgrade('牛奶选择器','让你选择要展示的牛奶的味道。',0,[1,8]);
 		Game.last.pool='toggle';
 		Game.last.choicesFunction=function()
 		{
@@ -8276,7 +8276,7 @@ Game.Launch=function()
 			choices[9]={name:'草莓牛奶',icon:[9,8]};
 			choices[10]={name:'香草牛奶',icon:[10,8]};
 			
-			if (Game.Has('Fanciful dairy selection'))
+			if (Game.Has('奇特的乳制品选择'))
 			{
 				choices[11]={name:'Zebra milk',icon:[10,7]};
 				choices[12]={name:'Cosmic milk',icon:[9,7]};
@@ -8352,11 +8352,11 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Digits',desc:'Three flavors, zero phalanges.',icon:[26,8],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Butter horseshoes',desc:'It would behoove you to not overindulge in these.',icon:[22,9],require:'Tin of butter cookies',power:							4,	price:	99999999999999999999999});
-		Game.NewUpgradeCookie({name:'Butter pucks',desc:'Lord, what fools these mortals be!<br>(This is kind of a hokey reference.)',icon:[23,9],require:'Tin of butter cookies',power:							4,	price:	99999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Butter knots',desc:'Look, you can call these pretzels if you want, but you\'d just be fooling yourself, wouldn\'t you?',icon:[24,9],require:'Tin of butter cookies',power:							4,	price:	999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Butter slabs',desc:'Nothing butter than a slab to the face.',icon:[25,9],require:'Tin of butter cookies',power:							4,	price:	999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Butter swirls',desc:'These are equal parts sugar, butter, and warm fuzzy feelings - all of which cause millions of deaths everyday.',icon:[26,9],require:'Tin of butter cookies',power:							4,	price:	9999999999999999999999999});
+		Game.NewUpgradeCookie({name:'Butter horseshoes',desc:'It would behoove you to not overindulge in these.',icon:[22,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999});
+		Game.NewUpgradeCookie({name:'Butter pucks',desc:'Lord, what fools these mortals be!<br>(This is kind of a hokey reference.)',icon:[23,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'Butter knots',desc:'Look, you can call these pretzels if you want, but you\'d just be fooling yourself, wouldn\'t you?',icon:[24,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999});
+		Game.NewUpgradeCookie({name:'Butter slabs',desc:'Nothing butter than a slab to the face.',icon:[25,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'Butter swirls',desc:'These are equal parts sugar, butter, and warm fuzzy feelings - all of which cause millions of deaths everyday.',icon:[26,9],require:'奶油饼干罐头',power:							4,	price:	9999999999999999999999999});
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Shortbread biscuits',desc:'These rich butter cookies are neither short, nor bread. What a country!',icon:[23,10],power:						4,price: 99999999999999999999999});
@@ -8679,7 +8679,7 @@ Game.Launch=function()
 		
 		new Game.Upgrade('皱纹的眼睛','Mouse over a wrinkler to see how many cookies are in its stomach.<q>Just a wrinkler and its will to survive.<br>Hangin\' tough, stayin\' hungry.</q>',99999999,[27,26]);Game.last.pool='prestige';Game.last.parents=['皱纹饼干'];
 		
-		new Game.Upgrade('Inspired checklist','Unlocks the <b>购买所有</b> feature, which lets you instantly purchase every upgrade in your store (starting from the cheapest one).<br>Also unlocks the <b>Vault</b>, a store section where you can place upgrades you do not wish to auto-buy.<q>Snazzy grandma accessories? Check. Transdimensional abominations? Check. A bunch of eggs for some reason? Check. Machine that goes "ping"? Check and check.</q>',900000,[28,26]);Game.last.pool='prestige';Game.last.parents=['持久的记忆','Permanent upgrade slot IV'];
+		new Game.Upgrade('Inspired checklist','Unlocks the <b>购买所有</b> feature, which lets you instantly purchase every upgrade in your store (starting from the cheapest one).<br>Also unlocks the <b>Vault</b>, a store section where you can place upgrades you do not wish to auto-buy.<q>Snazzy grandma accessories? Check. Transdimensional abominations? Check. A bunch of eggs for some reason? Check. Machine that goes "ping"? Check and check.</q>',900000,[28,26]);Game.last.pool='prestige';Game.last.parents=['持久的记忆','永久升级槽 IV'];
 		
 		order=10300;
 		Game.NewUpgradeCookie({name:'Pure pitch-black chocolate butter biscuit',desc:'Rewarded for owning 500 of everything.<br>This chocolate is so pure and so flawless that it has no color of its own, instead taking on the appearance of whatever is around it. You\'re a bit surprised to notice that this one isn\'t stamped with your effigy, as its surface is perfectly smooth (to the picometer) - until you realize it\'s quite literally reflecting your own face like a mirror.',icon:[24,27],power:	10,price: 999999999999999999999999999999999999999999999,locked:1});
