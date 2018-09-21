@@ -3181,7 +3181,7 @@ Game.Launch=function()
 			if (Game.Has('甜菊糖')) Game.lumpRipeAge-=hour;
 			if (Game.Has('糖尿病患者')) Game.lumpMatureAge-=hour;
 			if (Game.Has('Ichor syrup')) Game.lumpMatureAge-=1000*60*7;
-			if (Game.Has('Sugar aging process')) Game.lumpRipeAge-=6000*Math.min(600,Game.Objects['Grandma'].amount);//capped at 600 grandmas
+			if (Game.Has('糖老化过程')) Game.lumpRipeAge-=6000*Math.min(600,Game.Objects['Grandma'].amount);//capped at 600 grandmas
 			if (Game.hasGod && Game.BuildingsOwned%10==0)
 			{
 				var godLvl=Game.hasGod('order');
@@ -3783,7 +3783,7 @@ Game.Launch=function()
 			Game.cookiesMultByType['eggs']=eggMult;
 			mult*=eggMult;
 			
-			if (Game.Has('Sugar baking')) mult*=(1+Math.min(100,Game.lumps)*0.01);
+			if (Game.Has('糖烘焙')) mult*=(1+Math.min(100,Game.lumps)*0.01);
 			
 			if (Game.hasAura('Radiant Appetite')) mult*=2;
 			
@@ -8580,9 +8580,9 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'一个曲奇饼',desc:'你得到一个。',icon:[25,16],power:						1,price: 99999999999999999999999999999});
 		
 		
-		new Game.Upgrade('糖烘焙','Each unspent sugar lump (up to 100) gives <b>+1% CpS</b>.<div class="warning">Note : this means that spending sugar lumps will decrease your CpS until they grow back.</div><q>To bake with the sugary essence of eons themselves, you must first learn to take your sweet time.</q>',200000000,[21,17]);Game.last.pool='prestige';Game.last.parents=['甜菊糖'];
-		new Game.Upgrade('糖分渴求','Once an ascension, you may use the "糖的狂热" switch to <b>double your CpS</b> for 1 hour, at the cost of <b>1 sugar lump</b>.<q>Just a little kick to sweeten the deal.</q>',400000000,[22,17]);Game.last.pool='prestige';Game.last.parents=['Sugar baking'];
-		new Game.Upgrade('Sugar aging process','Each grandma (up to 600) makes sugar lumps ripen <b>6 seconds</b> sooner.<q>Aren\'t they just the sweetest?</q>',600000000,[23,17]);Game.last.pool='prestige';Game.last.parents=['糖分渴求','糖尿病患者'];
+		new Game.Upgrade('糖烘焙','每个未消耗的糖块（最多100个）产生<b> +1％ 饼干每秒产量</b>。<div class="warning">注意：这意味着花费糖块会降低你的饼干每秒产量，直到它们重新长大。</div><q>要用自己的含糖精华来烘焙，你必须先学会享受甜蜜的时光。</q>',200000000,[21,17]);Game.last.pool='prestige';Game.last.parents=['甜菊糖'];
+		new Game.Upgrade('糖分渴求','一旦提升, 你就可以使用 "糖的狂热" 切换 <b>翻倍你的 饼干每秒产量</b> 1小时, 成本是<b>1 糖块</b>.<q>只需一点点就能让这笔交易变得更加美好。</q>',400000000,[22,17]);Game.last.pool='prestige';Game.last.parents=['糖烘焙'];
+		new Game.Upgrade('糖老化过程','每个奶奶（最多600个）使糖块更快地成熟<b> 6秒</b>。<q>他们只是最甜蜜的吗？</q>',600000000,[23,17]);Game.last.pool='prestige';Game.last.parents=['糖分渴求','糖尿病患者'];
 		
 		order=40000;
 		new Game.Upgrade('糖的狂热','激活这个将会让你的饼干每秒产量在1小时内 <b>翻倍</b> , 成本是 <b>1 糖块</b>.<br>每次提升只能使用一次.',0,[22,17]);
