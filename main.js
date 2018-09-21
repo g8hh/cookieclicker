@@ -3144,7 +3144,7 @@ Game.Launch=function()
 		Game.lumpTooltip=function()
 		{
 			var str='<div style="padding:8px;width:400px;font-size:11px;text-align:center;">'+
-			'你有 <span class="price lump">'+Beautify(Game.lumps)+' 糖块'+(Game.lumps==1?'':'s')+'</span>.'+
+			'你有 <span class="price lump">'+Beautify(Game.lumps)+' 糖块'+(Game.lumps==1?'':'')+'</span>.'+
 			'<div class="line"></div>'+
 			'一个 <b>糖块</b> 在这里凝聚，被你过去的壮举所吸引。';
 						
