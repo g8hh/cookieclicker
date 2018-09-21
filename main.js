@@ -5297,7 +5297,7 @@ Game.Launch=function()
 				var dragonStr='';
 				var frames=8;
 				var mainLevels=[0,4,8,20,22];
-				if (Game.Has('A crumbly egg'))
+				if (Game.Has('易碎的鸡蛋'))
 				{
 					for (var i=0;i<=mainLevels.length;i++)
 					{
@@ -8209,20 +8209,21 @@ Game.Launch=function()
 		new Game.TieredUpgrade('Lux sanctorum','Prisms are <b>翻倍</b>。<q>Your prism attendants have become increasingly mesmerized with something in the light - or maybe something beyond it; beyond us all, perhaps?</q>','Prism',7);
 		
 		
-		order=200;new Game.TieredUpgrade('The Unbridling','老奶奶工作效率 <b>翻倍</b>。<q>It might be a classic tale of bad parenting, but let\'s see where grandma is going with this.</q>','Grandma',8);
-		order=300;new Game.TieredUpgrade('Wheat triffids','农场工作效率 <b>翻倍</b>。<q>Taking care of crops is so much easier when your plants can just walk about and help around the farm.<br>Do not pet. Do not feed. Do not attempt to converse with.</q>','Farm',8);
-		order=400;new Game.TieredUpgrade('Canola oil wells','Mines are <b>翻倍</b>。<q>A previously untapped resource, canola oil permeates the underground olifers which grant it its particular taste and lucrative properties.</q>','Mine',8);
-		order=500;new Game.TieredUpgrade('78-hour days','Factories are <b>翻倍</b>。<q>Why didn\'t we think of this earlier?</q>','Factory',8);
-		order=525;new Game.TieredUpgrade('The stuff rationale','Banks are <b>翻倍</b>。<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
-		order=550;new Game.TieredUpgrade('Theocracy','Temples are <b>翻倍</b>。<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
-		order=575;new Game.TieredUpgrade('Rabbit trick','Wizard towers are <b>翻倍</b>。<q>Using nothing more than a fancy top hat, your wizards have found a way to simultaneously curb rabbit population and produce heaps of extra cookies for basically free!<br>Resulting cookies may or may not be fit for vegans.</q>','Wizard tower',8);
-		order=600;new Game.TieredUpgrade('The final frontier','Shipments are <b>翻倍</b>。<q>It\'s been a long road, getting from there to here. It\'s all worth it though - the sights are lovely and the oil prices slightly more reasonable.</q>','Shipment',8);
-		order=700;new Game.TieredUpgrade('Beige goo','Alchemy labs are <b>翻倍</b>。<q>Well now you\'ve done it. Good job. Very nice. That\'s 3 galaxies you\'ve just converted into cookies. Good thing you can hop from universe to universe.</q>','Alchemy lab',8);
-		order=800;new Game.TieredUpgrade('Maddening chants','Portals are <b>翻倍</b>。<q>A popular verse goes like so : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
-		order=900;new Game.TieredUpgrade('Cookietopian moments of maybe','Time machines are <b>翻倍</b>。<q>Reminiscing how things could have been, should have been, will have been.</q>','Time machine',8);
-		order=1000;new Game.TieredUpgrade('Some other super-tiny fundamental particle? Probably?','Antimatter condensers are <b>翻倍</b>。<q>When even the universe is running out of ideas, that\'s when you know you\'re nearing the end.</q>','Antimatter condenser',8);
+		order=200;new Game.TieredUpgrade('未被发现的','老奶奶工作效率 <b>翻倍</b>。<q>这可能是一个糟糕的育儿方式的经典故事，但是让我们来看看奶奶是怎么做的。</q>','Grandma',8);
+		order=300;new Game.TieredUpgrade('小麦的由来','农场工作效率 <b>翻倍</b>。<q>当你的植物可以在农场里到处走走，帮助你的时候，照料庄稼就容易多了。<br>没有宠物。不要进食。不要试图与之交谈。</q>','Farm',8);
+		order=400;new Game.TieredUpgrade('菜籽油井','矿山工作效率 <b>翻倍</b>。<q>菜籽油是一种以前未开发的资源，它渗透在地下的橄榄石中，使其具有独特的味道和丰厚的性能.</q>','Mine',8);
+		order=500;new Game.TieredUpgrade('每天78小时','工厂工作效率 <b>翻倍</b>。<q>我们为什么不早点想到这个呢?</q>','Factory',8);
+		order=525;new Game.TieredUpgrade('基本原理','银行工作效率 <b>翻倍</b>。<q>如果不是现在,更待何时?如果不是，是什么?如果不是东西……东西呢?</q>','Bank',8);
+		order=550;new Game.TieredUpgrade('神权政治','寺庙工作效率 <b>翻倍</b>。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
+		order=575;new Game.TieredUpgrade('兔子戏法','精灵塔工作效率 <b>翻倍</b>。<q>除了一顶华丽的帽子外，你的巫师们已经找到了一种方法，可以同时控制兔子的数量，并能产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
+		order=600;new Game.TieredUpgrade('最后的边界','产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
+		order=600;new Game.TieredUpgrade('最后的边界','装船工作效率 <b>翻倍</b>。<q>从那里到这里，这条路很长。不过，这一切都是值得的——景色很美，油价也稍微合理一些。</q>','Shipment',8);
+		order=700;new Game.TieredUpgrade('原色古果','炼金实验室工作效率 <b>翻倍</b>。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
+		order=800;new Game.TieredUpgrade('疯狂的圣歌','传送门工作效率 <b>翻倍</b>。<q>流行的诗句是这样的 : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
+		order=900;new Game.TieredUpgrade('也许是小饼干的时候','时光机器工作效率 <b>翻倍</b>。<q>追忆过去的事，本应是如此。</q>','Time machine',8);
+		order=1000;new Game.TieredUpgrade('还有其他超微小的基本粒子吗?','反物质冷凝器工作效率 <b>翻倍</b>。<q>当连宇宙都没了主意的时候，当你知道你快要结束的时候。</q>','Antimatter condenser',8);
 		order=1100;
-		new Game.TieredUpgrade('Reverse shadows','Prisms are <b>翻倍</b>。<q>Oh man, this is really messing with your eyes.</q>','Prism',8);
+		new Game.TieredUpgrade('反向阴影','棱镜工作效率 <b>翻倍</b>。<q>哦，老兄，这真让你的眼睛大乱。</q>','Prism',8);
 		
 		
 		order=20000;
@@ -8230,10 +8231,10 @@ Game.Launch=function()
 		new Game.Upgrade('小猫专家','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>乐观地调整你的工作流程，先生</q>',900000000000000000000000000,Game.GetIcon('Kitten',7));Game.last.kitten=1;Game.MakeTiered(Game.last,7,18);
 		new Game.Upgrade('小猫能手','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>先生，10年时间在饼干生意中度过了</q>',900000000000000000000000000000,Game.GetIcon('Kitten',8));Game.last.kitten=1;Game.MakeTiered(Game.last,8,18);
 		
-		new Game.Upgrade('How to bake your dragon','Allows you to purchase a <b>crumbly egg</b> once you have earned 1 million cookies.<q>A tome full of helpful tips such as "oh god, stay away from it", "why did we buy this thing, it\'s not even house-broken" and "groom twice a week in the direction of the scales".</q>',9,[22,12]);Game.last.pool='prestige';
+		new Game.Upgrade('如何烤你的龙','一旦你获得了100万个饼干，你就可以购买一个<b>易碎的鸡蛋</b>。<q>这本书里有很多有用的建议，比如“哦，上帝，离它远点”，“我们为什么要买这个东西，它甚至连房子都没破”和“一周两次，朝着天平的方向”。</q>',9,[22,12]);Game.last.pool='prestige';
 
 		order=25100;
-		new Game.Upgrade('A crumbly egg','Unlocks the <b>cookie dragon egg</b>.<q>Thank you for adopting this robust, fun-loving cookie dragon! It will bring you years of joy and entertainment.<br>Keep in a dry and cool place, and away from other house pets. Subscription to home insurance is strongly advised.</q>',25,[21,12]);
+		new Game.Upgrade('易碎的鸡蛋','解锁 <b>饼干龙蛋</b>.<q>谢谢你收养了这个健壮的，有趣的饼干龙!它将给你带来数年的欢乐和娱乐。<br>保持干燥凉爽的环境，远离其他宠物。强烈建议购买家庭保险。</q>',25,[21,12]);
 		
 		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','路西法','协同效应2'];
 		
@@ -10456,7 +10457,7 @@ Game.Launch=function()
 		{
 			Game.specialTabs=[];
 			if (Game.Has('节庆帽子')) Game.specialTabs.push('santa');
-			if (Game.Has('A crumbly egg')) Game.specialTabs.push('dragon');
+			if (Game.Has('易碎的鸡蛋')) Game.specialTabs.push('dragon');
 			if (Game.specialTabs.length==0) {Game.ToggleSpecialMenu(0);return;}
 		
 			if (Game.LeftBackground)
@@ -12054,7 +12055,7 @@ Game.Launch=function()
 				if (Game.wrinklersPopped>=50) Game.Win('皱纹的问题');
 				if (Game.wrinklersPopped>=200) Game.Win('湿气爆炸');
 				
-				if (Game.cookiesEarned>=1000000 && Game.Has('How to bake your dragon')) Game.Unlock('A crumbly egg');
+				if (Game.cookiesEarned>=1000000 && Game.Has('如何烤你的龙')) Game.Unlock('易碎的鸡蛋');
 				
 				if (Game.cookiesEarned>=25 && Game.season=='christmas') Game.Unlock('节庆帽子');
 				if (Game.Has('Christmas tree biscuits') && Game.Has('Snowflake biscuits') && Game.Has('Snowman biscuits') && Game.Has('Holly biscuits') && Game.Has('Candy cane biscuits') && Game.Has('Bell biscuits') && Game.Has('Present biscuits')) Game.Win('让它下雪');
