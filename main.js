@@ -8140,7 +8140,7 @@ Game.Launch=function()
 			}
 			var upgrade=Game.permanentUpgrades[slot];
 			Game.SelectingPermanentUpgrade=upgrade;
-			Game.Prompt('<h3>Pick an upgrade to make permanent</h3>'+
+			Game.Prompt('<h3>选择升级，使其成为永久的</h3>'+
 			
 						'<div class="line"></div><div style="margin:4px auto;clear:both;width:120px;"><div class="crate upgrade enabled" style="background-position:'+(-slot*48)+'px '+(-10*48)+'px;"></div><div id="upgradeToSlotNone" class="crate upgrade enabled" style="background-position:'+(-0*48)+'px '+(-7*48)+'px;display:'+(upgrade!=-1?'none':'block')+';"></div><div id="upgradeToSlotWrap" style="float:left;display:'+(upgrade==-1?'none':'block')+';">'+(Game.crate(Game.UpgradesById[upgrade==-1?0:upgrade],'','','upgradeToSlot'))+'</div></div>'+
 						'<div class="block crateBox" style="overflow-y:scroll;float:left;clear:left;width:317px;padding:0px;height:250px;">'+upgrades+'</div>'+
@@ -8336,33 +8336,33 @@ Game.Launch=function()
 		
 		
 		order=10300;
-		Game.NewUpgradeCookie({name:'Milk chocolate butter biscuit',desc:'Rewarded for owning 100 of everything.<br>It bears the engraving of a fine entrepreneur.',icon:[27,8],power:	10,price: 999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'Dark chocolate butter biscuit',desc:'Rewarded for owning 150 of everything.<br>It is adorned with the image of an experienced cookie tycoon.',icon:[27,9],power:	10,price: 999999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'White chocolate butter biscuit',desc:'Rewarded for owning 200 of everything.<br>The chocolate is chiseled to depict a masterful pastry magnate.',icon:[28,9],power:	10,price: 999999999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'Ruby chocolate butter biscuit',desc:'Rewarded for owning 250 of everything.<br>Covered in a rare red chocolate, this biscuit is etched to represent the face of a cookie industrialist gone mad with power.',icon:[28,8],power:	10,price: 999999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'牛奶巧克力奶油饼干',desc:'当你拥有100个各种建筑时的奖励。这是一位优秀企业家的雕刻。',icon:[27,8],power:	10,price: 999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'黑巧克力奶油饼干',desc:'当你拥有150个各种建筑时的奖励。<br>它的形象是一位经验丰富的饼干大亨的形象。',icon:[27,9],power:	10,price: 999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'白巧克力奶油饼干',desc:'当你拥有200个各种建筑时的奖励。<br>巧克力的轮廓，描绘了一位优秀的糕点大亨。',icon:[28,9],power:	10,price: 999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'红宝石巧克力奶油饼干',desc:'当你拥有250个各种建筑时的奖励。<br>这款饼干被一种罕见的红色巧克力所覆盖，它被蚀刻成一个饼干产业主义者的脸，这是一种疯狂的力量。',icon:[28,8],power:	10,price: 999999999999999999999999999999,locked:1});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Gingersnaps',desc:'Cookies with a soul. Probably.',icon:[29,10],power:						4,price: 99999999999999999999});
-		Game.NewUpgradeCookie({name:'Cinnamon cookies',desc:'The secret is in the patented swirly glazing.',icon:[23,8],power:						4,price: 99999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Vanity cookies',desc:'One tiny candied fruit sits atop this decadent cookie.',icon:[22,8],power:						4,price: 999999999999999999999});
-		Game.NewUpgradeCookie({name:'Cigars',desc:'Close, but no match for those extravagant cookie straws they serve in coffee shops these days.',icon:[25,8],power:						4,price: 999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Pinwheel cookies',desc:'Bringing you the dizzying combination of brown flavor and beige taste!',icon:[22,10],power:						4,price: 9999999999999999999999});
-		Game.NewUpgradeCookie({name:'Fudge squares',desc:'Not exactly cookies, but you won\'t care once you\'ve tasted one of these.<br>They\'re so good, it\'s fudged-up!',icon:[24,8],power:						4,price: 9999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'姜饼',desc:'带着灵魂的饼干。可能吧。',icon:[29,10],power:						4,price: 99999999999999999999});
+		Game.NewUpgradeCookie({name:'肉桂饼干',desc:'秘密是在专利的旋转玻璃上。',icon:[23,8],power:						4,price: 99999999999999999999*5});
+		Game.NewUpgradeCookie({name:'小甜饼',desc:'在这个颓废的小甜饼上有一个小小的蜜饯水果。',icon:[22,8],power:						4,price: 999999999999999999999});
+		Game.NewUpgradeCookie({name:'雪茄',desc:'最近，他们在咖啡店里卖的那些奢侈的曲奇饼干都卖得很好。',icon:[25,8],power:						4,price: 999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'风车饼干',desc:'给你带来令人眼花缭乱的棕色味道和米黄色味道！',icon:[22,10],power:						4,price: 9999999999999999999999});
+		Game.NewUpgradeCookie({name:'软糖方块',desc:'不完全是饼干，但一旦你尝了其中的一种，你就不会在意。<br/>他们太棒了，这太棒了!',icon:[24,8],power:						4,price: 9999999999999999999999*5});
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Digits',desc:'Three flavors, zero phalanges.',icon:[26,8],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'数字',desc:'三种口味，零指骨。',icon:[26,8],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Butter horseshoes',desc:'It would behoove you to not overindulge in these.',icon:[22,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999});
-		Game.NewUpgradeCookie({name:'Butter pucks',desc:'Lord, what fools these mortals be!<br>(This is kind of a hokey reference.)',icon:[23,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Butter knots',desc:'Look, you can call these pretzels if you want, but you\'d just be fooling yourself, wouldn\'t you?',icon:[24,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Butter slabs',desc:'Nothing butter than a slab to the face.',icon:[25,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Butter swirls',desc:'These are equal parts sugar, butter, and warm fuzzy feelings - all of which cause millions of deaths everyday.',icon:[26,9],require:'奶油饼干罐头',power:							4,	price:	9999999999999999999999999});
+		Game.NewUpgradeCookie({name:'黄油马蹄铁',desc:'你不应该过分沉溺其中。',icon:[22,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999});
+		Game.NewUpgradeCookie({name:'奶油泡',desc:'主啊，这些凡人是多么愚蠢啊！<br>(这是一个很重要的参考。)',icon:[23,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'黄油结',desc:'听着，如果你想的话，你可以叫这些椒盐卷饼，但是你只是在愚弄你自己，对吗?',icon:[24,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999});
+		Game.NewUpgradeCookie({name:'黄油板',desc:'没有什么比一张板脸更好的了。',icon:[25,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'黄油漩涡',desc:'这些都是糖、黄油和温暖的模糊感觉——所有这些都导致了每天数百万人的死亡。',icon:[26,9],require:'奶油饼干罐头',power:							4,	price:	9999999999999999999999999});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Shortbread biscuits',desc:'These rich butter cookies are neither short, nor bread. What a country!',icon:[23,10],power:						4,price: 99999999999999999999999});
-		Game.NewUpgradeCookie({name:'Millionaires\' shortbreads',desc:'Three thought-provoking layers of creamy chocolate, hard-working caramel and crumbly biscuit in a poignant commentary of class struggle.',icon:[24,10],power:						4,price: 99999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Caramel cookies',desc:'The polymerized carbohydrates adorning these cookies are sure to stick to your teeth for quite a while.',icon:[25,10],power:						4,price: 999999999999999999999999});
+		Game.NewUpgradeCookie({name:'脆饼饼干',desc:'这些奶油饼干既不短也不面包。多么好的国家啊!',icon:[23,10],power:						4,price: 99999999999999999999999});
+		Game.NewUpgradeCookie({name:'百万富翁酥饼',desc:'三层令人深思的奶油巧克力，辛勤的焦糖和松软的饼干，这是阶级斗争的尖锐评论。',icon:[24,10],power:						4,price: 99999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'焦糖饼干',desc:'这些饼干的聚合碳水化合物肯定会粘在你的牙齿上一段时间。',icon:[25,10],power:						4,price: 999999999999999999999999});
 		
 		
 		var desc=function(totalHours){
@@ -12025,10 +12025,10 @@ Game.Launch=function()
 				if (minAmount>=1) Game.Win('其中的一切');
 				if (mathematician==1) Game.Win('数学家');
 				if (base10==1) Game.Win('基数10');
-				if (minAmount>=100) {Game.Win('一百周年纪念');Game.Unlock('Milk chocolate butter biscuit');}
-				if (minAmount>=150) {Game.Win('150周年纪念');Game.Unlock('Dark chocolate butter biscuit');}
-				if (minAmount>=200) {Game.Win('周年纪念');Game.Unlock('White chocolate butter biscuit');}
-				if (minAmount>=250) {Game.Win('二百年半');Game.Unlock('Ruby chocolate butter biscuit');}
+				if (minAmount>=100) {Game.Win('一百周年纪念');Game.Unlock('牛奶巧克力奶油饼干');}
+				if (minAmount>=150) {Game.Win('150周年纪念');Game.Unlock('黑巧克力奶油饼干');}
+				if (minAmount>=200) {Game.Win('周年纪念');Game.Unlock('白巧克力奶油饼干');}
+				if (minAmount>=250) {Game.Win('二百年半');Game.Unlock('红宝石巧克力奶油饼干');}
 				if (minAmount>=300) {Game.Win('三百周年纪念');Game.Unlock('Lavender chocolate butter biscuit');}
 				if (minAmount>=350) {Game.Win('Tricentennial and a half');Game.Unlock('Synthetic chocolate green honey butter biscuit');}
 				if (minAmount>=400) {Game.Win('Quadricentennial');Game.Unlock('Royal raspberry chocolate butter biscuit');}
