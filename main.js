@@ -3448,7 +3448,7 @@ Game.Launch=function()
 			if (Game.Has('范塔钢鼠标')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('永不崩溃的鼠标')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('阿迈斯里鼠标')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Technobsidian mouse')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('高科技鼠标')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('Plasmarble mouse')) add+=Game.cookiesPs*0.01;
 			var mult=1;
 			
@@ -8606,12 +8606,12 @@ Game.Launch=function()
 		
 		
 		order=40000;
-		new Game.Upgrade('涡轮增压土壤','Garden plants grow every second.<br>Garden seeds are free to plant.<br>You can switch soils at any time.<q>It\'s got electrolytes!</q>',7,[2,16]);//debug purposes only
+		new Game.Upgrade('涡轮增压土壤','花园植物每秒都在生长。<br>花园种子可以自由种植。<br>您可以随时切换土壤。<q>它有电解质！</q>',7,[2,16]);//debug purposes only
 		Game.last.buyFunction=function(){if (Game.Objects['Farm'].minigameLoaded){Game.Objects['Farm'].minigame.computeStepT();}}
 		Game.last.pool='debug';
 		
 		order=150;
-		new Game.Upgrade('Technobsidian mouse','点击获得 <b>+1% 饼干秒生产量</b>.<q>A highly advanced mouse of a sophisticated design. Only one thing on its mind : to click.</q>',5000000000000000000000000,[11,28]);Game.MakeTiered(Game.last,11,11);
+		new Game.Upgrade('高科技鼠标','点击获得 <b>+1% 饼干秒生产量</b>.<q>高级鼠标，设计精巧。 其中只有一件事：点击。</q>',5000000000000000000000000,[11,28]);Game.MakeTiered(Game.last,11,11);
 		new Game.Upgrade('Plasmarble mouse','点击获得 <b>+1% 饼干秒生产量</b>.<q>A shifting blur in the corner of your eye, this mouse can trigger a flurry of clicks when grazed by even the slightest breeze.</q>',500000000000000000000000000,[11,30]);Game.MakeTiered(Game.last,12,11);
 		
 		order=20000;
@@ -9577,23 +9577,23 @@ Game.Launch=function()
 		Game.BankAchievement('Hungry for more');
 		
 		order=1000;
-		new Game.Achievement('All the other kids with the pumped up clicks','通过点击获取 <b>100,000,000,000,000,000,000,000</b> 饼干。',[11,28]);
-		new Game.Achievement('One...more...click...','通过点击获取 <b>10,000,000,000,000,000,000,000,000</b> 饼干。',[11,30]);
+		new Game.Achievement('所有其他孩子们都被点击了','通过点击获取 <b>100,000,000,000,000,000,000,000</b> 饼干。',[11,28]);
+		new Game.Achievement('一个…更多…点击…','通过点击获取 <b>10,000,000,000,000,000,000,000,000</b> 饼干。',[11,30]);
 		
 		order=61515;
-		new Game.Achievement('Botany enthusiast','Harvest <b>100</b> mature garden plants.',[26,20]);
-		new Game.Achievement('Green, aching thumb','Harvest <b>1000</b> mature garden plants.',[27,20]);
-		new Game.Achievement('In the garden of Eden (baby)','Fill every tile of the biggest garden plot with plants.<q>Isn\'t tending to those precious little plants just so rock and/or roll?</q>',[28,20]);
+		new Game.Achievement('Botany enthusiast','收获<b> 100 </b>成熟的园林植物。',[26,20]);
+		new Game.Achievement('Green, aching thumb','收获<b> 1000 </b>成熟的园林植物。',[27,20]);
+		new Game.Achievement('In the garden of Eden (baby)','用植物填充最大的花园地块的每块瓷砖。<q>那些珍贵的小植物是不是只是如此摇滚和/或滚动？</q>',[28,20]);
 		
-		new Game.Achievement('Keeper of the conservatory','Unlock every garden seed.',[25,20]);
+		new Game.Achievement('Keeper of the conservatory','解锁所有花园的种子。',[25,20]);
 		new Game.Achievement('Seedless to nay','Convert a complete seed log into sugar lumps by sacrificing your garden to the sugar hornets.<div class="line"></div>Owning this achievement makes seeds <b>5% cheaper</b>, plants mature <b>5% sooner</b>, and plant upgrades drop <b>5% more</b>.',[29,20]);
 		
 		order=30050;
-		new Game.Achievement('你一无所获','Ascend with <b>1 undecillion</b> cookies baked.<q>Good day sir!</q>',[29,6]);
-		new Game.Achievement('谦虚的重新开始','Ascend with <b>1 duodecillion</b> cookies baked.<q>Started from the bottom, now we\'re here.</q>',[29,6]);
-		new Game.Achievement('世界末日','Ascend with <b>1 tredecillion</b> cookies baked.<q>(as we know it)</q>',[21,25]);
-		new Game.Achievement('哦，你回来了','Ascend with <b>1 quattuordecillion</b> cookies baked.<q>Missed us?</q>',[21,25]);
-		new Game.Achievement('拉撒路','Ascend with <b>1 quindecillion</b> cookies baked.<q>Try, try again.</q>',[21,25]);
+		new Game.Achievement('你一无所获','转生时烤了 <b>1 undecillion</b> 饼干。<q>美好的一天,先生！</q>',[29,6]);
+		new Game.Achievement('谦虚的重新开始','转生时烤了 <b>1 duodecillion</b> 饼干。<q>从底部开始，现在我们来到这里。</q>',[29,6]);
+		new Game.Achievement('世界末日','转生时烤了 <b>1 tredecillion</b> 饼干。<q>(因为我们知道它)</q>',[21,25]);
+		new Game.Achievement('哦，你回来了','转生时烤了 <b>1 quattuordecillion</b> 饼干。<q>想念我们？</q>',[21,25]);
+		new Game.Achievement('拉撒路','转生时烤了 <b>1 quindecillion</b> 饼干。<q>试试，再试一次。</q>',[21,25]);
 		
 		Game.CpsAchievement('Leisurely pace');
 		Game.CpsAchievement('Hypersonic');
@@ -12045,8 +12045,8 @@ Game.Launch=function()
 				if (Game.handmadeCookies>=100000000000000000) {Game.Win('点击祸患');Game.Unlock('范塔钢鼠标');}
 				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('点击大灾变');Game.Unlock('永不崩溃的鼠标');}
 				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('终极点击');Game.Unlock('阿迈斯里鼠标');}
-				if (Game.handmadeCookies>=100000000000000000000000) {Game.Win('All the other kids with the pumped up clicks');Game.Unlock('Technobsidian mouse');}
-				if (Game.handmadeCookies>=10000000000000000000000000) {Game.Win('One...more...click...');Game.Unlock('Plasmarble mouse');}
+				if (Game.handmadeCookies>=100000000000000000000000) {Game.Win('所有其他孩子们都被点击了');Game.Unlock('高科技鼠标');}
+				if (Game.handmadeCookies>=10000000000000000000000000) {Game.Win('一个…更多…点击…');Game.Unlock('Plasmarble mouse');}
 				
 				if (Game.cookiesEarned<Game.cookies) Game.Win('被骗的饼干味道很糟糕');
 				
