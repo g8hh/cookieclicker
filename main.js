@@ -3760,7 +3760,7 @@ Game.Launch=function()
 			mult*=catMult;
 			
 			var eggMult=1;
-			if (Game.Has('Chicken egg')) eggMult*=1.01;
+			if (Game.Has('鸡蛋')) eggMult*=1.01;
 			if (Game.Has('Duck egg')) eggMult*=1.01;
 			if (Game.Has('Turkey egg')) eggMult*=1.01;
 			if (Game.Has('Quail egg')) eggMult*=1.01;
@@ -3839,7 +3839,7 @@ Game.Launch=function()
 				}
 				mult*=goldenSwitchMult;
 			}
-			if (Game.Has('Magic shenanigans')) mult*=1000;
+			if (Game.Has('神奇的恶作剧')) mult*=1000;
 			if (Game.Has('Occult obstruction')) mult*=0;
 			
 			for (var i in Game.customCpsMult) {mult*=Game.customCpsMult[i]();}
@@ -7716,8 +7716,8 @@ Game.Launch=function()
 		Game.last.pool='debug';
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Eclipse cookies',desc:'注意饼干.',icon:[0,4],power:					2,	price:	99999999999*5});
-		Game.NewUpgradeCookie({name:'Zebra cookies',desc:'...',icon:[1,4],power:									2,	price:	999999999999});
+		Game.NewUpgradeCookie({name:'日食饼干',desc:'注意饼干.',icon:[0,4],power:					2,	price:	99999999999*5});
+		Game.NewUpgradeCookie({name:'斑马饼干',desc:'...',icon:[1,4],power:									2,	price:	999999999999});
 		
 		order=100;
 		new Game.Upgrade('万兆手指','鼠标和游标获得 <b>+5000</b> 每个非游标建筑生产的饼干数。<q>年轻人,你只需要点击，点击，点击，点击, 这真的很简单, 年轻人.</q>',10000000000000,[0,18]);Game.MakeTiered(Game.last,9,0);
@@ -7727,7 +7727,7 @@ Game.Launch=function()
 		Game.last.pool='debug';
 		
 		order=15000;
-		new Game.Upgrade('老人契约','Puts a permanent end to the elders\' wrath, at the price of 5% 饼干秒生产量.<q>This is a complicated ritual involving silly, inconsequential trivialities such as cursed laxatives, century-old cacao, and an infant.<br>Don\'t question it.</q>',66666666666666,[8,9],function()
+		new Game.Upgrade('老人契约','将永久结束长老的愤怒, 价格是 5% 总秒收益。<q>这是一种复杂的仪式，包括一些愚蠢的、无关紧要的琐事，比如被诅咒的泻药、有百年历史的可可和一个婴儿。<br>不要质疑它。</q>',66666666666666,[8,9],function()
 		{
 			Game.pledgeT=0;
 			Game.Lock('撤销老人契约');
@@ -7961,16 +7961,16 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'紫罗兰马卡龙',desc:'这就像向你的嘴里喷香水!',icon:[24,4],require:'马卡龙盒子',							power:3,price: 9999999999999999999});
 		
 		order=40000;
-		new Game.Upgrade('Magic shenanigans','Cookie production <b>multiplied by 1,000</b>.<q>It\'s magic. I ain\'t gotta explain sh<div style="display:inline-block;background:url(img/money.png);width:16px;height:16px;position:relative;top:4px;left:0px;margin:0px -2px;"></div>t.</q>',7,[17,5]);//debug purposes only
+		new Game.Upgrade('神奇的恶作剧','饼干生产 <b>乘以 1,000</b>。<q>这是魔法。我不需要解释<div style="display:inline-block;background:url(img/money.png);width:16px;height:16px;position:relative;top:4px;left:0px;margin:0px -2px;"></div></q>',7,[17,5]);//debug purposes only
 		Game.last.pool='debug';
 		
 		
 		order=24000;
-		new Game.Upgrade('Bunny biscuit','Triggers <b>Easter season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>All the world will be your enemy<br>and when they catch you,<br>they will kill you...<br>but first they must catch you.</q>',Game.seasonTriggerBasePrice,[0,12]);Game.last.season='easter';Game.last.pool='toggle';
+		new Game.Upgrade('兔子饼干','触发 <b>复活节</b> 在接下来的24小时。<br>触发另一个季节将会取消这个。<br>每个季节的开关都会增加成本。<q>全世界都会成为你的敌人<br>并且当他们抓到你，<br>他们会杀了你...<br>但首先，他们必须抓住你。</q>',Game.seasonTriggerBasePrice,[0,12]);Game.last.season='easter';Game.last.pool='toggle';
 		
 		var eggPrice=999999999999;
 		var eggPrice2=99999999999999;
-		new Game.Upgrade('Chicken egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>The egg. The egg came first. Get over it.</q>',eggPrice,[1,12]);
+		new Game.Upgrade('鸡蛋','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>The egg. The egg came first. Get over it.</q>',eggPrice,[1,12]);
 		new Game.Upgrade('Duck egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Then he waddled away.</q>',eggPrice,[2,12]);
 		new Game.Upgrade('Turkey egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These hatch into strange, hand-shaped creatures.</q>',eggPrice,[3,12]);
 		new Game.Upgrade('Quail egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These eggs are positively tiny. I mean look at them. How does this happen? Whose idea was that?</q>',eggPrice,[4,12]);
@@ -7997,8 +7997,8 @@ Game.Launch=function()
 		new Game.Upgrade('Century egg','You continually gain <b>more CpS the longer you\'ve played</b> in the current session.<br>Cost scales with how many eggs you own.<q>Actually not centuries-old. This one isn\'t a day over 86!</q>',eggPrice2,[19,12]);
 		new Game.Upgrade('"egg"','<b>+9 CpS</b><q>hey it\'s "egg"</q>',eggPrice2,[20,12]);
 		
-		Game.easterEggs=['Chicken egg','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva','Golden goose egg','Faberge egg','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
-		Game.eggDrops=['Chicken egg','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva'];
+		Game.easterEggs=['鸡蛋','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva','Golden goose egg','Faberge egg','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
+		Game.eggDrops=['鸡蛋','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva'];
 		Game.rareEggDrops=['Golden goose egg','Faberge egg','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
 		
 		Game.GetHowManyEggs=function()
@@ -8039,31 +8039,31 @@ Game.Launch=function()
 				}
 				if (Game.Has(drop) || Game.HasUnlocked(drop)) return;
 				Game.Unlock(drop);
-				if (Game.prefs.popups) Game.Popup('You find :<br>'+drop+'!');
-				else Game.Notify('You found an egg!','<b>'+drop+'</b>',Game.Upgrades[drop].icon);
+				if (Game.prefs.popups) Game.Popup('你找到了 :<br>'+drop+'!');
+				else Game.Notify('你找到了一个蛋!','<b>'+drop+'</b>',Game.Upgrades[drop].icon);
 			}
 		};
 		
 		order=10032;
-		Game.NewUpgradeCookie({name:'Caramel macarons',desc:'The saltiest, chewiest of them all.',icon:[25,3],require:'马卡龙盒子',		power:3,price: 9999999999999999999999});
-		Game.NewUpgradeCookie({name:'Licorice macarons',desc:'Also known as "blackarons".',icon:[25,4],require:'马卡龙盒子',				power:3,price: 9999999999999999999999999});
+		Game.NewUpgradeCookie({name:'焦糖马卡龙',desc:'最咸的，最不愉快的。',icon:[25,3],require:'马卡龙盒子',		power:3,price: 9999999999999999999999});
+		Game.NewUpgradeCookie({name:'甘草马卡龙',desc:'又名“黑火龙”。',icon:[25,4],require:'马卡龙盒子',				power:3,price: 9999999999999999999999999});
 		
 		
 		order=525;
-		new Game.TieredUpgrade('Taller tellers','Banks are <b>翻倍</b>。<q>Able to process a higher amount of transactions. Careful though, as taller tellers tell tall tales.</q>','Bank',1);
-		new Game.TieredUpgrade('Scissor-resistant credit cards','Banks are <b>翻倍</b>。<q>For those truly valued customers.</q>','Bank',2);
-		new Game.TieredUpgrade('Acid-proof vaults','Banks are <b>翻倍</b>。<q>You know what they say : better safe than sorry.</q>','Bank',3);
-		new Game.TieredUpgrade('Chocolate coins','Banks are <b>翻倍</b>。<q>This revolutionary currency is much easier to melt from and into ingots - and tastes much better, for a change.</q>','Bank',4);
-		new Game.TieredUpgrade('Exponential interest rates','Banks are <b>翻倍</b>。<q>Can\'t argue with mathematics! Now fork it over.</q>','Bank',5);
-		new Game.TieredUpgrade('Financial zen','Banks are <b>翻倍</b>。<q>The ultimate grail of economic thought; the feng shui of big money, the stock market yoga - the Heimlich maneuver of dimes and nickels.</q>','Bank',6);
+		new Game.TieredUpgrade('更高级的出纳员','银行工作效率 <b>翻倍</b>。<q>能够处理更高数量的事务。不过要小心，因为高个子的人会讲些高挑的故事。</q>','Bank',1);
+		new Game.TieredUpgrade('抗剪刀的信用卡','银行工作效率 <b>翻倍</b>。<q>对那些真正有价值的顾客。</q>','Bank',2);
+		new Game.TieredUpgrade('耐酸金库','银行工作效率 <b>翻倍</b>。<q>你知道他们说什么吗，小心点。</q>','Bank',3);
+		new Game.TieredUpgrade('巧克力硬币','银行工作效率 <b>翻倍</b>。<q>这种革命性的货币更容易从内部和内部熔化——而且味道更好，这是一种改变。</q>','Bank',4);
+		new Game.TieredUpgrade('指数利率','银行工作效率 <b>翻倍</b>。<q>不能和数学争辩!现在把它分叉。</q>','Bank',5);
+		new Game.TieredUpgrade('金融禅宗','银行工作效率 <b>翻倍</b>。<q>经济思想的终极目标;大资金的风水,股市瑜伽-海姆利克氏操作法的1角和2角5分的硬币。</q>','Bank',6);
 		
 		order=550;
-		new Game.TieredUpgrade('Golden idols','Temples are <b>翻倍</b>。<q>Lure even greedier adventurers to retrieve your cookies. Now that\'s a real idol game!</q>','Temple',1);
-		new Game.TieredUpgrade('Sacrifices','Temples are <b>翻倍</b>。<q>What\'s a life to a gigaton of cookies?</q>','Temple',2);
-		new Game.TieredUpgrade('Delicious blessing','Temples are <b>翻倍</b>。<q>And lo, the Baker\'s almighty spoon came down and distributed holy gifts unto the believers - shimmering sugar, and chocolate dark as night, and all manner of wheats. And boy let me tell you, that party was mighty gnarly.</q>','Temple',3);
-		new Game.TieredUpgrade('Sun festival','Temples are <b>翻倍</b>。<q>Free the primordial powers of your temples with these annual celebrations involving fire-breathers, traditional dancing, ritual beheadings and other merriments!</q>','Temple',4);
-		new Game.TieredUpgrade('Enlarged pantheon','Temples are <b>翻倍</b>。<q>Enough spiritual inadequacy! More divinities than you\'ll ever need, or your money back! 100% guaranteed!</q>','Temple',5);
-		new Game.TieredUpgrade('Great Baker in the sky','Temples are <b>翻倍</b>。<q>This is it. The ultimate deity has finally cast Their sublimely divine eye upon your operation; whether this is a good thing or possibly the end of days is something you should find out very soon.</q>','Temple',6);
+		new Game.TieredUpgrade('金色偶像','寺庙工作效率 <b>翻倍</b>。<q>吸引更贪婪的冒险者来找回你的饼干。现在这是真正的偶像比赛!</q>','Temple',1);
+		new Game.TieredUpgrade('牺牲','寺庙工作效率 <b>翻倍</b>。<q>10亿美元的饼干是什么样的生活?</q>','Temple',2);
+		new Game.TieredUpgrade('美味的祝福','寺庙工作效率 <b>翻倍</b>。<q>瞧，面包师的万能汤匙降临，对信徒和分布式神圣的礼物——闪闪发光的糖,巧克力漆黑如夜,和各种各样的小麦。让我告诉你，那个聚会很不友好。</q>','Temple',3);
+		new Game.TieredUpgrade('太阳节','寺庙工作效率 <b>翻倍</b>。<q>在每年的庆祝活动中，你的太阳穴都能释放出你的原始力量，包括喷火者、传统舞蹈、仪式砍头和其他的欢乐!</q>','Temple',4);
+		new Game.TieredUpgrade('扩大万神殿','寺庙工作效率 <b>翻倍</b>。<q>精神上的不足!比你需要的还要多，或者你的钱要回来!百分百保证!</q>','Temple',5);
+		new Game.TieredUpgrade('天上的面包师','寺庙工作效率 <b>翻倍</b>。<q>这是它。终极神终于在你的行动上投射他们的神性的眼睛;无论这是一件好事，或者可能是几天的结束，你很快就会发现。</q>','Temple',6);
 		
 		order=575;
 		new Game.TieredUpgrade('Pointier hats','Wizard towers are <b>翻倍</b>。<q>Tests have shown increased thaumic receptivity relative to the geometric proportions of wizardly conic implements.</q>','Wizard tower',1);
@@ -8724,7 +8724,7 @@ Game.Launch=function()
 			'christmas':{name:'Christmas',start:'Christmas season has started!',over:'Christmas season is over.',trigger:'节日饼干'},
 			'valentines':{name:'Valentine\'s day',start:'Valentine\'s day has started!',over:'Valentine\'s day is over.',trigger:'相思病饼干'},
 			'fools':{name:'Business day',start:'Business day has started!',over:'Business day is over.',trigger:'傻瓜的饼干'},
-			'easter':{name:'Easter',start:'Easter season has started!',over:'Easter season is over.',trigger:'Bunny biscuit'},
+			'easter':{name:'Easter',start:'Easter season has started!',over:'Easter season is over.',trigger:'兔子饼干'},
 			'halloween':{name:'Halloween',start:'Halloween has started!',over:'Halloween is over.',trigger:'鬼魂饼干'}
 		};
 		
@@ -11623,7 +11623,7 @@ Game.Launch=function()
 		Game.SetAllUpgrades=function(on)
 		{
 			Game.popups=0;
-			var leftout=['Magic shenanigans','Occult obstruction','Glucose-charged air'];
+			var leftout=['神奇的恶作剧','Occult obstruction','Glucose-charged air'];
 			for (var i in Game.Upgrades)
 			{
 				if (on && (Game.Upgrades[i].pool=='toggle' || leftout.indexOf(Game.Upgrades[i].name)!=-1)) {}
