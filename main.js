@@ -2018,13 +2018,13 @@ Game.Launch=function()
 								if (Game.Has('路西法')) maxTime*=2;
 								
 								var percent=5;
-								if (Game.Has('Angels')) percent+=10;
-								if (Game.Has('Archangels')) percent+=10;
-								if (Game.Has('Virtues')) percent+=10;
-								if (Game.Has('Dominions')) percent+=10;
-								if (Game.Has('Cherubim')) percent+=10;
-								if (Game.Has('Seraphim')) percent+=10;
-								if (Game.Has('God')) percent+=10;
+								if (Game.Has('天使')) percent+=10;
+								if (Game.Has('大天使')) percent+=10;
+								if (Game.Has('美德')) percent+=10;
+								if (Game.Has('领地')) percent+=10;
+								if (Game.Has('智天使')) percent+=10;
+								if (Game.Has('六翼天使')) percent+=10;
+								if (Game.Has('上帝')) percent+=10;
 								
 								if (Game.Has('奇美拉')) {maxTime+=60*60*24*2;percent+=5;}
 								
@@ -3834,7 +3834,7 @@ Game.Launch=function()
 				var goldenSwitchMult=1.5;
 				if (Game.Has('残余运气'))
 				{
-					var upgrades=['走运','幸运日','意外的惊喜','天上的运气','Lasting fortune','决定性的命运','Lucky digit','Lucky number','Lucky payout'];
+					var upgrades=['走运','幸运日','意外的惊喜','天上的运气','永恒的财富','决定性的命运','Lucky digit','Lucky number','Lucky payout'];
 					for (var i in upgrades) {if (Game.Has(upgrades[i])) goldenSwitchMult+=0.1;}
 				}
 				mult*=goldenSwitchMult;
@@ -4132,7 +4132,7 @@ Game.Launch=function()
 					//buff duration multiplier
 					var effectDurMod=1;
 					if (Game.Has('走运')) effectDurMod*=2;
-					if (Game.Has('Lasting fortune')) effectDurMod*=1.1;
+					if (Game.Has('永恒的财富')) effectDurMod*=1.1;
 					if (Game.Has('Lucky digit')) effectDurMod*=1.01;
 					if (Game.Has('Lucky number')) effectDurMod*=1.01;
 					if (Game.Has('Green yeast digestives')) effectDurMod*=1.01;
@@ -7105,7 +7105,7 @@ Game.Launch=function()
 				if (Game.Has('五指折扣')) price*=Math.pow(0.99,Game.Objects['Cursor'].amount/100);
 				if (Game.Has('圣诞老人的统治')) price*=0.98;
 				if (Game.Has('法贝热彩蛋')) price*=0.99;
-				if (Game.Has('Divine sales')) price*=0.99;
+				if (Game.Has('神圣销售')) price*=0.99;
 				if (Game.hasBuff('运气而已')) price*=0.98;
 				if (Game.hasBuff('砍价的不幸')) price*=1.02;
 				if (Game.hasAura('Master of the Armory')) price*=0.98;
@@ -8165,32 +8165,32 @@ Game.Launch=function()
 		
 		var angelPriceFactor=7;
 		var desc=function(percent,total){return 'You gain another <b>+'+percent+'%</b> of your regular CpS while the game is closed, for a total of <b>'+total+'%</b>.';}
-		new Game.Upgrade('Angels',desc(10,15)+'<q>Lowest-ranking at the first sphere of pastry heaven, angels are tasked with delivering new recipes to the mortals they deem worthy.</q>',Math.pow(angelPriceFactor,1),[0,11]);Game.last.pool='prestige';Game.last.parents=['双重超越之门'];
-		new Game.Upgrade('Archangels',desc(10,25)+'<q>Members of the first sphere of pastry heaven, archangels are responsible for the smooth functioning of the world\'s largest bakeries.</q>',Math.pow(angelPriceFactor,2),[1,11]);Game.last.pool='prestige';Game.last.parents=['Angels'];
-		new Game.Upgrade('Virtues',desc(10,35)+'<q>Found at the second sphere of pastry heaven, virtues make use of their heavenly strength to push and drag the stars of the cosmos.</q>',Math.pow(angelPriceFactor,3),[2,11]);Game.last.pool='prestige';Game.last.parents=['Archangels'];
-		new Game.Upgrade('Dominions',desc(10,45)+'<q>Ruling over the second sphere of pastry heaven, dominions hold a managerial position and are in charge of accounting and regulating schedules.</q>',Math.pow(angelPriceFactor,4),[3,11]);Game.last.pool='prestige';Game.last.parents=['Virtues'];
-		new Game.Upgrade('Cherubim',desc(10,55)+'<q>Sieging at the first sphere of pastry heaven, the four-faced cherubim serve as heavenly bouncers and bodyguards.</q>',Math.pow(angelPriceFactor,5),[4,11]);Game.last.pool='prestige';Game.last.parents=['Dominions'];
-		new Game.Upgrade('Seraphim',desc(10,65)+'<q>Leading the first sphere of pastry heaven, seraphim possess ultimate knowledge of everything pertaining to baking.</q>',Math.pow(angelPriceFactor,6),[5,11]);Game.last.pool='prestige';Game.last.parents=['Cherubim'];
-		new Game.Upgrade('God',desc(10,75)+'<q>Like Santa, but less fun.</q>',Math.pow(angelPriceFactor,7),[6,11]);Game.last.pool='prestige';Game.last.parents=['Seraphim'];
+		new Game.Upgrade('天使',desc(10,15)+'<q>在糕点天堂的第一层，天使们的任务是向他们认为有价值的人提供新的食谱。</q>',Math.pow(angelPriceFactor,1),[0,11]);Game.last.pool='prestige';Game.last.parents=['双重超越之门'];
+		new Game.Upgrade('大天使',desc(10,25)+'<q>天使长们是第一个糕点天堂的成员，他们负责世界上最大的面包房的顺利运转。</q>',Math.pow(angelPriceFactor,2),[1,11]);Game.last.pool='prestige';Game.last.parents=['天使'];
+		new Game.Upgrade('美德',desc(10,35)+'<q>在糕点天堂的第二层发现，美德利用他们的天力量来推和拉宇宙之星。</q>',Math.pow(angelPriceFactor,3),[2,11]);Game.last.pool='prestige';Game.last.parents=['大天使'];
+		new Game.Upgrade('领地',desc(10,45)+'<q>在糕点天堂的第二个领域，自治领有一个管理职位，负责会计和管理的日程安排。</q>',Math.pow(angelPriceFactor,4),[3,11]);Game.last.pool='prestige';Game.last.parents=['美德'];
+		new Game.Upgrade('智天使',desc(10,55)+'<q>在糕点天堂的第一层，四面派的小天使是天堂的护卫和保镖。</q>',Math.pow(angelPriceFactor,5),[4,11]);Game.last.pool='prestige';Game.last.parents=['领地'];
+		new Game.Upgrade('六翼天使',desc(10,65)+'<q>在糕点天堂的第一个领域，六翼天使拥有关于烘焙的所有知识。</q>',Math.pow(angelPriceFactor,6),[5,11]);Game.last.pool='prestige';Game.last.parents=['智天使'];
+		new Game.Upgrade('上帝',desc(10,75)+'<q>就像圣诞老人一样，但乐趣却少了。</q>',Math.pow(angelPriceFactor,7),[6,11]);Game.last.pool='prestige';Game.last.parents=['六翼天使'];
 		
-		new Game.Upgrade('双重超越之门','You now <b>keep making cookies while the game is closed</b>, at the rate of <b>5%</b> of your regular CpS and up to <b>1 hour</b> after the game is closed.<br>(Beyond 1 hour, this is reduced by a further 90% - your rate goes down to <b>0.5%</b> 饼干秒生产量.)<q>This is one occasion you\'re always underdressed for. Don\'t worry, just rush in past the bouncer and pretend you know people.</q>',1,[15,11]);Game.last.pool='prestige';
+		new Game.Upgrade('双重超越之门','你现在可以 <b>离线制作饼干</b>, 离线饼干每秒产量是你当前饼干每秒产量的 <b>5%</b>，离线时间是游戏关闭之后的 <b>1 小时</b>。<br>(超过1小时后，这个比例又降低了90% —— 直到你的比例下降到 <b>0.5%</b> 当前饼干每秒产量。)<q>这是一次你总是穿得不得体的场合。别担心，只要冲过保镖，假装你认识人。</q>',1,[15,11]);Game.last.pool='prestige';
 
-		new Game.Upgrade('天上的运气','Golden cookies appear <b>5%</b> more often.<q>Someone up there likes you.</q>',77,[22,6]);Game.last.pool='prestige';
-		new Game.Upgrade('Lasting fortune','Golden cookies effects last <b>10%</b> longer.<q>This isn\'t your average everyday luck. This is... advanced luck.</q>',777,[23,6]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
-		new Game.Upgrade('决定性的命运','Golden cookies stay <b>5%</b> longer.<q>Life just got a bit more intense.</q>',7777,[10,14]);Game.last.pool='prestige';Game.last.parents=['Lasting fortune'];
+		new Game.Upgrade('天上的运气','黄金饼干出现几率增加 <b>5%</b>。<q>上面有人喜欢你。</q>',77,[22,6]);Game.last.pool='prestige';
+		new Game.Upgrade('永恒的财富','黄金饼干效果持续时间增加 <b>10%</b>。<q>这是你每天的运气。这是……运气好。</q>',777,[23,6]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
+		new Game.Upgrade('决定性的命运','黄金饼干停留时间增加 <b>5%</b>。<q>生活变得更加紧张。</q>',7777,[10,14]);Game.last.pool='prestige';Game.last.parents=['永恒的财富'];
 
-		new Game.Upgrade('神圣折扣','Buildings are <b>1% cheaper</b>.<q>Someone special deserves a special price.</q>',99999,[21,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
-		new Game.Upgrade('Divine sales','Upgrades are <b>1% cheaper</b>.<q>一切都得走!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
-		new Game.Upgrade('神圣的面包店','Cookie upgrades are <b>5 times cheaper</b>.<q>They sure know what they\'re doing.</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['Divine sales','神圣折扣'];
+		new Game.Upgrade('神圣折扣','建筑便宜 <b>1% </b>。<q>一个特别的人值得付出特别的代价。</q>',99999,[21,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
+		new Game.Upgrade('神圣销售','升级便宜 <b>1% </b>。<q>一切都得过去!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
+		new Game.Upgrade('神圣的面包店','饼干升级 <b>便宜 5 倍</b>.<q>他们肯定知道自己在做什么。</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['神圣销售','神圣折扣'];
 		
-		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','奶油饼干罐头'];
-		new Game.Upgrade('启动厨房','You start with <b>5 grandmas</b>.<q>Where did these come from?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
-		new Game.Upgrade('光环手套','Clicks are <b>10% more powerful</b>.<q>Smite that cookie.</q>',55555,[22,7]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
+		new Game.Upgrade('启动装置','你开局时有 <b>10 游标</b>.<q>这可以派上用场。</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','奶油饼干罐头'];
+		new Game.Upgrade('启动厨房','你开局时有 <b>5 老奶奶</b>.<q>这些东西是从哪里来的?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
+		new Game.Upgrade('光环手套','点击效果增加 <b>10%</b>.<q>吃了那饼干。</q>',55555,[22,7]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
 
-		new Game.Upgrade('小猫天使','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>所有的猫都会去天堂。</q>',9000,[23,7]);Game.last.pool='prestige';Game.last.parents=['Dominions'];Game.last.kitten=1;
+		new Game.Upgrade('小猫天使','你的牛奶越多，你获得的<b>饼干每秒产量越多<q>所有的猫都会去天堂。</q>',9000,[23,7]);Game.last.pool='prestige';Game.last.parents=['领地'];Game.last.kitten=1;
 		
-		new Game.Upgrade('Unholy bait','Wrinklers appear <b>5 times</b> as fast.<q>No wrinkler can resist the scent of worm biscuits.</q>',44444,[15,12]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
-		new Game.Upgrade('Sacrilegious corruption','Wrinklers regurgitate <b>5%</b> more cookies.<q>Unique in the animal kingdom, the wrinkler digestive tract is able to withstand an incredible degree of dilation - provided you prod them appropriately.</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['Unholy bait'];
+		new Game.Upgrade('邪恶的诱饵','皱纹出现频率变快 <b>5 倍</b>。<q>没有皱纹可以抵御蠕虫饼干的气味。</q>',44444,[15,12]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
+		new Game.Upgrade('亵渎神明','起皱的人获得 <b>5%</b> 更多的饼干。<q>独特的动物王国，皱纹消化道能够承受难以置信程度的扩张——只要你适当地刺激它们。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
 		
 		
 		order=200;new Game.TieredUpgrade('Xtreme walkers','老奶奶工作效率 <b>翻倍</b>。<q>Complete with flame decals and a little horn that goes "toot".</q>','Grandma',7);
@@ -8236,7 +8236,7 @@ Game.Launch=function()
 		order=25100;
 		new Game.Upgrade('易碎的鸡蛋','解锁 <b>饼干龙蛋</b>.<q>谢谢你收养了这个健壮的，有趣的饼干龙!它将给你带来数年的欢乐和娱乐。<br>保持干燥凉爽的环境，远离其他宠物。强烈建议购买家庭保险。</q>',25,[21,12]);
 		
-		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','路西法','协同效应2'];
+		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['上帝','路西法','协同效应2'];
 		
 		new Game.Upgrade('奶油饼干罐头','含有丰富的奶油饼干。<q>丹麦饼干的五个品种。<br/>配小纸杯。</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
 		
@@ -8402,7 +8402,7 @@ Game.Launch=function()
 		
 		new Game.Upgrade('遗产','这是第一次天堂的升级;它解锁<b>天堂芯片</b>系统。<div class="line"></div>你每转生一次，你过去生活中的饼干就变成了 <b>天堂芯片</b> 和 <b>声望</b>.<div class="line"></div><b>天堂芯片</b> 可以用于各种永久的超越升级。<div class="line"></div>您的 <b>声望等级</b> 每一级会给你永久的 <b>+1% 饼干秒生产量</b> 。<q>我们都在等你。</q>',1,[21,6]);Game.last.pool='prestige';Game.last.parents=[];
 		
-		new Game.Upgrade('老香料','你可以吸引 <b>2 更多的皱纹</b>.<q>你的饼干闻起来像的饼干。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['Unholy bait'];
+		new Game.Upgrade('老香料','你可以吸引 <b>2 更多的皱纹</b>.<q>你的饼干闻起来像的饼干。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
 		
 		new Game.Upgrade('残余运气','当金色开关打开时，你会得到额外的 <b>+10% 饼干秒生产量</b> 每个黄金饼干升级所有。<q>财富的方法有许多种。</q>',99999,[27,6]);Game.last.pool='prestige';Game.last.parents=['黄金开关'];
 		
@@ -8451,11 +8451,11 @@ Game.Launch=function()
 		new Game.SynergyUpgrade('Mystical energies','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
 		
 		
-		new Game.Upgrade('协同效应1','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 15 </b>所有建筑物，就会出现协同作用。<q>许多人击败了少数人。</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','Dominions'];
-		new Game.Upgrade('协同效应2','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 75 </b>所有建筑物，就会出现协同作用。<q>这几个击败了许多人。</q>',252525,[10,29]);Game.last.pool='prestige';Game.last.parents=['恶魔','Seraphim','协同效应1'];
+		new Game.Upgrade('协同效应1','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 15 </b>所有建筑物，就会出现协同作用。<q>许多人击败了少数人。</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','领地'];
+		new Game.Upgrade('协同效应2','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 75 </b>所有建筑物，就会出现协同作用。<q>这几个击败了许多人。</q>',252525,[10,29]);Game.last.pool='prestige';Game.last.parents=['恶魔','六翼天使','协同效应1'];
 		
 		new Game.Upgrade('天堂饼干','饼干生产增加 <b>+10% 永久产量</b>.<q>和天堂芯片一起拷。另一种超越时间和空间的文字。</q>',3,[25,12]);Game.last.pool='prestige';Game.last.parents=['遗产'];Game.last.power=10;Game.last.pseudoCookie=true;
-		new Game.Upgrade('皱纹饼干','饼干生产增加 <b>+10% 永久地</b>.<q>在一个时间和空间都没有意义的地方，普通饼干的结果会让无数的电子人离开。</q>',6666666,[26,12]);Game.last.pool='prestige';Game.last.parents=['Sacrilegious corruption','老香料'];Game.last.power=10;Game.last.pseudoCookie=true;
+		new Game.Upgrade('皱纹饼干','饼干生产增加 <b>+10% 永久地</b>.<q>在一个时间和空间都没有意义的地方，普通饼干的结果会让无数的电子人离开。</q>',6666666,[26,12]);Game.last.pool='prestige';Game.last.parents=['亵渎神明','老香料'];Game.last.power=10;Game.last.pseudoCookie=true;
 		new Game.Upgrade('翻倍运气的精华','金色饼干（以及所有其他产生的东西，如驯鹿）有<b>1%的几率被加倍</b>.<q>味道亮闪闪的。空的小瓶是用来做大铅笔的。</q>',7777777,[27,12]);Game.last.pool='prestige';Game.last.parents=['神圣的面包店','残余运气'];
 		
 		order=40000;
@@ -8484,7 +8484,7 @@ Game.Launch=function()
 		
 		//note : these showIf functions stop working beyond 10 quadrillion prestige level, due to loss in precision; the solution, of course, is to make sure 10 quadrillion is not an attainable prestige level
 		new Game.Upgrade('Lucky digit','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a bit shy and only appears when your prestige level ends in 7.</q>',777,[24,15]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%10==7);};
-		new Game.Upgrade('Lucky number','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a reclusive hermit and only appears when your prestige level ends in 777.</q>',77777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Lucky digit','Lasting fortune'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000==777);};
+		new Game.Upgrade('Lucky number','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a reclusive hermit and only appears when your prestige level ends in 777.</q>',77777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Lucky digit','永恒的财富'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000==777);};
 		new Game.Upgrade('Lucky payout','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade took an oath of complete seclusion from the rest of the world and only appears when your prestige level ends in 777777.</q>',77777777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Lucky number','决定性的命运'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000000==777777);};
 		
 		order=50000;
@@ -10161,7 +10161,7 @@ Game.Launch=function()
 				{
 					var chance=0.00001*Game.elderWrath;
 					chance*=Game.eff('wrinklerSpawn');
-					if (Game.Has('Unholy bait')) chance*=5;
+					if (Game.Has('邪恶的诱饵')) chance*=5;
 					if (Game.hasGod)
 					{
 						var godLvl=Game.hasGod('scorn');
@@ -10261,7 +10261,7 @@ Game.Launch=function()
 					me.hurt=0;
 					me.hp=3;
 					var toSuck=1.1;
-					if (Game.Has('Sacrilegious corruption')) toSuck*=1.05;
+					if (Game.Has('亵渎神明')) toSuck*=1.05;
 					if (me.type==1) toSuck*=3;//shiny wrinklers are an elusive, profitable breed
 					me.sucked*=toSuck;//cookie dough does weird things inside wrinkler digestive tracts
 					if (Game.Has('Wrinklerspawn')) me.sucked*=1.05;
