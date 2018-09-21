@@ -3455,7 +3455,7 @@ Game.Launch=function()
 			for (var i in Game.customMouseCps) {mult+=Game.customMouseCps[i]();}
 			
 			if (Game.Has('圣诞老人的帮手')) mult*=1.1;
-			if (Game.Has('Cookie egg')) mult*=1.1;
+			if (Game.Has('饼干蛋')) mult*=1.1;
 			if (Game.Has('光环手套')) mult*=1.1;
 			
 			mult*=Game.eff('click');
@@ -3723,7 +3723,7 @@ Game.Launch=function()
 				Game.cookiesPsByType[me.name]=me.storedTotalCps;
 			}
 			
-			if (Game.Has('"egg"')) {Game.cookiesPs+=9;Game.cookiesPsByType['"egg"']=9;}//"egg"
+			if (Game.Has('"蛋"')) {Game.cookiesPs+=9;Game.cookiesPsByType['"蛋"']=9;}//"egg"
 			
 			for (var i in Game.customCps) {mult*=Game.customCps[i]();}
 			
@@ -3761,18 +3761,18 @@ Game.Launch=function()
 			
 			var eggMult=1;
 			if (Game.Has('鸡蛋')) eggMult*=1.01;
-			if (Game.Has('Duck egg')) eggMult*=1.01;
-			if (Game.Has('Turkey egg')) eggMult*=1.01;
-			if (Game.Has('Quail egg')) eggMult*=1.01;
-			if (Game.Has('Robin egg')) eggMult*=1.01;
-			if (Game.Has('Ostrich egg')) eggMult*=1.01;
-			if (Game.Has('Cassowary egg')) eggMult*=1.01;
-			if (Game.Has('Salmon roe')) eggMult*=1.01;
-			if (Game.Has('Frogspawn')) eggMult*=1.01;
-			if (Game.Has('Shark egg')) eggMult*=1.01;
-			if (Game.Has('Turtle egg')) eggMult*=1.01;
-			if (Game.Has('Ant larva')) eggMult*=1.01;
-			if (Game.Has('Century egg'))
+			if (Game.Has('鸭蛋')) eggMult*=1.01;
+			if (Game.Has('火鸡蛋')) eggMult*=1.01;
+			if (Game.Has('鹌鹑蛋')) eggMult*=1.01;
+			if (Game.Has('知更鸟蛋')) eggMult*=1.01;
+			if (Game.Has('鸵鸟蛋')) eggMult*=1.01;
+			if (Game.Has('食火鸡蛋')) eggMult*=1.01;
+			if (Game.Has('鲑鱼籽')) eggMult*=1.01;
+			if (Game.Has('蛙卵')) eggMult*=1.01;
+			if (Game.Has('鲨鱼卵')) eggMult*=1.01;
+			if (Game.Has('龟蛋')) eggMult*=1.01;
+			if (Game.Has('蚂蚁幼虫')) eggMult*=1.01;
+			if (Game.Has('世纪蛋'))
 			{
 				//the boost increases a little every day, with diminishing returns up to +10% on the 100th day
 				var day=Math.floor((Date.now()-Game.startDate)/1000/10)*10/60/60/24;
@@ -4329,7 +4329,7 @@ Game.Launch=function()
 				{
 					if (Game.Has('幸运日')) m/=2;
 					if (Game.Has('意外的惊喜')) m/=2;
-					if (Game.Has('Golden goose egg')) m*=0.95;
+					if (Game.Has('金鹅蛋')) m*=0.95;
 					if (Game.Has('天上的运气')) m*=0.95;
 					if (Game.Has('Green yeast digestives')) m*=0.99;
 					if (Game.hasAura('奥术光环')) m*=0.95;
@@ -7970,36 +7970,36 @@ Game.Launch=function()
 		
 		var eggPrice=999999999999;
 		var eggPrice2=99999999999999;
-		new Game.Upgrade('鸡蛋','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>The egg. The egg came first. Get over it.</q>',eggPrice,[1,12]);
-		new Game.Upgrade('Duck egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Then he waddled away.</q>',eggPrice,[2,12]);
-		new Game.Upgrade('Turkey egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These hatch into strange, hand-shaped creatures.</q>',eggPrice,[3,12]);
-		new Game.Upgrade('Quail egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These eggs are positively tiny. I mean look at them. How does this happen? Whose idea was that?</q>',eggPrice,[4,12]);
-		new Game.Upgrade('Robin egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Holy azure-hued shelled embryos!</q>',eggPrice,[5,12]);
-		new Game.Upgrade('Ostrich egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>One of the largest eggs in the world. More like ostrouch, am I right?<br>Guys?</q>',eggPrice,[6,12]);
-		new Game.Upgrade('Cassowary egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>The cassowary is taller than you, possesses murderous claws and can easily outrun you.<br>You\'d do well to be casso-wary of them.</q>',eggPrice,[7,12]);
-		new Game.Upgrade('Salmon roe','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Do the impossible, see the invisible.<br>Roe roe, fight the power?</q>',eggPrice,[8,12]);
-		new Game.Upgrade('Frogspawn','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>I was going to make a pun about how these "toadally look like eyeballs", but froget it.</q>',eggPrice,[9,12]);
-		new Game.Upgrade('Shark egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>HELLO IS THIS FOOD?<br>LET ME TELL YOU ABOUT FOOD.<br>WHY DO I KEEP EATING MY FRIENDS</q>',eggPrice,[10,12]);
-		new Game.Upgrade('Turtle egg','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Turtles, right? Hatch from shells. Grow into shells. What\'s up with that?<br>Now for my skit about airplane food.</q>',eggPrice,[11,12]);
-		new Game.Upgrade('Ant larva','Cookie production multiplier <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These are a delicacy in some countries, I swear. You will let these invade your digestive tract, and you will derive great pleasure from it.<br>And all will be well.</q>',eggPrice,[12,12]);
-		new Game.Upgrade('Golden goose egg','Golden cookies appear <b>5% more often</b>.<br>Cost scales with how many eggs you own.<q>The sole vestige of a tragic tale involving misguided investments.</q>',eggPrice2,[13,12]);
-		new Game.Upgrade('法贝热彩蛋','All buildings and upgrades are <b>1% cheaper</b>.<br>Cost scales with how many eggs you own.<q>This outrageous egg is definitely fab.</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
-		new Game.Upgrade('Wrinklerspawn','Wrinklers explode into <b>5% more cookies</b>.<br>Cost scales with how many eggs you own.<q>Look at this little guy! It\'s gonna be a big boy someday! Yes it is!</q>',eggPrice2,[15,12]);
-		new Game.Upgrade('Cookie egg','Clicking is <b>10% more powerful</b>.<br>Cost scales with how many eggs you own.<q>The shell appears to be chipped.<br>I wonder what\'s inside this one!</q>',eggPrice2,[16,12]);
-		new Game.Upgrade('煎蛋','Other eggs appear <b>10% more frequently</b>.<br>Cost scales with how many eggs you own.<q>Fromage not included.</q>',eggPrice2,[17,12]);
-		new Game.Upgrade('Chocolate egg','Contains <b>a lot of cookies</b>.<br>Cost scales with how many eggs you own.<q>Laid by the elusive cocoa bird. There\'s a surprise inside!</q>',eggPrice2,[18,12],function()
+		new Game.Upgrade('鸡蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>鸡蛋。鸡蛋是第一位的。克服它。</q>',eggPrice,[1,12]);
+		new Game.Upgrade('鸭蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>然后他摇摇摆摆地走了。</q>',eggPrice,[2,12]);
+		new Game.Upgrade('火鸡蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>这些孵化成奇异的手形生物。</q>',eggPrice,[3,12]);
+		new Game.Upgrade('鹌鹑蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>这些蛋确实很小。我是说，看看他们。这是如何发生的?这是谁的主意?</q>',eggPrice,[4,12]);
+		new Game.Upgrade('知更鸟蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>神圣的，有壳的胚胎!</q>',eggPrice,[5,12]);
+		new Game.Upgrade('鸵鸟蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>世界上最大的蛋之一。更像奥斯垂奇，对吧?<br>伙计们?</q>',eggPrice,[6,12]);
+		new Game.Upgrade('食火鸡蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>食火鸡比你高，拥有凶残的爪子，很容易跑得比你快。<br/>你最好对他们小心些。</q>',eggPrice,[7,12]);
+		new Game.Upgrade('鲑鱼籽','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>做不可能的事，看不见的。<br>罗伊·罗伊，反抗权力?</q>',eggPrice,[8,12]);
+		new Game.Upgrade('蛙卵','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>我想说一下这些“看起来像眼球”的东西，但忘掉它。</q>',eggPrice,[9,12]);
+		new Game.Upgrade('鲨鱼卵','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>你好这是食物吗?<br/>让我告诉你关于食物的事。<br/>我为什么一直吃我的朋友</q>',eggPrice,[10,12]);
+		new Game.Upgrade('龟蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>乌龟，对吧?<br>从贝壳里孵化出来。成长为贝壳。这是怎么了?现在是我的关于飞机食物的滑稽短剧。</q>',eggPrice,[11,12]);
+		new Game.Upgrade('蚂蚁幼虫','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>我发誓，在一些国家，这是一种美味。你会让这些侵入你的消化道，你会从中获得极大的乐趣。，一切都会好的。</q>',eggPrice,[12,12]);
+		new Game.Upgrade('金鹅蛋','黄金饼干出现几率 <b>+5%</b>.<br>成本是你拥有多少个蛋。<q>这是一个关于错误投资的悲惨故事的唯一痕迹。</q>',eggPrice2,[13,12]);
+		new Game.Upgrade('法贝热彩蛋','所有建筑和升级 <b>降低 1% 成本</b>.<br>成本是你拥有多少个蛋。<q>这个可恶的蛋绝对是假的。</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
+		new Game.Upgrade('皱纹卵','皱纹炸裂加成 <b>5% 饼干</b>.<br>成本是你拥有多少个蛋。<q>看看这个小家伙!总有一天会成为一个大男孩的!没错,是很好玩!</q>',eggPrice2,[15,12]);
+		new Game.Upgrade('饼干蛋','点击加成 <b>10% </b>。<br>成本是你拥有多少个蛋。<q>壳体似乎有缺口。<br>我想知道这个里面有什么!</q>',eggPrice2,[16,12]);
+		new Game.Upgrade('煎蛋','其他蛋出现频率增加 <b>10% </b>。<br>成本是你拥有多少个蛋。<q>不包括他的年龄。</q>',eggPrice2,[17,12]);
+		new Game.Upgrade('巧克力蛋','包含 <b>很多的饼干</b>.<br>成本是你拥有多少个蛋。<q>这是一种难以捉摸的可可鸟。里面有个惊喜!</q>',eggPrice2,[18,12],function()
 		{
 			var cookies=Game.cookies*0.05;
-			if (Game.prefs.popups) Game.Popup('The chocolate egg bursts into<br>'+Beautify(cookies)+'!');
-			else Game.Notify('Chocolate egg','The egg bursts into <b>'+Beautify(cookies)+'</b> cookies!',Game.Upgrades['Chocolate egg'].icon);
+			if (Game.prefs.popups) Game.Popup('巧克力蛋突然爆发<br>'+Beautify(cookies)+'!');
+			else Game.Notify('巧克力蛋','蛋突然爆发 <b>'+Beautify(cookies)+'</b> 饼干！!',Game.Upgrades['巧克力蛋'].icon);
 			Game.Earn(cookies);
 		});
-		new Game.Upgrade('Century egg','You continually gain <b>more CpS the longer you\'ve played</b> in the current session.<br>Cost scales with how many eggs you own.<q>Actually not centuries-old. This one isn\'t a day over 86!</q>',eggPrice2,[19,12]);
-		new Game.Upgrade('"egg"','<b>+9 CpS</b><q>hey it\'s "egg"</q>',eggPrice2,[20,12]);
+		new Game.Upgrade('世纪蛋','你不断地获得 <b>更多的饼干每秒产量，当你玩得越久</b> 在这个季节。<br>成本是你拥有多少个蛋。<q>实际上没有几个世纪的历史。这一天不超过86岁！</q>',eggPrice2,[19,12]);
+		new Game.Upgrade('"蛋"','<b>+9 饼干秒产量</b><q>嘿，这是"蛋"</q>',eggPrice2,[20,12]);
 		
-		Game.easterEggs=['鸡蛋','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva','Golden goose egg','法贝热彩蛋','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
-		Game.eggDrops=['鸡蛋','Duck egg','Turkey egg','Quail egg','Robin egg','Ostrich egg','Cassowary egg','Salmon roe','Frogspawn','Shark egg','Turtle egg','Ant larva'];
-		Game.rareEggDrops=['Golden goose egg','法贝热彩蛋','Wrinklerspawn','Cookie egg','煎蛋','Chocolate egg','Century egg','"egg"'];
+		Game.easterEggs=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫','金鹅蛋','法贝热彩蛋','皱纹卵','饼干蛋','煎蛋','巧克力蛋','世纪蛋','"蛋"'];
+		Game.eggDrops=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫'];
+		Game.rareEggDrops=['金鹅蛋','法贝热彩蛋','皱纹卵','饼干蛋','煎蛋','巧克力蛋','世纪蛋','"蛋"'];
 		
 		Game.GetHowManyEggs=function()
 		{
@@ -10264,7 +10264,7 @@ Game.Launch=function()
 					if (Game.Has('亵渎神明')) toSuck*=1.05;
 					if (me.type==1) toSuck*=3;//shiny wrinklers are an elusive, profitable breed
 					me.sucked*=toSuck;//cookie dough does weird things inside wrinkler digestive tracts
-					if (Game.Has('Wrinklerspawn')) me.sucked*=1.05;
+					if (Game.Has('皱纹卵')) me.sucked*=1.05;
 					if (Game.hasGod)
 					{
 						var godLvl=Game.hasGod('scorn');
