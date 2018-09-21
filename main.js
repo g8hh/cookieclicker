@@ -852,7 +852,7 @@ Game.Launch=function()
 	
 	'</div><div class="subsection update small">'+
 	'<div class="title">15/10/2013 - it\'s a secret</div>'+
-	'<div class="listing">&bull; added a new heavenly upgrade that gives you 5% of your heavenly chips power for 11 cookies (if you purchased the Heavenly key, you might need to buy it again, sorry)</div>'+
+	'<div class="listing">&bull; added a new heavenly upgrade that gives you 5% of your heavenly chips power for 11 cookies (if you purchased the 天国的钥匙, you might need to buy it again, sorry)</div>'+
 	'<div class="listing">&bull; golden cookie chains should now work properly</div>'+
 	
 	'</div><div class="subsection update small">'+
@@ -2687,11 +2687,11 @@ Game.Launch=function()
 		Game.GetHeavenlyMultiplier=function()
 		{
 			var heavenlyMult=0;
-			if (Game.Has('Heavenly chip secret')) heavenlyMult+=0.05;
-			if (Game.Has('Heavenly cookie stand')) heavenlyMult+=0.20;
-			if (Game.Has('Heavenly bakery')) heavenlyMult+=0.25;
-			if (Game.Has('Heavenly confectionery')) heavenlyMult+=0.25;
-			if (Game.Has('Heavenly key')) heavenlyMult+=0.25;
+			if (Game.Has('天堂芯片的秘密')) heavenlyMult+=0.05;
+			if (Game.Has('天堂饼干站')) heavenlyMult+=0.20;
+			if (Game.Has('天堂面包店')) heavenlyMult+=0.25;
+			if (Game.Has('天堂糖果店')) heavenlyMult+=0.25;
+			if (Game.Has('天国的钥匙')) heavenlyMult+=0.25;
 			if (Game.hasAura('Dragon God')) heavenlyMult*=1.05;
 			if (Game.Has('Lucky digit')) heavenlyMult*=1.01;
 			if (Game.Has('Lucky number')) heavenlyMult*=1.01;
@@ -7790,7 +7790,7 @@ Game.Launch=function()
 		
 		
 		order=100;
-		new Game.Upgrade('百万的六乘方手指','鼠标和游标获得 <b>+50000</b> 每个非游标建筑生产的饼干数。<q>sometimes<br>things just<br>click</q>',10000000000000000,[0,19]);Game.MakeTiered(Game.last,10,0);
+		new Game.Upgrade('百万的六乘方手指','鼠标和游标获得 <b>+50000</b> 每个非游标建筑生产的饼干数。<q>有时<br>事情只是<br>点击</q>',10000000000000000,[0,19]);Game.MakeTiered(Game.last,10,0);
 		
 		order=200;new Game.TieredUpgrade('Double-thick glasses','老奶奶工作效率 <b>翻倍</b>。<q>Oh... so THAT\'s what I\'ve been baking.</q>','Grandma',5);
 		order=300;new Game.TieredUpgrade('Gingerbread scarecrows','农场工作效率 <b>翻倍</b>。<q>Staring at your crops with mischievous glee.</q>','Farm',5);
@@ -7806,42 +7806,42 @@ Game.Launch=function()
 		new Game.Upgrade('难得素鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这些漂亮的鼠标就够了。</q>',5000000000000,[11,14]);Game.MakeTiered(Game.last,5,11);
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Caramoas',desc:'Yeah. That\'s got a nice ring to it.',icon:[14,4],require:'品牌饼干盒',power:					3,	price:	9999999999999999});
-		Game.NewUpgradeCookie({name:'Sagalongs',desc:'Grandma\'s favorite?',icon:[15,3],require:'品牌饼干盒',power:									3,	price:	9999999999999999});
-		Game.NewUpgradeCookie({name:'Shortfoils',desc:'Foiled again!',icon:[15,4],require:'品牌饼干盒',power:										3,	price:	9999999999999999});
-		Game.NewUpgradeCookie({name:'Win mints',desc:'They\'re the luckiest cookies you\'ve ever tasted!',icon:[14,3],require:'品牌饼干盒',power:	3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'卡拉恐鸟',desc:'那个戒指很漂亮。',icon:[14,4],require:'品牌饼干盒',power:					3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'萨松',desc:'老奶奶最喜欢的是什么?',icon:[15,3],require:'品牌饼干盒',power:									3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'短管',desc:'再次失败!',icon:[15,4],require:'品牌饼干盒',power:										3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'赢得薄荷糖',desc:'它们是你吃过的最幸运的饼干!',icon:[14,3],require:'品牌饼干盒',power:	3,	price:	9999999999999999});
 		
 		order=40000;
 		new Game.Upgrade('完美的空转','即使游戏关闭，你也会继续生产饼干。<q>这是我所见过的最美的东西。</q>',7,[10,0]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Fig gluttons',desc:'Got it all figured out.',icon:[17,4],require:'品牌饼干盒',power:													2,	price:	999999999999999*5});
-		Game.NewUpgradeCookie({name:'Loreols',desc:'Because, uh... they\'re worth it?',icon:[16,3],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
-		Game.NewUpgradeCookie({name:'Jaffa cakes',desc:'If you want to bake a cookie from scratch, you must first build a factory.',icon:[17,3],require:'品牌饼干盒',power:	2,	price:	999999999999999*5});
-		Game.NewUpgradeCookie({name:'Grease\'s cups',desc:'Extra-greasy peanut butter.',icon:[16,4],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'无花果胶子',desc:'一切都搞定了。',icon:[17,4],require:'品牌饼干盒',power:													2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'洛丽醇',desc:'因为,呃…它们值得吗?',icon:[16,3],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'佳发蛋糕',desc:'如果你想从头开始烤一个饼干，你必须先建一个工厂。',icon:[17,3],require:'品牌饼干盒',power:	2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'油脂杯',desc:'特别油腻的花生酱。',icon:[16,4],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
 		
 		order=30000;
-		new Game.Upgrade('Heavenly chip secret','Unlocks <b>5%</b> of the potential of your prestige level.<q>Grants the knowledge of heavenly chips, and how to use them to make baking more efficient.<br>It\'s a secret to everyone.</q>',11,[19,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly cookie stand','Unlocks <b>25%</b> of the potential of your prestige level.<q>Don\'t forget to visit the heavenly lemonade stand afterwards. When afterlife gives you lemons...</q>',1111,[18,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly bakery','Unlocks <b>50%</b> of the potential of your prestige level.<q>Also sells godly cakes and divine pastries. The pretzels aren\'t too bad either.</q>',111111,[17,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly confectionery','Unlocks <b>75%</b> of the potential of your prestige level.<q>They say angel bakers work there. They take angel lunch breaks and sometimes go on angel strikes.</q>',11111111,[16,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly key','Unlocks <b>100%</b> of the potential of your prestige level.<q>This is the key to the pearly (and tasty) gates of pastry heaven, granting you access to your entire stockpile of heavenly chips for baking purposes.<br>May you use them wisely.</q>',1111111111,[15,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂芯片的秘密','解锁 <b>5%</b> 你的威望等级的潜力。<q>授予天堂芯片的知识,以及如何使用它们来提高烘焙的效率。<br>这是每个人的秘密。</q>',11,[19,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂饼干站','解锁 <b>25%</b> 你的威望等级的潜力。<q>别忘了去参观天堂的柠檬水摊。来世给你柠檬...</q>',1111,[18,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂面包店','解锁 <b>50%</b> 你的威望等级的潜力。<q>还卖神圣的蛋糕和神圣的点心。椒盐卷饼也不坏。</q>',111111,[17,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂糖果店','解锁 <b>75%</b> 你的威望等级的潜力。<q>他们说天使面包师在那里工作。他们带着天使午餐休息，有时还会进行天使袭击。</q>',11111111,[16,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天国的钥匙','解锁 <b>100%</b> 你的威望等级的潜力。<q>这是做馅饼天堂的珍珠(和美味)大门的关键，让你可以进入你的整个储存的天堂芯片，用于烘焙。<br>请明智地使用它们。</q>',1111111111,[15,7]);Game.last.noPerm=1;
 		
 		order=10100;
-		Game.NewUpgradeCookie({name:'Skull cookies',desc:'Wanna know something spooky? You\'ve got one of these inside your head RIGHT NOW.',locked:1,icon:[12,8],power:	2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'Ghost cookies',desc:'They\'re something strange, but they look pretty good!',locked:1,icon:[13,8],power:								2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'Bat cookies',desc:'The cookies this town deserves.',locked:1,icon:[14,8],power:														2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'Slime cookies',desc:'The incredible melting cookies!',locked:1,icon:[15,8],power: 														2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'Pumpkin cookies',desc:'Not even pumpkin-flavored. Tastes like glazing. Yeugh.',locked:1,icon:[16,8],power:								2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'Eyeball cookies',desc:'When you stare into the cookie, the cookie stares back at you.',locked:1,icon:[17,8],power:						2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'Spider cookies',desc:'You found the recipe on the web. They do whatever a cookie can.',locked:1,icon:[18,8],power:						2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'骷髅饼干',desc:'想知道什么鬼东西吗?你现在脑子里有个想法。',locked:1,icon:[12,8],power:	2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'鬼饼干',desc:'它们很奇怪，但看起来很不错!',locked:1,icon:[13,8],power:								2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'蝙蝠饼干',desc:'这个小镇值得拥有的饼干。',locked:1,icon:[14,8],power:														2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'粘液饼干',desc:'令人难以置信的融化饼干!',locked:1,icon:[15,8],power: 														2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'南瓜饼干',desc:'连南瓜味都没有。味道像玻璃。是啊。',locked:1,icon:[16,8],power:								2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'眼球饼干',desc:'当你盯着饼干的时候，饼干会盯着你看。',locked:1,icon:[17,8],power:						2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'蜘蛛饼干',desc:'你在网上找到了这个菜谱。他们做任何饼干都可以。',locked:1,icon:[18,8],power:						2, price: 444444444444});
 
 		order=0;
-		new Game.Upgrade('持久的记忆','Subsequent research will be <b>10 times</b> as fast.<q>It\'s all making sense!<br>Again!</q>',500,[9,2]);Game.last.pool='prestige';
+		new Game.Upgrade('持久的记忆','后续研究将工作效率 <b>10 倍</b> 那样快。<q>这一切都是有道理的!<br>再一次!<br>Again!</q>',500,[9,2]);Game.last.pool='prestige';
 		
 		order=40000;
-		new Game.Upgrade('Wrinkler doormat','Wrinklers spawn much more frequently.<q>You\'re such a pushover.</q>',7,[19,8]);//debug purposes only
+		new Game.Upgrade('皱纹门垫','皱纹产生的频率要高得多。<q>你真是个软弱的人。</q>',7,[19,8]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10200;
@@ -10168,7 +10168,7 @@ Game.Launch=function()
 						else if (godLvl==2) chance*=2;
 						else if (godLvl==3) chance*=1.5;
 					}
-					if (Game.Has('Wrinkler doormat')) chance=0.1;
+					if (Game.Has('皱纹门垫')) chance=0.1;
 					if (Math.random()<chance)//respawn
 					{
 						Game.SpawnWrinkler(me);
@@ -10294,7 +10294,7 @@ Game.Launch=function()
 							if (me.type==1) failRate*=0.9;
 							if (Math.random()>failRate)//halloween cookie drops
 							{
-								var cookie=choose(['Skull cookies','Ghost cookies','Bat cookies','Slime cookies','Pumpkin cookies','Eyeball cookies','Spider cookies']);
+								var cookie=choose(['骷髅饼干','鬼饼干','蝙蝠饼干','粘液饼干','南瓜饼干','眼球饼干','蜘蛛饼干']);
 								if (!Game.HasUnlocked(cookie) && !Game.Has(cookie))
 								{
 									Game.Unlock(cookie);
@@ -11996,13 +11996,13 @@ Game.Launch=function()
 				
 				if (Game.prestige>0 && Game.ascensionMode!=1)
 				{
-					Game.Unlock('Heavenly chip secret');
-					if (Game.Has('Heavenly chip secret')) Game.Unlock('Heavenly cookie stand');
-					if (Game.Has('Heavenly cookie stand')) Game.Unlock('Heavenly bakery');
-					if (Game.Has('Heavenly bakery')) Game.Unlock('Heavenly confectionery');
-					if (Game.Has('Heavenly confectionery')) Game.Unlock('Heavenly key');
+					Game.Unlock('天堂芯片的秘密');
+					if (Game.Has('天堂芯片的秘密')) Game.Unlock('天堂饼干站');
+					if (Game.Has('天堂饼干站')) Game.Unlock('天堂面包店');
+					if (Game.Has('天堂面包店')) Game.Unlock('天堂糖果店');
+					if (Game.Has('天堂糖果店')) Game.Unlock('天国的钥匙');
 					
-					if (Game.Has('Heavenly key')) Game.Win('健康');
+					if (Game.Has('天国的钥匙')) Game.Win('健康');
 				}
 			
 				for (var i in Game.BankAchievements)
@@ -12049,7 +12049,7 @@ Game.Launch=function()
 				
 				if (Game.cookiesEarned<Game.cookies) Game.Win('被骗的饼干味道很糟糕');
 				
-				if (Game.Has('Skull cookies') && Game.Has('Ghost cookies') && Game.Has('Bat cookies') && Game.Has('Slime cookies') && Game.Has('Pumpkin cookies') && Game.Has('Eyeball cookies') && Game.Has('Spider cookies')) Game.Win('幽灵饼干');
+				if (Game.Has('骷髅饼干') && Game.Has('鬼饼干') && Game.Has('蝙蝠饼干') && Game.Has('粘液饼干') && Game.Has('南瓜饼干') && Game.Has('眼球饼干') && Game.Has('蜘蛛饼干')) Game.Win('幽灵饼干');
 				if (Game.wrinklersPopped>=1) Game.Win('瘙痒不求人');
 				if (Game.wrinklersPopped>=50) Game.Win('皱纹的问题');
 				if (Game.wrinklersPopped>=200) Game.Win('湿气爆炸');
