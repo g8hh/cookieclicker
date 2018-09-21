@@ -8418,37 +8418,37 @@ Game.Launch=function()
 		new Game.SynergyUpgrade('雨中的祈祷','<q>这是一种涉及复杂的舞蹈动作和高科技的云计算激光的精神仪式。</q>','Farm','Temple','synergy2');
 		
 		new Game.SynergyUpgrade('地震魔法','<q>意外地震是魔法兄弟会的老宠儿。</q>','Mine','Wizard tower','synergy1');
-		new Game.SynergyUpgrade('Asteroid mining','<q>As per the <span>19</span>74 United Cosmic Convention, comets, moons, and inhabited planetoids are no longer legally excavatable.<br>But hey, a space bribe goes a long way.</q>','Mine','Shipment','synergy2');
+		new Game.SynergyUpgrade('小行星采矿','<q>根据<span> 19 </span> 74联合宇宙大会，彗星，卫星和有人居住的小行星不再是合法的可挖掘物。但是，嘿，太空贿赂还有很长的路要走。</q>','Mine','Shipment','synergy2');
 		
-		new Game.SynergyUpgrade('Quantum electronics','<q>Your machines won\'t even be sure if they\'re on or off!</q>','Factory','Antimatter condenser','synergy1');
-		new Game.SynergyUpgrade('Temporal overclocking','<q>Introduce more quickitude in your system for increased speedation of fastness.</q>','Factory','Time machine','synergy2');
+		new Game.SynergyUpgrade('量子电子学','<q>你的机器甚至不确定它们是否开启或关闭！</q>','Factory','Antimatter condenser','synergy1');
+		new Game.SynergyUpgrade('颞超频','<q>在系统中引入更多速度，以提高牢度。</q>','Factory','Time machine','synergy2');
 		
-		new Game.SynergyUpgrade('Contracts from beyond','<q>Make sure to read the fine print!</q>','Bank','Portal','synergy1');
-		new Game.SynergyUpgrade('Printing presses','<q>Fake bills so real, they\'re almost worth the ink they\'re printed with.</q>','Bank','Factory','synergy2');
+		new Game.SynergyUpgrade('来自远方的合同','<q>一定要仔细阅读！</q>','Bank','Portal','synergy1');
+		new Game.SynergyUpgrade('印刷机','<q>虚假票据如此真实，它们几乎值得他们印刷的墨水。</q>','Bank','Factory','synergy2');
 		
-		new Game.SynergyUpgrade('Paganism','<q>Some deities are better left unworshipped.</q>','Temple','Portal','synergy1');
-		new Game.SynergyUpgrade('God particle','<q>Turns out God is much tinier than we thought, I guess.</q>','Temple','Antimatter condenser','synergy2');
+		new Game.SynergyUpgrade('异教','<q>有些神灵最好不要离婚。</q>','Temple','Portal','synergy1');
+		new Game.SynergyUpgrade('上帝粒子','<q>事实证明，上帝比我们想象的要小得多。</q>','Temple','Antimatter condenser','synergy2');
 		
-		new Game.SynergyUpgrade('Arcane knowledge','<q>Some things were never meant to be known - only mildly speculated.</q>','Wizard tower','Alchemy lab','synergy1');
-		new Game.SynergyUpgrade('Magical botany','<q>Already known in some reactionary newspapers as "the wizard\'s GMOs".</q>','Wizard tower','Farm','synergy2');
+		new Game.SynergyUpgrade('奥术知识','<q>有些事情从来没有被人知道 - 只是有点推测。</q>','Wizard tower','Alchemy lab','synergy1');
+		new Game.SynergyUpgrade('神奇植物学','<q>在一些反动报纸中已经称为“巫师的转基因生物”。</q>','Wizard tower','Farm','synergy2');
 		
-		new Game.SynergyUpgrade('Fossil fuels','<q>Somehow better than plutonium for powering rockets.<br>Extracted from the fuels of ancient, fossilized civilizations.</q>','Shipment','Mine','synergy1');
-		new Game.SynergyUpgrade('Shipyards','<q>Where carpentry, blind luck, and asbestos insulation unite to produce the most dazzling spaceships on the planet.</q>','Shipment','Factory','synergy2');
+		new Game.SynergyUpgrade('化石燃料','<q>不知何故比钚更能为火箭提供动力。<br>从古代化石文明的燃料中提取。</q>','Shipment','Mine','synergy1');
+		new Game.SynergyUpgrade('船厂','<q>当木工，盲目的运气，和石棉保温团结起来，产生在这个星球上最耀眼的太空船。</q>','Shipment','Factory','synergy2');
 		
-		new Game.SynergyUpgrade('Primordial ores','<q>Only when refining the purest metals will you extract the sweetest sap of the earth.</q>','Alchemy lab','Mine','synergy1');
-		new Game.SynergyUpgrade('Gold fund','<q>If gold is the backbone of the economy, cookies, surely, are its hip joints.</q>','Alchemy lab','Bank','synergy2');
+		new Game.SynergyUpgrade('原始矿石','<q>只有在精制最纯净的金属时，才能提取出最甜蜜的地球汁液。</q>','Alchemy lab','Mine','synergy1');
+		new Game.SynergyUpgrade('黄金基金','<q>如果黄金是经济的支柱，肯定是饼干的髋关节。</q>','Alchemy lab','Bank','synergy2');
 		
-		new Game.SynergyUpgrade('Infernal crops','<q>Sprinkle regularly with FIRE.</q>','Portal','Farm','synergy1');
-		new Game.SynergyUpgrade('Abysmal glimmer','<q>Someone, or something, is staring back at you.<br>Perhaps at all of us.</q>','Portal','Prism','synergy2');
+		new Game.SynergyUpgrade('地狱作物','<q>定期用火喷洒。</q>','Portal','Farm','synergy1');
+		new Game.SynergyUpgrade('暗淡的微光','<q>有人或某事正在盯着你。<br>也许在我们所有人身上。</q>','Portal','Prism','synergy2');
 		
-		new Game.SynergyUpgrade('Relativistic parsec-skipping','<q>People will tell you this isn\'t physically possible.<br>These are people you don\'t want on your ship.</q>','Time machine','Shipment','synergy1');
-		new Game.SynergyUpgrade('Primeval glow','<q>From unending times, an ancient light still shines, impossibly pure and fragile in its old age.</q>','Time machine','Prism','synergy2');
+		new Game.SynergyUpgrade('相对论性的省略','<q>人们会告诉你这在物理上是不可能的。<br>这些是你不想要的人。</q>','Time machine','Shipment','synergy1');
+		new Game.SynergyUpgrade('原始辉光','<q>从无止境的时代开始，古老的光芒仍然闪耀着，在它的晚年仍然是不可思议的纯净和脆弱。</q>','Time machine','Prism','synergy2');
 		
-		new Game.SynergyUpgrade('Extra physics funding','<q>Time to put your money where your particle colliders are.</q>','Antimatter condenser','Bank','synergy1');
-		new Game.SynergyUpgrade('化学能力','<q>Discover exciting new elements, such as Fleshmeltium, Inert Shampoo Byproduct #17 and Carbon++!</q>','Antimatter condenser','Alchemy lab','synergy2');
+		new Game.SynergyUpgrade('额外的物理资金','<q>是时候把你的钱放在粒子碰撞器的位置了。</q>','Antimatter condenser','Bank','synergy1');
+		new Game.SynergyUpgrade('化学能力','<q>发现令人兴奋的新元素，如Fleshmeltium，Inert Shampoo Byproduct＃17和Carbon ++！</q>','Antimatter condenser','Alchemy lab','synergy2');
 		
-		new Game.SynergyUpgrade('光明魔法','<q>Actually not to be taken lightly! No, I\'m serious. 178 people died last year. You don\'t mess around with magic.</q>','Prism','Wizard tower','synergy1');
-		new Game.SynergyUpgrade('神秘的能量','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
+		new Game.SynergyUpgrade('光明魔法','<q>其实不要掉以轻心！ 不，我认真的。 去年有178人死亡。 你不要乱用魔法。</q>','Prism','Wizard tower','synergy1');
+		new Game.SynergyUpgrade('神秘的能量','<q>在光明中有些东西在招手。 它是温暖，舒适，并且显然是几种外来皮肤癌的原因。</q>','Prism','Temple','synergy2');
 		
 		
 		new Game.Upgrade('协同效应1','解锁新一层的升级，<b> 同时影响2栋建筑</b>。<br>一旦你同时拥有<b> 15 </b>所有建筑物，就会出现协同作用。<q>许多人击败了少数人。</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','领地'];
