@@ -8216,7 +8216,6 @@ Game.Launch=function()
 		order=525;new Game.TieredUpgrade('基本原理','银行工作效率 <b>翻倍</b>。<q>如果不是现在,更待何时?如果不是，是什么?如果不是东西……东西呢?</q>','Bank',8);
 		order=550;new Game.TieredUpgrade('神权政治','寺庙工作效率 <b>翻倍</b>。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
 		order=575;new Game.TieredUpgrade('兔子戏法','精灵塔工作效率 <b>翻倍</b>。<q>除了一顶华丽的帽子外，你的巫师们已经找到了一种方法，可以同时控制兔子的数量，并能产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
-		order=600;new Game.TieredUpgrade('最后的边界','产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
 		order=600;new Game.TieredUpgrade('最后的边界','装船工作效率 <b>翻倍</b>。<q>从那里到这里，这条路很长。不过，这一切都是值得的——景色很美，油价也稍微合理一些。</q>','Shipment',8);
 		order=700;new Game.TieredUpgrade('原色古果','炼金实验室工作效率 <b>翻倍</b>。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
 		order=800;new Game.TieredUpgrade('疯狂的圣歌','传送门工作效率 <b>翻倍</b>。<q>流行的诗句是这样的 : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
