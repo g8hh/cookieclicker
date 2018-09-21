@@ -3829,7 +3829,7 @@ Game.Launch=function()
 			
 			if (Game.Has('老人契约')) mult*=0.95;
 			
-			if (Game.Has('Golden switch [off]'))
+			if (Game.Has('黄金开关[关闭]'))
 			{
 				var goldenSwitchMult=1.5;
 				if (Game.Has('残余运气'))
@@ -4319,7 +4319,7 @@ Game.Launch=function()
 				spawnsOnTimer:true,
 				spawnConditions:function()
 				{
-					if (!Game.Has('Golden switch [off]')) return true; else return false;
+					if (!Game.Has('黄金开关[关闭]')) return true; else return false;
 				},
 				spawned:0,
 				time:0,
@@ -8243,23 +8243,23 @@ Game.Launch=function()
 		
 		new Game.Upgrade('选择经典的乳制品','解锁 <b>牛奶选择器</b>, 让你挑出你的饼干下面的牛奶。<br>有各种各样的基本口味。<q>别大惊小怪的，老兄。</q>',9,[1,8]);Game.last.pool='prestige';Game.last.parents=[];
 		
-		new Game.Upgrade('Fanciful dairy selection','Contains more exotic flavors for your milk selector.<q>Strong bones for the skeleton army.</q>',1000000,[9,7]);Game.last.pool='prestige';Game.last.parents=['选择经典的乳制品'];
+		new Game.Upgrade('Fanciful dairy selection','Contains more exotic flavors for your 牛奶选择器.<q>Strong bones for the skeleton army.</q>',1000000,[9,7]);Game.last.pool='prestige';Game.last.parents=['选择经典的乳制品'];
 		
 		order=10300;
 		Game.NewUpgradeCookie({name:'龙形饼干',desc:'Imbued with the vigor and vitality of a full-grown cookie dragon, this mystical cookie will embolden your empire for the generations to come.',icon:[10,25],power:5,price:9999999999999999*7,locked:1});
 		
 		
 		order=40000;
-		new Game.Upgrade('Golden switch [off]','Turning this on will give you a passive <b>+50% CpS</b>, but prevents golden cookies from spawning.<br>Cost is equal to 1 hour of production.',1000000,[20,10]);
-		Game.last.pool='toggle';Game.last.toggleInto='Golden switch [on]';
+		new Game.Upgrade('黄金开关[关闭]','Turning this on will give you a passive <b>+50% CpS</b>, but prevents golden cookies from spawning.<br>Cost is equal to 1 hour of production.',1000000,[20,10]);
+		Game.last.pool='toggle';Game.last.toggleInto='黄金开关[开启]';
 		Game.last.priceFunc=function(){return Game.cookiesPs*60*60;}
 		
-		new Game.Upgrade('Golden switch [on]','The switch is currently giving you a passive <b>+50% CpS</b>; it also prevents golden cookies from spawning.<br>Turning it off will revert those effects.<br>Cost is equal to 1 hour of production.',1000000,[21,10]);
-		Game.last.pool='toggle';Game.last.toggleInto='Golden switch [off]';
+		new Game.Upgrade('黄金开关[开启]','The switch is currently giving you a passive <b>+50% CpS</b>; it also prevents golden cookies from spawning.<br>Turning it off will revert those effects.<br>Cost is equal to 1 hour of production.',1000000,[21,10]);
+		Game.last.pool='toggle';Game.last.toggleInto='黄金开关[关闭]';
 		Game.last.priceFunc=function(){return Game.cookiesPs*60*60;}
 		
 		order=50000;
-		new Game.Upgrade('Milk selector','Lets you pick what flavor of milk to display.',0,[1,8]);
+		new Game.Upgrade('牛奶选择器','Lets you pick what flavor of milk to display.',0,[1,8]);
 		Game.last.pool='toggle';
 		Game.last.choicesFunction=function()
 		{
@@ -8580,19 +8580,19 @@ Game.Launch=function()
 		
 		
 		new Game.Upgrade('Sugar baking','Each unspent sugar lump (up to 100) gives <b>+1% CpS</b>.<div class="warning">Note : this means that spending sugar lumps will decrease your CpS until they grow back.</div><q>To bake with the sugary essence of eons themselves, you must first learn to take your sweet time.</q>',200000000,[21,17]);Game.last.pool='prestige';Game.last.parents=['Stevia Caelestis'];
-		new Game.Upgrade('Sugar craving','Once an ascension, you may use the "Sugar frenzy" switch to <b>double your CpS</b> for 1 hour, at the cost of <b>1 sugar lump</b>.<q>Just a little kick to sweeten the deal.</q>',400000000,[22,17]);Game.last.pool='prestige';Game.last.parents=['Sugar baking'];
-		new Game.Upgrade('Sugar aging process','Each grandma (up to 600) makes sugar lumps ripen <b>6 seconds</b> sooner.<q>Aren\'t they just the sweetest?</q>',600000000,[23,17]);Game.last.pool='prestige';Game.last.parents=['Sugar craving','Diabetica Daemonicus'];
+		new Game.Upgrade('糖分渴求','Once an ascension, you may use the "糖的狂热" switch to <b>double your CpS</b> for 1 hour, at the cost of <b>1 sugar lump</b>.<q>Just a little kick to sweeten the deal.</q>',400000000,[22,17]);Game.last.pool='prestige';Game.last.parents=['Sugar baking'];
+		new Game.Upgrade('Sugar aging process','Each grandma (up to 600) makes sugar lumps ripen <b>6 seconds</b> sooner.<q>Aren\'t they just the sweetest?</q>',600000000,[23,17]);Game.last.pool='prestige';Game.last.parents=['糖分渴求','Diabetica Daemonicus'];
 		
 		order=40000;
-		new Game.Upgrade('Sugar frenzy','Activating this will <b>double your CpS</b> for 1 hour, at the cost of <b>1 sugar lump</b>.<br>May only be used once per ascension.',0,[22,17]);
+		new Game.Upgrade('糖的狂热','Activating this will <b>double your CpS</b> for 1 hour, at the cost of <b>1 sugar lump</b>.<br>May only be used once per ascension.',0,[22,17]);
 		Game.last.pool='toggle';Game.last.toggleInto=0;
 		Game.last.canBuyFunc=function(){return Game.lumps>=1;};
 		Game.last.clickFunction=Game.spendLump(1,'activate the sugar frenzy',function()
 		{
-			Game.Upgrades['Sugar frenzy'].buy(1);
-			buff=Game.gainBuff('sugar frenzy',60*60,2);
-			if (Game.prefs.popups) Game.Popup('Sugar frenzy activated!');
-			else Game.Notify('Sugar frenzy!','CpS x2 for 1 hour!',[29,14]);
+			Game.Upgrades['糖的狂热'].buy(1);
+			buff=Game.gainBuff('糖的狂热',60*60,2);
+			if (Game.prefs.popups) Game.Popup('糖的狂热 activated!');
+			else Game.Notify('糖的狂热!','CpS x2 for 1 hour!',[29,14]);
 		});
 		
 		order=10020;
@@ -9982,7 +9982,7 @@ Game.Launch=function()
 		new Game.buffType('sugar frenzy',function(time,pow)
 		{
 			return {
-				name:'Sugar frenzy',
+				name:'糖的狂热',
 				desc:'饼干产量 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[29,14],
 				time:time*Game.fps,
@@ -11974,9 +11974,9 @@ Game.Launch=function()
 					}
 				}
 				
-				if (Game.Has('黄金开关')) Game.Unlock('Golden switch [off]');
-				if (Game.Has('Sugar craving')) Game.Unlock('Sugar frenzy');
-				if (Game.Has('选择经典的乳制品')) Game.Unlock('Milk selector');
+				if (Game.Has('黄金开关')) Game.Unlock('黄金开关[关闭]');
+				if (Game.Has('糖分渴求')) Game.Unlock('糖的狂热');
+				if (Game.Has('选择经典的乳制品')) Game.Unlock('牛奶选择器');
 				if (Game.Has('基本壁纸分类')) Game.Unlock('Background selector');
 				if (Game.Has('金色饼干提示音')) Game.Unlock('黄金饼干声音选择器');
 				
