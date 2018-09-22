@@ -128,7 +128,7 @@ M.launch=function()
 				},
 			},
 			'bakeberry':{
-				name:'Bakeberry',
+				name:'烘焙浆果',
 				icon:8,
 				cost:45,
 				costM:100000000,
@@ -136,8 +136,8 @@ M.launch=function()
 				ageTickR:1,
 				mature:50,
 				children:['queenbeet'],
-				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; harvest when mature for +30 minutes of CpS (max. 3% of bank)</div>',
-				q:'A favorite among cooks, this large berry has a crunchy brown exterior and a creamy red center. Excellent in pies or chicken stews.',
+				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; 成熟时收获将获取30分钟的当前饼干产量 (最大不超过当前饼干数量的3%)</div>',
+				q:'这是厨师们最爱的东西，这种大浆果有着松脆的棕色外表和奶油红色的中心。非常适合做派或鸡肉炖菜。',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature)
@@ -153,7 +153,7 @@ M.launch=function()
 				},
 			},
 			'chocoroot':{
-				name:'Chocoroot',
+				name:'巧克力根',
 				icon:9,
 				cost:15,
 				costM:100000,
@@ -162,7 +162,7 @@ M.launch=function()
 				mature:25,
 				detailsStr:'Predictable growth',
 				children:['whiteChocoroot','drowsyfern','queenbeet'],
-				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; 成熟时收获了3分钟的饼干秒出了（最高不超过3%的银行产量）</div><div class="green">&bull; 可预见的增长</div>',
+				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; 成熟时收获将获取3分钟的当前饼干产量（最大不超过当前饼干数量的3%）</div><div class="green">&bull; 可预见的增长</div>',
 				q:'一种涂有粘稠甜味物质的汤姆荆棘。 未知的遗传祖先。 孩子们经常从田里采摘这些作为零食。',
 				onHarvest:function(x,y,age)
 				{
@@ -178,7 +178,7 @@ M.launch=function()
 				},
 			},
 			'whiteChocoroot':{
-				name:'White chocoroot',
+				name:'白巧克力根',
 				icon:10,
 				cost:15,
 				costM:100000,
@@ -187,8 +187,8 @@ M.launch=function()
 				mature:25,
 				detailsStr:'Predictable growth',
 				children:['whiskerbloom','tidygrass'],
-				effsStr:'<div class="green">&bull; +1% golden cookie gains</div><div class="green">&bull; harvest when mature for +3 minutes of CpS (max. 3% of bank)</div><div class="green">&bull; predictable growth</div>',
-				q:'A pale, even sweeter variant of the chocoroot. Often impedes travelers with its twisty branches.',
+				effsStr:'<div class="green">&bull; +1% 黄金饼干获得</div><div class="green">&bull; 成熟时收获将获取3分钟的当前饼干产量 (最大不超过当前饼干数量的3%)</div><div class="green">&bull; predictable growth</div>',
+				q:'白色的、比巧克力根更要甜的变种。它弯曲的树枝经常阻碍旅行者。',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature)
@@ -204,7 +204,7 @@ M.launch=function()
 			},
 			
 			'whiteMildew':{
-				name:'White mildew',
+				name:'白色霉菌',
 				fungus:true,
 				icon:26,
 				cost:20,
@@ -212,13 +212,13 @@ M.launch=function()
 				ageTick:8,
 				ageTickR:12,
 				mature:70,
-				detailsStr:'Spreads easily',
+				detailsStr:'蔓延迅速',
 				children:['brownMold','whiteChocoroot','wardlichen','greenRot'],
-				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="gray">&bull; 可以像棕色霉菌一样传播</div>',
+				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="gray">&bull; 可以传播变为棕色霉菌</div>',
 				q:'一种常见的腐烂物，寄生在阴凉的土地上。生长在乳脂状的小胶囊里。闻起来很香，但很快就会枯萎。',
 			},
 			'brownMold':{
-				name:'Brown mold',
+				name:'棕色霉菌',
 				fungus:true,
 				icon:27,
 				cost:20,
@@ -226,14 +226,14 @@ M.launch=function()
 				ageTick:8,
 				ageTickR:12,
 				mature:70,
-				detailsStr:'Spreads easily',
+				detailsStr:'蔓延迅速',
 				children:['whiteMildew','chocoroot','keenmoss','wrinklegill'],
-				effsStr:'<div class="red">&bull; -1% 饼干每秒产量</div><div class="gray">&bull; may spread as white mildew</div>',
-				q:'A common rot that infests shady plots of earth. Grows in odd reddish clumps. Smells bitter, but thankfully wilts quickly.',
+				effsStr:'<div class="red">&bull; -1% 饼干每秒产量</div><div class="gray">&bull; 可以传播变为白色霉菌</div>',
+				q:'一种常见的腐烂物，寄生在阴凉的土地上。生长在奇怪的红色丛生。闻起来很苦，但还好很快就会枯萎。',
 			},
 			
 			'meddleweed':{
-				name:'Meddleweed',
+				name:'野草',
 				weed:true,
 				icon:29,
 				cost:1,
@@ -242,10 +242,10 @@ M.launch=function()
 				ageTickR:6,
 				mature:50,
 				contam:0.05,
-				detailsStr:'Grows in empty tiles, spreads easily',
+				detailsStr:'生长在空闲土壤中，蔓延很快',
 				children:['meddleweed','brownMold','crumbspore'],
-				effsStr:'<div class="red">&bull; useless</div><div class="red">&bull; may overtake nearby plants</div><div class="gray">&bull; may sometimes drop spores when uprooted</div>',
-				q:'The sign of a neglected farmland, this annoying weed spawns from unused dirt and may sometimes spread to other plants, killing them in the process.',
+				effsStr:'<div class="red">&bull; 无用的</div><div class="red">&bull; 可能会取代附近的植物</div><div class="gray">&bull; 当连根拔起时，有时可能掉落孢子</div>',
+				q:'它是农田被忽视的证明，这种令人讨厌的杂草从未被利用的泥土中滋生，有时会蔓延到其他植物周围，并在这个过程中杀死其他植物。',
 				onKill:function(x,y,age)
 				{
 					if (Math.random()<0.2*(age/100)) M.plot[y][x]=[M.plants[choose(['brownMold','crumbspore'])].id+1,0];
@@ -253,7 +253,7 @@ M.launch=function()
 			},
 			
 			'whiskerbloom':{
-				name:'Whiskerbloom',
+				name:'猫须花',
 				icon:11,
 				cost:20,
 				costM:1000000,
@@ -261,8 +261,8 @@ M.launch=function()
 				ageTickR:2,
 				mature:60,
 				children:['chimerose','nursetulip'],
-				effsStr:'<div class="green">&bull; +0.2% effects from milk</div>',
-				q:'Squeezing the translucent pods makes them excrete a milky liquid, while producing a faint squeak akin to a cat\'s meow.',
+				effsStr:'<div class="green">&bull; +0.2% 牛奶效果</div>',
+				q:'挤压半透明的豆荚使它们分泌一种类似牛奶的液体，同时产生一种类似猫喵喵叫的微弱声音。',
 			},
 			'chimerose':{
 				name:'Chimerose',
@@ -285,7 +285,7 @@ M.launch=function()
 				ageTickR:2,
 				mature:60,
 				children:[],
-				effsStr:'<div class="green">&bull; surrounding plants (3x3) are 20% more efficient</div><div class="red">&bull; -2% 饼干每秒产量</div>',
+				effsStr:'<div class="green">&bull; 周围的植物 (3x3) 效率增加20%</div><div class="red">&bull; -2% 饼干每秒产量</div>',
 				q:'This flower grows an intricate root network that distributes nutrients throughout the surrounding soil. The reason for this seemingly altruistic behavior is still unknown.',
 			},
 			'drowsyfern':{
@@ -297,7 +297,7 @@ M.launch=function()
 				ageTickR:0.1,
 				mature:30,
 				children:[],
-				effsStr:'<div class="green">&bull; +3% 饼干每秒产量</div><div class="red">&bull; -5% cookies per click</div><div class="red">&bull; -10% golden cookie frequency</div>',
+				effsStr:'<div class="green">&bull; +3% 饼干每秒产量</div><div class="red">&bull; -5% 每次点击的饼干</div><div class="red">&bull; -10% 黄金饼干频率</div>',
 				q:'Traditionally used to brew a tea that guarantees a good night of sleep.',
 				onHarvest:function(x,y,age)
 				{
@@ -313,7 +313,7 @@ M.launch=function()
 				ageTickR:4,
 				mature:65,
 				children:['wardlichen'],
-				effsStr:'<div class="gray">&bull; 2% less wrath cookies</div><div class="gray">&bull; wrinklers spawn 15% slower</div>',
+				effsStr:'<div class="gray">&bull; 减少2%的愤怒饼干</div><div class="gray">&bull; 皱纹虫生产速度减慢 15% </div>',
 				q:'The metallic stench that emanates from this organism has been known to keep insects and slugs away.',
 			},
 			'keenmoss':{
@@ -325,7 +325,7 @@ M.launch=function()
 				ageTickR:5,
 				mature:65,
 				children:['drowsyfern','wardlichen','keenmoss'],
-				effsStr:'<div class="green">&bull; +3% random drops</div>',
+				effsStr:'<div class="green">&bull; +3% 随机掉落</div>',
 				q:'Fuzzy to the touch and of a vibrant green. In plant symbolism, keenmoss is associated with good luck for finding lost objects.',
 			},
 			'queenbeet':{
@@ -338,7 +338,7 @@ M.launch=function()
 				mature:80,
 				noContam:true,
 				children:['duketater','queenbeetLump','shriekbulb'],
-				effsStr:'<div class="green">&bull; +0.3% golden cookie effect duration</div><div class="red">&bull; -2% 饼干每秒产量</div><div class="green">&bull; harvest when mature for +1 hour of CpS (max. 6% of bank)</div>',
+				effsStr:'<div class="green">&bull; +0.3% 黄金饼干效果持续时间</div><div class="red">&bull; -2% 饼干每秒产量</div><div class="green">&bull; 成熟时收获将获取1小时的饼干产量(最大不超过当前饼干的6%)</div>',
 				q:'A delicious taproot used to prepare high-grade white sugar. Entire countries once went to war over these.',
 				onHarvest:function(x,y,age)
 				{
@@ -364,7 +364,7 @@ M.launch=function()
 				mature:85,
 				noContam:true,
 				children:[],
-				effsStr:'<div class="red">&bull; -10% 饼干每秒产量</div><div class="red">&bull; surrounding plants (3x3) are 20% less efficient</div><div class="green">&bull; harvest when mature for a sugar lump</div>',
+				effsStr:'<div class="red">&bull; -10% 饼干每秒产量</div><div class="red">&bull; 周围植物 (3x3) 效率减少20%</div><div class="green">&bull; 成熟时收获将获取一个糖块</div>',
 				q:'A delicious taproot used to prepare high-grade white sugar. Entire countries once went to war over these.<br>It looks like this one has grown especially sweeter and juicier from growing in close proximity to other queenbeets.',
 				onHarvest:function(x,y,age)
 				{
@@ -385,7 +385,7 @@ M.launch=function()
 				mature:95,
 				noContam:true,
 				children:['shriekbulb'],
-				effsStr:'<div class="green">&bull; harvest when mature for +2 hours of CpS (max. 8% of bank)</div>',
+				effsStr:'<div class="green">&bull; 成熟时收获将获取2小时的饼干产量(最大不超过当前饼干的8%)</div>',
 				q:'A rare, rich-tasting tuber fit for a whole meal, as long as its strict harvesting schedule is respected. Its starch has fascinating baking properties.',
 				onHarvest:function(x,y,age)
 				{
@@ -414,7 +414,7 @@ M.launch=function()
 				noContam:true,
 				detailsStr:'Spreads easily',
 				children:['crumbspore','glovemorel','cheapcap','doughshroom','wrinklegill','ichorpuff'],
-				effsStr:'<div class="green">&bull; explodes into up to 1 minute of CpS at the end of its lifecycle (max. 1% of bank)</div><div class="red">&bull; may overtake nearby plants</div>',
+				effsStr:'<div class="green">&bull; explodes into up to 1 minute of CpS at the end of its lifecycle (max. 1% of bank)</div><div class="red">&bull; 可能会取代附近的植物</div>',
 				q:'An archaic mold that spreads its spores to the surrounding dirt through simple pod explosion.',
 				onDie:function(x,y)
 				{
@@ -461,7 +461,7 @@ M.launch=function()
 				ageTickR:18,
 				mature:80,
 				children:[],
-				effsStr:'<div class="green">&bull; +4% cookies per click</div><div class="green">&bull; +1% cursor CpS</div><div class="red">&bull; -1% 饼干每秒产量</div>',
+				effsStr:'<div class="green">&bull; +4% 每次点击的饼干产量</div><div class="green">&bull; +1% 游标饼干产量</div><div class="red">&bull; -1% 饼干每秒产量</div>',
 				q:'Touching its waxy skin reveals that the interior is hollow and uncomfortably squishy.',
 			},
 			'cheapcap':{
@@ -474,7 +474,7 @@ M.launch=function()
 				ageTickR:16,
 				mature:40,
 				children:[],
-				effsStr:'<div class="green">&bull; buildings and upgrades are 0.2% cheaper</div><div class="red">&bull; cannot handle cold climates; 15% chance to die when frozen</div>',
+				effsStr:'<div class="green">&bull; 建筑以及升级价格减少 0.2% </div><div class="red">&bull; 不能适应寒冷的气候; 在冰冻时有 15% 的概率死亡</div>',
 				q:'Small, tough, and good in omelettes. Some historians propose that the heads of dried cheapcaps were once used as currency in some bronze age societies.',
 			},
 			'foolBolete':{
@@ -487,7 +487,7 @@ M.launch=function()
 				ageTickR:25,
 				mature:50,
 				children:[],
-				effsStr:'<div class="green">&bull; +2% golden cookie frequency</div><div class="red">&bull; -5% golden cookie gains</div><div class="red">&bull; -2% golden cookie duration</div><div class="red">&bull; -2% golden cookie effect duration</div>',
+				effsStr:'<div class="green">&bull; +2% 黄金饼干频率</div><div class="red">&bull; -5% 黄金饼干获得</div><div class="red">&bull; -2% 黄金饼干存在时间</div><div class="red">&bull; -2% 黄金饼干效果持续时间</div>',
 				q:'Named for its ability to fool mushroom pickers. The fool\'s bolete is not actually poisonous, it\'s just extremely bland.',
 			},
 			'wrinklegill':{
