@@ -2782,7 +2782,7 @@ Game.Launch=function()
 			var tagsStr='';
 			for (var i=0;i<tags.length;i+=2)
 			{
-				if (i%2==0) tagsStr+=' <div class="tag" style="color:'+(tags[i+1]==0?'#fff':tags[i+1])+';">['+tags[i]+']</div>';
+				if (i%2==0) tagsStr+=' <div class="tag" style="color:'+(tags[i+1]==0?'#fff':tags[i+1])+';">['+cnItem(tags[i])+']</div>';
 			}
 			tagsStr=tagsStr.substring(1);
 			
@@ -2804,7 +2804,7 @@ Game.Launch=function()
 						if (Game.keys[17]) tip+='<br>(You are holding Ctrl.)';
 						else tip+='<br>(You are not holding Ctrl.)';
 					}
-					else tip='Click to purchase.';
+					else tip='点击购买';
 				}
 				else if (me.pool=='toggle' && me.choicesFunction) tip='Click to open selector.';
 				else if (me.pool=='toggle') tip='Click to toggle.';
@@ -2836,7 +2836,7 @@ Game.Launch=function()
 			return '<div style="padding:8px 4px;min-width:350px;">'+
 			'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;'+(icon[2]?'background-image:url('+icon[2]+');':'')+'background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div>'+
 			(me.bought && context=='store'?'':price)+
-			'<div class="name">'+(mysterious?'???':me.name)+'</div>'+
+			'<div class="name">'+(mysterious?'???':cnItem(me.name))+'</div>'+
 			tagsStr+
 			'<div class="line"></div><div class="description">'+(mysterious?'???':desc)+'</div></div>'+
 			(tip!=''?('<div class="line"></div><div style="font-size:10px;font-weight:bold;color:#999;text-align:center;padding-bottom:4px;line-height:100%;">'+tip+'</div>'):'')+
