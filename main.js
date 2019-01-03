@@ -1589,16 +1589,16 @@ Game.Launch=function()
 		Game.attachTooltip(l('heralds'),function(){
 			var str='';
 			
-			if (!Game.externalDataLoaded) str+='Heralds couldn\'t be loaded. There may be an issue with our servers, or you are playing the game locally.';
+			if (!Game.externalDataLoaded) str+='先驱者无法装载。 我们的服务器可能存在问题，或者您正在本地玩游戏。';
 			else
 			{
-				if (Game.heralds==0) str+='There are no heralds at the moment. Please consider <b style="color:#bc3aff;">donating to our Patreon</b>!';
+				if (Game.heralds==0) str+='有目前没有任何先驱者。 请考虑 <b style="color:#bc3aff;">捐赠我们的Patreon</b>!';
 				else
 				{
 					str+=(Game.heralds==1?'<b style="color:#bc3aff;text-shadow:0px 1px 0px #6d0096;">1 herald</b> is':'<b style="color:#fff;text-shadow:0px 1px 0px #6d0096,0px 0px 6px #bc3aff;">'+Game.heralds+' heralds</b> are')+' selflessly inspiring a boost in production for everyone, resulting in<br><b style="color:#cdaa89;text-shadow:0px 1px 0px #7c4532,0px 0px 6px #7c4532;"><div style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(img/money.png);"></div> +'+Game.heralds+'% cookies per second</b>.';
 					str+='<div class="line"></div>';
-					if (Game.ascensionMode==1) str+='You are in a <b>Born again</b> run, and are not currently benefiting from heralds.';
-					else if (Game.Has('Heralds')) str+='You own the <b>Heralds</b> upgrade, and therefore benefit from the production boost.';
+					if (Game.ascensionMode==1) str+='你现在处于一个 <b>重生</b> 轮回, 并且目前没有受益于先驱者。';
+					else if (Game.Has('Heralds')) str+='你拥有 <b>先驱者</b> 升级, 并因此从生产中提高获益。';
 					else str+='To benefit from the herald bonus, you need a special upgrade you do not yet own. You will permanently unlock it later in the game.';
 				}
 			}
@@ -3032,7 +3032,7 @@ Game.Launch=function()
 		}
 		Game.Reincarnate=function(bypass)
 		{
-			if (!bypass) Game.Prompt('<h3>Reincarnate</h3><div class="block">Are you ready to return to the mortal world?</div>',[['Yes','Game.ClosePrompt();Game.Reincarnate(1);'],'No']);
+			if (!bypass) Game.Prompt('<h3>转生</h3><div class="block">你准备好重返人间了吗?</div>',[['确定','Game.ClosePrompt();Game.Reincarnate(1);'],'取消']);
 			else
 			{
 				Game.ascendUpgradesl.innerHTML='';
@@ -3042,7 +3042,7 @@ Game.Launch=function()
 				if (Game.HasAchiev('Rebirth'))
 				{
 					if (Game.prefs.popups) Game.Popup('Reincarnated');
-					else Game.Notify('Reincarnated','Hello, cookies!',[10,0],4);
+					else Game.Notify('转生','你好, 饼干！',[10,0],4);
 				}
 				if (Game.resets>=1000) Game.Win('Endless cycle');
 				if (Game.resets>=100) Game.Win('Reincarnation');
@@ -3058,21 +3058,21 @@ Game.Launch=function()
 		}
 		Game.GiveUpAscend=function(bypass)
 		{
-			if (!bypass) Game.Prompt('<h3>Give up</h3><div class="block">Are you sure? You\'ll have to start this run over and won\'t gain any heavenly chips!</div>',[['Yes','Game.ClosePrompt();Game.GiveUpAscend(1);'],'No']);
+			if (!bypass) Game.Prompt('<h3>Give up</h3><div class="block">你确定吗?你离开的话，就得不到任何天堂芯片！</div>',[['确定','Game.ClosePrompt();Game.GiveUpAscend(1);'],'取消']);
 			else
 			{
-				if (Game.prefs.popups) Game.Popup('Game reset');
-				else Game.Notify('Gave up','Let\'s try this again!',[0,5],4);
+				if (Game.prefs.popups) Game.Popup('游戏重置');
+				else Game.Notify('放弃','让我们再试一次!',[0,5],4);
 				Game.Reset();
 			}
 		}
 		Game.Ascend=function(bypass)
 		{
-			if (!bypass) Game.Prompt('<h3>Ascend</h3><div class="block">Do you REALLY want to ascend?<div class="line"></div>You will lose your progress and start over from scratch.<div class="line"></div>All your cookies will be converted into prestige and heavenly chips.<div class="line"></div>You will keep your achievements'+(Game.canLumps()?', building levels and sugar lumps':'')+'.</div>',[['Yes!','Game.ClosePrompt();Game.Ascend(1);'],'No']);
+			if (!bypass) Game.Prompt('<h3>转生</h3><div class="block">你真的想转生吗？<div class="line"></div>你会失去你所以的游戏进度，并从头开始。<div class="line"></div>所有的饼干将被转换成威望和天堂芯片。<div class="line"></div>你会保留你的成就 '+(Game.canLumps()?', 建筑等级和糖块':'')+'.</div>',[['确定!','Game.ClosePrompt();Game.Ascend(1);'],'取消']);
 			else
 			{
-				if (Game.prefs.popups) Game.Popup('Ascending');
-				else Game.Notify('Ascending','So long, cookies.',[20,7],4);
+				if (Game.prefs.popups) Game.Popup('转生');
+				else Game.Notify('转生','这么久了，饼干。',[20,7],4);
 				Game.OnAscend=0;Game.removeClass('ascending');
 				Game.addClass('ascendIntro');
 				//trigger the ascend animation
@@ -3218,8 +3218,8 @@ Game.Launch=function()
 			
 			if (Game.T%2==0)
 			{
-				l('ascendPrestige').innerHTML='Prestige level :<br>'+Beautify(Game.prestige);
-				l('ascendHCs').innerHTML='Heavenly chips :<br><span class="price heavenly">'+Beautify(Math.round(Game.heavenlyChipsDisplayed))+'</span>';
+				l('ascendPrestige').innerHTML='声望等级 :<br>'+Beautify(Game.prestige);
+				l('ascendHCs').innerHTML='天堂芯片 :<br><span class="price heavenly">'+Beautify(Math.round(Game.heavenlyChipsDisplayed))+'</span>';
 				if (Game.prestige>0) l('ascendModeButton').style.display='block';
 				else l('ascendModeButton').style.display='none';
 			}
@@ -3345,31 +3345,31 @@ Game.Launch=function()
 		Game.lumpTooltip=function()
 		{
 			var str='<div style="padding:8px;width:400px;font-size:11px;text-align:center;">'+
-			'You have <span class="price lump">'+Beautify(Game.lumps)+' sugar lump'+(Game.lumps==1?'':'s')+'</span>.'+
+			'You have <span class="price lump">'+Beautify(Game.lumps)+' 糖块'+(Game.lumps==1?'':'s')+'</span>.'+
 			'<div class="line"></div>'+
-			'A <b>sugar lump</b> is coalescing here, attracted by your accomplishments.';
+			'一个 <b>糖块</b> 在这里凝聚，被你过去的壮举所吸引。';
 						
 			var age=Date.now()-Game.lumpT;
 			str+='<div class="line"></div>';
-			if (age<Game.lumpMatureAge) str+='This sugar lump is still growing and will take <b>'+Game.sayTime(((Game.lumpMatureAge-age)/1000+1)*Game.fps,-1)+'</b> to reach maturity.';
-			else if (age<Game.lumpRipeAge) str+='This sugar lump is mature and will be ripe in <b>'+Game.sayTime(((Game.lumpRipeAge-age)/1000+1)*Game.fps,-1)+'</b>.<br>You may <b>click it to harvest it now</b>, but there is a <b>50% chance you won\'t get anything</b>.';
-			else if (age<Game.lumpOverripeAge) str+='<b>This sugar lump is ripe! Click it to harvest it.</b><br>If you do nothing, it will auto-harvest in <b>'+Game.sayTime(((Game.lumpOverripeAge-age)/1000+1)*Game.fps,-1)+'</b>.';
+			if (age<Game.lumpMatureAge) str+='这个糖块还在生长，还需要 <b>'+Game.sayTime(((Game.lumpMatureAge-age)/1000+1)*Game.fps,-1)+'</b> 达到成熟。';
+			else if (age<Game.lumpRipeAge) str+='这个糖块是成熟的，会在 <b>'+Game.sayTime(((Game.lumpRipeAge-age)/1000+1)*Game.fps,-1)+' 成熟的</b>.<br>你可以现在就 <b>点击它以获取它 </b>, 但是有 <b>50% 几率你不会得到任何东西</b>.';
+			else if (age<Game.lumpOverripeAge) str+='<b>这个糖块熟了!点击它以获取它。</b><br>如果你什么都不做，它就会在 <b>'+Game.sayTime(((Game.lumpOverripeAge-age)/1000+1)*Game.fps,-1)+'</b>.';
 			
 			var phase=(age/Game.lumpOverripeAge)*7;
 			if (phase>=3)
 			{
 				if (Game.lumpCurrentType!=0) str+='<div class="line"></div>';
-				if (Game.lumpCurrentType==1) str+='This sugar lump grew to be <b>bifurcated</b>; harvesting it has a 50% chance of yielding two lumps.';
-				else if (Game.lumpCurrentType==2) str+='This sugar lump grew to be <b>golden</b>; harvesting it will yield 2 to 7 lumps, your current cookies will be doubled, and you will find 10% more golden cookies for the next 24 hours.';
-				else if (Game.lumpCurrentType==3) str+='This sugar lump was affected by the elders and grew to be <b>meaty</b>; harvesting it will yield between 0 and 2 lumps.';
-				else if (Game.lumpCurrentType==4) str+='This sugar lump is <b>caramelized</b>, its stickiness binding it to unexpected things; harvesting it will yield between 1 and 3 lumps and will refill your sugar lump cooldowns.';
+				if (Game.lumpCurrentType==1) str+='这个糖块出现了效果 <b>分叉</b>; 收割时，它有50%的几率产生两块。';
+				else if (Game.lumpCurrentType==2) str+='这个糖块出现了效果 <b>黄金</b>; 收获时可以得到2~7糖块，你现在的饼干会翻倍，在接下来的24小时你会找到更多的 10% 的黄金饼干。';
+				else if (Game.lumpCurrentType==3) str+='这个糖块受到了长老们的影响，出现了效果 <b>多肉</b>; 收割时，它的产量在0~2块之间。';
+				else if (Game.lumpCurrentType==4) str+='这个糖块出现了效果 <b>焦糖化</b>, 它的粘性把它和意想不到的东西结合在一起;收获它将会产生1~3个糖块，并补充你的糖块冷却时间。';
 			}
 			
 			str+='<div class="line"></div>';
-			str+='Your sugar lumps mature after <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>ripen after <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>and fall after <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>.';
+			str+='糖块完全成熟需要 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>成熟后 <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>然后会在 <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>后自动掉落。';
 			
 			str+='<div class="line"></div>'+
-			'&bull; Sugar lumps can be harvested when mature, though if left alone beyond that point they will start ripening (increasing the chance of harvesting them) and will eventually fall and be auto-harvested after some time.<br>&bull; Sugar lumps are delicious and may be used as currency for all sorts of things.<br>&bull; Once a sugar lump is harvested, another one will start growing in its place.<br>&bull; Note that sugar lumps keep growing when the game is closed.';
+			'&bull; 糖块可以在成熟时收获，但如果不吃的话，它们最终会掉落并在一段时间后自动收获。<br>&bull; 糖块儿很好吃，可以用作各种食物的货币。<br>&bull; 一旦一个糖块被收获，另一个就会开始生长。<br>&bull; 注意，当游戏关闭时，糖块会继续生长。';
 			
 			str+='</div>';
 			return str;
@@ -3410,7 +3410,7 @@ Game.Launch=function()
 					Game.harvestLumps(1,true);
 					Game.lumpCurrentType=0;//all offline lumps after the first one have a normal type
 					if (amount>1) Game.harvestLumps(amount-1,true);
-					if (Game.prefs.popups) Game.Popup('Harvested '+Beautify(amount)+' sugar lump'+(amount==1?'':'s')+' while you were away');
+					if (Game.prefs.popups) Game.Popup('收获了 '+Beautify(amount)+' sugar lump'+(amount==1?'':'s')+' while you were away');
 					else Game.Notify('','You harvested <b>'+Beautify(amount)+'</b> sugar lump'+(amount==1?'':'s')+' while you were away.',[29,14]);
 					Game.lumpT=Date.now()-(age-amount*Game.lumpOverripeAge);
 					Game.computeLumpType();

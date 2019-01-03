@@ -5399,7 +5399,7 @@ Game.Launch=function()
 				Game.WriteButton('wobbly','wobblyButton','饼干颤抖 已开启','饼干颤抖 已关闭')+'<label>(你的饼干会在你点击的时候作出反应)</label><br>'+
 				Game.WriteButton('cookiesound','cookiesoundButton','点击饼干声音 已开启','点击饼干声音 已关闭')+'<label>(当你点击它时，你的饼干是否发出声音)</label><br>'+
 				Game.WriteButton('crates','cratesButton','图标箱 已开启','图标箱 已关闭')+'<label>(显示升级和统计成就的框)</label><br>'+
-				Game.WriteButton('monospace','monospaceButton','字体 已开启','字体 已关闭')+'<label>(您的饼干使用等宽字体显示)</label><br>'+
+				Game.WriteButton('monospace','monospaceButton','粗字体 已开启','粗字体 已关闭')+'<label>(您的饼干使用等宽字体显示)</label><br>'+
 				Game.WriteButton('format','formatButton','短数字 已关闭','短数字 已开启','BeautifyAll();Game.RefreshStore();Game.upgradesToRebuild=1;',1)+'<label>(缩短大数目的数字)</label><br>'+
 				Game.WriteButton('notifs','notifsButton','快速提示 已开启','快速提示 已关闭')+'<label>(通知消失得更快)</label><br>'+
 				//Game.WriteButton('autoupdate','autoupdateButton','Offline mode OFF','Offline mode ON',0,1)+'<label>(disables update notifications)</label><br>'+
