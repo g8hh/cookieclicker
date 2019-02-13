@@ -2977,7 +2977,7 @@ Game.Launch=function()
 							,'bottom-right')+'><h3 id="ascendHCs"></h3></div>'+
 			'<a id="ascendButton" class="option framed large red" '+Game.getTooltip(
 							'<div style="min-width:200px;text-align:center;font-size:11px;">一旦你点击这个就购买了<br>你需要的一切!</div>'
-							,'bottom-right')+' style="font-size:16px;margin-top:0px;"><span class="fancyText" style="font-size:20px;">Reincarnate</span></a>'+
+							,'bottom-right')+' style="font-size:16px;margin-top:0px;"><span class="fancyText" style="font-size:20px;">转生</span></a>'+
 			'<div id="ascendModeButton" style="position:absolute;right:34px;bottom:25px;display:none;"></div>'+
 			'<input type="text" style="display:block;" id="upgradePositions"/></div>'+
 			
@@ -6601,7 +6601,7 @@ Game.Launch=function()
 							if (synergiesStr!='') synergiesStr+=', ';
 							synergiesStr+=i+' +'+Beautify(synergiesWith[i]*100,1)+'%';
 						}
-						synergiesStr='...plus <b>'+Beautify(synergyBoost,1)+'</b> cookies through synergies with other buildings ('+synergiesStr+'; <b>'+Beautify((synergyBoost/Game.cookiesPs)*100,1)+'%</b> of total CpS)';
+						synergiesStr='...加上 <b>'+Beautify(synergyBoost,1)+'</b> 饼干通过与其他建筑的协同作用 ('+synergiesStr+'; <b>'+Beautify((synergyBoost/Game.cookiesPs)*100,1)+'%</b> 总饼干每秒产量)';
 					}
 				}
 				
@@ -6619,7 +6619,7 @@ Game.Launch=function()
 			this.levelTooltip=function()
 			{
 				var me=this;
-				return '<div style="width:280px;padding:8px;"><b>等级 '+Beautify(me.level)+' '+me.plural+'</b><div class="line"></div>'+(me.level==1?me.extraName:me.extraPlural).replace('[X]',Beautify(me.level))+' 给予 <b>+'+Beautify(me.level)+'% '+cnItem(me.name)+' 饼干每秒总产量</b>.<div class="line"></div>点击升级消耗 <span class="price lump'+(Game.lumps>=me.level+1?'':' disabled')+'">'+Beautify(me.level+1)+' 糖块'+(me.level==0?'':'')+'</span>.'+((me.level==0 && me.minigameUrl)?'<div class="line"></div><b>这个建筑升级解锁一个迷你游戏。</b>':'')+'</div>';
+				return '<div style="width:280px;padding:8px;"><b>等级 '+Beautify(me.level)+' '+cnItem(me.plural)+'</b><div class="line"></div>'+cnItem((me.level==1?me.extraName:me.extraPlural)).replace('[X]',Beautify(me.level))+' 给予 <b>+'+Beautify(me.level)+'% '+cnItem(me.name)+' 饼干每秒总产量</b>.<div class="line"></div>点击升级消耗 <span class="price lump'+(Game.lumps>=me.level+1?'':' disabled')+'">'+Beautify(me.level+1)+' 糖块'+(me.level==0?'':'')+'</span>.'+((me.level==0 && me.minigameUrl)?'<div class="line"></div><b>这个建筑升级解锁一个迷你游戏。</b>':'')+'</div>';
 			}
 			/*this.levelUp=function()
 			{

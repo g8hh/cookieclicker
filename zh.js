@@ -2,6 +2,7 @@
 var cnItems = {
     //建筑开始
     'Cursor': '游标',
+    'cursors': '游标',
     'Grandma': '老奶奶',
     'Farm': '农场',
     'Mine': '矿山',
@@ -413,8 +414,6 @@ var cnItems = {
     '': '',
     '': '',
     '': '',
-    '': '',
-    '<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>': '<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>',
     //升级名称结束
     //成就名称开始
     'Wake and bake': '唤醒和烘烤',
@@ -522,10 +521,10 @@ var cnItems = {
     'Ruler of the ancients': '老人的统治者',
     'Wholesome': '健康',
     'Just plain lucky': '非常幸运',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
+    'You get nothing': '你什么都没有得到',
+    '[X] extra fingers': '[X] 额外的手指',
+    'Kitten consultants': '小猫顾问',
+    'Self-contained': '自包含',
     '': '',
     '': '',
     '': '',
@@ -716,6 +715,9 @@ var cnItems = {
     '': '',
     '': '',
     '': '',
+    //原样输出
+    '???': '???',
+    '<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>': '<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>',
 
 };
 
