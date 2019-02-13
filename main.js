@@ -617,22 +617,22 @@ Game.Launch=function()
 	'<div class="title">更新日志</div>'+
 	
 	'</div><div class="subsection update">'+
-	'<div class="title">25/10/2018 - feedback loop</div>'+
-	'<div class="listing">&bull; added a new building</div>'+
-	'<div class="listing">&bull; launched our <a href="https://www.patreon.com/dashnet" class="orangeLink" target="_blank">Patreon</a> <span style="font-size:80%;">(the link is orange so you\'ll notice it!)</span></div>'+
-	'<div class="listing">&bull; added a bunch of new heavenly upgrades, one of which ties into our Patreon but benefits everyone (this is still experimental!)</div>'+
-	'<div class="listing">&bull; when hovering over grandmas, you can now see their names and ages</div>'+
-	'<div class="listing">&bull; "make X cookies just from Y" requirements are now higher</div>'+
-	'<div class="listing">&bull; tweaked the prices of some heavenly upgrades to better fit the current cookie economy (it turns out billions of heavenly chips is now very achievable)</div>'+
-	'<div class="listing">&bull; building tooltips now display what % of CpS they contribute through synergy upgrades</div>'+
-	'<div class="listing">&bull; queenbeets now give up to 4% of bank, down from 6%</div>'+
-	'<div class="listing">&bull; among other things, season switches now display how many seasonal upgrades you\'re missing, and permanent upgrade slots now display the name of the slotted upgrade</div>'+
-	'<div class="listing">&bull; season switches have reworked prices</div>'+
-	'<div class="listing">&bull; season switches can now be cancelled by clicking them again</div>'+
-	'<div class="listing">&bull; can no longer accidentally click wrinklers through other elements</div>'+
-	'<div class="listing">&bull; sugar frenzy now triples your CpS for an hour instead of doubling it</div>'+
-	'<div class="listing">&bull; this text is now selectable</div>'+
-	'<div class="listing">&bull; progress on dungeons minigame is still very much ongoing</div>'+
+	'<div class="title">25/10/2018 - 反馈回路</div>'+
+	'<div class="listing">&bull; 新增一个建筑</div>'+
+	'<div class="listing">&bull; 推出了 <a href="https://www.patreon.com/dashnet" class="orangeLink" target="_blank">Patreon</a> <span style="font-size:80%;">(链接是橙色的，所以你会注意到的!)</span></div>'+
+	'<div class="listing">&bull; 增加了一堆新的天堂升级，其中一个与我们的Patreon相关但对每个人都有好处（这仍然是实验性的！）</div>'+
+	'<div class="listing">&bull; 当你鼠标悬浮在祖母身上时，你现在可以看到他们的名字和年龄</div>'+
+	'<div class="listing">&bull; "从Y开始制作X饼干“要求现在更高</div>'+
+	'<div class="listing">&bull; 调整了一些天堂升级的价格，以更好地适应当前的饼干经济（事实证明，数十亿的天堂芯片现在非常容易实现）</div>'+
+	'<div class="listing">&bull; 构建工具提示现在显示他们通过协同升级贡献的饼干每秒产量百分比</div>'+
+	'<div class="listing">&bull; 奎恩女王现在放弃了4%的银行，从6%降下来</div>'+
+	'<div class="listing">&bull; 除此之外，季节开关现在显示你错过了多少个季节升级，永久升级槽现在显示有槽升级的名称</div>'+
+	'<div class="listing">&bull; 季节开关已经修改了价格</div>'+
+	'<div class="listing">&bull; 季节转换现在可以通过再次点击取消</div>'+
+	'<div class="listing">&bull; 不可能不小心在其他元素上按下皱纹</div>'+
+	'<div class="listing">&bull; 糖的狂热现在使你的饼干每秒产量增加了三倍，而不是原来的两倍</div>'+
+	'<div class="listing">&bull; 更新日志文本现在是可选择的</div>'+
+	'<div class="listing">&bull; 迷你副本的进展仍在进行中</div>'+
 	
 	'</div><div class="subsection update small">'+
 	'<div class="title">08/08/2018 - hey now</div>'+
@@ -2568,11 +2568,11 @@ Game.Launch=function()
 		{
 			if (!bypass)
 			{
-				Game.Prompt('<h3>Wipe save</h3><div class="block">Do you REALLY want to wipe your save?<br><small>You will lose your progress, your achievements, and your heavenly chips!</small></div>',[['Yes!','Game.ClosePrompt();Game.HardReset(1);'],'No']);
+				Game.Prompt('<h3>Wipe save</h3><div class="block">你真的想删掉你的所有游戏进度？<br><small>你将失去你的所有游戏进度，你的成就，你的天堂芯片！</small></div>',[['确定!','Game.ClosePrompt();Game.HardReset(1);'],'取消']);
 			}
 			else if (bypass==1)
 			{
-				Game.Prompt('<h3>Wipe save</h3><div class="block">Whoah now, are you really, <b><i>REALLY</i></b> sure you want to go through with this?<br><small>Don\'t say we didn\'t warn you!</small></div>',[['Do it!','Game.ClosePrompt();Game.HardReset(2);'],'No']);
+				Game.Prompt('<h3>Wipe save</h3><div class="block">哇，现在，你真的， <b><i>真的</i></b> 确定你想要删除游戏存档？<br><small>不要怪我们没有提醒你！</small></div>',[['确定了!','Game.ClosePrompt();Game.HardReset(2);'],'取消']);
 			}
 			else
 			{
@@ -2881,8 +2881,8 @@ Game.Launch=function()
 				Game.gainedPrestige=prestigeDifference;
 				Game.heavenlyChips+=prestigeDifference;
 				Game.prestige=prestige;
-				if (Game.prefs.popups) Game.Popup('You gain '+Beautify(prestigeDifference)+' prestige level'+(prestigeDifference==1?'':'s')+'!');
-				else Game.Notify('You forfeit your '+Beautify(cookiesForfeited)+' cookies.','You gain <b>'+Beautify(prestigeDifference)+'</b> prestige level'+(prestigeDifference==1?'':'s')+'!',[19,7]);
+				if (Game.prefs.popups) Game.Popup('你获得了 '+Beautify(prestigeDifference)+' 声望等级'+(prestigeDifference==1?'':'s')+'!');
+				else Game.Notify('你失去了你的 '+Beautify(cookiesForfeited)+' 饼干.','你获得了 <b>'+Beautify(prestigeDifference)+'</b> 声望等级'+(prestigeDifference==1?'':'s')+'!',[19,7]);
 			}
 		}
 		
@@ -2970,18 +2970,18 @@ Game.Launch=function()
 		l('ascendOverlay').innerHTML=
 			'<div id="ascendBox">'+
 			'<div class="ascendData smallFramed prompt" '+Game.getTooltip(
-							'<div style="min-width:200px;text-align:center;font-size:11px;">Each prestige level grants you a permanent +1% CpS.<br>The more levels you have, the more cookies they require.</div>'
+							'<div style="min-width:200px;text-align:center;font-size:11px;">每一个威望等级给予你永久+ 1%的饼干每秒产量。<br />你的等级越高，他们需要的饼干就越多。</div>'
 							,'bottom-right')+' style="margin-top:8px;"><h3 id="ascendPrestige"></h3></div>'+
 			'<div class="ascendData smallFramed prompt" '+Game.getTooltip(
-							'<div style="min-width:200px;text-align:center;font-size:11px;">Heavenly chips are used to buy heavenly upgrades.<br>You gain 1 chip every time you gain a prestige level.</div>'
+							'<div style="min-width:200px;text-align:center;font-size:11px;">天堂芯片是用来购买天堂升级的。<br>每次你获得声望等级提升，你就能得到一枚芯片。</div>'
 							,'bottom-right')+'><h3 id="ascendHCs"></h3></div>'+
 			'<a id="ascendButton" class="option framed large red" '+Game.getTooltip(
-							'<div style="min-width:200px;text-align:center;font-size:11px;">Click this once you\'ve bought<br>everything you need!</div>'
+							'<div style="min-width:200px;text-align:center;font-size:11px;">一旦你点击这个就购买了<br>你需要的一切!</div>'
 							,'bottom-right')+' style="font-size:16px;margin-top:0px;"><span class="fancyText" style="font-size:20px;">Reincarnate</span></a>'+
 			'<div id="ascendModeButton" style="position:absolute;right:34px;bottom:25px;display:none;"></div>'+
 			'<input type="text" style="display:block;" id="upgradePositions"/></div>'+
 			
-			'<div id="ascendInfo"><div class="ascendData smallFramed" style="margin-top:22px;width:40%;font-size:11px;">You are ascending.<br>Drag the screen around<br>or use arrow keys!<br>When you\'re ready,<br>click Reincarnate.</div></div>';
+			'<div id="ascendInfo"><div class="ascendData smallFramed" style="margin-top:22px;width:40%;font-size:11px;">你正在转生。拖动屏幕<br>或使用箭头键!<br>当你准备好时，<br>点击转生。</div></div>';
 		
 		Game.UpdateAscensionModePrompt();
 		
