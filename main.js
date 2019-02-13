@@ -602,12 +602,12 @@ Game.Launch=function()
 	'<div class="title">关于</div>'+
 	'<div class="listing">无尽的饼干是一个JavaScript游戏，作者是 <a href="http://orteil.dashnet.org" target="_blank">Orteil</a> 和 <a href="http://dashnet.org" target="_blank">Opti</a>.</div>'+
 	//'<div class="listing">We have an <a href="https://discordapp.com/invite/cookie" target="_blank">official Discord</a>, as well as a <a href="http://forum.dashnet.org" target="_blank">forum</a>; '+
-	'<div class="listing">我们有一个 <a href="https://discordapp.com/invite/cookie" target="_blank">official Discord</a>; '+
-		'if you\'re looking for help, you may also want to visit the <a href="http://www.reddit.com/r/CookieClicker" target="_blank">subreddit</a> '+
-		'or the <a href="http://cookieclicker.wikia.com/wiki/Cookie_Clicker_Wiki" target="_blank">wiki</a>.</div>'+
-	'<div class="listing">News and teasers are usually posted on my <a href="http://orteil42.tumblr.com/" target="_blank">tumblr</a> and <a href="http://twitter.com/orteil42" target="_blank">twitter</a>.</div>'+
-	'<div class="listing" id="supportSection"><b style="color:#fff;opacity:1;">Cookie Clicker is 100% free, forever.</b> Want to support us so we can keep developing games? Here\'s some ways you can help :<div style="margin:4px 12px;line-height:150%;">'+
-	'<br>&bull; support us on <a href="https://www.patreon.com/dashnet" target="_blank" class="highlightHover" style="background:#f86754;box-shadow:0px 0px 0px 1px #c52921 inset,0px 2px 0px #ff966d inset;text-shadow:0px -1px 0px #ff966d,0px 1px 0px #c52921;text-decoration:none;color:#fff;font-weight:bold;padding:1px 4px;">Patreon</a> <span style="opacity:0.5;">(there\'s perks!)</span>'+
+	'<div class="listing">我们有一个 <a href="https://discordapp.com/invite/cookie" target="_blank">官方论坛</a>; '+
+		'如果你正在寻求帮助，你可以访问 <a href="http://www.reddit.com/r/CookieClicker" target="_blank">subreddit</a> '+
+		'或者访问 <a href="http://cookieclicker.wikia.com/wiki/Cookie_Clicker_Wiki" target="_blank">wiki</a>.</div>'+
+	'<div class="listing">新闻和玩笑通常被贴在我的 <a href="http://orteil42.tumblr.com/" target="_blank">tumblr</a> 和 <a href="http://twitter.com/orteil42" target="_blank">twitter</a>.</div>'+
+	'<div class="listing" id="supportSection"><b style="color:#fff;opacity:1;">无尽的饼干是100%的免费的, 永远。</b> 想要支持我们继续开发游戏吗?这里有一些方法可以帮助你 :<div style="margin:4px 12px;line-height:150%;">'+
+	'<br>&bull; 支持我们可以通过 <a href="https://www.patreon.com/dashnet" target="_blank" class="highlightHover" style="background:#f86754;box-shadow:0px 0px 0px 1px #c52921 inset,0px 2px 0px #ff966d inset;text-shadow:0px -1px 0px #ff966d,0px 1px 0px #c52921;text-decoration:none;color:#fff;font-weight:bold;padding:1px 4px;">Patreon</a> <span style="opacity:0.5;">(there\'s perks!)</span>'+
 	'<br>&bull; <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="donate"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="BBN2WL3TC6QH4"><input type="submit" id="donateButton" value="donate" name="submit" alt="PayPal — The safer, easier way to pay online."><img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1"></form> 通过 PayPal 捐赠我们'+
 	'<br>&bull; 关掉广告拦截器<br>&bull; 访问或者购买 <a href="http://www.redbubble.com/people/dashnet" target="_blank">拉德饼干衬衫，帽衫和贴纸</a>!<br>&bull; (如果你想的话!)</div></div>'+
 	'<div class="listing warning">注意：如果在更新之后发现新的错误，并且您正在使用第三方附加组件，请确保它不是您的附加组件造成的！</div>'+
@@ -2328,8 +2328,8 @@ Game.Launch=function()
 							
 							if (amount>0)
 							{
-								if (Game.prefs.popups) Game.Popup('Earned '+Beautify(amount)+' cookie'+(Math.floor(amount)==1?'':'s')+' while you were away');
-								else Game.Notify('Welcome back!','You earned <b>'+Beautify(amount)+'</b> cookie'+(Math.floor(amount)==1?'':'s')+' while you were away.<br>('+Game.sayTime(timeOfflineOptimal*Game.fps,-1)+' at '+Math.floor(percent)+'% CpS'+(timeOfflineReduced?', plus '+Game.sayTime(timeOfflineReduced*Game.fps,-1)+' at '+(Math.floor(percent*10)/100)+'%':'')+'.)',[Math.floor(Math.random()*16),11]);
+								if (Game.prefs.popups) Game.Popup('获得 '+Beautify(amount)+' 饼干'+(Math.floor(amount)==1?'':'')+' 在你离开的时候。');
+								else Game.Notify('欢迎回来!','你获得了 <b>'+Beautify(amount)+'</b> 饼干'+(Math.floor(amount)==1?'':'')+' 在你离开的时候。<br>('+Game.sayTime(timeOfflineOptimal*Game.fps,-1)+' 相当于 '+Math.floor(percent)+'% 饼干每秒总产量'+(timeOfflineReduced?', 加上 '+Game.sayTime(timeOfflineReduced*Game.fps,-1)+' 相当于 '+(Math.floor(percent*10)/100)+'%':'')+'.)',[Math.floor(Math.random()*16),11]);
 								Game.Earn(amount);
 							}
 						}
@@ -2348,7 +2348,7 @@ Game.Launch=function()
 					}
 					else//importing old version save
 					{
-						Game.Notify('Error importing save','Sorry, you can\'t import saves from the old version anymore.','',6,1);
+						Game.Notify('导入存档出错','对不起，您不能导入旧版本的存档。','',6,1);
 						return false;
 					}
 					
@@ -2380,15 +2380,15 @@ Game.Launch=function()
 					
 					if (Game.season!='' && Game.season==Game.baseSeason)
 					{
-						if (Game.season=='valentines') Game.Notify('Valentine\'s Day!','It\'s <b>Valentine\'s season</b>!<br>Love\'s in the air and cookies are just that much sweeter!',[20,3],60*3);
-						else if (Game.season=='fools') Game.Notify('Business Day!','It\'s <b>Business season</b>!<br>Don\'t panic! Things are gonna be looking a little more corporate for a few days.',[17,6],60*3);
-						else if (Game.season=='halloween') Game.Notify('Halloween!','It\'s <b>Halloween season</b>!<br>Everything is just a little bit spookier!',[13,8],60*3);
-						else if (Game.season=='christmas') Game.Notify('Christmas time!','It\'s <b>Christmas season</b>!<br>Bring good cheer to all and you just may get cookies in your stockings!',[12,10],60*3);
-						else if (Game.season=='easter') Game.Notify('Easter!','It\'s <b>Easter season</b>!<br>Keep an eye out and you just might click a rabbit or two!',[0,12],60*3);
+						if (Game.season=='valentines') Game.Notify('情人节!','这是 <b>情人节季节</b>!<br>爱在空中，饼干更加甜美！',[20,3],60*3);
+						else if (Game.season=='fools') Game.Notify('工作日!','这是 <b>工作季节</b>!<br>别恐慌！ 几天后，事情会变得更加公司化。',[17,6],60*3);
+						else if (Game.season=='halloween') Game.Notify('万圣节!','这是 <b>万圣节季节</b>！<br>一切都有点怪异！',[13,8],60*3);
+						else if (Game.season=='christmas') Game.Notify('圣诞节时刻!','这是 <b>圣诞节季节</b>!<br>为所有人带来愉快的欢呼，你可以在你的长筒袜中获得饼干！',[12,10],60*3);
+						else if (Game.season=='easter') Game.Notify('复活节!','这是<b>复活节的季节</b>！<br>请注意，你可能会点击一两只兔子!',[0,12],60*3);
 					}
 					
-					if (Game.prefs.popups) Game.Popup('Game loaded');
-					else Game.Notify('Game loaded','','',1,1);
+					if (Game.prefs.popups) Game.Popup('游戏加载成功');
+					else Game.Notify('游戏加载成功','','',1,1);
 					
 					if (Game.prefs.showBackupWarning==1) Game.showBackupWarning();
 				}
@@ -7572,15 +7572,15 @@ Game.Launch=function()
 							Game.choiceSelectorSelected=selected;
 							var str='';
 							str+='<div class="close" onclick="Game.UpgradesById['+this.id+'].buy();">x</div>';
-							str+='<h3>'+this.name+'</h3>'+
+							str+='<h3>'+cnItem(this.name)+'</h3>'+
 							'<div class="line"></div>'+
-							'<h4 id="choiceSelectedName">'+choices[selected].name+'</h4>'+
+							'<h4 id="choiceSelectedName">'+cnItem(choices[selected].name)+'</h4>'+
 							'<div class="line"></div>';
 							
 							for (var i in choices)
 							{
 								var icon=choices[i].icon;
-								str+='<div class="crate enabled'+(i==selected?' highlighted':'')+'" style="opacity:1;float:none;display:inline-block;'+(icon[2]?'background-image:url('+icon[2]+');':'')+'background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;" '+Game.clickStr+'="Game.UpgradesById['+this.id+'].choicesPick('+i+');PlaySound(\'snd/tick.mp3\');Game.choiceSelectorOn=-1;Game.UpgradesById['+this.id+'].buy();" onMouseOut="l(\'choiceSelectedName\').innerHTML=Game.choiceSelectorChoices[Game.choiceSelectorSelected].name;" onMouseOver="l(\'choiceSelectedName\').innerHTML=Game.choiceSelectorChoices['+i+'].name;"'+
+								str+='<div class="crate enabled'+(i==selected?' highlighted':'')+'" style="opacity:1;float:none;display:inline-block;'+(icon[2]?'background-image:url('+icon[2]+');':'')+'background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;" '+Game.clickStr+'="Game.UpgradesById['+this.id+'].choicesPick('+i+');PlaySound(\'snd/tick.mp3\');Game.choiceSelectorOn=-1;Game.UpgradesById['+this.id+'].buy();" onMouseOut="l(\'choiceSelectedName\').innerHTML=cnItem(Game.choiceSelectorChoices[Game.choiceSelectorSelected].name);" onMouseOver="l(\'choiceSelectedName\').innerHTML=cnItem(Game.choiceSelectorChoices['+i+'].name);"'+
 								'></div>';
 							}
 						}
@@ -8485,28 +8485,28 @@ Game.Launch=function()
 		
 		
 		order=525;
-		new Game.TieredUpgrade('Taller tellers','Banks are <b>twice</b> as efficient.<q>Able to process a higher amount of transactions. Careful though, as taller tellers tell tall tales.</q>','Bank',1);
-		new Game.TieredUpgrade('Scissor-resistant credit cards','Banks are <b>twice</b> as efficient.<q>For those truly valued customers.</q>','Bank',2);
-		new Game.TieredUpgrade('Acid-proof vaults','Banks are <b>twice</b> as efficient.<q>You know what they say : better safe than sorry.</q>','Bank',3);
-		new Game.TieredUpgrade('Chocolate coins','Banks are <b>twice</b> as efficient.<q>This revolutionary currency is much easier to melt from and into ingots - and tastes much better, for a change.</q>','Bank',4);
-		new Game.TieredUpgrade('Exponential interest rates','Banks are <b>twice</b> as efficient.<q>Can\'t argue with mathematics! Now fork it over.</q>','Bank',5);
-		new Game.TieredUpgrade('Financial zen','Banks are <b>twice</b> as efficient.<q>The ultimate grail of economic thought; the feng shui of big money, the stock market yoga - the Heimlich maneuver of dimes and nickels.</q>','Bank',6);
+		new Game.TieredUpgrade('Taller tellers','银行工作效率 <b>翻倍</b>。<q>Able to process a higher amount of transactions. Careful though, as taller tellers tell tall tales.</q>','Bank',1);
+		new Game.TieredUpgrade('Scissor-resistant credit cards','银行工作效率 <b>翻倍</b>。<q>For those truly valued customers.</q>','Bank',2);
+		new Game.TieredUpgrade('Acid-proof vaults','银行工作效率 <b>翻倍</b>。<q>You know what they say : better safe than sorry.</q>','Bank',3);
+		new Game.TieredUpgrade('Chocolate coins','银行工作效率 <b>翻倍</b>。<q>This revolutionary currency is much easier to melt from and into ingots - and tastes much better, for a change.</q>','Bank',4);
+		new Game.TieredUpgrade('Exponential interest rates','银行工作效率 <b>翻倍</b>。<q>Can\'t argue with mathematics! Now fork it over.</q>','Bank',5);
+		new Game.TieredUpgrade('Financial zen','银行工作效率 <b>翻倍</b>。<q>The ultimate grail of economic thought; the feng shui of big money, the stock market yoga - the Heimlich maneuver of dimes and nickels.</q>','Bank',6);
 		
 		order=550;
-		new Game.TieredUpgrade('Golden idols','Temples are <b>twice</b> as efficient.<q>Lure even greedier adventurers to retrieve your cookies. Now that\'s a real idol game!</q>','Temple',1);
-		new Game.TieredUpgrade('Sacrifices','Temples are <b>twice</b> as efficient.<q>What\'s a life to a gigaton of cookies?</q>','Temple',2);
-		new Game.TieredUpgrade('Delicious blessing','Temples are <b>twice</b> as efficient.<q>And lo, the Baker\'s almighty spoon came down and distributed holy gifts unto the believers - shimmering sugar, and chocolate dark as night, and all manner of wheats. And boy let me tell you, that party was mighty gnarly.</q>','Temple',3);
-		new Game.TieredUpgrade('Sun festival','Temples are <b>twice</b> as efficient.<q>Free the primordial powers of your temples with these annual celebrations involving fire-breathers, traditional dancing, ritual beheadings and other merriments!</q>','Temple',4);
-		new Game.TieredUpgrade('Enlarged pantheon','Temples are <b>twice</b> as efficient.<q>Enough spiritual inadequacy! More divinities than you\'ll ever need, or your money back! 100% guaranteed!</q>','Temple',5);
-		new Game.TieredUpgrade('Great Baker in the sky','Temples are <b>twice</b> as efficient.<q>This is it. The ultimate deity has finally cast Their sublimely divine eye upon your operation; whether this is a good thing or possibly the end of days is something you should find out very soon.</q>','Temple',6);
+		new Game.TieredUpgrade('Golden idols','寺庙工作效率 <b>翻倍</b>。<q>Lure even greedier adventurers to retrieve your cookies. Now that\'s a real idol game!</q>','Temple',1);
+		new Game.TieredUpgrade('Sacrifices','寺庙工作效率 <b>翻倍</b>。<q>What\'s a life to a gigaton of cookies?</q>','Temple',2);
+		new Game.TieredUpgrade('Delicious blessing','寺庙工作效率 <b>翻倍</b>。<q>And lo, the Baker\'s almighty spoon came down and distributed holy gifts unto the believers - shimmering sugar, and chocolate dark as night, and all manner of wheats. And boy let me tell you, that party was mighty gnarly.</q>','Temple',3);
+		new Game.TieredUpgrade('Sun festival','寺庙工作效率 <b>翻倍</b>。<q>Free the primordial powers of your temples with these annual celebrations involving fire-breathers, traditional dancing, ritual beheadings and other merriments!</q>','Temple',4);
+		new Game.TieredUpgrade('Enlarged pantheon','寺庙工作效率 <b>翻倍</b>。<q>Enough spiritual inadequacy! More divinities than you\'ll ever need, or your money back! 100% guaranteed!</q>','Temple',5);
+		new Game.TieredUpgrade('Great Baker in the sky','寺庙工作效率 <b>翻倍</b>。<q>This is it. The ultimate deity has finally cast Their sublimely divine eye upon your operation; whether this is a good thing or possibly the end of days is something you should find out very soon.</q>','Temple',6);
 		
 		order=575;
-		new Game.TieredUpgrade('Pointier hats','Wizard towers are <b>twice</b> as efficient.<q>Tests have shown increased thaumic receptivity relative to the geometric proportions of wizardly conic implements.</q>','Wizard tower',1);
-		new Game.TieredUpgrade('Beardlier beards','Wizard towers are <b>twice</b> as efficient.<q>Haven\'t you heard? The beard is the word.</q>','Wizard tower',2);
-		new Game.TieredUpgrade('Ancient grimoires','Wizard towers are <b>twice</b> as efficient.<q>Contain interesting spells such as "Turn Water To Drool", "Grow Eyebrows On Furniture" and "Summon Politician".</q>','Wizard tower',3);
-		new Game.TieredUpgrade('Kitchen curses','Wizard towers are <b>twice</b> as efficient.<q>Exotic magic involved in all things pastry-related. Hexcellent!</q>','Wizard tower',4);
-		new Game.TieredUpgrade('School of sorcery','Wizard towers are <b>twice</b> as efficient.<q>This cookie-funded academy of witchcraft is home to the 4 prestigious houses of magic : the Jocks, the Nerds, the Preps, and the Deathmunchers.</q>','Wizard tower',5);
-		new Game.TieredUpgrade('Dark formulas','Wizard towers are <b>twice</b> as efficient.<q>Eldritch forces are at work behind these spells - you get the feeling you really shouldn\'t be messing with those. But I mean, free cookies, right?</q>','Wizard tower',6);
+		new Game.TieredUpgrade('Pointier hats','精灵塔工作效率 <b>翻倍</b>。<q>Tests have shown increased thaumic receptivity relative to the geometric proportions of wizardly conic implements.</q>','Wizard tower',1);
+		new Game.TieredUpgrade('Beardlier beards','精灵塔工作效率 <b>翻倍</b>。<q>Haven\'t you heard? The beard is the word.</q>','Wizard tower',2);
+		new Game.TieredUpgrade('Ancient grimoires','精灵塔工作效率 <b>翻倍</b>。<q>Contain interesting spells such as "Turn Water To Drool", "Grow Eyebrows On Furniture" and "Summon Politician".</q>','Wizard tower',3);
+		new Game.TieredUpgrade('Kitchen curses','精灵塔工作效率 <b>翻倍</b>。<q>Exotic magic involved in all things pastry-related. Hexcellent!</q>','Wizard tower',4);
+		new Game.TieredUpgrade('School of sorcery','精灵塔工作效率 <b>翻倍</b>。<q>This cookie-funded academy of witchcraft is home to the 4 prestigious houses of magic : the Jocks, the Nerds, the Preps, and the Deathmunchers.</q>','Wizard tower',5);
+		new Game.TieredUpgrade('Dark formulas','精灵塔工作效率 <b>翻倍</b>。<q>Eldritch forces are at work behind these spells - you get the feeling you really shouldn\'t be messing with those. But I mean, free cookies, right?</q>','Wizard tower',6);
 
 		order=250;
 		Game.GrandmaSynergy('Banker grandmas','A nice banker to cash in more cookies.','Bank');
@@ -8642,9 +8642,9 @@ Game.Launch=function()
 		order=300;new Game.TieredUpgrade('Fudge fungus','农场工作效率 <b>翻倍</b>。<q>A sugary parasite whose tendrils help cookie growth.<br>Please do not breathe in the spores. In case of spore ingestion, seek medical help within the next 36 seconds.</q>','Farm',7);
 		order=400;new Game.TieredUpgrade('Planetsplitters','矿山工作效率 <b>翻倍</b>。<q>These new state-of-the-art excavators have been tested on Merula, Globort and Flwanza VI, among other distant planets which have been curiously quiet lately.</q>','Mine',7);
 		order=500;new Game.TieredUpgrade('Cyborg workforce','工厂工作效率 <b>翻倍</b>。<q>Semi-synthetic organisms don\'t slack off, don\'t unionize, and have 20% shorter lunch breaks, making them ideal labor fodder.</q>','Factory',7);
-		order=525;new Game.TieredUpgrade('Way of the wallet','Banks are <b>twice</b> as efficient.<q>This new monetary school of thought is all the rage on the banking scene; follow its precepts and you may just profit from it.</q>','Bank',7);
-		order=550;new Game.TieredUpgrade('Creation myth','Temples are <b>twice</b> as efficient.<q>Stories have been circulating about the origins of the very first cookie that was ever baked; tales of how it all began, in the Dough beyond time and the Ovens of destiny.</q>','Temple',7);
-		order=575;new Game.TieredUpgrade('Cookiemancy','Wizard towers are <b>twice</b> as efficient.<q>There it is; the perfected school of baking magic. From summoning chips to hexing nuts, there is not a single part of cookie-making that hasn\'t been improved tenfold by magic tricks.</q>','Wizard tower',7);
+		order=525;new Game.TieredUpgrade('Way of the wallet','银行工作效率 <b>翻倍</b>。<q>This new monetary school of thought is all the rage on the banking scene; follow its precepts and you may just profit from it.</q>','Bank',7);
+		order=550;new Game.TieredUpgrade('Creation myth','寺庙工作效率 <b>翻倍</b>。<q>Stories have been circulating about the origins of the very first cookie that was ever baked; tales of how it all began, in the Dough beyond time and the Ovens of destiny.</q>','Temple',7);
+		order=575;new Game.TieredUpgrade('Cookiemancy','精灵塔工作效率 <b>翻倍</b>。<q>There it is; the perfected school of baking magic. From summoning chips to hexing nuts, there is not a single part of cookie-making that hasn\'t been improved tenfold by magic tricks.</q>','Wizard tower',7);
 		order=600;new Game.TieredUpgrade('Dyson sphere','装船工作效率 <b>翻倍</b>。<q>You\'ve found a way to apply your knowledge of cosmic technology to slightly more local endeavors; this gigantic sphere of meta-materials, wrapping the solar system, is sure to kick your baking abilities up a notch.</q>','Shipment',7);
 		order=700;new Game.TieredUpgrade('Theory of atomic fluidity','炼金实验室工作效率 <b>翻倍</b>。<q>Pushing alchemy to its most extreme limits, you find that everything is transmutable into anything else - lead to gold, mercury to water; more importantly, you realize that anything can -and should- be converted to cookies.</q>','Alchemy lab',7);
 		order=800;new Game.TieredUpgrade('End of times back-up plan','传送门工作效率 <b>翻倍</b>。<q>Just in case, alright?</q>','Portal',7);
@@ -8658,9 +8658,9 @@ Game.Launch=function()
 		order=300;new Game.TieredUpgrade('Wheat triffids','农场工作效率 <b>翻倍</b>。<q>Taking care of crops is so much easier when your plants can just walk about and help around the farm.<br>Do not pet. Do not feed. Do not attempt to converse with.</q>','Farm',8);
 		order=400;new Game.TieredUpgrade('Canola oil wells','矿山工作效率 <b>翻倍</b>。<q>A previously untapped resource, canola oil permeates the underground olifers which grant it its particular taste and lucrative properties.</q>','Mine',8);
 		order=500;new Game.TieredUpgrade('78-hour days','工厂工作效率 <b>翻倍</b>。<q>Why didn\'t we think of this earlier?</q>','Factory',8);
-		order=525;new Game.TieredUpgrade('The stuff rationale','Banks are <b>twice</b> as efficient.<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
-		order=550;new Game.TieredUpgrade('Theocracy','Temples are <b>twice</b> as efficient.<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
-		order=575;new Game.TieredUpgrade('Rabbit trick','Wizard towers are <b>twice</b> as efficient.<q>Using nothing more than a fancy top hat, your wizards have found a way to simultaneously curb rabbit population and produce heaps of extra cookies for basically free!<br>Resulting cookies may or may not be fit for vegans.</q>','Wizard tower',8);
+		order=525;new Game.TieredUpgrade('The stuff rationale','银行工作效率 <b>翻倍</b>。<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
+		order=550;new Game.TieredUpgrade('Theocracy','寺庙工作效率 <b>翻倍</b>。<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
+		order=575;new Game.TieredUpgrade('Rabbit trick','精灵塔工作效率 <b>翻倍</b>。<q>Using nothing more than a fancy top hat, your wizards have found a way to simultaneously curb rabbit population and produce heaps of extra cookies for basically free!<br>Resulting cookies may or may not be fit for vegans.</q>','Wizard tower',8);
 		order=600;new Game.TieredUpgrade('The final frontier','装船工作效率 <b>翻倍</b>。<q>It\'s been a long road, getting from there to here. It\'s all worth it though - the sights are lovely and the oil prices slightly more reasonable.</q>','Shipment',8);
 		order=700;new Game.TieredUpgrade('Beige goo','炼金实验室工作效率 <b>翻倍</b>。<q>Well now you\'ve done it. Good job. Very nice. That\'s 3 galaxies you\'ve just converted into cookies. Good thing you can hop from universe to universe.</q>','Alchemy lab',8);
 		order=800;new Game.TieredUpgrade('Maddening chants','传送门工作效率 <b>翻倍</b>。<q>A popular verse goes like so : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
@@ -9027,9 +9027,9 @@ Game.Launch=function()
 		order=300;new Game.TieredUpgrade('Humane pesticides','农场工作效率 <b>翻倍</b>。<q>Made by people, for people, from people and ready to unleash some righteous scorching pain on those pesky insects that so deserve it.</q>','Farm',9);
 		order=400;new Game.TieredUpgrade('Mole people','矿山工作效率 <b>翻倍</b>。<q>Engineered from real human beings within your very labs, these sturdy little folks have a knack for finding the tastiest underground minerals in conditions that more expensive machinery probably wouldn\'t survive.</q>','Mine',9);
 		order=500;new Game.TieredUpgrade('Machine learning','工厂工作效率 <b>翻倍</b>。<q>You figured you might get better productivity if you actually told your workers to learn how to work the machines. Sometimes, it\'s the little things...</q>','Factory',9);
-		order=525;new Game.TieredUpgrade('Edible money','Banks are <b>twice</b> as efficient.<q>It\'s really quite simple; you make all currency too delicious not to eat, solving world hunger and inflation in one fell swoop!</q>','Bank',9);
-		order=550;new Game.TieredUpgrade('Sick rap prayers','Temples are <b>twice</b> as efficient.<q>With their ill beat and radical rhymes, these way-hip religious tunes are sure to get all the youngins who thought they were 2 cool 4 church back on the pews and praying for more! Wicked!</q>','Temple',9);
-		order=575;new Game.TieredUpgrade('Deluxe tailored wands','Wizard towers are <b>twice</b> as efficient.<q>In this age of science, most skillful wand-makers are now long gone; but thankfully - not all those wanders are lost.</q>','Wizard tower',9);
+		order=525;new Game.TieredUpgrade('Edible money','银行工作效率 <b>翻倍</b>。<q>It\'s really quite simple; you make all currency too delicious not to eat, solving world hunger and inflation in one fell swoop!</q>','Bank',9);
+		order=550;new Game.TieredUpgrade('Sick rap prayers','寺庙工作效率 <b>翻倍</b>。<q>With their ill beat and radical rhymes, these way-hip religious tunes are sure to get all the youngins who thought they were 2 cool 4 church back on the pews and praying for more! Wicked!</q>','Temple',9);
+		order=575;new Game.TieredUpgrade('Deluxe tailored wands','精灵塔工作效率 <b>翻倍</b>。<q>In this age of science, most skillful wand-makers are now long gone; but thankfully - not all those wanders are lost.</q>','Wizard tower',9);
 		order=600;new Game.TieredUpgrade('Autopilot','装船工作效率 <b>翻倍</b>。<q>Your ships are now fitted with completely robotic crews! It\'s crazy how much money you save when you don\'t have to compensate the families of those lost in space.</q>','Shipment',9);
 		order=700;new Game.TieredUpgrade('The advent of chemistry','炼金实验室工作效率 <b>翻倍</b>。<q>You know what? That whole alchemy nonsense was a load of baseless rubbish. Dear god, what were you thinking?</q>','Alchemy lab',9);
 		order=800;new Game.TieredUpgrade('The real world','传送门工作效率 <b>翻倍</b>。<q>It turns out that our universe is actually the twisted dimension of another, saner plane of reality. Time to hop on over there and loot the place!</q>','Portal',9);
@@ -9136,9 +9136,9 @@ Game.Launch=function()
 		order=300;new Game.TieredUpgrade('Barnstars','农场工作效率 <b>翻倍</b>。<q>Ah, yes. These help quite a bit. Somehow.</q>','Farm',10);
 		order=400;new Game.TieredUpgrade('Mine canaries','矿山工作效率 <b>翻倍</b>。<q>These aren\'t used for anything freaky! The miners just enjoy having a pet or two down there.</q>','Mine',10);
 		order=500;new Game.TieredUpgrade('Brownie point system','工厂工作效率 <b>翻倍</b>。<q>Oh, these are lovely! You can now reward your factory employees for good behavior, such as working overtime or snitching on coworkers. 58 brownie points gets you a little picture of a brownie, and 178 of those pictures gets you an actual brownie piece for you to do with as you please! Infantilizing? Maybe. Oodles of fun? You betcha!</q>','Factory',10);
-		order=525;new Game.TieredUpgrade('Grand supercycles','Banks are <b>twice</b> as efficient.<q>We let the public think these are complicated financial terms when really we\'re just rewarding the bankers with snazzy bicycles for a job well done. It\'s only natural after you built those fancy gold swimming pools for them, where they can take a dip and catch Kondratiev waves.</q>','Bank',10);
-		order=550;new Game.TieredUpgrade('Psalm-reading','Temples are <b>twice</b> as efficient.<q>A theologically dubious and possibly blasphemous blend of fortune-telling and scripture studies.</q>','Temple',10);
-		order=575;new Game.TieredUpgrade('Immobile spellcasting','Wizard towers are <b>twice</b> as efficient.<q>Wizards who master this skill can now cast spells without having to hop and skip and gesticulate embarrassingly, which is much sneakier and honestly quite a relief.</q>','Wizard tower',10);
+		order=525;new Game.TieredUpgrade('Grand supercycles','银行工作效率 <b>翻倍</b>。<q>We let the public think these are complicated financial terms when really we\'re just rewarding the bankers with snazzy bicycles for a job well done. It\'s only natural after you built those fancy gold swimming pools for them, where they can take a dip and catch Kondratiev waves.</q>','Bank',10);
+		order=550;new Game.TieredUpgrade('Psalm-reading','寺庙工作效率 <b>翻倍</b>。<q>A theologically dubious and possibly blasphemous blend of fortune-telling and scripture studies.</q>','Temple',10);
+		order=575;new Game.TieredUpgrade('Immobile spellcasting','精灵塔工作效率 <b>翻倍</b>。<q>Wizards who master this skill can now cast spells without having to hop and skip and gesticulate embarrassingly, which is much sneakier and honestly quite a relief.</q>','Wizard tower',10);
 		order=600;new Game.TieredUpgrade('Restaurants at the end of the universe','装船工作效率 <b>翻倍</b>。<q>Since the universe is spatially infinite, and therefore can be construed to have infinite ends, you\'ve opened an infinite chain of restaurants where your space truckers can rest and partake in some home-brand cookie-based meals.</q>','Shipment',10);
 		order=700;new Game.TieredUpgrade('On second thought','炼金实验室工作效率 <b>翻倍</b>。<q>Disregard that last upgrade, alchemy is where it\'s at! Your eggheads just found a way to transmute children\'s nightmares into rare metals!</q>','Alchemy lab',10);
 		order=800;new Game.TieredUpgrade('Dimensional garbage gulper','传送门工作效率 <b>翻倍</b>。<q>So we\'ve been looking for a place to dispose of all the refuse that\'s been accumulating since we started baking - burnt cookies, failed experiments, unruly workers - and well, we figured rather than sell it to poor countries like we\'ve been doing, we could just dump it in some alternate trash dimension where it\'s not gonna bother anybody! Probably!</q>','Portal',10);
@@ -9181,9 +9181,9 @@ Game.Launch=function()
 		order=300;new Game.TieredUpgrade('Lindworms','农场工作效率 <b>翻倍</b>。<q>You have to import these from far up north, but they really help areate the soil!</q>','Farm',11);
 		order=400;new Game.TieredUpgrade('Bore again','矿山工作效率 <b>翻倍</b>。<q>After extracting so much sediment for so long, you\'ve formed some veritable mountains of your own from the accumulated piles of rock and dirt. Time to dig through those and see if you find anything fun!</q>','Mine',11);
 		order=500;new Game.TieredUpgrade('"Volunteer" interns','工厂工作效率 <b>翻倍</b>。<q>If you\'re bad at something, always do it for free.</q>','Factory',11);
-		order=525;new Game.TieredUpgrade('Rules of acquisition','Banks are <b>twice</b> as efficient.<q>Rule 387 : a cookie baked is a cookie kept.</q>','Bank',11);
-		order=550;new Game.TieredUpgrade('War of the gods','Temples are <b>twice</b> as efficient.<q>An interesting game; the only winning move is not to pray.</q>','Temple',11);
-		order=575;new Game.TieredUpgrade('Electricity','Wizard towers are <b>twice</b> as efficient.<q>Ancient magicks and forbidden hexes shroud this arcane knowledge, whose unfathomable power can mysteriously turn darkness into light and shock an elephant to death.</q>','Wizard tower',11);
+		order=525;new Game.TieredUpgrade('Rules of acquisition','银行工作效率 <b>翻倍</b>。<q>Rule 387 : a cookie baked is a cookie kept.</q>','Bank',11);
+		order=550;new Game.TieredUpgrade('War of the gods','寺庙工作效率 <b>翻倍</b>。<q>An interesting game; the only winning move is not to pray.</q>','Temple',11);
+		order=575;new Game.TieredUpgrade('Electricity','精灵塔工作效率 <b>翻倍</b>。<q>Ancient magicks and forbidden hexes shroud this arcane knowledge, whose unfathomable power can mysteriously turn darkness into light and shock an elephant to death.</q>','Wizard tower',11);
 		order=600;new Game.TieredUpgrade('Universal alphabet','装船工作效率 <b>翻倍</b>。<q>You\'ve managed to chart a language that can be understood by any sentient species in the galaxy; its exciting vocabulary contains over 56 trillion words that sound and look like sparkly burps, forming intricate sentences that usually translate to something like "give us your cookies, or else".</q>','Shipment',11);
 		order=700;new Game.TieredUpgrade('Public betterment','炼金实验室工作效率 <b>翻倍</b>。<q>Why do we keep trying to change useless matter into cookies, or cookies into even better cookies? Clearly, the way of the future is to change the people who eat the cookies into people with a greater understanding, appreciation and respect for the cookies they\'re eating. Into the vat you go!</q>','Alchemy lab',11);
 		order=800;new Game.TieredUpgrade('Embedded microportals','传送门工作效率 <b>翻倍</b>。<q>We\'ve found out that if we bake the portals into the cookies themselves, we can transport people\'s taste buds straight into the taste dimension! Good thing your army of lawyers got rid of the FDA a while ago!</q>','Portal',11);
@@ -12890,18 +12890,18 @@ Game.Launch=function()
 			var startDate=Game.sayTime(timeInSeconds*Game.fps,-1);
 			
 			var str='';
-			str+='You\'ve been on this run for <b>'+(startDate==''?'not very long':(startDate))+'</b>.<br>';
+			str+='你从开始到现在，持续的游戏时间是 <b>'+(startDate==''?'不是太久':(startDate))+'</b>.<br>';
 			str+='<div class="line"></div>';
 			if (Game.prestige>0)
 			{
-				str+='Your prestige level is currently <b>'+Beautify(Game.prestige)+'</b>.<br>(CpS +'+Beautify(Game.prestige)+'%)';
+				str+='你现在的声望等级是 <b>'+Beautify(Game.prestige)+'</b>.<br>(饼干每秒产量 +'+Beautify(Game.prestige)+'%)';
 				str+='<div class="line"></div>';
 			}
-			if (ascendNowToGet<1) str+='Ascending now would grant you no prestige.';
-			else if (ascendNowToGet<2) str+='Ascending now would grant you<br><b>1 prestige level</b> (+1% CpS)<br>and <b>1 heavenly chip</b> to spend.';
-			else str+='Ascending now would grant you<br><b>'+Beautify(ascendNowToGet)+' prestige levels</b> (+'+Beautify(ascendNowToGet)+'% CpS)<br>and <b>'+Beautify(ascendNowToGet)+' heavenly chips</b> to spend.';
+			if (ascendNowToGet<1) str+='现在升天你将得不到任何声望。';
+			else if (ascendNowToGet<2) str+='现在升天你会得到<br><b>1 声望等级</b> (+1% 饼干每秒产量)<br>和 <b>1 天堂芯片</b>以供使用。';
+			else str+='现在升天你会得到<br><b>'+Beautify(ascendNowToGet)+' 声望等级</b> (+'+Beautify(ascendNowToGet)+'% 饼干每秒产量)<br>和 <b>'+Beautify(ascendNowToGet)+' 天堂芯片</b> 以供使用。';
 			str+='<div class="line"></div>';
-			str+='You need <b>'+Beautify(cookiesToNext)+' more cookies</b> for the next level.<br>';
+			str+='你还需要 <b>'+Beautify(cookiesToNext)+' 饼干才能提升到</b> 下一声望等级。<br>';
 			l('ascendTooltip').innerHTML=str;
 			
 			if (ascendNowToGet>0)//show number saying how many chips you'd get resetting now
@@ -13005,10 +13005,10 @@ Game.Launch=function()
 				}
 				str=[str.slice(0, spacePos),add,str.slice(spacePos)].join('');
 			}
-			if (str.length>11 && !Game.mobile) unit='<br>cookies';
+			if (str.length>11 && !Game.mobile) unit='<br>饼干';
 			str+=unit;
 			if (Game.prefs.monospace) str='<span class="monospace">'+str+'</span>';
-			str=str+'<div style="font-size:50%;"'+(Game.cpsSucked>0?' class="warning"':'')+'>per second : '+Beautify(Game.cookiesPs*(1-Game.cpsSucked),1)+'</div>';//display cookie amount
+			str=str+'<div style="font-size:50%;"'+(Game.cpsSucked>0?' class="warning"':'')+'>每秒 : '+Beautify(Game.cookiesPs*(1-Game.cpsSucked),1)+'</div>';//display cookie amount
 			l('cookies').innerHTML=str;
 			l('compactCookies').innerHTML=str;
 			Timer.track('cookie amount');
