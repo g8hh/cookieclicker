@@ -8544,7 +8544,7 @@ Game.Launch=function()
 			Game.Upgrades[slots[i]].descFunc=function(i){return function(){
 				if (Game.permanentUpgrades[i]==-1) return this.desc;
 				var upgrade=Game.UpgradesById[Game.permanentUpgrades[i]];
-				return '<div style="text-align:center;">'+'Current : <div class="icon" style="vertical-align:middle;display:inline-block;'+(upgrade.icon[2]?'background-image:url('+upgrade.icon[2]+');':'')+'background-position:'+(-upgrade.icon[0]*48)+'px '+(-upgrade.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+upgrade.name+'</b><div class="line"></div></div>'+this.desc;
+				return '<div style="text-align:center;">'+'当前 : <div class="icon" style="vertical-align:middle;display:inline-block;'+(upgrade.icon[2]?'background-image:url('+upgrade.icon[2]+');':'')+'background-position:'+(-upgrade.icon[0]*48)+'px '+(-upgrade.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+cnItem(upgrade.name)+'</b><div class="line"></div></div>'+this.desc;
 			};}(i);
 		}
 		
@@ -8719,7 +8719,7 @@ Game.Launch=function()
 		new Game.Upgrade('Milk selector','Lets you pick what flavor of milk to display.',0,[1,8]);
 		Game.last.descFunc=function(){
 			var choice=this.choicesFunction()[Game.milkType];
-			return '<div style="text-align:center;">Current : <div class="icon" style="vertical-align:middle;display:inline-block;'+(choice.icon[2]?'background-image:url('+choice.icon[2]+');':'')+'background-position:'+(-choice.icon[0]*48)+'px '+(-choice.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+choice.name+'</b></div><div class="line"></div>'+this.desc;
+			return '<div style="text-align:center;">当前 : <div class="icon" style="vertical-align:middle;display:inline-block;'+(choice.icon[2]?'background-image:url('+choice.icon[2]+');':'')+'background-position:'+(-choice.icon[0]*48)+'px '+(-choice.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+cnItem(choice.name)+'</b></div><div class="line"></div>'+this.desc;
 		};
 		
 		Game.last.pool='toggle';
@@ -8849,7 +8849,7 @@ Game.Launch=function()
 		new Game.Upgrade('Golden cookie sound selector','Lets you change the sound golden cookies make when they spawn.',0,[28,6]);
 		Game.last.descFunc=function(){
 			var choice=this.choicesFunction()[Game.chimeType];
-			return '<div style="text-align:center;">Current : <div class="icon" style="vertical-align:middle;display:inline-block;'+(choice.icon[2]?'background-image:url('+icon[2]+');':'')+'background-position:'+(-choice.icon[0]*48)+'px '+(-choice.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+choice.name+'</b></div><div class="line"></div>'+this.desc;
+			return '<div style="text-align:center;">当前 : <div class="icon" style="vertical-align:middle;display:inline-block;'+(choice.icon[2]?'background-image:url('+icon[2]+');':'')+'background-position:'+(-choice.icon[0]*48)+'px '+(-choice.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+cnItem(choice.name)+'</b></div><div class="line"></div>'+this.desc;
 		};
 		
 		Game.last.pool='toggle';
@@ -8959,7 +8959,7 @@ Game.Launch=function()
 		new Game.Upgrade('Background selector','Lets you pick which wallpaper to display.',0,[29,5]);
 		Game.last.descFunc=function(){
 			var choice=this.choicesFunction()[Game.bgType];
-			return '<div style="text-align:center;">Current : <div class="icon" style="vertical-align:middle;display:inline-block;'+(choice.icon[2]?'background-image:url('+choice.icon[2]+');':'')+'background-position:'+(-choice.icon[0]*48)+'px '+(-choice.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+choice.name+'</b></div><div class="line"></div>'+this.desc;
+			return '<div style="text-align:center;">当前 : <div class="icon" style="vertical-align:middle;display:inline-block;'+(choice.icon[2]?'background-image:url('+choice.icon[2]+');':'')+'background-position:'+(-choice.icon[0]*48)+'px '+(-choice.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> <b>'+cnItem(choice.name)+'</b></div><div class="line"></div>'+this.desc;
 		};
 		
 		Game.last.pool='toggle';
@@ -9253,7 +9253,7 @@ Game.Launch=function()
 			{
 				if (Game.Objects[i].level>=10) n++;
 			}
-			return '<div style="text-align:center;">Current : <b>+'+Beautify(n)+'%</b><div class="line"></div></div>'+this.desc;
+			return '<div style="text-align:center;">当前 : <b>+'+Beautify(n)+'%</b><div class="line"></div></div>'+this.desc;
 		};
 		new Game.Upgrade('Box of maybe cookies','Contains an assortment of...something.<q>These may or may not be considered cookies.</q>',333000000000,[25,29]);Game.last.pool='prestige';Game.last.parents=['Sugar crystal cookies'];
 		new Game.Upgrade('Box of not cookies','Contains an assortment of...something.<q>These are strictly, definitely not cookies.</q>',333000000000,[26,29]);Game.last.pool='prestige';Game.last.parents=['Sugar crystal cookies'];
