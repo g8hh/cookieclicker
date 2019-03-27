@@ -1611,7 +1611,7 @@ Game.Launch=function()
 		
 		Game.GrabData=function()
 		{
-			ajax('http://orteil.dashnet.org/patreon/grab.php',Game.GrabDataResponse);
+//			ajax('http://orteil.dashnet.org/patreon/grab.php',Game.GrabDataResponse);
 		}
 		Game.GrabDataResponse=function(response)
 		{
@@ -3478,8 +3478,8 @@ Game.Launch=function()
 					Game.harvestLumps(1,true);
 					Game.lumpCurrentType=0;//all offline lumps after the first one have a normal type
 					if (amount>1) Game.harvestLumps(amount-1,true);
-					if (Game.prefs.popups) Game.Popup('收获了 '+Beautify(amount)+' sugar lump'+(amount==1?'':'s')+' while you were away');
-					else Game.Notify('','You harvested <b>'+Beautify(amount)+'</b> sugar lump'+(amount==1?'':'s')+' while you were away.',[29,14]);
+					if (Game.prefs.popups) Game.Popup('收获了 '+Beautify(amount)+' 糖块'+(amount==1?'':'')+' 在你离开的时候');
+					else Game.Notify('','你收获了 <b>'+Beautify(amount)+'</b> 糖块'+(amount==1?'':'s')+' 在你离开的时候',[29,14]);
 					Game.lumpT=Date.now()-(age-amount*Game.lumpOverripeAge);
 					Game.computeLumpType();
 				}
@@ -3526,15 +3526,15 @@ Game.Launch=function()
 				Game.gainBuff('sugar blessing',24*60*60,1);
 				Game.Earn(Math.min(Game.cookiesPs*60*60*24,Game.cookies));
 				if (Game.prefs.popups) Game.Popup('Sugar blessing activated!');
-				else Game.Notify('Sugar blessing activated!','Your cookies have been doubled.<br>+10% golden cookies for the next 24 hours.',[29,16]);
+				else Game.Notify('糖祝福激活了！','您的饼干已加倍。<br>接下来的24小时内会有 +10％ 的金饼干。',[29,16]);
 			}
 			else if (Game.lumpCurrentType==3) total*=choose([0,0,1,2,2]);
 			else if (Game.lumpCurrentType==4)
 			{
 				total*=choose([1,2,3]);
 				Game.lumpRefill=Date.now()-Game.getLumpRefillMax();
-				if (Game.prefs.popups) Game.Popup('Sugar lump cooldowns cleared!');
-				else Game.Notify('Sugar lump cooldowns cleared!','',[29,27]);
+				if (Game.prefs.popups) Game.Popup('糖块冷却清除！');
+				else Game.Notify('糖块冷却清除！','',[29,27]);
 			}
 			total=Math.floor(total);
 			Game.gainLumps(total);
@@ -5143,11 +5143,11 @@ Game.Launch=function()
 					var me=Game.Notes[i];
 					var pic='';
 					if (me.pic!='') pic='<div class="icon" style="'+(me.pic[2]?'background-image:url('+me.pic[2]+');':'')+'background-position:'+(-me.pic[0]*48)+'px '+(-me.pic[1]*48)+'px;"></div>';
-					str='<div id="note-'+me.id+'" class="framed note '+(me.pic!=''?'haspic':'nopic')+' '+(me.desc!=''?'hasdesc':'nodesc')+'"><div class="close" onclick="PlaySound(\'snd/tick.mp3\');Game.CloseNote('+me.id+');">x</div>'+pic+'<div class="text"><h3>'+me.title+'</h3>'+(me.desc!=''?'<div class="line"></div><h5>'+me.desc+'</h5>':'')+'</div></div>'+str;
+					str='<div id="note-'+me.id+'" class="framed note '+(me.pic!=''?'haspic':'nopic')+' '+(me.desc!=''?'hasdesc':'nodesc')+'"><div class="close" onclick="PlaySound(\'snd/tick.mp3\');Game.CloseNote('+me.id+');">x</div>'+pic+'<div class="text"><h3>'+cnItem(me.title)+'</h3>'+(me.desc!=''?'<div class="line"></div><h5>'+cnItem(me.desc)+'</h5>':'')+'</div></div>'+str;
 					remaining--;
 				}
 			}
-			if (remaining>0) str='<div class="remaining">+'+remaining+' more notification'+(remaining==1?'':'s')+'.</div>'+str;
+			if (remaining>0) str='<div class="remaining">+'+remaining+' 个通知'+(remaining==1?'':'')+'.</div>'+str;
 			if (Game.Notes.length>1)
 			{
 				str+='<div class="framed close sidenote" onclick="PlaySound(\'snd/tick.mp3\');Game.CloseNotes();">x</div>';
@@ -6295,9 +6295,9 @@ Game.Launch=function()
 		{
 			var str='';
 			if (Game.Ticker!='') str=Game.Ticker;
-			Game.tickerBelowL.innerHTML=Game.tickerL.innerHTML;
-			Game.tickerL.innerHTML=str;
-			Game.tickerCompactL.innerHTML=str;
+			Game.tickerBelowL.innerHTML=cnItem(Game.tickerL.innerHTML);
+			Game.tickerL.innerHTML=cnItem(str);
+			Game.tickerCompactL.innerHTML=cnItem(str);
 			
 			Game.tickerBelowL.className='commentsText';
 			void Game.tickerBelowL.offsetWidth;
