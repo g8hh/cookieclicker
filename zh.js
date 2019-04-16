@@ -735,7 +735,253 @@ var cnItems = {
     //新闻
     '': '',
     'Your family accepts to try some of your cookies.': '您的家人接受尝试您的一些饼干。',
-    '': '',
+    'News : "Can\'t you sense the prism watching us?", rambles insane local man. "No idea what he\'s talking about", shrugs cookie magnate/government official.': '新闻:“你感觉不到棱镜在监视我们吗?”，一个疯了的当地人说。“不知道他在说什么”，饼干巨头/政府官员耸了耸肩。',
+    'Game saved': '',
+    'Neeeeews : "neeeew EEEEEE keeeeey working fineeeeeeeee", reeeports gleeeeeeeeful journalist.': '',
+    'News : "accusations of cookie abuse are only vile slander", reveals celebrity.': '',
+    'News : "all-you-can-eat" cookie restaurant opens in big city; waiters trampled in minutes.': '',
+    'News : "alright, I\'ll say it - I\'ve never eaten a single cookie in my life", reveals celebrity.': '',
+    'News : "Any sufficiently crude magic is indistinguishable from technology", claims renowned technowizard.': '',
+    'News : "at this point, cookies permeate the economy", says economist. "If we start eating anything else, we\'re all dead."': '',
+    'News : "average person bakes 572,757,881,545,340 cookies a year" factoid actually just statistical error; Fantastic Baker, who has produced 4.1,811,325,352,809,785e+24 cookies in their lifetime, is an outlier and should not have been counted.': '',
+    'News : "average person bakes 572,975,371,995,415 cookies a year" factoid actually just statistical error; Fantastic Baker, who has produced 4.1,827,202,155,665,235e+24 cookies in their lifetime, is an outlier and should not have been counted.': '',
+    'News : "average person bakes 574,148,266,922,603 cookies a year" factoid actually just statistical error; Fantastic Baker, who has produced 4.1,912,823,485,349,983e+24 cookies in their lifetime, is an outlier and should not have been counted.': '',
+    'News : "average person bakes 575,554,187,332,014 cookies a year" factoid actually just statistical error; Fantastic Baker, who has produced 4.2,015,455,675,237e+24 cookies in their lifetime, is an outlier and should not have been counted.': '',
+    'News : "average person bakes 578,661,193,761,652 cookies a year" factoid actually just statistical error; Fantastic Baker, who has produced 4.224,226,714,460,057e+24 cookies in their lifetime, is an outlier and should not have been counted.': '',
+    'News : "Back in my day, sugar lumps were these little cubes you\'d put in your tea, not those fist-sized monstrosities people eat for lunch", whines curmudgeon with failing memory.': '',
+    'News : "Can\'t you sense the prism watching us?", rambles insane local man. "No idea what he\'s talking about", shrugs cookie magnate/government official.': '',
+    'News : "cookies are the secret behind my perfect skin", reveals celebrity.': '',
+    'News : "cookies helped me stay sane while filming my upcoming movie", reveals celebrity.': '',
+    'News : "cookies helped me stay thin and healthy", reveals celebrity.': '',
+    'News : "cookies really helped me when I was feeling low", reveals celebrity.': '',
+    'News : "do not settle near portals," says specialist; "your children will become strange and corrupted inside."': '',
+    'News : "do your cookies contain axolotls?", asks PSA warning against counterfeit cookies.': '',
+    'News : "do your cookies contain frogs?", asks PSA warning against counterfeit cookies.': '',
+    'News : "do your cookies contain monkfish?", asks PSA warning against counterfeit cookies.': '',
+    'News : "do your cookies contain penguins?", asks PSA warning against counterfeit cookies.': '',
+    'News : "do your cookies contain porpoises?", asks PSA warning against counterfeit cookies.': '',
+    'News : "do your cookies contain scorpions?", asks PSA warning against counterfeit cookies.': '',
+    'News : "explain to me again why we need particle accelerators to bake cookies?" asks misguided local woman.': '',
+    'News : "Fantastic Baker" set to be this year\'s most popular baby name.': '',
+    'News : "I guess I have a cookie problem", reveals celebrity.': '',
+    'News : "I have seen the future," says time machine operator, "and I do not wish to go there again."': '',
+    'News : "I just can\'t stop eating cookies. I think I seriously need help", reveals celebrity.': '',
+    'News : "I\'ll say one word, just one : cookies", reveals celebrity.': '',
+    'News : "I\'m all about cookies", reveals celebrity.': '',
+    'News : "I\'m not addicted to cookies. That\'s just speculation by fans with too much free time", reveals celebrity.': '',
+    'News : "I\'ve had dreams about cookies 3 nights in a row now. I\'m a bit worried honestly", reveals celebrity.': '',
+    'News : "memes from last year somehow still relevant", deplore experts.': '',
+    'News : "my upcoming album contains 3 songs about cookies", reveals celebrity.': '',
+    'News : "Ook", says interviewed orangutan.': '',
+    'News : "the universe pretty much loops on itself," suggests researcher; "it\'s cookies all the way down."': '',
+    'News : "Try to ignore any ghostly felines that may be purring inside your ears," warn scientists. "They\'ll just lure you into making poor life choices."': '',
+    'News : "unravelling the fabric of reality just makes these cookies so much tastier", claims scientist.': '',
+    'News : "you gotta admit, all this cookie stuff is a bit ominous", says confused idiot.': '',
+    'News : alchemy-made cookies shunned by purists!': '',
+    'News : all clouds turned into goblins in freak magic catastrophe!': '',
+    'News : all goblins turned into hats in freak magic catastrophe!': '',
+    'News : all mole rats turned into giant squids in freak magic catastrophe!': '',
+    'News : all polar bears turned into lemons in freak magic catastrophe!': '',
+    'News : all potted plants turned into giant squids in freak magic catastrophe!': '',
+    'News : all scratching tickets printed as winners, prompting national economy to crash and, against all odds, recover overnight.': '',
+    'News : all-cookie restaurant opening downtown. Dishes such as braised cookies, cookie thermidor, and for dessert : crepes.': '',
+    'News : ancient baking artifacts found on distant planet; "terrifying implications", experts say.': '',
+    'News : area man goes on journey of introspection, finds cookies : "I honestly don\'t know what I was expecting."': '',
+    'News : authorities warn tourists not to buy bootleg sugar lumps from street peddlers - "You think you\'re getting a sweet deal, but what you\'re being sold is really just ordinary cocaine", says agent.': '',
+    'News : births of suspiciously bald babies on the rise; reptilian overlords deny involvement.': '',
+    'News : chocolate jewelry found fashionable, gold and diamonds "just a fad", says specialist.': '',
+    'News : chocolate-based organisms found on distant planet!': '',
+    'News : comedian forced to cancel cookie routine due to unrelated indigestion.': '',
+    'News : cookie emoji most popular among teenagers, far ahead of "judgemental OK hand sign" and "shifty-looking dark moon", says study.': '',
+    'News : cookie heaven allegedly "sports elevator instead of stairway"; cookie hell "paved with flagstone, as good intentions make for poor building material".': '',
+    'News : cookie manufacturer completely forgoes common sense, lets OCD drive building decisions!': '',
+    'News : cookie shortage strikes town, people forced to eat cupcakes; "just not the same", concedes mayor.': '',
+    'News : cookie wizards deny involvement in shockingly ugly newborn - infant is "honestly grody-looking, but natural", say doctors.': '',
+    'News : cookie-flavored cereals break all known cereal-related records': '',
+    'News : cookie-flavored popcorn pretty damn popular; "we kinda expected that", say scientists.': '',
+    'News : cookie-flavored popcorn sales exploded during screening of Grandmothers II : The Moistening.': '',
+    'News : cookies brought back from the past "unfit for human consumption", says historian.': '',
+    'News : cookies could be the key to better eating, say scientists.': '',
+    'News : cookies could be the key to better living, say scientists.': '',
+    'News : cookies could be the key to eternal youth, say scientists.': '',
+    'News : cookies could be the key to infinite riches, say scientists.': '',
+    'News : cookies could be the key to solving world hunger, say scientists.': '',
+    'News : cookies found to cure blindness in penguins!': '',
+    'News : cookies found to cure blindness in porpoises!': '',
+    'News : cookies found to decrease hair loss in axolotls!': '',
+    'News : cookies found to increase lifespan in humpback whales!': '',
+    'News : cookies found to increase lifespan in sea squirts!': '',
+    'News : cookies found to increase lifespan in velvet worms!': '',
+    'News : cookies found to make fruit bats more docile!': '',
+    'News : cookies found to make fruit bats nicer!': '',
+    'News : cookies found to make giraffes nicer!': '',
+    'News : cookies found to make goblins tastier!': '',
+    'News : cookies found to make horses tastier!': '',
+    'News : cookies found to make nematodes tastier!': '',
+    'News : cookies found to make nurse sharks more handsome!': '',
+    'News : cookies found to make porpoises less hungry!': '',
+    'News : cookies found to sensibly increase intelligence in crayfish!': '',
+    'News : cookies go well with minced paramecia, says controversial chef.': '',
+    'News : cookies go well with minced wolfmen, says controversial chef.': '',
+    'News : cookies go well with newts carpaccio, says controversial chef.': '',
+    'News : cookies go well with puffins steak, says controversial chef.': '',
+    'News : cookies go well with roasted crayfish, says controversial chef.': '',
+    'News : cookies go well with toasted sea squirts, says controversial chef.': '',
+    'News : cookies now being baked at the literal speed of light thanks to new prismatic contraptions.': '',
+    'News : cookies now illegal in some backwards country nobody cares about. Political tensions rising; war soon, hopefully.': '',
+    'News : cookies now more popular than stable jobs, says study.': '',
+    'News : cookies now more popular than whatever it is we ate before, says study.': '',
+    'News : cookies popular among all age groups, including fetuses, says study.': '',
+    'News : cookies tested on axolotls, found to have no ill effects.': '',
+    'News : cookies tested on frogs, found to have no ill effects.': '',
+    'News : cookies tested on goblins, found to have no ill effects.': '',
+    'News : cookies tested on hippies, found to have no ill effects.': '',
+    'News : cookies tested on hippies, found to have no ill effects.': '',
+    'News : cookies tested on humpback whales, found to have no ill effects.': '',
+    'News : cookies tested on mole rats, found to have no ill effects.': '',
+    'News : cookies tested on newts, found to have no ill effects.': '',
+    'News : cookies tested on puffins, found to have no ill effects.': '',
+    'News : cookies tested on sea squirts, found to have no ill effects.': '',
+    'News : cookies unexpectedly popular among monkfish!': '',
+    'News : cookies unexpectedly popular among paramecia!': '',
+    'News : cookieverse portals suspected to cause fast aging and obsession with baking, says study.': '',
+    'News : deadly bacteria to be named after Fantastic Baker, the world-famous cookie manufacturer.': '',
+    'News : defective alchemy lab shut down, found to convert cookies to useless gold.': '',
+    'News : dimensional portals involved in city-engulfing disaster!': '',
+    'News : doctors advise against new cookie-free fad diet.': '',
+    'News : doctors recommend twice-daily consumption of fresh cookies.': '',
+    'News : doctors warn against chocolate chip-snorting teen fad.': '',
+    'News : doctors warn mothers about the dangers of "home-made cookies".': '',
+    'News : don\'t miss tonight\'s biopic on Fantastic Baker\'s irresistible rise to success!': '',
+    'News : don\'t miss tonight\'s interview of Fantastic Baker by Blay Bleno!': '',
+    'News : don\'t miss tonight\'s interview of Fantastic Baker by Bleven Blolbert!': '',
+    'News : don\'t miss tonight\'s interview of Fantastic Baker by Blon Blewart!': '',
+    'News : don\'t miss tonight\'s interview of Fantastic Baker by Blonan Blo\'Brien!': '',
+    'News : experts in bitter disagreement over whether sugar consumption turns children sluggish or hyperactive.': '',
+    'News : Fantastic Baker-brand cookies "arguably healthier than competitors", says consumer survey.': '',
+    'News : Fantastic Baker-brand cookies "less toxic than competitors", says consumer survey.': '',
+    'News : Fantastic Baker-brand cookies "much tastier than competitors", says consumer survey.': '',
+    'News : Fantastic Baker-brand cookies "trendier than competitors", says consumer survey.': '',
+    'News : first antimatter condenser successfully turned on, doesn\'t rip apart reality!': '',
+    'News : fishermen deplore upturn in fish tooth decay as sugar lumps-hauling cargo sinks into the ocean.': '',
+    'News : flavor text kind of unsavory, study finds.': '',
+    'News : flavor text not particularly flavorful, study finds.': '',
+    'News : follow the tear-jerking, riches-to-rags story about a local cookie manufacturer who decided to give it all up!': '',
+    'News : foreign politician involved in cookie-smuggling scandal.': '',
+    'News : fossil records show cookie-based organisms prevalent during Cambrian explosion, scientists say.': '',
+    'News : get your new charms and curses at the yearly National Spellcrafting Fair! Exclusive prices on runes and spellbooks.': '',
+    'News : heavy dissent rages between the schools of crab magic and nature magic!': '',
+    'News : heavy dissent rages between the schools of dolphin magic and space magic!': '',
+    'News : heavy dissent rages between the schools of earth magic and bird magic!': '',
+    'News : heavy dissent rages between the schools of ice magic and battle magic!': '',
+    'News : heavy dissent rages between the schools of lightning magic and fire magic!': '',
+    'News : heavy dissent rages between the schools of nature magic and punch magic!': '',
+    'News : heavy dissent rages between the schools of nature magic and space magic!': '',
+    'News : heavy dissent rages between the schools of song magic and fart magic!': '',
+    'News : heavy dissent rages between the schools of water magic and air magic!': '',
+    'News : hundreds of tons of cookies dumped into starving country from airplanes; thousands dead, nation grateful.': '',
+    'News : irate radio host rambles about pixelated icons. "None of the cookies are aligned! Can\'t anyone else see it? I feel like I\'m taking crazy pills!"': '',
+    'News : is our media controlled by the cookie industry? This could very well be the case, says crackpot conspiracy theorist.': '',
+    'News : just how extensive is the cookie pantheon? Theologians speculate about possible god of humpback whales.': '',
+    'News : just how extensive is the cookie pantheon? Theologians speculate about possible god of kittens.': '',
+    'News : just how extensive is the cookie pantheon? Theologians speculate about possible god of memes.': '',
+    'News : just how extensive is the cookie pantheon? Theologians speculate about possible god of web browsers.': '',
+    'News : just how extensive is the cookie pantheon? Theologians speculate about possible goddess of stand-up comedy.': '',
+    'News : just how extensive is the cookie pantheon? Theologians speculate about possible goddess of the letter "P".': '',
+    'News : just how extensive is the cookie pantheon? Theologians speculate about possible goddess of velvet worms.': '',
+    'News : local casino ruined as all gamblers somehow hit a week-long winning streak! "We might still be okay", says owner before being hit by lightning 47 times.': '',
+    'News : local guru claims "there\'s a little bit of ourselves in everyone", under investigation for alleged cannibalism.': '',
+    'News : local man "done with Cookie Clicker", finds the constant self-references "grating and on-the-nose".': '',
+    'News : local man goes on journey of introspection, finds cookies : "I honestly don\'t know what I was expecting."': '',
+    'News : local man sails around the world to find himself - right where he left it.': '',
+    'News : local woman goes on journey of introspection, finds cookies : "I honestly don\'t know what I was expecting."': '',
+    'News : major city being renamed Fantastic Bakerville after world-famous cookie manufacturer.': '',
+    'News : major sugar-smuggling ring dismantled by authorities; 18 tons of sugar lumps seized, 14 suspects apprehended.': '',
+    'News : major sugar-smuggling ring dismantled by authorities; 27 tons of sugar lumps seized, 20 suspects apprehended.': '',
+    'News : man dies in cookie-eating contest; "a less-than-impressive performance", says judge.': '',
+    'News : man found allergic to cookies; "what a weirdo", says family.': '',
+    'News : man found dead after ingesting cookie; investigators favor "mafia snitch" hypothesis.': '',
+    'News : man robs bank, buys cookies.': '',
+    'News : man wakes up from coma, asks for cookies.': '',
+    'News : man wakes up from coma, babbles incoherently about some supposed "non-cookie food" we used to eat.': '',
+    'News : man wakes up from coma, cites cookies as main motivator.': '',
+    'News : man wakes up from coma, regrets it instantly.': '',
+    'News : man wakes up from coma, wonders "why everything is cookies now".': '',
+    'News : massive chocolate planet found with 99.8% certified pure dark chocolate core!': '',
+    'News : million-to-one event sees gritty movie reboot turning out better than the original! "We have no idea how this happened", say movie execs.': '',
+    'News : minor cookie-related incident turns whole town to ashes; neighboring cities asked to chip in for reconstruction.': '',
+    'News : movie cancelled from lack of actors; "everybody\'s at home eating cookies", laments director.': '',
+    'News : mysterious illegal cookies seized; "tastes terrible", says police.': '',
+    'News : nation cheers as legislators finally outlaw broccoli!': '',
+    'News : nation cheers as legislators finally outlaw clickbait!': '',
+    'News : nation cheers as legislators finally outlaw dabbing!': '',
+    'News : nation cheers as legislators finally outlaw lack of cheerfulness!': '',
+    'News : nation cheers as legislators finally outlaw pineapple on pizza!': '',
+    'News : nation worried as more and more unsettling creatures emerge from dimensional portals!': '',
+    'News : national gold reserves dwindle as more and more of the precious mineral is turned to cookies!': '',
+    'News : neighboring nation somehow elects president with sensible policies in freak accident of random chance!': '',
+    'News : new chocolate planet found, becomes target of cookie-trading spaceships!': '',
+    'News : new cookie-based religion sweeps the nation.': '',
+    'News : new cookie-producing prisms linked to outbreak of rainbow-related viral videos.': '',
+    'News : new disease to be named after Fantastic Baker, the world-famous cookie manufacturer.': '',
+    'News : new law to be named after Fantastic Baker, the world-famous cookie manufacturer.': '',
+    'News : new popularity survey says Fantastic Baker\'s the word when it comes to cookies.': '',
+    'News : new species of crayfish to be named after Fantastic Baker, the world-famous cookie manufacturer.': '',
+    'News : new species of goblins discovered in distant country; "yup, tastes like cookies", says biologist.': '',
+    'News : new species of mole rats discovered in distant country; "yup, tastes like cookies", says biologist.': '',
+    'News : new species of nematodes discovered in distant country; "yup, tastes like cookies", says biologist.': '',
+    'News : new species of puffins discovered in distant country; "yup, tastes like cookies", says biologist.': '',
+    'News : new study suggests cookies neither speed up nor slow down aging, but instead "take you in a different direction".': '',
+    'News : news writer finds herself daydreaming about new career. Or at least a raise.': '',
+    'News : nursing home to be named after Fantastic Baker, the world-famous cookie manufacturer.': '',
+    'News : obesity epidemic strikes nation; experts blame aliens.': '',
+    'News : obesity epidemic strikes nation; experts blame comic-books.': '',
+    'News : obesity epidemic strikes nation; experts blame schools.': '',
+    'News : obesity epidemic strikes nation; experts blame that darn rap music.': '',
+    'News : overgrown cookies found in fishing nets, raise questions about hormone baking.': '',
+    'News : people all over the internet still scratching their heads over nonsensical reference : "Okay, but why an egg?"': '',
+    'News : person typing these wouldn\'t mind someone else breaking the news to THEM, for a change.': '',
+    'News : pet axolotls, dangerous fad or juicy new market?': '',
+    'News : pet crayfish, dangerous fad or juicy new market?': '',
+    'News : pet frogs, dangerous fad or juicy new market?': '',
+    'News : pet monkfish, dangerous fad or juicy new market?': '',
+    'News : pet sea squirts, dangerous fad or juicy new market?': '',
+    'News : pet slugs, dangerous fad or juicy new market?': '',
+    'News : polls find idea of cookies made of cookies "acceptable" - "at least we finally know what\'s in them", says interviewed citizen.': '',
+    'News : pro-diabetes movement protests against sugar-shaming. "I\'ve eaten nothing but sugar lumps for the past 12 years and I\'m feeling great!", says woman with friable skin.': '',
+    'News : pun in headline infuriates town, causes riot. 21 wounded, 5 dead; mayor still missing.': '',
+    'News : rare black sugar lump that captivated millions in unprecedented auction revealed to be common toxic fungus.': '',
+    'News : researchers conclude that what the cookie industry needs, first and foremost, is "more magnets".': '',
+    'News : scientist predicts imminent cookie-related "end of the world"; becomes joke among peers.': '',
+    'News : scientists establish that the deal with airline food is, in fact, a critical lack of cookies.': '',
+    'News : scientists warn against systematically turning light into matter - "One day, we\'ll end up with all matter and no light!"': '',
+    'News : seasons are all out of whack! "We need to get some whack back into them seasons", says local resident.': '',
+    'News : silver found to also be transmutable into white chocolate!': '',
+    'News : space tourism booming as distant planets attract more bored millionaires!': '',
+    'News : strange statistical anomalies continue as weather forecast proves accurate an unprecedented 3 days in a row!': '',
+    'News : street to be named after Fantastic Baker, the world-famous cookie manufacturer.': '',
+    'News : theists of the world discover new cookie religion - "Oh boy, guess we were wrong all along!"': '',
+    'News : time machines involved in history-rewriting scandal! Or are they?': '',
+    'News : time machines used in unlawful time tourism!': '',
+    'News : tiny felines show sudden and amazing proficiency with fuzzy mathematics and pawlinomials, baffling scientists and pet store owners.': '',
+    'News : tourism to cookieverse popular with bored teenagers! Casualty rate as high as 73%!': '',
+    'News : unsightly lumps found on humpback whales near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on newts near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on nurse sharks near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on paramecia near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on penguins near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on polar bears near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on sea squirts near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on slugs near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : unsightly lumps found on velvet worms near cookie facility; "they\'ve pretty much always looked like that", say biologists.': '',
+    'News : various historical figures inexplicably replaced with talking lumps of dough!': '',
+    'News : viral video "Too Many Cookies" could be "a grim commentary on the impending crisis our world is about to face", says famous economist.': '',
+    'News : what do golden cookies taste like? Study reveals a flavor "somewhere between spearmint and liquorice".': '',
+    'News : what do wrath cookies taste like? Study reveals a flavor "somewhere between blood sausage and seawater".': '',
+    'News : what makes cookies taste so right? "Probably all the [*****] they put in them", says anonymous tipper.': '',
+    'News : whole town seemingly swallowed by antimatter-induced black hole; more reliable sources affirm town "never really existed"!': '',
+    'News : woman wakes up from coma, asks for cookies.': '',
+    'News : woman wakes up from coma, wonders "why everything is cookies now".': '',
     '': '',
     '': '',
     '': '',
@@ -762,62 +1008,60 @@ var cnItems = {
 //2.采集新词
 //20190320@JAR
 
-var cnItem = function() {
+var cnItem = function () {
 
     //传参是否非空字串
     if (!arguments[0]) return;
 
     //检验传参是否对象
-    let text = arguments[0], s = '';
-    if (typeof(text) != "string")
+    let text = arguments[0],
+        s = '';
+    if (typeof (text) != "string")
         return text;
     else
-        s = arguments[0].charCodeAt()
-    ;
+        s = arguments[0].charCodeAt();
 
     //检验传参是否英文
-    if(
-        s < 65 || (s > 90 && s <97) || (s > 122)
-        
+    if (
+        s < 65 || (s > 90 && s < 97) || (s > 122)
+
     ) return text;
     //检验字典是否可存
-    if(!cnItems._OTHER_) cnItems._OTHER_=[];
+    if (!cnItems._OTHER_) cnItems._OTHER_ = [];
 
     //遍历尝试匹配
-    for ( let i in cnItems ) {
+    for (let i in cnItems) {
         //字典已有词汇或译文、且译文不为空，则返回译文
-        if(
-            text == i || text == cnItems[i]
-            && cnItems[i] != ''
+        if (
+            text == i || text == cnItems[i] &&
+            cnItems[i] != ''
         )
-        return cnItems[i];
+            return cnItems[i];
     }
 
     //遍历生词表是否收录
     for (
-        let i = 0;
-        i < cnItems._OTHER_.length;
-        i++
+        let i = 0; i < cnItems._OTHER_.length; i++
     ) {
         //已收录则直接返回
         if (text == cnItems._OTHER_[i])
-        return text;
+            return text;
     }
 
     //未收录则保存
     cnItems._OTHER_.push(text);
     cnItems._OTHER_.sort(
-      function(a,b){
-        return a.localeCompare(b)
-      }
+        function (a, b) {
+            return a.localeCompare(b)
+        }
     );
-        
-/*
-    //开启生词打印
-    //console.log(
-        '有需要汉化的英文：', text
-    );
-*/
+
+    /*
+        //开启生词打印
+        //console.log(
+            '有需要汉化的英文：', text
+        );
+    */
 
     //返回生词字串
     return text;

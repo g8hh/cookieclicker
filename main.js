@@ -2768,7 +2768,7 @@ Game.Launch=function()
 			var textStr='';
 			for (var i=0;i<text.length;i+=2)
 			{
-				textStr+='<div style="opacity:0.9;z-index:1000;padding:0px 2px;background:'+text[i+1]+';color:#000;font-size:10px;position:absolute;top:'+(i/2*10)+'px;left:0px;">'+text[i]+'</div>';
+				textStr+='<div style="opacity:0.9;z-index:1000;padding:0px 2px;background:'+text[i+1]+';color:#000;font-size:10px;position:absolute;top:'+(i/2*10)+'px;left:0px;">'+cnItem(text[i])+'</div>';
 			}
 			
 			return '<div'+
@@ -2887,7 +2887,7 @@ Game.Launch=function()
 				if (me.unlockAt.require)
 				{
 					var it=Game.Upgrades[me.unlockAt.require];
-					desc='<div style="font-size:80%;text-align:center;">From <div class="icon" style="vertical-align:middle;display:inline-block;'+(it.icon[2]?'background-image:url('+it.icon[2]+');':'')+'background-position:'+(-it.icon[0]*48)+'px '+(-it.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> '+it.name+'</div><div class="line"></div>'+desc;
+					desc='<div style="font-size:80%;text-align:center;">From <div class="icon" style="vertical-align:middle;display:inline-block;'+(it.icon[2]?'background-image:url('+it.icon[2]+');':'')+'background-position:'+(-it.icon[0]*48)+'px '+(-it.icon[1]*48)+'px;transform:scale(0.5);margin:-16px;"></div> '+cnItem(it.name)+'</div><div class="line"></div>'+desc;
 				}
 				/*else if (me.unlockAt.season)
 				{
