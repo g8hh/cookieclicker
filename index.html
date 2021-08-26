@@ -1,19 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script src="cdn-cgi/apps/head/U1ynLJi7XlL2v3oJJnySPA4n-Q4.js"></script>
+<meta charset="utf-8" />
 <!--
-   <script type="text/javascript">
-    window.cookieconsent_options = {"message":"Unsurprisingly, this website uses cookies for ads and traffic analysis.","dismiss":"Got it!","learnMore":"Learn more","link":"http://orteil.dashnet.org/cookieconsentpolicy.html","target":"_blank","theme":"http://orteil.dashnet.org/cookieconsent.css","domain":"dashnet.org"};
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Unsurprisingly, this website uses cookies for ads and traffic analysis.","dismiss":"Got it!","learnMore":"Learn more","link":"//orteil.dashnet.org/cookieconsentpolicy.html","target":"_blank","theme":"//orteil.dashnet.org/cookieconsent.css","domain":"dashnet.org"};
 </script>
 -->
 
-<script type="text/javascript" src="cookieconsent.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 
 <title>无尽的饼干 - Cookie Clicker</title>
 <!--
-Code and graphics copyright Orteil, 2013-2019
+Code and graphics copyright Orteil, 2013-2020
 Feel free to alter this code to your liking, but please do not re-host it, do not profit from it and do not present it as your own.
 -->
 
@@ -23,10 +22,18 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 <!--<link href='https://fonts.googleapis.com/css?family=Merriweather:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
 <!--<script src="showads.js"></script>-->
 <!-- this just detects adblockers so we can adjust the layout and play nice -->
-<script src="zh.js"></script>
 <script src="base64.js"></script>
-<script src="main.js?v=2.055"></script>
-<link href="style.css?v=2.047" rel="stylesheet" type="text/css">
+<script src="main.js?v=2.089"></script>
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8491708950677704",
+          enable_page_level_ads: true
+     });
+</script>
+-->
+<link href="style.css?v=2.053" rel="stylesheet" type="text/css">
 <!--[if IE]>
 <style type="text/css">
 	#ifIE9{display:block;}
@@ -34,30 +41,47 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 <![endif]-->
 
 <!--[if lt IE9]><script src="excanvas.compiled.js"></script><![endif]-->
-
+<!-- Facebook Pixel Code -->
+<!--
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '357399801355203');
+	fbq('track', 'PageView');
+	</script>
+-->
+<!--
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=357399801355203&ev=PageView&noscript=1"></noscript>
+-->
+<!-- end code -->
 </head>
 <body>
-
+<script src="chs.js?07071443"></script>
+<script src="https://cdn.jsdelivr.net/gh/g8hh/g8hh.github.io/zh/core.js"></script>
 <div id="wrapper">
 
 	<div id="topBar">
-		<div><b>无尽的饼干</b>&trade; &copy; <a href="http://orteil.dashnet.org" target="_blank" id="topbarOrteil">Orteil</a>, 2019 - <a href="http://dashnet.org" target="_blank" id="topbarDashnet">DashNet</a></div>
-		<div><a href="http://twitter.com/orteil42" target="_blank" id="topbarTwitter">twitter</a></div>
-		<div><a href="http://orteil42.tumblr.com" target="_blank" id="topbarTumblr">tumblr</a></div>
-		<!--<div><a href="http://forum.dashnet.org" target="_blank">Official forum</a></div>-->
+		<div><b>Cookie Clicker</b>&trade; &copy; <a href="//orteil.dashnet.org" target="_blank" id="topbarOrteil">Orteil</a>, 2020 - <a href="//dashnet.org" target="_blank" id="topbarDashnet">DashNet</a></div>
+		<div><a href="https://twitter.com/orteil42" target="_blank" id="topbarTwitter">twitter</a></div>
+		<div><a href="https://orteil42.tumblr.com" target="_blank" id="topbarTumblr">tumblr</a></div>
 		<div style="position:relative;"><div style="width:22px;height:32px;background:url(img/discord.png);position:absolute;left:0px;top:0px;pointer-events:none;"></div><a href="https://discordapp.com/invite/cookie" target="_blank" style="padding-left:16px;" id="topbarDiscord">Discord</a></div>
 		<div style="position:relative;"><div style="width:25px;height:32px;background:url(img/weeHoodie.png);position:absolute;left:-2px;top:0px;pointer-events:none;"></div><a class="blueLink" href="http://www.redbubble.com/people/dashnet" target="_blank" style="padding-left:12px;" id="topbarMerch">Merch!</a></div>
 		<div style="position:relative;"><div style="width:22px;height:32px;background:url(img/patreon.png);position:absolute;left:0px;top:0px;pointer-events:none;"></div><a class="orangeLink" href="https://www.patreon.com/dashnet" target="_blank" style="padding-left:16px;" id="topbarPatreon">Patreon</a></div>
 		<div style="position:relative;display:none;font-weight:bold;" id="heralds"><div style="position:absolute;top:-4px;width:31px;height:39px;background:url(img/heraldFlag.png);left:50%;margin-left:-15px;pointer-events:none;"></div><div id="heraldsAmount" style="position:relative;z-index:10;text-shadow:0px 1px 0px #000,0px 0px 6px #ff00e4;color:#fff;">-</div></div>
-		<div><a href="http://orteil.dashnet.org/randomgen/" target="_blank" id="topbarRandomgen">RandomGen</a></div>
-		<div><a href="http://orteil.dashnet.org/igm/" target="_blank" id="topbarIGM">Idle Game Maker</a></div>
+		<div><a class="lightblueLink" style="font-weight:bold;" href="https://play.google.com/store/apps/details?id=org.dashnet.cookieclicker" target="_blank" id="topbarMobileCC">Cookie Clicker for Android</a></div>
+		<div><a href="//orteil.dashnet.org/randomgen/" target="_blank" id="topbarRandomgen">RandomGen</a></div>
+		<div><a href="//orteil.dashnet.org/igm/" target="_blank" id="topbarIGM">Idle Game Maker</a></div>
 		<div id="links" class="hoverer">
-			其它版本
+			Other versions
 			<div class="hoverable">
 			<a href="../" target="_blank" id="linkVersionLive">Live version</a>
 			<a href="beta" target="_blank" id="linkVersionBeta">Try the beta!</a>
-			<a href="http://orteil.dashnet.org/cookieclicker/v10466" target="_blank" id="linkVersionOld">v. 1.0466</a>
-			<a href="http://orteil.dashnet.org/experiments/cookie/" target="_blank">Classic</a>
+			<a href="//orteil.dashnet.org/cookieclicker/v10466" target="_blank" id="linkVersionOld">v. 1.0466</a>
+			<a href="//orteil.dashnet.org/experiments/cookie/" target="_blank">Classic</a>
 			</div>
 		</div>
 	</div>
@@ -67,11 +91,11 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 			<div id="loader">
 				<div class="spinnyBig"></div>
 				<div class="spinnySmall"></div>
-				<div id="loading" class="title">加载中...</div>
-				<div id="failedToLoad" class="title">这比预计的时间要长。<br>
-				<div style="font-size:65%;line-height:120%;">连接缓慢?如果没有，请确保你的javascript是启用的，然后刷新。<br>
-				如果问题持续存在，这可能会出现在我们这边-等待几分钟，然后按ctrl +f5!</div></div>
-				<div id="ifIE9" class="title" style="font-size:100%;line-height:120%;">您的浏览器可能还不足以运行无尽的饼干。<br>您可能需要更新，或者切换到更现代的浏览器，如Chrome或Firefox。</div>
+				<div id="loading" class="title">Loading...</div>
+				<div id="failedToLoad" class="title">This is taking longer than expected.<br>
+				<div style="font-size:65%;line-height:120%;">Slow connection? If not, please make sure your javascript is enabled, then refresh.<br>
+				If problems persist, this might be on our side - wait a few minutes, then hit ctrl+f5!</div></div>
+				<div id="ifIE9" class="title" style="font-size:100%;line-height:120%;">Your browser may not be recent enough to run Cookie Clicker.<br>You might want to update, or switch to a more modern browser such as Chrome or Firefox.</div>
 				<!--<div class="title">Oops, looks like we've got a problem.</div>
 				<div>Please bear with us while we fix it.<br>Your save is safe, don't worry!</div>-->
 			</div>
@@ -119,16 +143,16 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 
 		<div id="sectionMiddle" class="inset">
 			<div id="comments" class="inset title">
-				<div id="prefsButton" class="button">选项</div>
-				<div id="statsButton" class="button">统计</div>
-				<div id="logButton" class="button"><div id="checkForUpdate">新版本!</div>信息</div>
-				<div id="legacyButton" class="button">遗产<div id="ascendMeterContainer" class="smallFramed meterContainer"><div id="ascendMeter" class="meter filling"></div></div><div class="roundedPanel" id="ascendNumber"></div><div id="ascendTooltip" class="framed"></div></div>
+				<div id="prefsButton" class="button">Options</div>
+				<div id="statsButton" class="button">Stats</div>
+				<div id="logButton" class="button"><div id="checkForUpdate">New update!</div>Info</div>
+				<div id="legacyButton" class="button">Legacy<div id="ascendMeterContainer" class="smallFramed meterContainer"><div id="ascendMeter" class="meter filling"></div></div><div class="roundedPanel" id="ascendNumber"></div><div id="ascendTooltip" class="framed"></div></div>
 				<div id="commentsTextBelow" class="commentsText"></div>
 				<div id="commentsText" class="commentsText"></div>
 				<div class="separatorBottom"></div>
 			</div>
 			<div id="centerArea">
-				<div id="buildingsTitle" class="inset title zoneTitle">建筑</div>
+				<div id="buildingsTitle" class="inset title zoneTitle">Buildings</div>
 				<div id="buildingsMaster"></div>
 				<div id="rows"></div>
 				<div id="menu"></div>
@@ -147,12 +171,12 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 		</div>
 
 		<div id="sectionRight" class="inset">
-<!--
 			<div class="ifNoAds" style="width:300px;text-align:center;padding:8px 0px;background:rgba(0,0,0,0.95);font-size:10px;opacity:0.5;text-shadow:0px 0px 2px #000,0px 1px 0px #000;text-align:center;">
 				Cookie Clicker is mainly supported by ads.<br>Consider unblocking our site or checking out our <a href="https://www.patreon.com/dashnet" target="_blank">Patreon</a>!
 			</div>
 			<div id="smallSupport" style="width:300px;text-align:center;padding-bottom:40px;background:rgba(0,0,0,0.5);position:relative;z-index:100;">
 				
+<!--
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				 Cookie Clicker Header Responsive 
 				<ins class="adsbygoogle"
@@ -164,12 +188,12 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
-				
-				<div class="supportComment">^ Sponsored link ^</div>
-			</div>
 -->
+				
+<!--				<div class="supportComment">^ Sponsored link ^</div>-->
+			</div>
 			<div id="store">
-				<div id="storeTitle" class="inset title zoneTitle">商店</div>
+				<div id="storeTitle" class="inset title zoneTitle">Store</div>
 				<div id="toggleUpgrades" class="storeSection upgradeBox"></div>
 				<div id="techUpgrades" class="storeSection upgradeBox"></div>
 				<div id="vaultUpgrades" class="storeSection upgradeBox"></div>
@@ -177,14 +201,14 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 				<div id="products" class="storeSection"></div>
 			</div>
 			
-<!--			<div id="detectAds" class="adBanner" style="background:transparent;width:1px;height:1px;"></div>-->
-<!--
+			<div id="detectAds" class="adBanner" style="background:transparent;width:1px;height:1px;"></div>
 			<div id="support" style="margin-top:130px;">
-				<div class="supportComment">v Sponsored links v</div>
+<!--				<div class="supportComment">v Sponsored links v</div>-->
 				<div style="position:relative;">
 				
 					<div style="position:relative;z-index:100;min-height:250px;">
 					
+<!--
 						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 						 Cookie Clicker Responsive 
 						<ins class="adsbygoogle"
@@ -196,24 +220,27 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 						<script>
 						(adsbygoogle = window.adsbygoogle || []).push({});
 						</script>
+-->
 						
 						<div style="height:16px;"></div>
 						
+						<!-- AdventureQuest Worlds banner -->
+<!--
 						<a class="ad" id="aqad" href="http://www.aq.com/landing/cookie/?utm_campaign=AQW_CookieClicker&utm_source=CookieClicker" target="_blank" title="AdventureQuest Worlds" style="background:url(img/aqworldsbanner.jpg) no-repeat;width:300px;height:64px;display:block;position:relative;margin:0px auto;">
 						</a>
+-->
 						
 					</div>
 					
 				</div>
 			</div>
--->
 		</div>
 		
 		<div id="focusButtons">
-			<div id="focusLeft" class="title">饼干</div>
-			<div id="focusMiddle" class="title" style="font-size:80%;padding-top:18px;padding-bottom:14px;">建筑</div>
-			<div id="focusRight" class="title">商店</div>
-			<div id="focusMenu" class="title">菜单</div>
+			<div id="focusLeft" class="title">Cookie</div>
+			<div id="focusMiddle" class="title" style="font-size:80%;padding-top:18px;padding-bottom:14px;">Buildings</div>
+			<div id="focusRight" class="title">Store</div>
+			<div id="focusMenu" class="title">Menu</div>
 		</div>
 		<div id="compactOverlay" class="title">
 			<div id="compactCommentsText" class="commentsText"></div>
@@ -227,13 +254,13 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 
 </div>
 <!--客服 开始-->
-<script src="//cnh5.gitee.io/game/js/jquery.min.js"></script>
-<link rel="stylesheet" href="//cnh5.gitee.io/game/css/kf.css" type="text/css" media="screen" charset="utf-8">
-<script src="//cnh5.gitee.io/game/js/kf.js"></script>
-    <style>
-        .main-im,.main-im .open-im{bottom: auto;top: 10px; right:20px; height: 30px;z-index: 999}
-    </style>
-
+<script src="https://cdn.jsdelivr.net/gh/g8hh/g8hh.github.io/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/g8hh/g8hh.github.io/static/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="https://cdn.jsdelivr.net/gh/g8hh/g8hh.github.io/static/js/kf.js"></script>
 <!-- 客服 结束 -->
+<!--站长统计-->
+    <div style="display: none">
+       <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1280006740&web_id=1280006740"></script>
+    </div>
 </body>
 </html>

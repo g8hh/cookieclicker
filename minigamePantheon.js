@@ -11,33 +11,33 @@ M.launch=function()
 				
 		M.gods={
 			'asceticism':{
-				name:'霍罗波，禁欲之魂',
+				name:'Holobore, Spirit of Asceticism',
 				icon:[21,18],
-				desc1:'<span class="green">+15% 基础饼干秒产量。</span>',
-				desc2:'<span class="green">+10% 基础饼干秒产量。</span>',
-				desc3:'<span class="green">+5% 基础饼干秒产量。</span>',
-				descAfter:'<span class="red">如果一个黄金饼干被点击，这个灵魂就会从槽上下来，所有的崇拜互换次数都会被用完。</span>',
-				quote:'不朽的一生专注于内在自我，远离物质财富的干扰。',
+				desc1:'<span class="green">+15% base CpS.</span>',
+				desc2:'<span class="green">+10% base CpS.</span>',
+				desc3:'<span class="green">+5% base CpS.</span>',
+				descAfter:'<span class="red">If a golden cookie is clicked, this spirit is unslotted and all worship swaps will be used up.</span>',
+				quote:'An immortal life spent focusing on the inner self, away from the distractions of material wealth.',
 			},
 			'decadence':{
-				name:'沃米萨斯，堕落之魂',
+				name:'Vomitrax, Spirit of Decadence',
 				icon:[22,18],
-				desc1:'<span class="green">金色和愤怒饼干效果持续时间 +7%,</span> <span class="red">但是建筑的生产效率 -7% 饼干每秒产量。</span>',
-				desc2:'<span class="green">金色和愤怒饼干效果持续时间 +5%,</span> <span class="red">但是建筑的生产效率 -5% 饼干每秒产量。</span>',
-				desc3:'<span class="green">金色和愤怒饼干效果持续时间 +2%,</span> <span class="red">但是建筑的生产效率 -2% 饼干每秒产量。</span>',
-				quote:'这种卑鄙的灵魂沉溺于贪得无厌，对稳定工作的价值不屑一顾。',
+				desc1:'<span class="green">Golden and wrath cookie effect duration +7%,</span> <span class="red">but buildings grant -7% CpS.</span>',
+				desc2:'<span class="green">Golden and wrath cookie effect duration +5%,</span> <span class="red">but buildings grant -5% CpS.</span>',
+				desc3:'<span class="green">Golden and wrath cookie effect duration +2%,</span> <span class="red">but buildings grant -2% CpS.</span>',
+				quote:'This sleazy spirit revels in the lust for quick easy gain and contempt for the value of steady work.',
 			},
 			'ruin':{
-				name:'哥萨莫克，毁灭之魂',
+				name:'Godzamok, Spirit of Ruin',
 				icon:[23,18],
-				descBefore:'<span class="green">出售建筑物时触发一个增益效果，效果取决于出售的建筑数量。</span>',
-				desc1:'<span class="green">在出售建筑后的10秒钟的时间里，出售的每一幢建筑都能增加1%的点击量。</span>',
-				desc2:'<span class="green">在出售建筑后的10秒钟的时间里，出售的每一幢建筑都能增加0.5%的点击量。</span>',
-				desc3:'<span class="green">在出售建筑后的10秒钟的时间里，出售的每一幢建筑都能增加0.25%的点击量。</span>',
-				quote:'自然灾害的化身。一种难以理解的动机驱使着这种灵魂所造成的破坏。',
+				descBefore:'<span class="green">Selling buildings triggers a buff boosted by how many buildings were sold.</span>',
+				desc1:'<span class="green">Buff boosts clicks by +1% for every building sold for 10 seconds.</span>',
+				desc2:'<span class="green">Buff boosts clicks by +0.5% for every building sold for 10 seconds.</span>',
+				desc3:'<span class="green">Buff boosts clicks by +0.25% for every building sold for 10 seconds.</span>',
+				quote:'The embodiment of natural disasters. An impenetrable motive drives the devastation caused by this spirit.',
 			},
 			'ages':{
-				name:'赛克琉斯, 时光之魂',
+				name:'Cyclius, Spirit of Ages',
 				icon:[24,18],
 				activeDescFunc:function()
 				{
@@ -46,77 +46,77 @@ M.launch=function()
 					if (godLvl==1) mult*=0.15*Math.sin((Date.now()/1000/(60*60*3))*Math.PI*2);
 					else if (godLvl==2) mult*=0.15*Math.sin((Date.now()/1000/(60*60*12))*Math.PI*2);
 					else if (godLvl==3) mult*=0.15*Math.sin((Date.now()/1000/(60*60*24))*Math.PI*2);
-					return '当前奖励 : '+(mult<0?'-':'+')+Beautify(Math.abs(mult)*100,2)+'%.';
+					return 'Current bonus : '+(mult<0?'-':'+')+Beautify(Math.abs(mult)*100,2)+'%.';
 				},
-				descBefore:'随着时间的推移，饼干每秒产量的奖励在<span class="green">+15%</span>到<span class="red">-15%</span>之间波动。',
-				desc1:'效果周期为 3 小时。',
-				desc2:'效果周期为 12 小时。',
-				desc3:'效果周期为 24 小时。',
-				quote:'这个灵魂知道你将要做的每一件事，并且喜欢给出严厉的评价。',
+				descBefore:'CpS bonus fluctuating between <span class="green">+15%</span> and <span class="red">-15%</span> over time.',
+				desc1:'Effect cycles over 3 hours.',
+				desc2:'Effect cycles over 12 hours.',
+				desc3:'Effect cycles over 24 hours.',
+				quote:'This spirit knows about everything you\'ll ever do, and enjoys dispensing a harsh judgement.',
 			},
 			'seasons':{
-				name:'塞雷布拉克，节日之魂',
+				name:'Selebrak, Spirit of Festivities',
 				icon:[25,18],
-				descBefore:'<span class="green">一些节日效果得到了加强。</span>',
-				desc1:'<span class="green">大幅提升。</span> <span class="red">切换季节的价格是 100%。</span>',
-				desc2:'<span class="green">中等提升。</span> <span class="red">切换季节的价格是 50%。</span>',
-				desc3:'<span class="green">小幅提升。</span> <span class="red">切换季节的价格是 25%。</span>',
-				quote:'这是快乐的假期和后悔星期一早晨的灵魂。',
+				descBefore:'<span class="green">Some seasonal effects are boosted.</span>',
+				desc1:'<span class="green">Large boost.</span> <span class="red">Switching seasons is 100% pricier.</span>',
+				desc2:'<span class="green">Medium boost.</span> <span class="red">Switching seasons is 50% pricier.</span>',
+				desc3:'<span class="green">Small boost.</span> <span class="red">Switching seasons is 25% pricier.</span>',
+				quote:'This is the spirit of merry getaways and regretful Monday mornings.',
 			},
 			'creation':{
-				name:'多杰斯，创造之魂',
+				name:'Dotjeiess, Spirit of Creation',
 				icon:[26,18],
-				desc1:'<span class="green">建筑成本降低 7% ,</span> <span class="red">但是天堂芯片的效果降低 30% 。</span>',
-				desc2:'<span class="green">建筑成本降低 5% ,</span> <span class="red">但是天堂芯片的效果降低 20% 。</span>',
-				desc3:'<span class="green">建筑成本降低 2% ,</span> <span class="red">但是天堂芯片的效果降低 10% 。</span>',
-				quote:'在很久以前，所有存在和永远存在的事物都是由这种灵魂神秘的卷须书写的。',
+				desc1:'<span class="green">Buildings are 7% cheaper,</span> <span class="red">but heavenly chips have 30% less effect.</span>',
+				desc2:'<span class="green">Buildings are 5% cheaper,</span> <span class="red">but heavenly chips have 20% less effect.</span>',
+				desc3:'<span class="green">Buildings are 2% cheaper,</span> <span class="red">but heavenly chips have 10% less effect.</span>',
+				quote:'All things that be and ever will be were scripted long ago by this spirit\'s inscrutable tendrils.',
 			},
 			'labor':{
-				name:'穆里达尔，劳动之魂',
+				name:'Muridal, Spirit of Labor',
 				icon:[27,18],
-				desc1:'<span class="green">点击效果增加 15% ,</span> <span class="red">但是建筑产量减少 3% 。</span>',
-				desc2:'<span class="green">点击效果增加 10% ,</span> <span class="red">但是建筑产量减少 2% 。</span>',
-				desc3:'<span class="green">点击效果增加 5% ,</span> <span class="red">但是建筑产量减少 1% 。</span>',
-				quote:'经过一天的辛勤工作，这种灵魂享受着美味的奶酪。',
+				desc1:'<span class="green">Clicks are 15% more powerful,</span> <span class="red">but buildings produce 3% less.</span>',
+				desc2:'<span class="green">Clicks are 10% more powerful,</span> <span class="red">but buildings produce 2% less.</span>',
+				desc3:'<span class="green">Clicks are 5% more powerful,</span> <span class="red">but buildings produce 1% less.</span>',
+				quote:'This spirit enjoys a good cheese after a day of hard work.',
 			},
 			'industry':{
-				name:'杰瑞米，工业之魂',
+				name:'Jeremy, Spirit of Industry',
 				icon:[28,18],
-				desc1:'<span class="green">建筑多生产 10% 的饼干,</span> <span class="red">但是黄金饼干和愤怒饼干却少了 10% 。</span>',
-				desc2:'<span class="green">建筑多生产 6% 的饼干,</span> <span class="red">但是黄金饼干和愤怒饼干却少了 6% 。</span>',
-				desc3:'<span class="green">建筑多生产 3% 的饼干,</span> <span class="red">但是黄金饼干和愤怒饼干却少了 3% 。</span>',
-				quote:'虽然这种灵魂有很多遗憾，但帮助你们通过不断的工业化来统治世界并不是其中之一。',
+				desc1:'<span class="green">Buildings produce 10% more cookies,</span> <span class="red">but golden and wrath cookies appear 10% less.</span>',
+				desc2:'<span class="green">Buildings produce 6% more cookies,</span> <span class="red">but golden and wrath cookies appear 6% less.</span>',
+				desc3:'<span class="green">Buildings produce 3% more cookies,</span> <span class="red">but golden and wrath cookies appear 3% less.</span>',
+				quote:'While this spirit has many regrets, helping you rule the world through constant industrialization is not one of them.',
 			},
 			'mother':{
-				name:'莫卡西姆，母亲之魂',
+				name:'Mokalsium, Mother Spirit',
 				icon:[29,18],
-				desc1:'<span class="green">牛奶效果增加 10%,</span> <span class="red">但是黄金饼干和愤怒饼干却少了15%</span>',
-				desc2:'<span class="green">牛奶效果增加 5%,</span> <span class="red">但是黄金饼干和愤怒饼干却少了10%</span>',
-				desc3:'<span class="green">牛奶效果增加 3%,</span> <span class="red">但是黄金饼干和愤怒饼干却少了5%</span>',
-				quote:'一种关怀的灵魂，据说是无限地包容着自己。',
+				desc1:'<span class="green">Milk is 10% more powerful,</span> <span class="red">but golden and wrath cookies appear 15% less.</span>',
+				desc2:'<span class="green">Milk is 5% more powerful,</span> <span class="red">but golden and wrath cookies appear 10% less.</span>',
+				desc3:'<span class="green">Milk is 3% more powerful,</span> <span class="red">but golden and wrath cookies appear 5% less.</span>',
+				quote:'A caring spirit said to contain itself, inwards infinitely.',
 			},
 			'scorn':{
-				name:'斯克鲁伊亚，轻蔑之魂',
+				name:'Skruuia, Spirit of Scorn',
 				icon:[21,19],
-				descBefore:'<span class="red">所有的黄金饼干都是愤怒饼干，有更大的机会产生负面影响。</span>',
-				desc1:'<span class="green">皱纹虫出现加速 150%，并再多消化15%的饼干。</span>',
-				desc2:'<span class="green">皱纹虫出现加速 100%，并再多消化10%的饼干。</span>',
-				desc3:'<span class="green">皱纹虫出现加速 50%，并再多消化5%的饼干。</span>',
-				quote:'这种灵魂喜欢刺死野兽，看着他们局促不安，但却不喜欢自己的家人。',
+				descBefore:'<span class="red">All golden cookies are wrath cookies with a greater chance of a negative effect.</span>',
+				desc1:'<span class="green">Wrinklers appear 150% faster and digest 15% more cookies.</span>',
+				desc2:'<span class="green">Wrinklers appear 100% faster and digest 10% more cookies.</span>',
+				desc3:'<span class="green">Wrinklers appear 50% faster and digest 5% more cookies.</span>',
+				quote:'This spirit enjoys poking foul beasts and watching them squirm, but has no love for its own family.',
 			},
 			'order':{
-				name:'瑞吉德尔, 秩序之魂',
+				name:'Rigidel, Spirit of Order',
 				icon:[22,19],
 				activeDescFunc:function()
 				{
-					if (Game.BuildingsOwned%10==0) return '拥有建筑 : '+Beautify(Game.BuildingsOwned)+'.<br>效果已激活。';
-					else return '拥有建筑 : '+Beautify(Game.BuildingsOwned)+'.<br>效果未激活。';
+					if (Game.BuildingsOwned%10==0) return 'Buildings owned : '+Beautify(Game.BuildingsOwned)+'.<br>Effect is active.';
+					else return 'Buildings owned : '+Beautify(Game.BuildingsOwned)+'.<br>Effect is inactive.';
 				},
-				desc1:'<span class="green">糖块成熟时间提前1小时。</span>',
-				desc2:'<span class="green">糖块成熟时间提前40分钟。</span>',
-				desc3:'<span class="green">糖块成熟时间提前20分钟。</span>',
-				descAfter:'<span class="red">只有当建筑物的总数量以0结尾时，效果才会激活。</span>',
-				quote:'你会发现，如果你能以整洁的数字和恰当的纳税申报单来激励这种灵魂，生活就会变得更加甜蜜。',
+				desc1:'<span class="green">Sugar lumps ripen an hour sooner.</span>',
+				desc2:'<span class="green">Sugar lumps ripen 40 minutes sooner.</span>',
+				desc3:'<span class="green">Sugar lumps ripen 20 minutes sooner.</span>',
+				descAfter:'<span class="red">Effect is only active when your total amount of buildings ends with 0.</span>',
+				quote:'You will find that life gets just a little bit sweeter if you can motivate this spirit with tidy numbers and properly-filled tax returns.',
 			},
 		};
 		M.godsById=[];var n=0;
@@ -129,7 +129,7 @@ M.launch=function()
 		M.slot[2]=-1;//jade socket
 		
 		M.slotNames=[
-			'钻石','红宝石','玉石'
+			'Diamond','Ruby','Jade'
 		];
 		
 		M.swaps=3;//swaps left
@@ -145,7 +145,7 @@ M.launch=function()
 				var str='<div style="padding:8px 4px;min-width:350px;">'+
 				'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
 				'<div class="name">'+me.name+'</div>'+
-				'<div class="line"></div><div class="description"><div style="margin:6px 0px;font-weight:bold;">效果 :</div>'+
+				'<div class="line"></div><div class="description"><div style="margin:6px 0px;font-weight:bold;">Effects :</div>'+
 					(me.descBefore?('<div class="templeEffect">'+me.descBefore+'</div>'):'')+
 					(me.desc1?('<div class="templeEffect templeEffect1"><div class="usesIcon shadowFilter templeGem templeGem1"></div>'+me.desc1+'</div>'):'')+
 					(me.desc2?('<div class="templeEffect templeEffect2"><div class="usesIcon shadowFilter templeGem templeGem2"></div>'+me.desc2+'</div>'):'')+
@@ -170,7 +170,7 @@ M.launch=function()
 					'<div class="name templeEffect" style="margin-bottom:12px;"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+M.slotNames[id]+' slot</div>'+
 					'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
 					'<div class="name">'+me.name+'</div>'+
-					'<div class="line"></div><div class="description"><div style="margin:6px 0px;font-weight:bold;">效果 :</div>'+
+					'<div class="line"></div><div class="description"><div style="margin:6px 0px;font-weight:bold;">Effects :</div>'+
 						(me.activeDescFunc?('<div class="templeEffect templeEffectOn" style="padding:8px 4px;text-align:center;">'+me.activeDescFunc()+'</div>'):'')+
 						(me.descBefore?('<div class="templeEffect">'+me.descBefore+'</div>'):'')+
 						(me.desc1?('<div class="templeEffect templeEffect1'+(me.slot==0?' templeEffectOn':'')+'"><div class="usesIcon shadowFilter templeGem templeGem1"></div>'+me.desc1+'</div>'):'')+
@@ -180,8 +180,8 @@ M.launch=function()
 						(me.quote?('<q>'+me.quote+'</q>'):'')+
 					'</div>'
 				):
-				('<div class="name templeEffect"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+M.slotNames[id]+' 插槽 (空)</div><div class="line"></div><div class="description">'+
-				((M.slotHovered==id && M.dragging)?'释放 <b>'+M.dragging.name+'</b> 来将它分配到这个插槽。':'拖动一个灵魂到这个插槽上来分配它。')+
+				('<div class="name templeEffect"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+M.slotNames[id]+' slot (empty)</div><div class="line"></div><div class="description">'+
+				((M.slotHovered==id && M.dragging)?'Release to assign <b>'+M.dragging.name+'</b> to this slot.':'Drag a spirit onto this slot to assign it.')+
 				'</div>')
 				)+
 				'</div>';
@@ -373,7 +373,7 @@ M.launch=function()
 				str+='<div class="ready templeGod templeGod'+(i%4)+' templeSlot titleFont" id="templeSlot'+i+'" '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.slotTooltip('+i+')','this')+'><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(i)+1)+'"></div></div>';
 			}
 			str+='</div>';
-			str+='<div id="templeInfo"><div '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.refillTooltip','this')+' id="templeLumpRefill" class="usesIcon shadowFilter lumpRefill" style="left:-6px;top:-10px;background-position:'+(-29*48)+'px '+(-14*48)+'px;"></div><div id="templeSwaps" '+Game.getTooltip('<div style="padding:8px;width:350px;font-size:11px;text-align:center;">每次你将一个灵魂放至插槽, 你就会使用一个崇拜互换次数。<div class="line"></div>如果你还剩2个次数, 下一个将在1小时后补充。<br>如果你还剩1个次数, 下一个将在4小时后补充。<br>如果你还剩0个次数, 下一个将在16小时后补充。<div class="line"></div>将灵魂移出插槽不消耗次数。</div>')+'>-</div></div>';
+			str+='<div id="templeInfo"><div '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.refillTooltip','this')+' id="templeLumpRefill" class="usesIcon shadowFilter lumpRefill" style="left:-6px;top:-10px;background-position:'+(-29*48)+'px '+(-14*48)+'px;"></div><div id="templeSwaps" '+Game.getTooltip('<div style="padding:8px;width:350px;font-size:11px;text-align:center;">Each time you slot a spirit, you use up one worship swap.<div class="line"></div>If you have 2 swaps left, the next one will refill after 1 hour.<br>If you have 1 swap left, the next one will refill after 4 hours.<br>If you have 0 swaps left, you will get one after 16 hours.<div class="line"></div>Unslotting a spirit costs no swaps.</div>')+'>-</div></div>';
 			str+='<div id="templeGods">';
 			for (var i in M.gods)
 			{
@@ -391,22 +391,22 @@ M.launch=function()
 		for (var i in M.gods)
 		{
 			var me=M.gods[i];
-			AddEvent(l('templeGodDrag'+me.id),'mousedown',function(what){return function(){M.dragGod(what);}}(me));
-			AddEvent(l('templeGodDrag'+me.id),'mouseup',function(what){return function(){M.dropGod(what);}}(me));
+			AddEvent(l('templeGodDrag'+me.id),'mousedown',function(what){return function(e){if (e.button==0){M.dragGod(what);}}}(me));
+			AddEvent(l('templeGodDrag'+me.id),'mouseup',function(what){return function(e){if (e.button==0){M.dropGod(what);}}}(me));
 		}
 		for (var i in M.slot)
 		{
 			var me=M.slot[i];
 			AddEvent(l('templeSlot'+i),'mouseover',function(what){return function(){M.hoverSlot(what);}}(i));
-			AddEvent(l('templeSlot'+i),'mouseout',function(what){return function(){M.hoverSlot(-1);}}(i));
+			AddEvent(l('templeSlot'+i),'mouseout',function(what){return function(e){if (e.button==0){M.hoverSlot(-1);}}}(i));
 		}
 		
 		AddEvent(document,'mouseup',M.dropGod);
 		
 		
 		M.refillTooltip=function(){
-			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击来花费<span class="price lump">1 糖块</span>充满崇拜互换次数。'+
-				(Game.canRefillLump()?'<br><small>(每'+Game.sayTime((Game.getLumpRefillMax()/1000)*Game.fps,-1)+'可以做一次)</small>':('<br><small class="red">(再次使用 '+Game.sayTime((Game.getLumpRefillRemaining()/1000+1)*Game.fps,-1)+')</small>'))+
+			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">Click to refill all your worship swaps for <span class="price lump">1 sugar lump</span>.'+
+				(Game.canRefillLump()?'<br><small>(can be done once every '+Game.sayTime(Game.getLumpRefillMax(),-1)+')</small>':('<br><small class="red">(usable again in '+Game.sayTime(Game.getLumpRefillRemaining()+Game.fps,-1)+')</small>'))+
 			'</div>';
 		};
 		AddEvent(M.lumpRefill,'click',function(){
@@ -496,7 +496,7 @@ M.launch=function()
 		if (M.swaps==0) t=1000*60*60*16;
 		else if (M.swaps==1) t=1000*60*60*4;
 		var t2=M.swapT+t-Date.now();
-		M.swapsL.innerHTML='崇拜互换次数 : <span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>'+((M.swaps<3)?' (下一个在 '+Game.sayTime((t2/1000+1)*Game.fps,-1)+')':'');
+		M.swapsL.innerHTML='Worship swaps : <span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>'+((M.swaps<3)?' (next in '+Game.sayTime((t2/1000+1)*Game.fps,-1)+')':'');
 	}
 	M.init(l('rowSpecial'+M.parent.id));
 }

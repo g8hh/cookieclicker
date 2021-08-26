@@ -62,6 +62,7 @@ body
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	touch-action: manipulation;
 	
 	color:#fff;
 	background:#000 url(img/darkNoise.jpg);
@@ -405,6 +406,10 @@ oh forget it this is just a mess
 {color:#06c;}
 #topBar a.blueLink:hover
 {color:#28f;text-shadow:0px 0px 3px #06c;}
+#topBar a.lightblueLink
+{color:#6ad3ff;}
+#topBar a.lightblueLink:hover
+{color:#74fffd;text-shadow:0px 0px 3px #6ad3ff;}
 a.orangeLink,#topBar a.orangeLink
 {color:#f65f4d;}
 a.orangeLink:hover,#topBar a.orangeLink:hover
@@ -986,6 +991,22 @@ q:after
 	width:16px;
 	height:16px;
 }
+.hasTinyCookie
+{
+	position:relative;
+	padding-left:18px;
+}
+.hasTinyCookie:before
+{
+	content:'';
+	display:block;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:url(img/money.png);
+	width:16px;
+	height:16px;
+}
 .heavenly.price:before
 {
 	background:url(img/heavenlyMoney.png);
@@ -1406,10 +1427,12 @@ q:after
 	background:url(img/prestigeBar.jpg) 0px 0px;
 	position:absolute;
 	left:0px;
-	right:100%;
+	/*right:100%;*/
+	right:0px;
 	top:0px;
 	height:100%;
-	max-width:100%;
+	/*max-width:100%;*/
+	transform:translate(0px,0px);
 }
 .meter:after
 {
@@ -1428,10 +1451,11 @@ q:after
 	right:0px;
 	bottom:4px;
 	position:absolute;
+	overflow:hidden;
 }
 #ascendMeter
 {
-	right:100px;
+	/*right:100px;*/
 }
 
 .meter.filling
@@ -1510,6 +1534,16 @@ from {background-position:0px -24px;}
 {
 	content:"-";
 	padding-left:64px;
+}
+.fortune
+{
+	color:#ade000;
+	cursor:pointer;
+}
+.fortune:hover
+{
+	color:#d2ff00;
+	text-shadow:0px 0px 4px #ade000;
 }
 
 #commentsText
@@ -1884,9 +1918,9 @@ from {top:20px;opacity:0;}
 	text-align:center;
 }
 
-#upgrades:before{content:'升级';}
-#toggleUpgrades:before{content:'开关';}
-#techUpgrades:before{content:'研究';}
+#upgrades:before{content:'Upgrades';}
+#toggleUpgrades:before{content:'Switches';}
+#techUpgrades:before{content:'Research';}
 /*#vaultUpgrades{height:0px;}*/
 /*#vaultUpgrades:hover{height:auto;min-height:60px;}*/
 #vaultUpgrades .crate{opacity:0.5;}
@@ -1894,7 +1928,7 @@ from {top:20px;opacity:0;}
 #vaultUpgrades{height:30px;}
 #vaultUpgrades:hover{height:auto;min-height:30px;}
 #vaultUpgrades:before{content:'Vault';}
-#products:before{content:'建筑';}
+#products:before{content:'Buildings';}
 #upgrades
 {
 }
@@ -2174,7 +2208,7 @@ from {background-position:0px 0px;}
 	position:absolute;
 	left:0px;
 	top:0px;
-	background:url(img/buildings.png?v=3);
+	background:url(img/buildings.png?v=4);
 	background-repeat:no-repeat;
 	margin:0px;
 }
@@ -2195,7 +2229,7 @@ from {background-position:0px 0px;}
 	height:64px;
 	left:0px;
 	top:0px;
-	background:url(img/buildings.png?v=3);
+	background:url(img/buildings.png?v=4);
 	background-repeat:no-repeat;
 	margin:-16px;
 	transform:scale(0.5);
@@ -2216,12 +2250,13 @@ from {background-position:0px 0px;}
 .product .content .owned
 {
 	position:absolute;
-	right:12px;
-	top:6px;
+	right:8px;
+	bottom:5px;
 	font-size:40px;
 	opacity:0.2;
 	color:#000;
 	text-shadow:0px 0px 8px #fff;
+	letter-spacing:-2.5px;
 }
 .product .icon
 {
@@ -2235,7 +2270,7 @@ from {background-position:0px 0px;}
 {
 	z-index:100;
 	opacity:1;
-	background:url(img/buildings.png?v=3);
+	background:url(img/buildings.png?v=4);
 	background-repeat:no-repeat;
 	-webkit-transition: opacity 2s ease-out;
 	-moz-transition: opacity 2s ease-out;
@@ -2741,9 +2776,9 @@ p
 
 
 
-.green{color:#3f0;}.green b{color:inherit;}
-.red{color:#f30;}.red b{color:inherit;}
-.gray{color:#999;}.gray b{color:inherit;}
+.green,b.green{color:#3f0;}.green b{color:inherit;}
+.red,b.red{color:#f30;}.red b{color:inherit;}
+.gray,b.gray{color:#999;}.gray b{color:inherit;}
 
 #versionNumber
 {
@@ -2866,9 +2901,10 @@ SUPPORT
 }
 .supportComment
 {
+	font-size:10px;
 	opacity:0.75;
 	text-shadow:0px 0px 2px #000,0px 1px 0px #000;
-	margin:8px;
+	padding:8px 0px;
 	text-align:center;
 }
 .supportPlaceholder {width:300px;height:250px;position:absolute;left:0px;top:0px;z-index:10;opacity:0.6;}
@@ -2937,6 +2973,13 @@ SUPPORT
 	background:rgba(128,128,255,0.2);
 	box-shadow:0px 0px 4px 4px rgba(128,128,255,0.2);
 }
+
+.ifNoAds
+{
+	display:none;
+}
+.noAds .ifNoAds{display:block;}
+.noAds #support,.noAds #smallSupport,.noAds .supportComment{display:none;}
 
 /*=====================================================================================
 NEW AD DISPLAY

@@ -11,9 +11,9 @@ M.launch=function()
 		
 		M.spells={
 			'conjure baked goods':{
-				name:'召唤烘焙食品',
-				desc:'瞬间获得半小时生产量的饼干，不超过你拥有的饼干的15%。',
-				failDesc:'触发一个15分钟的冻结，并减少你15分钟的饼干产量。',
+				name:'Conjure Baked Goods',
+				desc:'Summon half an hour worth of your CpS, capped at 15% of your cookies owned.',
+				failDesc:'Trigger a 15-minute clot and lose 15 minutes of CpS.',
 				icon:[21,11],
 				costMin:2,
 				costPercent:0.4,
@@ -21,8 +21,8 @@ M.launch=function()
 				{
 					var val=Math.max(7,Math.min(Game.cookies*0.15,Game.cookiesPs*60*30));
 					Game.Earn(val);
-					Game.Notify('召唤烘焙食品!','你通过魔法获得 <b>'+Beautify(val)+' 饼干'+(val==1?'':'')+'</b> 从稀薄的空气中。',[21,11],6);
-					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' 饼干'+(val==1?'':'')+'!</div>',Game.mouseX,Game.mouseY);
+					Game.Notify('Conjure baked goods!','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> out of thin air.',[21,11],6);
+					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -31,13 +31,13 @@ M.launch=function()
 					val=Math.min(Game.cookies,val);
 					Game.Spend(val);
 					Game.Notify(buff.name,buff.desc,buff.icon,6);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>召唤失败! 失去了 '+Beautify(val)+' 饼干'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>Summoning failed! Lost '+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'hand of fate':{
-				name:'命运之手',
-				desc:'召唤一个随机的黄金饼干。每个现有黄金饼干让这个法术+ 15%反效果概率。',
-				failDesc:'召唤一个不走运的愤怒饼干。',
+				name:'Force the Hand of Fate',
+				desc:'Summon a random golden cookie. Each existing golden cookie makes this spell +15% more likely to backfire.',
+				failDesc:'Summon an unlucky wrath cookie.',
 				icon:[22,11],
 				costMin:10,
 				costPercent:0.6,
@@ -50,7 +50,7 @@ M.launch=function()
 					var newShimmer=new Game.shimmer('golden',{noWrath:true});
 					var choices=[];
 					choices.push('frenzy','multiply cookies');
-					if (!Game.hasBuff('龙之飞舞')) choices.push('click frenzy');
+					if (!Game.hasBuff('Dragonflight')) choices.push('click frenzy');
 					if (Math.random()<0.1) choices.push('cookie storm','cookie storm','blab');
 					if (Game.BuildingsOwned>=10 && Math.random()<0.25) choices.push('building special');
 					//if (Math.random()<0.2) choices.push('clot','cursed finger','ruin cookies');
@@ -61,7 +61,7 @@ M.launch=function()
 					{
 						newShimmer.sizeMult=Math.random()*0.75+0.25;
 					}
-					Game.Popup('<div style="font-size:80%;">有前途的命运!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Promising fate!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -72,13 +72,13 @@ M.launch=function()
 					if (Math.random()<0.003) choices.push('free sugar lump');
 					if (Math.random()<0.1) choices=['blab'];
 					newShimmer.force=choose(choices);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>险恶的命运!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>Sinister fate!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'stretch time':{
-				name:'拉伸时间',
-				desc:'所有激活的效果将延长10%的持续时间(最多延长5分钟)',
-				failDesc:'所有激活的效果将缩短10%的持续时间(最多缩短5分钟)',
+				name:'Stretch Time',
+				desc:'All active buffs gain 10% more time (up to 5 more minutes).',
+				failDesc:'All active buffs are shortened by 20% (up to 10 minutes shorter).',
 				icon:[23,11],
 				costMin:8,
 				costPercent:0.2,
@@ -93,8 +93,8 @@ M.launch=function()
 						me.time+=gain;
 						changed++;
 					}
-					if (changed==0){Game.Popup('<div style="font-size:80%;">没有Buff来改变!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">好!Buff持续时间加长了。</div>',Game.mouseX,Game.mouseY);
+					if (changed==0){Game.Popup('<div style="font-size:80%;">No buffs to alter!</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">Zap! Buffs lengthened.</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -107,14 +107,14 @@ M.launch=function()
 						me.time=Math.max(me.time,0);
 						changed++;
 					}
-					if (changed==0){Game.Popup('<div style="font-size:80%;">没有Buff来改变!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>反效果!不好!Buff持续时间缩短了。</div>',Game.mouseX,Game.mouseY);
+					if (changed==0){Game.Popup('<div style="font-size:80%;">No buffs to alter!</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>Fizz! Buffs shortened.</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'spontaneous edifice':{
-				name:'自发大厦',
-				desc:'这个咒语会选择一个，如果你有当前两倍的饼干能买得起的建筑，然后把这个建筑免费给你。被选中的建筑必须在400以下，并且不能是你建得最多的建筑(除非它是你唯一的建筑)。',
-				failDesc:'失去一个随机的建筑。',
+				name:'Spontaneous Edifice',
+				desc:'The spell picks a random building you could afford if you had twice your current cookies, and gives it to you for free. The building selected must be under 400, and cannot be your most-built one (unless it is your only one).',
+				failDesc:'Lose a random building.',
 				icon:[24,11],
 				costMin:20,
 				costPercent:0.75,
@@ -130,65 +130,65 @@ M.launch=function()
 					}
 					for (var i in Game.Objects)
 					{if ((Game.Objects[i].amount<max || n==1) && Game.Objects[i].getPrice()<=Game.cookies*2 && Game.Objects[i].amount<400) buildings.push(Game.Objects[i]);}
-					if (buildings.length==0){Game.Popup('<div style="font-size:80%;">没有建筑可以改进!</div>',Game.mouseX,Game.mouseY);return -1;}
+					if (buildings.length==0){Game.Popup('<div style="font-size:80%;">No buildings to improve!</div>',Game.mouseX,Game.mouseY);return -1;}
 					var building=choose(buildings);
 					building.buyFree(1);
-					Game.Popup('<div style="font-size:80%;">一个新的 '+building.single+'<br>冲出地面。</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">A new '+building.single+'<br>bursts out of the ground.</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					if (Game.BuildingsOwned==0){Game.Popup('<div style="font-size:80%;">反效果, 但是没有建筑可以摧毁!</div>',Game.mouseX,Game.mouseY);return -1;}
+					if (Game.BuildingsOwned==0){Game.Popup('<div style="font-size:80%;">Backfired, but no buildings to destroy!</div>',Game.mouseX,Game.mouseY);return -1;}
 					var buildings=[];
 					for (var i in Game.Objects)
 					{if (Game.Objects[i].amount>0) buildings.push(Game.Objects[i]);}
 					var building=choose(buildings);
 					building.sacrifice(1);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>你的一个'+building.plural+'<br>在一股烟雾中消失。</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>One of your '+building.plural+'<br>disappears in a puff of smoke.</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'haggler\'s charm':{
-				name:'砍价的魅力',
-				desc:'升级的价格在1分钟内降低了2%。',
-				failDesc:'升级费用在一小时内增加了2%。<q>那是什么咒语?给我钱!</q>',
+				name:'Haggler\'s Charm',
+				desc:'Upgrades are 2% cheaper for 1 minute.',
+				failDesc:'Upgrades are 2% more expensive for an hour.<q>What\'s that spell? Loadsamoney!</q>',
 				icon:[25,11],
 				costMin:10,
 				costPercent:0.1,
 				win:function()
 				{
-					Game.killBuff('砍价的魅力');
+					Game.killBuff('Haggler\'s misery');
 					var buff=Game.gainBuff('haggler luck',60,2);
-					Game.Popup('<div style="font-size:80%;">升级更便宜!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Upgrades are cheaper!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					Game.killBuff('运气而已');
+					Game.killBuff('Haggler\'s luck');
 					var buff=Game.gainBuff('haggler misery',60*60,2);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>升级价格变高!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>Upgrades are pricier!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'summon crafty pixies':{
-				name:'召唤狡猾的小妖精',
-				desc:'建筑在1分钟内便宜2%。',
-				failDesc:'1小时内，建筑价格上涨了2%。',
+				name:'Summon Crafty Pixies',
+				desc:'Buildings are 2% cheaper for 1 minute.',
+				failDesc:'Buildings are 2% more expensive for an hour.',
 				icon:[26,11],
 				costMin:10,
 				costPercent:0.2,
 				win:function()
 				{
-					Game.killBuff('肮脏的妖精');
+					Game.killBuff('Nasty goblins');
 					var buff=Game.gainBuff('pixie luck',60,2);
-					Game.Popup('<div style="font-size:80%;">狡猾的小妖精!<br>建筑更便宜了!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Crafty pixies!<br>Buildings are cheaper!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					Game.killBuff('狡猾的小妖精');
+					Game.killBuff('Crafty pixies');
 					var buff=Game.gainBuff('pixie misery',60*60,2);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>肮脏的妖精!<br>建筑价格更高!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>Nasty goblins!<br>Buildings are pricier!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'gambler\'s fever dream':{
-				name:'赌徒的狂热梦',
-				desc:'以一半的魔法成本随机施法，两倍反效果的几率。',
+				name:'Gambler\'s Fever Dream',
+				desc:'Cast a random spell at half the magic cost, with twice the chance of backfiring.',
 				icon:[27,11],
 				costMin:3,
 				costPercent:0.05,
@@ -198,60 +198,61 @@ M.launch=function()
 					var selfCost=M.getSpellCost(M.spells['gambler\'s fever dream']);
 					for (var i in M.spells)
 					{if (i!='gambler\'s fever dream' && (M.magic-selfCost)>=M.getSpellCost(M.spells[i])*0.5) spells.push(M.spells[i]);}
-					if (spells.length==0){Game.Popup('<div style="font-size:80%;">没有符合条件的法术!</div>',Game.mouseX,Game.mouseY);return -1;}
+					if (spells.length==0){Game.Popup('<div style="font-size:80%;">No eligible spells!</div>',Game.mouseX,Game.mouseY);return -1;}
 					var spell=choose(spells);
 					var cost=M.getSpellCost(spell)*0.5;
-					setTimeout(function(){
+					setTimeout(function(spell,cost,seed){return function(){
+						if (Game.seed!=seed) return false;
 						var out=M.castSpell(spell,{cost:cost,failChanceMax:0.5,passthrough:true});
 						if (!out)
 						{
 							M.magic+=selfCost;
 							setTimeout(function(){
-								Game.Popup('<div style="font-size:80%;">这太糟糕了!<br>魔法退还。</div>',Game.mouseX,Game.mouseY);
+								Game.Popup('<div style="font-size:80%;">That\'s too bad!<br>Magic refunded.</div>',Game.mouseX,Game.mouseY);
 							},1500);
 						}
-					},1000);
-					Game.Popup('<div style="font-size:80%;">释放 '+spell.name+'<br>消耗 '+Beautify(cost)+' 魔法...</div>',Game.mouseX,Game.mouseY);
+					}}(spell,cost,Game.seed),1000);
+					Game.Popup('<div style="font-size:80%;">Casting '+spell.name+'<br>for '+Beautify(cost)+' magic...</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'resurrect abomination':{
-				name:'复活可憎之物',
-				desc:'如果条件满足，立即召唤皱纹虫。',
-				failDesc:'使你的一只皱纹虫爆裂。',
+				name:'Resurrect Abomination',
+				desc:'Instantly summon a wrinkler if conditions are fulfilled.',
+				failDesc:'Pop one of your wrinklers.',
 				icon:[28,11],
 				costMin:20,
 				costPercent:0.1,
 				win:function()
 				{
 					var out=Game.SpawnWrinkler();
-					if (!out){Game.Popup('<div style="font-size:80%;">无法产生皱纹虫!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">起来，我的宝贝!</div>',Game.mouseX,Game.mouseY);
+					if (!out){Game.Popup('<div style="font-size:80%;">Unable to spawn a wrinkler!</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">Rise, my precious!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
 					var out=Game.PopRandomWrinkler();
-					if (!out){Game.Popup('<div style="font-size:80%;">反效果!<br>但没有皱纹虫受伤.</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">反效果!<br>再见了, 丑陋的虫...</div>',Game.mouseX,Game.mouseY);
+					if (!out){Game.Popup('<div style="font-size:80%;">Backfire!<br>But no wrinkler was harmed.</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>So long, ugly...</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'diminish ineptitude':{
-				name:'减少无能',
-				desc:'法术的反效果在接下来的5分钟内减少10次。',
-				failDesc:'法术的反效果在接下来的10分钟内增加5次。',
+				name:'Diminish Ineptitude',
+				desc:'Spells backfire 10 times less for the next 5 minutes.',
+				failDesc:'Spells backfire 5 times more for the next 10 minutes.',
 				icon:[29,11],
 				costMin:5,
 				costPercent:0.2,
 				win:function()
 				{
-					Game.killBuff('魔法无能');
-					var buff=Game.gainBuff('魔法专家',5*60,10);
-					Game.Popup('<div style="font-size:80%;">能力减弱了!</div>',Game.mouseX,Game.mouseY);
+					Game.killBuff('Magic inept');
+					var buff=Game.gainBuff('magic adept',5*60,10);
+					Game.Popup('<div style="font-size:80%;">Ineptitude diminished!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					Game.killBuff('魔法专家');
-					var buff=Game.gainBuff('魔法无能',10*60,5);
-					Game.Popup('<div style="font-size:80%;">反效果!<br>无能放大!</div>',Game.mouseX,Game.mouseY);
+					Game.killBuff('Magic adept');
+					var buff=Game.gainBuff('magic inept',10*60,5);
+					Game.Popup('<div style="font-size:80%;">Backfire!<br>Ineptitude magnified!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 		};
@@ -288,8 +289,8 @@ M.launch=function()
 		M.getFailChance=function(spell)
 		{
 			var failChance=0.15;
-			if (Game.hasBuff('魔法专家')) failChance*=0.1;
-			if (Game.hasBuff('魔法无能')) failChance*=5;
+			if (Game.hasBuff('Magic adept')) failChance*=0.1;
+			if (Game.hasBuff('Magic inept')) failChance*=5;
 			if (spell.failFunc) failChance=spell.failFunc(failChance);
 			return failChance;
 		}
@@ -316,9 +317,9 @@ M.launch=function()
 				{
 					M.spellsCast++;
 					M.spellsCastTotal++;
-					if (M.spellsCastTotal>=9) Game.Win('圣经');
-					if (M.spellsCastTotal>=99) Game.Win('我是天才');
-					if (M.spellsCastTotal>=999) Game.Win('巫师就是你');
+					if (M.spellsCastTotal>=9) Game.Win('Bibbidi-bobbidi-boo');
+					if (M.spellsCastTotal>=99) Game.Win('I\'m the wiz');
+					if (M.spellsCastTotal>=999) Game.Win('A wizard is you');
 				}
 				
 				M.magic-=cost;
@@ -343,8 +344,8 @@ M.launch=function()
 		M.getSpellCostBreakdown=function(spell)
 		{
 			var str='';
-			if (spell.costPercent) str+=Beautify(spell.costMin)+' 魔法 +'+Beautify(Math.ceil(spell.costPercent*100))+'% 魔法上限';
-			else str+=Beautify(spell.costMin)+' 魔法';
+			if (spell.costPercent) str+=Beautify(spell.costMin)+' magic +'+Beautify(Math.ceil(spell.costPercent*100))+'% of max magic';
+			else str+=Beautify(spell.costMin)+' magic';
 			return str;
 		}
 		
@@ -360,9 +361,9 @@ M.launch=function()
 				var str='<div style="padding:8px 4px;min-width:350px;">'+
 				'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
 				'<div class="name">'+me.name+'</div>'+
-				'<div>魔法成本 : <b style="color:#'+(cost<=M.magic?'6f6':'f66')+';">'+cost+'</b>'+costBreakdown+'</div>'+
-				(me.fail?('<div><small>反效果几率 : <b style="color:#f66">'+Math.ceil(100*backfire)+'%</b></small></div>'):'')+
-				'<div class="line"></div><div class="description"><b>正面效果 :</b> <span class="green">'+(me.descFunc?me.descFunc():me.desc)+'</span>'+(me.failDesc?('<div style="height:8px;"></div><b>反效果 :</b> <span class="red">'+me.failDesc+'</span>'):'')+'</div></div>';
+				'<div>Magic cost : <b style="color:#'+(cost<=M.magic?'6f6':'f66')+';">'+cost+'</b>'+costBreakdown+'</div>'+
+				(me.fail?('<div><small>Chance to backfire : <b style="color:#f66">'+Math.ceil(100*backfire)+'%</b></small></div>'):'')+
+				'<div class="line"></div><div class="description"><b>Effect :</b> <span class="green">'+(me.descFunc?me.descFunc():me.desc)+'</span>'+(me.failDesc?('<div style="height:8px;"></div><b>Backfire :</b> <span class="red">'+me.failDesc+'</span>'):'')+'</div></div>';
 				return str;
 			};
 		}
@@ -405,7 +406,7 @@ M.launch=function()
 			}
 			str+='</div>';
 			var icon=[29,14];
-			str+='<div id="grimoireBar" class="smallFramed meterContainer"><div '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.refillTooltip','this')+' id="grimoireLumpRefill" class="usesIcon shadowFilter lumpRefill" style="left:-40px;top:-17px;background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div id="grimoireBarFull" class="meter filling"></div><div id="grimoireBarText" class="titleFont"></div><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">这是你的魔法仪。释放每个法术都需要魔法。<div class="line"></div>您的最大魔法量取决于您的<b>精灵塔</b>的数量, 以及它们的等级。<div class="line"></div>随着时间的推移，魔法会被重新填满。你的魔法仪越低，它的填充速度就越慢。</div>')+' style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;"></div></div>';
+			str+='<div id="grimoireBar" class="smallFramed meterContainer"><div '+Game.getDynamicTooltip('Game.ObjectsById['+M.parent.id+'].minigame.refillTooltip','this')+' id="grimoireLumpRefill" class="usesIcon shadowFilter lumpRefill" style="left:-40px;top:-17px;background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div id="grimoireBarFull" class="meter filling"></div><div id="grimoireBarText" class="titleFont"></div><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">This is your magic meter. Each spell costs magic to use.<div class="line"></div>Your maximum amount of magic varies depending on your amount of <b>Wizard towers</b>, and their level.<div class="line"></div>Magic refills over time. The lower your magic meter, the slower it refills.</div>')+' style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;"></div></div>';
 			str+='<div id="grimoireInfo"></div>';
 		str+='</div>';
 		div.innerHTML=str;
@@ -421,8 +422,8 @@ M.launch=function()
 		}
 		
 		M.refillTooltip=function(){
-			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击来填充 <b>100 单位</b> 的魔法仪，花费 <span class="price lump">1 糖块</span>.'+
-				(Game.canRefillLump()?'<br><small>(每 '+Game.sayTime((Game.getLumpRefillMax()/1000)*Game.fps,-1)+'可以重填一次)</small>':('<br><small class="red">(在 '+Game.sayTime((Game.getLumpRefillRemaining()/1000+1)*Game.fps,-1)+'后可重新使用)</small>'))+
+			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">Click to refill <b>100 units</b> of your magic meter for <span class="price lump">1 sugar lump</span>.'+
+				(Game.canRefillLump()?'<br><small>(can be done once every '+Game.sayTime(Game.getLumpRefillMax(),-1)+')</small>':('<br><small class="red">(usable again in '+Game.sayTime(Game.getLumpRefillRemaining()+Game.fps,-1)+')</small>'))+
 			'</div>';
 		};
 		AddEvent(M.lumpRefill,'click',function(){
@@ -496,7 +497,7 @@ M.launch=function()
 		M.magicBarTextL.innerHTML=Math.min(Math.floor(M.magicM),Beautify(M.magic))+'/'+Beautify(Math.floor(M.magicM))+(M.magic<M.magicM?(' (+'+Beautify((M.magicPS||0)*Game.fps,2)+'/s)'):'');
 		M.magicBarFullL.style.width=((M.magic/M.magicM)*100)+'%';
 		M.magicBarL.style.width=(M.magicM*3)+'px';
-		M.infoL.innerHTML='施放法术 : '+Beautify(M.spellsCast)+' (总共 : '+Beautify(M.spellsCastTotal)+')';
+		M.infoL.innerHTML='Spells cast : '+Beautify(M.spellsCast)+' (total : '+Beautify(M.spellsCastTotal)+')';
 	}
 	M.init(l('rowSpecial'+M.parent.id));
 }

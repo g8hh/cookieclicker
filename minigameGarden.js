@@ -21,7 +21,7 @@ M.launch=function()
 		*/
 		M.plants={
 			'bakerWheat':{
-				name:'面包师的小麦',
+				name:'Baker\'s wheat',
 				icon:0,
 				cost:1,
 				costM:30,
@@ -29,15 +29,15 @@ M.launch=function()
 				ageTickR:2,
 				mature:35,
 				children:['bakerWheat','thumbcorn','cronerice','bakeberry','clover','goldenClover','chocoroot','tidygrass'],
-				effsStr:'<div class="green">&bull; +1% 饼干产量</div>',
-				q:'一种多产的作物，其坚韧的谷物用来做糕点用的面粉。',
+				effsStr:'<div class="green">&bull; +1% CpS</div>',
+				q:'A plentiful crop whose hardy grain is used to make flour for pastries.',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature) M.dropUpgrade('Wheat slims',0.001);
 				},
 			},
 			'thumbcorn':{
-				name:'手指玉米',
+				name:'Thumbcorn',
 				icon:1,
 				cost:5,
 				costM:100,
@@ -45,11 +45,11 @@ M.launch=function()
 				ageTickR:2,
 				mature:20,
 				children:['bakerWheat','thumbcorn','cronerice','gildmillet','glovemorel'],
-				effsStr:'<div class="green">&bull; +2% 每次点击的饼干</div>',
-				q:'一种形状奇特的变种玉米。从一颗种子中长出的的果实数量通常只有个位数。',
+				effsStr:'<div class="green">&bull; +2% cookies per click</div>',
+				q:'A strangely-shaped variant of corn. The amount of strands that can sprout from one seed is usually in the single digits.',
 			},
 			'cronerice':{
-				name:'老妪稻谷',
+				name:'Cronerice',
 				icon:2,
 				cost:15,
 				costM:250,
@@ -57,11 +57,11 @@ M.launch=function()
 				ageTickR:0.7,
 				mature:55,
 				children:['thumbcorn','gildmillet','elderwort','wardlichen'],
-				effsStr:'<div class="green">&bull; +3% 老奶奶饼干产量</div>',
-				q:'这作物带皱纹的茎不仅不像稻谷，甚至和它一点关系都没有；它看起来就像垂柳。',
+				effsStr:'<div class="green">&bull; +3% grandma CpS</div>',
+				q:'Not only does this wrinkly bulb look nothing like rice, it\'s not even related to it either; its closest extant relative is the weeping willow.',
 			},
 			'gildmillet':{
-				name:'黄金小米',
+				name:'Gildmillet',
 				icon:3,
 				cost:15,
 				costM:1500,
@@ -69,11 +69,11 @@ M.launch=function()
 				ageTickR:1.5,
 				mature:40,
 				children:['clover','goldenClover','shimmerlily'],
-				effsStr:'<div class="green">&bull; +1% 黄金饼干获得</div><div class="green">&bull; +0.1% 黄金饼干效果持续时间</div>',
-				q:'一种古代的主要作物，以其金色的光泽而闻名。曾被用来为古代的国王和王后烤生日蛋糕。',
+				effsStr:'<div class="green">&bull; +1% golden cookie gains</div><div class="green">&bull; +0.1% golden cookie effect duration</div>',
+				q:'An ancient staple crop, famed for its golden sheen. Was once used to bake birthday cakes for kings and queens of old.',
 			},
 			'clover':{
-				name:'普通三叶草',
+				name:'Ordinary clover',
 				icon:4,
 				cost:25,
 				costM:77777,
@@ -81,11 +81,11 @@ M.launch=function()
 				ageTickR:1.5,
 				mature:35,
 				children:['goldenClover','greenRot','shimmerlily'],
-				effsStr:'<div class="green">&bull; +1% 黄金饼干出现频率</div>',
-				q:'<i>三叶草</i>, 一种相当普通的三叶草，有生产四片叶子的倾向。 有些人认为这种情况很幸运。',
+				effsStr:'<div class="green">&bull; +1% golden cookie frequency</div>',
+				q:'<i>Trifolium repens</i>, a fairly mundane variety of clover with a tendency to produce four leaves. Such instances are considered lucky by some.',
 			},
 			'goldenClover':{
-				name:'金色三叶草',
+				name:'Golden clover',
 				icon:5,
 				cost:125,
 				costM:777777777777,
@@ -93,11 +93,11 @@ M.launch=function()
 				ageTickR:12,
 				mature:50,
 				children:[],
-				effsStr:'<div class="green">&bull; +3% 黄金饼干出现频率</div>',
-				q:'通常的三叶草的变种，其叶绿素交换为纯有机金。 可悲的是短暂的，这种草药是一个进化的死胡同 - 但至少它看起来很漂亮。',
+				effsStr:'<div class="green">&bull; +3% golden cookie frequency</div>',
+				q:'A variant of the ordinary clover that traded its chlorophyll for pure organic gold. Tragically short-lived, this herb is an evolutionary dead-end - but at least it looks pretty.',
 			},
 			'shimmerlily':{
-				name:'微光百合',
+				name:'Shimmerlily',
 				icon:6,
 				cost:60,
 				costM:777777,
@@ -105,11 +105,11 @@ M.launch=function()
 				ageTickR:6,
 				mature:70,
 				children:['elderwort','whiskerbloom','chimerose','cheapcap'],
-				effsStr:'<div class="green">&bull; +1% 黄金饼干获得</div><div class="green">&bull; +1% 黄金饼干出现频率</div><div class="green">&bull; +1% 随机掉落</div>',
-				q:'这些小花在黎明时很容易找到，因为在水滴中折射的阳光会引起人们对纯白色花瓣的注意。',
+				effsStr:'<div class="green">&bull; +1% golden cookie gains</div><div class="green">&bull; +1% golden cookie frequency</div><div class="green">&bull; +1% random drops</div>',
+				q:'These little flowers are easiest to find at dawn, as the sunlight refracting in dew drops draws attention to their pure-white petals.',
 			},
 			'elderwort':{
-				name:'老麦汁',
+				name:'Elderwort',
 				icon:7,
 				cost:60*3,
 				costM:100000000,
@@ -120,15 +120,15 @@ M.launch=function()
 				noContam:true,
 				detailsStr:'Immortal',
 				children:['everdaisy','ichorpuff','shriekbulb'],
-				effsStr:'<div class="green">&bull; +1%愤怒饼干获得</div><div class="green">&bull; +1% 愤怒饼干出现频率</div><div class="green">&bull; +1% 老奶奶每秒饼干产量</div><div class="green">&bull; 不朽</div><div class="gray">&bull; 周围植物（3x3）的年龄增长3％</div>',
-				q:'一种非常古老，久已遗忘的亚种或诺贝尔威斯，散发出一种奇怪的，令人兴奋的气味。 有一些传闻证据表明，这些没有经过分子老化。',
+				effsStr:'<div class="green">&bull; +1% wrath cookie gains</div><div class="green">&bull; +1% wrath cookie frequency</div><div class="green">&bull; +1% grandma CpS</div><div class="green">&bull; immortal</div><div class="gray">&bull; surrounding plants (3x3) age 3% faster</div>',
+				q:'A very old, long-forgotten subspecies of edelweiss that emits a strange, heady scent. There is some anecdotal evidence that these do not undergo molecular aging.',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature) M.dropUpgrade('Elderwort biscuits',0.01);
 				},
 			},
 			'bakeberry':{
-				name:'烘焙浆果',
+				name:'Bakeberry',
 				icon:8,
 				cost:45,
 				costM:100000000,
@@ -136,8 +136,8 @@ M.launch=function()
 				ageTickR:1,
 				mature:50,
 				children:['queenbeet'],
-				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; 成熟时收获将获取30分钟的当前饼干产量 (最大不超过当前饼干数量的3%)</div>',
-				q:'这是厨师们最爱的东西，这种大浆果有着松脆的棕色外表和奶油红色的中心。非常适合做派或鸡肉炖菜。',
+				effsStr:'<div class="green">&bull; +1% CpS</div><div class="green">&bull; harvest when mature for +30 minutes of CpS (max. 3% of bank)</div>',
+				q:'A favorite among cooks, this large berry has a crunchy brown exterior and a creamy red center. Excellent in pies or chicken stews.',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature)
@@ -153,7 +153,7 @@ M.launch=function()
 				},
 			},
 			'chocoroot':{
-				name:'巧克力根',
+				name:'Chocoroot',
 				icon:9,
 				cost:15,
 				costM:100000,
@@ -162,8 +162,8 @@ M.launch=function()
 				mature:25,
 				detailsStr:'Predictable growth',
 				children:['whiteChocoroot','drowsyfern','queenbeet'],
-				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="green">&bull; 成熟时收获将获取3分钟的当前饼干产量（最大不超过当前饼干数量的3%）</div><div class="green">&bull; 可预见的增长</div>',
-				q:'一种涂有粘稠甜味物质的汤姆荆棘。 未知的遗传祖先。 孩子们经常从田里采摘这些作为零食。',
+				effsStr:'<div class="green">&bull; +1% CpS</div><div class="green">&bull; harvest when mature for +3 minutes of CpS (max. 3% of bank)</div><div class="green">&bull; predictable growth</div>',
+				q:'A tangly bramble coated in a sticky, sweet substance. Unknown genetic ancestry. Children often pick these from fields as-is as a snack.',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature)
@@ -178,7 +178,7 @@ M.launch=function()
 				},
 			},
 			'whiteChocoroot':{
-				name:'白巧克力根',
+				name:'White chocoroot',
 				icon:10,
 				cost:15,
 				costM:100000,
@@ -187,8 +187,8 @@ M.launch=function()
 				mature:25,
 				detailsStr:'Predictable growth',
 				children:['whiskerbloom','tidygrass'],
-				effsStr:'<div class="green">&bull; +1% 黄金饼干获得</div><div class="green">&bull; 成熟时收获将获取3分钟的当前饼干产量 (最大不超过当前饼干数量的3%)</div><div class="green">&bull; predictable growth</div>',
-				q:'白色的、比巧克力根更要甜的变种。它弯曲的树枝经常阻碍旅行者。',
+				effsStr:'<div class="green">&bull; +1% golden cookie gains</div><div class="green">&bull; harvest when mature for +3 minutes of CpS (max. 3% of bank)</div><div class="green">&bull; predictable growth</div>',
+				q:'A pale, even sweeter variant of the chocoroot. Often impedes travelers with its twisty branches.',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature)
@@ -204,7 +204,7 @@ M.launch=function()
 			},
 			
 			'whiteMildew':{
-				name:'白色霉菌',
+				name:'White mildew',
 				fungus:true,
 				icon:26,
 				cost:20,
@@ -212,13 +212,13 @@ M.launch=function()
 				ageTick:8,
 				ageTickR:12,
 				mature:70,
-				detailsStr:'蔓延迅速',
+				detailsStr:'Spreads easily',
 				children:['brownMold','whiteChocoroot','wardlichen','greenRot'],
-				effsStr:'<div class="green">&bull; +1% 饼干每秒产量</div><div class="gray">&bull; 可以传播变为棕色霉菌</div>',
-				q:'一种常见的腐烂物，寄生在阴凉的土地上。生长在乳脂状的小胶囊里。闻起来很香，但很快就会枯萎。',
+				effsStr:'<div class="green">&bull; +1% CpS</div><div class="gray">&bull; may spread as brown mold</div>',
+				q:'A common rot that infests shady plots of earth. Grows in little creamy capsules. Smells sweet, but sadly wilts quickly.',
 			},
 			'brownMold':{
-				name:'棕色霉菌',
+				name:'Brown mold',
 				fungus:true,
 				icon:27,
 				cost:20,
@@ -226,14 +226,14 @@ M.launch=function()
 				ageTick:8,
 				ageTickR:12,
 				mature:70,
-				detailsStr:'蔓延迅速',
+				detailsStr:'Spreads easily',
 				children:['whiteMildew','chocoroot','keenmoss','wrinklegill'],
-				effsStr:'<div class="red">&bull; -1% 饼干每秒产量</div><div class="gray">&bull; 可以传播变为白色霉菌</div>',
-				q:'一种常见的腐烂物，寄生在阴凉的土地上。生长在奇怪的红色丛生。闻起来很苦，但还好很快就会枯萎。',
+				effsStr:'<div class="red">&bull; -1% CpS</div><div class="gray">&bull; may spread as white mildew</div>',
+				q:'A common rot that infests shady plots of earth. Grows in odd reddish clumps. Smells bitter, but thankfully wilts quickly.',
 			},
 			
 			'meddleweed':{
-				name:'野草',
+				name:'Meddleweed',
 				weed:true,
 				icon:29,
 				cost:1,
@@ -242,10 +242,10 @@ M.launch=function()
 				ageTickR:6,
 				mature:50,
 				contam:0.05,
-				detailsStr:'生长在空闲土壤中，蔓延很快',
+				detailsStr:'Grows in empty tiles, spreads easily',
 				children:['meddleweed','brownMold','crumbspore'],
-				effsStr:'<div class="red">&bull; 无用的</div><div class="red">&bull; 可能会取代附近的植物</div><div class="gray">&bull; 当连根拔起时，有时可能掉落孢子</div>',
-				q:'它是农田被忽视的证明，这种令人讨厌的杂草从未被利用的泥土中滋生，有时会蔓延到其他植物周围，并在这个过程中杀死其他植物。',
+				effsStr:'<div class="red">&bull; useless</div><div class="red">&bull; may overtake nearby plants</div><div class="gray">&bull; may sometimes drop spores when uprooted</div>',
+				q:'The sign of a neglected farmland, this annoying weed spawns from unused dirt and may sometimes spread to other plants, killing them in the process.',
 				onKill:function(x,y,age)
 				{
 					if (Math.random()<0.2*(age/100)) M.plot[y][x]=[M.plants[choose(['brownMold','crumbspore'])].id+1,0];
@@ -253,7 +253,7 @@ M.launch=function()
 			},
 			
 			'whiskerbloom':{
-				name:'猫须花',
+				name:'Whiskerbloom',
 				icon:11,
 				cost:20,
 				costM:1000000,
@@ -261,8 +261,8 @@ M.launch=function()
 				ageTickR:2,
 				mature:60,
 				children:['chimerose','nursetulip'],
-				effsStr:'<div class="green">&bull; +0.2% 牛奶效果</div>',
-				q:'挤压半透明的豆荚使它们分泌一种类似牛奶的液体，同时产生一种类似猫喵喵叫的微弱声音。',
+				effsStr:'<div class="green">&bull; +0.2% effects from milk</div>',
+				q:'Squeezing the translucent pods makes them excrete a milky liquid, while producing a faint squeak akin to a cat\'s meow.',
 			},
 			'chimerose':{
 				name:'Chimerose',
@@ -285,7 +285,7 @@ M.launch=function()
 				ageTickR:2,
 				mature:60,
 				children:[],
-				effsStr:'<div class="green">&bull; 周围的植物 (3x3) 效率增加20%</div><div class="red">&bull; -2% 饼干每秒产量</div>',
+				effsStr:'<div class="green">&bull; surrounding plants (3x3) are 20% more efficient</div><div class="red">&bull; -2% CpS</div>',
 				q:'This flower grows an intricate root network that distributes nutrients throughout the surrounding soil. The reason for this seemingly altruistic behavior is still unknown.',
 			},
 			'drowsyfern':{
@@ -297,7 +297,7 @@ M.launch=function()
 				ageTickR:0.1,
 				mature:30,
 				children:[],
-				effsStr:'<div class="green">&bull; +3% 饼干每秒产量</div><div class="red">&bull; -5% 每次点击的饼干</div><div class="red">&bull; -10% 黄金饼干频率</div>',
+				effsStr:'<div class="green">&bull; +3% CpS</div><div class="red">&bull; -5% cookies per click</div><div class="red">&bull; -10% golden cookie frequency</div>',
 				q:'Traditionally used to brew a tea that guarantees a good night of sleep.',
 				onHarvest:function(x,y,age)
 				{
@@ -313,7 +313,7 @@ M.launch=function()
 				ageTickR:4,
 				mature:65,
 				children:['wardlichen'],
-				effsStr:'<div class="gray">&bull; 减少2%的愤怒饼干</div><div class="gray">&bull; 皱纹虫生产速度减慢 15% </div>',
+				effsStr:'<div class="gray">&bull; 2% less wrath cookies</div><div class="gray">&bull; wrinklers spawn 15% slower</div>',
 				q:'The metallic stench that emanates from this organism has been known to keep insects and slugs away.',
 			},
 			'keenmoss':{
@@ -325,7 +325,7 @@ M.launch=function()
 				ageTickR:5,
 				mature:65,
 				children:['drowsyfern','wardlichen','keenmoss'],
-				effsStr:'<div class="green">&bull; +3% 随机掉落</div>',
+				effsStr:'<div class="green">&bull; +3% random drops</div>',
 				q:'Fuzzy to the touch and of a vibrant green. In plant symbolism, keenmoss is associated with good luck for finding lost objects.',
 			},
 			'queenbeet':{
@@ -338,13 +338,13 @@ M.launch=function()
 				mature:80,
 				noContam:true,
 				children:['duketater','queenbeetLump','shriekbulb'],
-				effsStr:'<div class="green">&bull; +0.3% 黄金饼干效果持续时间</div><div class="red">&bull; -2% 饼干每秒产量</div><div class="green">&bull; 成熟时收获将获取1小时的饼干产量(最大不超过当前饼干的6%)</div>',
+				effsStr:'<div class="green">&bull; +0.3% golden cookie effect duration</div><div class="red">&bull; -2% CpS</div><div class="green">&bull; harvest when mature for +1 hour of CpS (max. 4% of bank)</div>',
 				q:'A delicious taproot used to prepare high-grade white sugar. Entire countries once went to war over these.',
 				onHarvest:function(x,y,age)
 				{
 					if (age>=this.mature)
 					{
-						var moni=Math.min(Game.cookies*0.06,Game.cookiesPs*60*60);
+						var moni=Math.min(Game.cookies*0.04,Game.cookiesPs*60*60);
 						if (moni!=0)
 						{
 							Game.Earn(moni);
@@ -364,7 +364,7 @@ M.launch=function()
 				mature:85,
 				noContam:true,
 				children:[],
-				effsStr:'<div class="red">&bull; -10% 饼干每秒产量</div><div class="red">&bull; 周围植物 (3x3) 效率减少20%</div><div class="green">&bull; 成熟时收获将获取一个糖块</div>',
+				effsStr:'<div class="red">&bull; -10% CpS</div><div class="red">&bull; surrounding plants (3x3) are 20% less efficient</div><div class="green">&bull; harvest when mature for a sugar lump</div>',
 				q:'A delicious taproot used to prepare high-grade white sugar. Entire countries once went to war over these.<br>It looks like this one has grown especially sweeter and juicier from growing in close proximity to other queenbeets.',
 				onHarvest:function(x,y,age)
 				{
@@ -385,7 +385,7 @@ M.launch=function()
 				mature:95,
 				noContam:true,
 				children:['shriekbulb'],
-				effsStr:'<div class="green">&bull; 成熟时收获将获取2小时的饼干产量(最大不超过当前饼干的8%)</div>',
+				effsStr:'<div class="green">&bull; harvest when mature for +2 hours of CpS (max. 8% of bank)</div>',
 				q:'A rare, rich-tasting tuber fit for a whole meal, as long as its strict harvesting schedule is respected. Its starch has fascinating baking properties.',
 				onHarvest:function(x,y,age)
 				{
@@ -414,7 +414,7 @@ M.launch=function()
 				noContam:true,
 				detailsStr:'Spreads easily',
 				children:['crumbspore','glovemorel','cheapcap','doughshroom','wrinklegill','ichorpuff'],
-				effsStr:'<div class="green">&bull; explodes into up to 1 minute of CpS at the end of its lifecycle (max. 1% of bank)</div><div class="red">&bull; 可能会取代附近的植物</div>',
+				effsStr:'<div class="green">&bull; explodes into up to 1 minute of CpS at the end of its lifecycle (max. 1% of bank)</div><div class="red">&bull; may overtake nearby plants</div>',
 				q:'An archaic mold that spreads its spores to the surrounding dirt through simple pod explosion.',
 				onDie:function(x,y)
 				{
@@ -461,7 +461,7 @@ M.launch=function()
 				ageTickR:18,
 				mature:80,
 				children:[],
-				effsStr:'<div class="green">&bull; +4% 每次点击的饼干产量</div><div class="green">&bull; +1% 游标饼干产量</div><div class="red">&bull; -1% 饼干每秒产量</div>',
+				effsStr:'<div class="green">&bull; +4% cookies per click</div><div class="green">&bull; +1% cursor CpS</div><div class="red">&bull; -1% CpS</div>',
 				q:'Touching its waxy skin reveals that the interior is hollow and uncomfortably squishy.',
 			},
 			'cheapcap':{
@@ -474,7 +474,7 @@ M.launch=function()
 				ageTickR:16,
 				mature:40,
 				children:[],
-				effsStr:'<div class="green">&bull; 建筑以及升级价格减少 0.2% </div><div class="red">&bull; 不能适应寒冷的气候; 在冰冻时有 15% 的概率死亡</div>',
+				effsStr:'<div class="green">&bull; buildings and upgrades are 0.2% cheaper</div><div class="red">&bull; cannot handle cold climates; 15% chance to die when frozen</div>',
 				q:'Small, tough, and good in omelettes. Some historians propose that the heads of dried cheapcaps were once used as currency in some bronze age societies.',
 			},
 			'foolBolete':{
@@ -487,7 +487,7 @@ M.launch=function()
 				ageTickR:25,
 				mature:50,
 				children:[],
-				effsStr:'<div class="green">&bull; +2% 黄金饼干频率</div><div class="red">&bull; -5% 黄金饼干获得</div><div class="red">&bull; -2% 黄金饼干存在时间</div><div class="red">&bull; -2% 黄金饼干效果持续时间</div>',
+				effsStr:'<div class="green">&bull; +2% golden cookie frequency</div><div class="red">&bull; -5% golden cookie gains</div><div class="red">&bull; -2% golden cookie duration</div><div class="red">&bull; -2% golden cookie effect duration</div>',
 				q:'Named for its ability to fool mushroom pickers. The fool\'s bolete is not actually poisonous, it\'s just extremely bland.',
 			},
 			'wrinklegill':{
@@ -531,7 +531,7 @@ M.launch=function()
 				noContam:true,
 				detailsStr:'The unfortunate result of some plant combinations',
 				children:['shriekbulb'],
-				effsStr:'<div class="red">&bull; -2% 饼干每秒产量</div><div class="red">&bull; surrounding plants (3x3) are 5% less efficient</div>',
+				effsStr:'<div class="red">&bull; -2% CpS</div><div class="red">&bull; surrounding plants (3x3) are 5% less efficient</div>',
 				q:'A nasty vegetable with a dreadful quirk : its flesh resonates with a high-pitched howl whenever it is hit at the right angle by sunlight, moonlight, or even a slight breeze.',
 			},
 			'tidygrass':{
@@ -873,34 +873,34 @@ M.launch=function()
 		
 		M.soils={
 			'dirt':{
-				name:'泥土',
+				name:'Dirt',
 				icon:0,
 				tick:5,
 				effMult:1,
 				weedMult:1,
 				req:0,
-				effsStr:'<div class="gray">&bull; 一个周期有 <b>5 分钟</b></div>',
-				q:'简单而平常的泥土，你可以在自然环境中随便挖到。',
+				effsStr:'<div class="gray">&bull; tick every <b>5 minutes</b></div>',
+				q:'Simple, regular old dirt that you\'d find in nature.',
 			},
 			'fertilizer':{
-				name:'肥料',
+				name:'Fertilizer',
 				icon:1,
 				tick:3,
 				effMult:0.75,
 				weedMult:1.2,
 				req:50,
-				effsStr:'<div class="gray">&bull; 一个周期有 <b>3 分钟</b></div><div class="red">&bull; 作物效果 <b>-25%</b></div><div class="red">&bull; 杂草出现概率增加 <b>20%</b></div>',
-				q:'有新鲜肥料的有益健康的土壤。植物长得快但效果低。',
+				effsStr:'<div class="gray">&bull; tick every <b>3 minutes</b></div><div class="red">&bull; passive plant effects <b>-25%</b></div><div class="red">&bull; weeds appear <b>20%</b> more</div>',
+				q:'Soil with a healthy helping of fresh manure. Plants grow faster but are less efficient.',
 			},
 			'clay':{
-				name:'黏土',
+				name:'Clay',
 				icon:2,
 				tick:15,
 				effMult:1.25,
 				weedMult:1,
 				req:100,
-				effsStr:'<div class="gray">&bull; 一个周期有 <b>15 分钟</b></div><div class="green">&bull; 作物效果 <b>+25%</b></div>',
-				q:'土壤肥沃，保水性能好。植物生长缓慢但效果更高。',
+				effsStr:'<div class="gray">&bull; tick every <b>15 minutes</b></div><div class="green">&bull; passive plant effects <b>+25%</b></div>',
+				q:'Rich soil with very good water retention. Plants grow slower but are more efficient.',
 			},
 			'pebbles':{
 				name:'Pebbles',
@@ -909,8 +909,8 @@ M.launch=function()
 				effMult:0.25,
 				weedMult:0.1,
 				req:200,
-				effsStr:'<div class="gray">&bull; 一个周期有 <b>5 分钟</b></div><div class="red">&bull; 作物效果 <b>-75%</b></div><div class="green">&bull; 作物死亡时有<b>35% 概率</b>自动收获种子</div><div class="green">&bull; 杂草出现概率减少 <b>10 倍</b></div>',
-				q:'由小岩石紧密堆积而成的干燥土壤。对植物健康没有多大帮助，但任何从庄稼上掉下来的东西都很容易找回。<br>如果你是那些只想寻找新种子而不必过多照料花园的农民之一，那很有用。',
+				effsStr:'<div class="gray">&bull; tick every <b>5 minutes</b></div><div class="red">&bull; passive plant effects <b>-75%</b></div><div class="green">&bull; <b>35% chance</b> of collecting seeds automatically when plants expire</div><div class="green">&bull; weeds appear <b>10 times</b> less</div>',
+				q:'Dry soil made of small rocks tightly packed together. Not very conducive to plant health, but whatever falls off your crops will be easy to retrieve.<br>Useful if you\'re one of those farmers who just want to find new seeds without having to tend their garden too much.',
 			},
 			'woodchips':{
 				name:'Wood chips',
@@ -919,8 +919,8 @@ M.launch=function()
 				effMult:0.25,
 				weedMult:0.1,
 				req:300,
-				effsStr:'<div class="gray">&bull; 一个周期有 <b>5 分钟</b></div><div class="red">&bull; 作物效果 <b>-75%</b></div><div class="green">&bull; 植物发育与变异变为 <b>3 倍以上</b></div><div class="green">&bull; 杂草出现概率减少 <b>10 倍</b></div>',
-				q:'由树皮和木屑制成的土壤。有助于幼芽生长，而不是成熟植物。',
+				effsStr:'<div class="gray">&bull; tick every <b>5 minutes</b></div><div class="red">&bull; passive plant effects <b>-75%</b></div><div class="green">&bull; plants spread and mutate <b>3 times more</b></div><div class="green">&bull; weeds appear <b>10 times</b> less</div>',
+				q:'Soil made of bits and pieces of bark and sawdust. Helpful for young sprouts to develop, not so much for mature plants.',
 			},
 		};
 		M.soilsById=[];var n=0;for (var i in M.soils){M.soils[i].id=n;M.soils[i].key=i;M.soilsById[n]=M.soils[i];n++;}
@@ -928,18 +928,18 @@ M.launch=function()
 		
 		M.tools={
 			'info':{
-				name:'花园信息',
+				name:'Garden information',
 				icon:3,
 				desc:'-',
 				descFunc:function()
 				{
 					var str='';
-					if (M.freeze) str='你的花园冻住了，不会产生任何效果。';
+					if (M.freeze) str='Your garden is frozen, providing no effects.';
 					else
 					{
 						var effs={
-							cps:{n:'饼干每秒产量'},
-							click:{n:'饼干/点击'},
+							cps:{n:'CpS'},
+							click:{n:'cookies/click'},
 							cursorCps:{n:'cursor CpS'},
 							grandmaCps:{n:'grandma CpS'},
 							goldenCookieGain:{n:'golden cookie gains'},
@@ -971,18 +971,18 @@ M.launch=function()
 							}
 						}
 						if (effStr=='') effStr='<div style="font-size:10px;margin-left:64px;"><b>None.</b></div>';
-						str+='<div>你所有的植物的联合作用 :</div>'+effStr;
+						str+='<div>Combined effects of all your plants :</div>'+effStr;
 					}
 					str+='<div class="line"></div>';
-					str+='<img src="img/gardenTip.png" style="float:right;margin:0px 0px 8px 8px;"/><small style="line-height:100%;">&bull; 你可以通过把种子种在一起来使它们杂交；新的作物会在相邻的空土地上生长。<br>&bull; 通过收获成熟作物来解锁新种子。<br>&bull; 你转生后，你的花园作物会重置，但是你将保留所有已解锁的种子。<br>&bull; 游戏关闭后，花园没有效果，作物也不会生长。</small>';
+					str+='<img src="img/gardenTip.png" style="float:right;margin:0px 0px 8px 8px;"/><small style="line-height:100%;">&bull; You can cross-breed plants by planting them close to each other; new plants will grow in the empty tiles next to them.<br>&bull; Unlock new seeds by harvesting mature plants.<br>&bull; When you ascend, your garden plants are reset, but you keep all the seeds you\'ve unlocked.<br>&bull; Your garden has no effect and does not grow while the game is closed.</small>';
 					return str;
 				},
 				func:function(){},
 			},
 			'harvestAll':{
-				name:'收获所有',
+				name:'Harvest all',
 				icon:0,
-				descFunc:function(){return '马上收获花园里的所有作物。<div class="line"></div>'+((Game.keys[16] && Game.keys[17])?'<b>你正在按着 shift+ctrl.</b> 只会收获成熟的、死亡的作物。':'Shift+ctrl+单击 来只收获成熟的、死亡的作物。');},
+				descFunc:function(){return 'Instantly harvest all plants in your garden.<div class="line"></div>'+((Game.keys[16] && Game.keys[17])?'<b>You are holding shift+ctrl.</b> Only mature, mortal plants will be harvested.':'Shift+ctrl+click to harvest only mature, mortal plants.');},
 				func:function(){
 					PlaySound('snd/toneTick.mp3');
 					/*if (M.freeze){return false;}*/
@@ -991,11 +991,11 @@ M.launch=function()
 				},
 			},
 			'freeze':{
-				name:'冰冻',
+				name:'Freeze',
 				icon:1,
 				descFunc:function()
 				{
-					return '低温保护你的花园。<br>作物将不再生长，发育及死亡；它们也将不会提供加成。<br>土壤无法改变。<div class="line"></div>使用这功能将有效地暂停你的花园。<div class="line"></div>';//<span class="red">'+((M.nextFreeze>Date.now())?'You will be able to freeze your garden again in '+Game.sayTime((M.nextFreeze-Date.now())/1000*30+30,-1)+'.':'After unfreezing your garden, you must wait 10 minutes to freeze it again.')+'</span>
+					return 'Cryogenically preserve your garden.<br>Plants no longer grow, spread or die; they provide no benefits.<br>Soil cannot be changed.<div class="line"></div>Using this will effectively pause your garden.<div class="line"></div>';//<span class="red">'+((M.nextFreeze>Date.now())?'You will be able to freeze your garden again in '+Game.sayTime((M.nextFreeze-Date.now())/1000*30+30,-1)+'.':'After unfreezing your garden, you must wait 10 minutes to freeze it again.')+'</span>
 				},
 				func:function(){
 					//if (!M.freeze && M.nextFreeze>Date.now()) return false;
@@ -1092,7 +1092,7 @@ M.launch=function()
 		
 		M.getCost=function(me)
 		{
-			if (Game.Has('涡轮增压土壤')) return 0;
+			if (Game.Has('Turbo-charged soil')) return 0;
 			return Math.max(me.costM,Game.cookiesPs*me.cost*60)*(Game.HasAchiev('Seedless to nay')?0.95:1);
 		}
 		
@@ -1116,14 +1116,14 @@ M.launch=function()
 			}
 			
 			return '<div class="description">'+
-						(!me.immortal?('<div style="margin:6px 0px;font-size:11px;"><b>平均寿命 :</b> '+Game.sayTime(((100/(me.ageTick+me.ageTickR/2))*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(1)))+' 周期)</small></div>'):'')+
-						'<div style="margin:6px 0px;font-size:11px;"><b>平均成熟时间 :</b> '+Game.sayTime(((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)))+' 周期)</small></div>'+
-						(me.weed?'<div style="margin:6px 0px;font-size:11px;"><b>是杂草</b></div>':'')+
-						(me.fungus?'<div style="margin:6px 0px;font-size:11px;"><b>是一种真菌</b></div>':'')+
-						(me.detailsStr?('<div style="margin:6px 0px;font-size:11px;"><b>详情 :</b> '+me.detailsStr+'</div>'):'')+
-						(children!=''?('<div style="margin:6px 0px;font-size:11px;"><b>可能的变异 :</b> '+children+'</div>'):'')+
+						(!me.immortal?('<div style="margin:6px 0px;font-size:11px;"><b>Average lifespan :</b> '+Game.sayTime(((100/(me.ageTick+me.ageTickR/2))*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(1)))+' ticks)</small></div>'):'')+
+						'<div style="margin:6px 0px;font-size:11px;"><b>Average maturation :</b> '+Game.sayTime(((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)*M.stepT)*30,-1)+' <small>('+Beautify(Math.ceil((100/((me.ageTick+me.ageTickR/2)))*(me.mature/100)))+' ticks)</small></div>'+
+						(me.weed?'<div style="margin:6px 0px;font-size:11px;"><b>Is a weed</b></div>':'')+
+						(me.fungus?'<div style="margin:6px 0px;font-size:11px;"><b>Is a fungus</b></div>':'')+
+						(me.detailsStr?('<div style="margin:6px 0px;font-size:11px;"><b>Details :</b> '+me.detailsStr+'</div>'):'')+
+						(children!=''?('<div style="margin:6px 0px;font-size:11px;"><b>Possible mutations :</b> '+children+'</div>'):'')+
 						'<div class="line"></div>'+
-						'<div style="margin:6px 0px;"><b>效果 :</b></div>'+
+						'<div style="margin:6px 0px;"><b>Effects :</b></div>'+
 						'<div style="font-size:11px;font-weight:bold;">'+me.effsStr+'</div>'+
 						(me.q?('<q>'+me.q+'</q>'):'')+
 					'</div>';
@@ -1149,12 +1149,12 @@ M.launch=function()
 				var me=M.soilsById[id];
 				var str='<div style="padding:8px 4px;min-width:350px;">'+
 					(M.parent.amount<me.req?(
-						'<div style="text-align:center;">这种土壤需要 '+me.req+' 个农场解锁。</div>'
+						'<div style="text-align:center;">Soil unlocked at '+me.req+' farms.</div>'
 					):('<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon*48)+'px '+(-34*48)+'px;"></div>'+
-					'<div><div class="name">'+me.name+'</div><div><small>'+((M.soil==me.id)?'你的种植区正在使用这种土壤。':(M.nextSoil>Date.now())?'你将在 '+Game.sayTime((M.nextSoil-Date.now())/1000*30+30,-1)+'后才能再次改变土壤.':'单击此处来为你的整片种植区使用这种土壤。')+'</small></div></div>'+
+					'<div><div class="name">'+me.name+'</div><div><small>'+((M.soil==me.id)?'Your field is currently using this soil.':(M.nextSoil>Date.now())?'You will be able to change your soil again in '+Game.sayTime((M.nextSoil-Date.now())/1000*30+30,-1)+'.':'Click to use this type of soil for your whole field.')+'</small></div></div>'+
 					'<div class="line"></div>'+
 					'<div class="description">'+
-						'<div style="margin:6px 0px;"><b>效果 :</b></div>'+
+						'<div style="margin:6px 0px;"><b>Effects :</b></div>'+
 						'<div style="font-size:11px;font-weight:bold;">'+me.effsStr+'</div>'+
 						(me.q?('<q>'+me.q+'</q>'):'')+
 					'</div>'))+
@@ -1170,8 +1170,8 @@ M.launch=function()
 					'<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-24px;margin-top:-4px;background-position:'+(-0*48)+'px '+(-me.icon*48)+'px;"></div>'+
 					'<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-24px;margin-top:-28px;background-position:'+(-4*48)+'px '+(-me.icon*48)+'px;"></div>'+
 					'<div style="background:url(img/turnInto.png);width:20px;height:22px;position:absolute;left:28px;top:24px;z-index:1000;"></div>'+
-					(me.plantable?('<div style="float:right;text-align:right;width:100px;"><small>种植成本:</small><br><span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(shortenNumber(M.getCost(me))))+'</span><br><small>'+Game.sayTime(me.cost*60*30,-1)+' 的饼干每秒生产量,<br>最少  '+Beautify(me.costM)+' 饼干</small></div>'):'')+
-					'<div style="width:300px;"><div class="name">'+me.name+' 种子</div><div><small>'+(me.plantable?'单击此处来选择这颗种子去种植。':'<span class="red">无法种植这棵种子。</span>')+'<br>Shift+ctrl+单击来收获所有这类型的成熟作物。</small></div></div>'+
+					(me.plantable?('<div style="float:right;text-align:right;width:100px;"><small>Planting cost :</small><br><span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(shortenNumber(M.getCost(me))))+'</span><br><small>'+Game.sayTime(me.cost*60*30,-1)+' of CpS,<br>minimum '+Beautify(me.costM)+' cookies</small></div>'):'')+
+					'<div style="width:300px;"><div class="name">'+me.name+' seed</div><div><small>'+(me.plantable?'Click to select this seed for planting.':'<span class="red">This seed cannot be planted.</span>')+'<br>Shift+ctrl+click to harvest all mature plants of this type.</small></div></div>'+
 					'<div class="line"></div>'+
 					M.getPlantDesc(me)+
 				'</div>';
@@ -1197,14 +1197,15 @@ M.launch=function()
 		M.tileTooltip=function(x,y)
 		{
 			return function(){
+				if (Game.keys[16]) return '';
 				var tile=M.plot[y][x];
 				if (tile[0]==0)
 				{
 					var me=(M.seedSelected>=0)?M.plantsById[M.seedSelected]:0;
 					var str='<div style="padding:8px 4px;min-width:350px;text-align:center;">'+
-						'<div class="name">一片空土地</div>'+'<div class="line"></div><div class="description">'+
-							'这片土地是空的。<br>拿一颗种子，在这里种点什么！'+
-							(me?'<div class="line"></div>点击这里种植 <b>'+me.name+'</b> 并花费 <span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(M.getCost(me)))+'</span>.<br><small>(按住Shift-单击去批量种植.)</small>':'')+
+						'<div class="name">Empty tile</div>'+'<div class="line"></div><div class="description">'+
+							'This tile of soil is empty.<br>Pick a seed and plant something!'+
+							(me?'<div class="line"></div>Click to plant <b>'+me.name+'</b> for <span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(M.getCost(me)))+'</span>.<br><small>(Shift-click to plant multiple.)</small><br><small>(Holding the shift key pressed will also hide tooltips.)</small>':'')+
 							(M.plotBoost[y][x]!=[1,1,1]?('<small>'+
 								(M.plotBoost[y][x][0]!=1?'<br>Aging multiplier : '+Beautify(M.plotBoost[y][x][0]*100)+'%':'')+
 								(M.plotBoost[y][x][1]!=1?'<br>Effect multiplier : '+Beautify(M.plotBoost[y][x][1]*100)+'%':'')+
@@ -1226,7 +1227,7 @@ M.launch=function()
 					var icon=[stage,me.icon];
 					var str='<div style="padding:8px 4px;min-width:350px;">'+
 						'<div class="icon" style="background:url(img/gardenPlants.png?v='+Game.version+');float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div>'+
-						'<div class="name">'+me.name+'</div><div><small>这个作物在这里生长。</small></div>'+
+						'<div class="name">'+me.name+'</div><div><small>This plant is growing here.</small></div>'+
 						'<div class="line"></div>'+
 						'<div style="text-align:center;">'+
 							'<div style="display:inline-block;position:relative;box-shadow:0px 0px 0px 1px #000,0px 0px 0px 1px rgba(255,255,255,0.5) inset,0px -2px 2px 0px rgba(255,255,255,0.5) inset;width:256px;height:6px;background:linear-gradient(to right,#fff 0%,#0f9 '+me.mature+'%,#3c0 '+(me.mature+0.1)+'%,#960 100%)">'+
@@ -1236,29 +1237,29 @@ M.launch=function()
 								'<div style="background:url(img/gardenPlants.png?v='+Game.version+');background-position:'+(-3*48)+'px '+(-icon[1]*48)+'px;position:absolute;left:'+((((me.mature*0.666)/100)*256)-24)+'px;top:-32px;transform:scale(0.5,0.5);width:48px;height:48px;"></div>'+
 								'<div style="background:url(img/gardenPlants.png?v='+Game.version+');background-position:'+(-4*48)+'px '+(-icon[1]*48)+'px;position:absolute;left:'+((((me.mature)/100)*256)-24)+'px;top:-32px;transform:scale(0.5,0.5);width:48px;height:48px;"></div>'+
 							'</div><br>'+
-							'<b>阶段 :</b> '+['发芽','长芽','开花','成熟'][stage-1]+'<br>'+
-							'<small>'+(stage==1?'作物效果 : 10%':stage==2?'作物效果 : 25%':stage==3?'作物效果 : 50%':'作物效果 : 100%; 可能会繁殖，在收获时留下种子')+'</small>'+
+							'<b>Stage :</b> '+['bud','sprout','bloom','mature'][stage-1]+'<br>'+
+							'<small>'+(stage==1?'Plant effects : 10%':stage==2?'Plant effects : 25%':stage==3?'Plant effects : 50%':'Plant effects : 100%; may reproduce, will drop seed when harvested')+'</small>'+
 							'<br><small>'+(
 								stage<4?(
-									'大约在 '+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)))+' 周期'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100))==1?'':'')+')后成熟'
+									'Mature in about '+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100)))+' tick'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((me.mature-tile[1])/100))==1?'':'s')+')'
 								):(
 									!me.immortal?(
-										'大约在 '+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)))+' 周期'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100))==1?'':'')+')后腐烂'
+										'Decays in about '+Game.sayTime(((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)*M.stepT)*30,-1)+' ('+Beautify(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100)))+' tick'+(Math.ceil((100/(M.plotBoost[y][x][0]*(me.ageTick+me.ageTickR/2)))*((100-tile[1])/100))==1?'':'s')+')'
 									):
-										'不会腐烂'
+										'Does not decay'
 								)
 							)+'</small>'+
 							//'<small><br>'+M.plotBoost[y][x]+'</small>'+
 							(M.plotBoost[y][x]!=[1,1,1]?('<small>'+
-								(M.plotBoost[y][x][0]!=1?'<br>老化乘数 : '+Beautify(M.plotBoost[y][x][0]*100)+'%':'')+
-								(M.plotBoost[y][x][1]!=1?'<br>效果乘数 : '+Beautify(M.plotBoost[y][x][1]*100)+'%':'')+
-								(M.plotBoost[y][x][2]!=1?'<br>杂草/真菌剂 : '+Beautify(100-M.plotBoost[y][x][2]*100)+'%':'')+
+								(M.plotBoost[y][x][0]!=1?'<br>Aging multiplier : '+Beautify(M.plotBoost[y][x][0]*100)+'%':'')+
+								(M.plotBoost[y][x][1]!=1?'<br>Effect multiplier : '+Beautify(M.plotBoost[y][x][1]*100)+'%':'')+
+								(M.plotBoost[y][x][2]!=1?'<br>Weeds/fungus repellent : '+Beautify(100-M.plotBoost[y][x][2]*100)+'%':'')+
 								'</small>'
 							):'')+
 						'</div>'+
 						'<div class="line"></div>'+
 						//'<div style="text-align:center;">Click to harvest'+(M.seedSelected>=0?', planting <b>'+M.plantsById[M.seedSelected].name+'</b><br>for <span class="price'+(M.canPlant(me)?'':' disabled')+'">'+Beautify(Math.round(M.getCost(M.plantsById[M.seedSelected])))+'</span> in its place':'')+'.</div>'+
-						'<div style="text-align:center;">单击来 '+(stage==4?'收获':'挖出')+'.</div>'+
+						'<div style="text-align:center;">Click to '+(stage==4?'harvest':'unearth')+'.</div>'+
 						'<div class="line"></div>'+
 						M.getPlantDesc(me)+
 					'</div>';
@@ -1269,7 +1270,7 @@ M.launch=function()
 		
 		M.refillTooltip=function(){
 			return '<div style="padding:8px;width:300px;font-size:11px;text-align:center;">Click to refill your soil timer and trigger <b>1</b> plant growth tick with <b>x3</b> spread and mutation rate for <span class="price lump">1 sugar lump</span>.'+
-				(Game.canRefillLump()?'<br><small>(can be done once every '+Game.sayTime((Game.getLumpRefillMax()/1000)*Game.fps,-1)+')</small>':('<br><small class="red">(usable again in '+Game.sayTime((Game.getLumpRefillRemaining()/1000+1)*Game.fps,-1)+')</small>'))+
+				(Game.canRefillLump()?'<br><small>(can be done once every '+Game.sayTime(Game.getLumpRefillMax(),-1)+')</small>':('<br><small class="red">(usable again in '+Game.sayTime(Game.getLumpRefillRemaining()+Game.fps,-1)+')</small>'))+
 			'</div>';
 		};
 		
@@ -1350,7 +1351,7 @@ M.launch=function()
 				AddEvent(l('gardenSoil-'+me.id),'click',function(me){return function(){
 					if (M.freeze || M.soil==me.id || M.nextSoil>Date.now() || M.parent.amount<me.req){return false;}
 					PlaySound('snd/toneTick.mp3');
-					M.nextSoil=Date.now()+(Game.Has('涡轮增压土壤')?1:(1000*60*10));
+					M.nextSoil=Date.now()+(Game.Has('Turbo-charged soil')?1:(1000*60*10));
 					M.toCompute=true;M.soil=me.id;M.computeStepT();
 					for (var i in M.soils){var it=M.soils[i];if (it.id==M.soil){l('gardenSoil-'+it.id).classList.add('on');}else{l('gardenSoil-'+it.id).classList.remove('on');}}
 				}}(me));
@@ -1490,7 +1491,7 @@ M.launch=function()
 		
 		M.computeStepT=function()
 		{
-			if (Game.Has('涡轮增压土壤')) M.stepT=1;
+			if (Game.Has('Turbo-charged soil')) M.stepT=1;
 			else M.stepT=M.soilsById[M.soil].tick*60;
 		}
 		
@@ -1510,6 +1511,7 @@ M.launch=function()
 			Game.gainLumps(10);
 			Game.Notify('Sacrifice!','You\'ve sacrificed your garden to the sugar hornets, destroying your crops and your knowledge of seeds.<br>In the remains, you find <b>10 sugar lumps</b>.',[29,14],12);
 			
+			M.seedSelected=-1;
 			Game.Win('Seedless to nay');
 			M.convertTimes++;
 			M.computeMatures();
@@ -1633,7 +1635,7 @@ M.launch=function()
 		str+='<div id="gardenDrag"><div id="gardenCursor" class="shadowFilter"></div></div>';
 			
 			str+='<div id="gardenPanel" class="framed">';
-				str+='<div class="title gardenPanelLabel">工具</div><div class="line"></div>';
+				str+='<div class="title gardenPanelLabel">Tools</div><div class="line"></div>';
 				str+='<div id="gardenTools"></div>';
 				str+='<div id="gardenSeedsUnlocked" class="title gardenPanelLabel">Seeds</div><div class="line"></div>';
 				str+='<div id="gardenSeeds"></div>';
@@ -1835,6 +1837,7 @@ M.launch=function()
 		
 		M.buildPlot();
 		M.buildPanel();
+		M.computeEffs();
 		M.toCompute=true;
 		
 		setTimeout(function(M){return function(){M.onResize();}}(M),10);
@@ -1997,12 +2000,12 @@ M.launch=function()
 		if (Game.drawT%10==0)
 		{
 			M.lumpRefill.style.display='block';
-			if (M.freeze) l('gardenNextTick').innerHTML='花园冻住了。解冻来恢复。';
-			else l('gardenNextTick').innerHTML='下一周期在 '+Game.sayTime((M.nextStep-Date.now())/1000*30+30,-1)+'';
-			l('gardenStats').innerHTML='已收获成熟作物 : '+Beautify(M.harvests)+' (总共 : '+Beautify(M.harvestsTotal)+')';
-			if (M.parent.level<M.plotLimits.length) l('gardenPlotSize').innerHTML='<small>种植区尺寸 : '+Math.max(1,Math.min(M.plotLimits.length,M.parent.level))+'/'+M.plotLimits.length+'<br>(随农场等级升级<糖块升级>)</small>';
+			if (M.freeze) l('gardenNextTick').innerHTML='Garden is frozen. Unfreeze to resume.';
+			else l('gardenNextTick').innerHTML='Next tick in '+Game.sayTime((M.nextStep-Date.now())/1000*30+30,-1)+'';
+			l('gardenStats').innerHTML='Mature plants harvested : '+Beautify(M.harvests)+' (total : '+Beautify(M.harvestsTotal)+')';
+			if (M.parent.level<M.plotLimits.length) l('gardenPlotSize').innerHTML='<small>Plot size : '+Math.max(1,Math.min(M.plotLimits.length,M.parent.level))+'/'+M.plotLimits.length+'<br>(Upgrades with farm level)</small>';
 			else l('gardenPlotSize').innerHTML='';
-			l('gardenSeedsUnlocked').innerHTML='种子<small> ('+M.plantsUnlockedN+'/'+M.plantsN+')</small>';
+			l('gardenSeedsUnlocked').innerHTML='Seeds<small> ('+M.plantsUnlockedN+'/'+M.plantsN+')</small>';
 			for (var i in M.soils)
 			{
 				var me=M.soils[i];
